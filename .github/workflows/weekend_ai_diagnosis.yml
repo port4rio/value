@@ -1,0 +1,59 @@
+name: Weekend AI Financial Diagnosis & Deploy
+
+on:
+  schedule:
+    # 毎週土曜日 日本時間 09:07 (UTC 00:07) に実行
+    # 平日の決算短信要約で消費したGemini無料枠が空いている週末朝に一括診断
+    - cron: '7 0 * * 6'
+  workflow_dispatch: # 手動実行トリガー（直近診断済み銘柄は自動スキップ）
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  ai-diagnosis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js 20のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 依存パッケージのインストール
+        run: npm ci
+
+      - name: スクリーニング銘柄のAI決算・財務サマリーを一括生成
+        run: node scripts/run_ai_diagnosis.mjs
+        env:
+          TZ: 'Asia/Tokyo'
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: AI診断データをコミット＆プッシュ
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/ai_summaries.json
+          if git diff --staged --quiet; then
+            echo "AI診断データに変更はありませんでした。"
+          else
+            git commit -m "chore(ai): 週末銘柄AI財務診断サマリー自動更新 [$(date +'%Y-%m-%d')]"
+            git push
+          fi
+
+      - name: 静的サイトをビルド
+        run: npm run build
+
+      - name: GitHub Pagesに自動デプロイ
+        uses: actions/deploy-pages@v4

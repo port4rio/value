@@ -1,0 +1,57 @@
+name: Daily Minkabu Screener & Deploy
+
+on:
+  schedule:
+    # 毎週月〜金曜日 日本時間 15:37 (UTC 06:37) 東京市場引け(15:30)直後に定期実行
+    - cron: '37 6 * * 1-5'
+  workflow_dispatch: # GitHub管理画面から手動実行可能（二重カウント防止済み）
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js 20のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 依存パッケージのインストール
+        run: npm ci
+
+      - name: みんかぶ割安高配当スクリーニングを実行 (15:37 JST)
+        run: node scripts/fetch_minkabu.mjs
+        env:
+          TZ: 'Asia/Tokyo'
+
+      - name: 差分データをGitリポジトリに自動コミット＆プッシュ
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/
+          if git diff --staged --quiet; then
+            echo "本日のデータに変更はありませんでした（または二重実行による既存データ保持）。"
+          else
+            git commit -m "chore(data): 割安高配当スクリーニング日次データ自動更新 [$(date +'%Y-%m-%d')]"
+            git push
+          fi
+
+      - name: 静的サイトをビルド
+        run: npm run build
+
+      - name: GitHub Pagesに自動デプロイ
+        uses: actions/deploy-pages@v4
