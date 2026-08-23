@@ -3,19 +3,15 @@ import {
   Hourglass, 
   Zap, 
   GraduationCap, 
-  TrendingUp, 
-  ShieldCheck, 
-  Sparkles, 
-  Info, 
-  Layers,
-  Star,
-  ArrowUpDown,
-  ArrowUp,
-  ArrowDown,
-  Bot
+  Star, 
+  ArrowUpDown, 
+  ArrowUp, 
+  ArrowDown, 
+  Sparkles,
+  Info,
+  Layers
 } from 'lucide-react';
-import { Stock, ViewMode, HoldingItem } from '../types/stock';
-import { SparklineChart } from './SparklineChart';
+import { Stock, ViewMode, HoldingItem, SortKey } from '../types/stock';
 
 interface StockTableProps {
   stocks: Stock[];
@@ -24,9 +20,9 @@ interface StockTableProps {
   onToggleHolding?: (stock: Stock) => void;
   onSelectStock: (stock: Stock) => void;
   onOpenAiSummary?: (stock: Stock) => void;
-  sortBy?: string;
+  sortBy?: SortKey | string;
   sortOrder?: 'asc' | 'desc';
-  onSortChange?: (field: any) => void;
+  onSortChange?: (field: SortKey) => void;
 }
 
 export const StockTable: React.FC<StockTableProps> = ({
@@ -36,7 +32,7 @@ export const StockTable: React.FC<StockTableProps> = ({
   onToggleHolding,
   onSelectStock,
   onOpenAiSummary,
-  sortBy = 'dividendYield',
+  sortBy = 'roe',
   sortOrder = 'desc',
   onSortChange
 }) => {
@@ -54,13 +50,13 @@ export const StockTable: React.FC<StockTableProps> = ({
 
   const isCompact = viewMode === 'compact';
 
-  const handleHeaderClick = (field: any) => {
+  const handleHeaderClick = (field: SortKey) => {
     if (onSortChange) {
       onSortChange(field);
     }
   };
 
-  const renderSortIndicator = (field: string) => {
+  const renderSortIndicator = (field: SortKey) => {
     if (sortBy !== field) {
       return <ArrowUpDown className="w-3 h-3 text-slate-600 inline ml-1 opacity-0 group-hover/th:opacity-100 transition-opacity" />;
     }
@@ -71,34 +67,61 @@ export const StockTable: React.FC<StockTableProps> = ({
     );
   };
 
+  const getMarketBadge = (stock: Stock) => {
+    const short = stock.marketShort || (stock.market === 'プライム' ? '東P' : stock.market === 'スタンダード' ? '東S' : '東G');
+    const isPrime = short === '東P' || stock.market === 'プライム';
+    const isStandard = short === '東S' || stock.market === 'スタンダード';
+
+    return (
+      <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold font-mono tracking-tight border ${
+        isPrime 
+          ? 'bg-blue-950/60 text-blue-300 border-blue-500/30' 
+          : isStandard 
+            ? 'bg-amber-950/60 text-amber-300 border-amber-500/30' 
+            : 'bg-emerald-950/60 text-emerald-300 border-emerald-500/30'
+      }`}>
+        {short}
+      </span>
+    );
+  };
+
+  const formatMarketCap = (marketCap: number) => {
+    if (!marketCap || marketCap <= 0) return '-';
+    if (marketCap >= 10000) {
+      const cho = (marketCap / 10000).toFixed(marketCap >= 100000 ? 1 : 2);
+      return `${cho}兆円`;
+    }
+    return `${marketCap.toLocaleString()}億円`;
+  };
+
   const renderStatusBadge = (stock: Stock) => {
     switch (stock.status) {
       case 'chronic':
         return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30 whitespace-nowrap">
-            <Hourglass className="w-3 h-3 mr-1 text-amber-400" />
+          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30 whitespace-nowrap">
+            <Hourglass className="w-2.5 h-2.5 mr-1 text-amber-400" />
             ずっと割安 ({stock.consecutiveDays}日)
           </span>
         );
       case 'rare_new':
         return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 animate-pulse whitespace-nowrap">
-            <Zap className="w-3 h-3 mr-1 text-emerald-400" />
+          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 animate-pulse whitespace-nowrap">
+            <Zap className="w-2.5 h-2.5 mr-1 text-emerald-400" />
             新着割安 ({stock.consecutiveDays}日目)
           </span>
         );
       case 'graduated':
         return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 whitespace-nowrap">
-            <GraduationCap className="w-3 h-3 mr-1 text-indigo-400" />
-            割安卒業 (+{stock.graduationReturnPercent}%)
+          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 whitespace-nowrap">
+            <GraduationCap className="w-2.5 h-2.5 mr-1 text-indigo-400" />
+            卒業 (+{stock.graduationReturnPercent}%)
           </span>
         );
       case 'normal_active':
       default:
         return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-300 border border-slate-700 whitespace-nowrap">
-            通常監視 ({stock.consecutiveDays}日)
+          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-400 border border-slate-700 whitespace-nowrap">
+            {stock.consecutiveDays}日滞在
           </span>
         );
     }
@@ -109,72 +132,109 @@ export const StockTable: React.FC<StockTableProps> = ({
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           
-          {/* Table Header with Click-to-Sort */}
+          {/* Table Header: みんかぶスクリーニング結果順 */}
           <thead>
-            <tr className="bg-slate-800/70 border-b border-slate-700 text-[10px] font-medium text-slate-400 uppercase tracking-wider select-none">
+            <tr className="bg-slate-800/80 border-b border-slate-700 text-[11px] font-semibold text-slate-400 select-none">
+              
+              {/* 1. 銘柄 (コードと東S、改行して銘柄名) */}
               <th 
-                className="py-3 px-3 cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
+                className="py-3 px-3 cursor-pointer hover:bg-slate-700/50 transition-colors group/th min-w-[160px]"
                 onClick={() => handleHeaderClick('code')}
               >
-                <span>コード・銘柄名</span>
+                <span>銘柄</span>
                 {renderSortIndicator('code')}
               </th>
-              
-              <th 
-                className="py-3 px-2.5 cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
-                onClick={() => handleHeaderClick('consecutiveDays')}
-              >
-                <span>分類・滞在</span>
-                {renderSortIndicator('consecutiveDays')}
-              </th>
 
-              <th className="py-3 px-2 text-center">
-                <span>直近株価推移</span>
-              </th>
-
+              {/* 2. 株価 */}
               <th 
-                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
                 onClick={() => handleHeaderClick('price')}
               >
-                <span>現在株価 (前日比)</span>
+                <span>株価</span>
                 {renderSortIndicator('price')}
               </th>
 
+              {/* 3. 前日比 */}
               <th 
-                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
-                onClick={() => handleHeaderClick('dividendYield')}
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('changePercent')}
               >
-                <span className="text-emerald-400 font-bold">予想配当利回り</span>
-                {renderSortIndicator('dividendYield')}
+                <span>前日比</span>
+                {renderSortIndicator('changePercent')}
               </th>
 
+              {/* [4. 目標株価: 非表示] */}
+
+              {/* 5. 時価総額 */}
               <th 
-                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('marketCap')}
+              >
+                <span>時価総額</span>
+                {renderSortIndicator('marketCap')}
+              </th>
+
+              {/* 6. PER (調整後の文字は消去) */}
+              <th 
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('per')}
+              >
+                <span>PER</span>
+                {renderSortIndicator('per')}
+              </th>
+
+              {/* 7. PBR */}
+              <th 
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
                 onClick={() => handleHeaderClick('pbr')}
               >
-                <span>PBR / PER</span>
+                <span>PBR</span>
                 {renderSortIndicator('pbr')}
               </th>
 
+              {/* 8. ROE (みんかぶのソート順) */}
               <th 
-                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
-                onClick={() => handleHeaderClick('undervaluedScore')}
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('roe')}
               >
-                <span>理論株価 (割安度)</span>
-                {renderSortIndicator('undervaluedScore')}
+                <span className="text-indigo-300 font-bold">ROE</span>
+                {renderSortIndicator('roe')}
               </th>
 
-              {!isCompact && (
-                <th 
-                  className="py-3 px-2.5 cursor-pointer hover:bg-slate-700/50 transition-colors group/th"
-                  onClick={() => handleHeaderClick('consecutiveDividendHikeYears')}
-                >
-                  <span>増配 / 財務健全性</span>
-                  {renderSortIndicator('consecutiveDividendHikeYears')}
-                </th>
-              )}
+              {/* 9. 3年平均売上成長率 */}
+              <th 
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('salesCagr3y')}
+              >
+                <span>3年平均売上成長率</span>
+                {renderSortIndicator('salesCagr3y')}
+              </th>
 
-              <th className="py-3 px-3 text-center">AI・操作</th>
+              {/* 10. 配当利回り */}
+              <th 
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('dividendYield')}
+              >
+                <span className="text-emerald-400 font-bold">配当利回り</span>
+                {renderSortIndicator('dividendYield')}
+              </th>
+
+              {/* 11. 自己資本比率 */}
+              <th 
+                className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
+                onClick={() => handleHeaderClick('equityRatio')}
+              >
+                <span>自己資本比率</span>
+                {renderSortIndicator('equityRatio')}
+              </th>
+
+              {/* [12. 最低投資金額: 非表示] */}
+
+              {/* 13. 滞在日数 / AI・操作 */}
+              <th className="py-3 px-3 text-center whitespace-nowrap">
+                <span>滞在・AI</span>
+              </th>
+
             </tr>
           </thead>
 
@@ -188,141 +248,134 @@ export const StockTable: React.FC<StockTableProps> = ({
                 <tr
                   key={stock.code}
                   id={`stock-row-${stock.code}`}
-                  className={`hover:bg-slate-800/60 transition-colors group cursor-pointer ${
+                  className={`hover:bg-slate-800/70 transition-colors group cursor-pointer ${
                     isGraduated ? 'bg-indigo-950/20' : ''
                   } ${isSaved ? 'bg-indigo-950/15' : ''}`}
                   onClick={() => onSelectStock(stock)}
                 >
                   
-                  {/* Stock Code, Favorite Star & Name */}
-                  <td className={`${isCompact ? 'py-2 px-3' : 'py-3.5 px-3'}`}>
-                    <div className="flex items-center space-x-2">
+                  {/* 1. 銘柄: 1行目に[コード]と東S(市場)、改行して2行目に銘柄名 */}
+                  <td className={`${isCompact ? 'py-2 px-3' : 'py-3 px-3'}`}>
+                    <div className="flex items-start space-x-2">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           if (onToggleHolding) onToggleHolding(stock);
                         }}
-                        className={`p-1 rounded transition-colors ${
+                        className={`p-1 mt-0.5 rounded transition-colors ${
                           isSaved ? 'text-amber-400 hover:text-amber-300' : 'text-slate-600 hover:text-amber-400'
                         }`}
                         title={isSaved ? 'port4rio保有・ウォッチから解除' : 'port4rio保有・ウォッチに登録'}
                       >
-                        <Star className={`w-4 h-4 ${isSaved ? 'fill-current' : ''}`} />
+                        <Star className={`w-3.5 h-3.5 ${isSaved ? 'fill-current' : ''}`} />
                       </button>
 
-                      <div>
-                        <div className="flex items-center space-x-1.5">
-                          <span className="font-mono font-bold text-indigo-400 bg-slate-900/80 px-1.5 py-0.5 rounded text-xs border border-slate-700">
+                      <div className="flex flex-col">
+                        {/* 1行目: コード + 市場バッジ (例: [8058] 東P) */}
+                        <div className="flex items-center space-x-1.5 leading-tight">
+                          <span className="font-mono font-bold text-indigo-400 text-xs">
                             {stock.code}
                           </span>
-                          <span className="font-semibold text-slate-100 group-hover:text-indigo-300 transition-colors truncate max-w-[150px] sm:max-w-[200px]">
-                            {stock.name}
+                          {getMarketBadge(stock)}
+                          <span className="text-[11px] text-slate-500 truncate max-w-[80px]">
+                            {stock.sector}
                           </span>
                         </div>
-                        {!isCompact && (
-                          <div className="flex items-center space-x-1 mt-0.5 text-[11px] text-slate-400">
-                            <span>{stock.sector}</span>
-                            <span className="text-slate-600">•</span>
-                            <span>{stock.market}</span>
-                          </div>
-                        )}
+
+                        {/* 2行目 (改行): 銘柄名 */}
+                        <div className="mt-1 font-bold text-slate-100 group-hover:text-indigo-300 transition-colors truncate max-w-[150px] sm:max-w-[210px] text-sm">
+                          {stock.name}
+                        </div>
                       </div>
                     </div>
                   </td>
 
-                  {/* Status Badge */}
-                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3.5 px-2.5'} whitespace-nowrap`}>
-                    {renderStatusBadge(stock)}
+                  {/* 2. 株価 */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono`}>
+                    <span className="font-bold text-slate-100">
+                      {stock.price.toLocaleString()}円
+                    </span>
                   </td>
 
-                  {/* Compact 1-Line Sparkline Chart */}
-                  <td className={`${isCompact ? 'py-2 px-2' : 'py-3.5 px-2'} text-center whitespace-nowrap`} onClick={(e) => e.stopPropagation()}>
-                    <SparklineChart 
-                      history={stock.history} 
-                      width={isCompact ? 72 : 84} 
-                      height={isCompact ? 18 : 22} 
-                    />
-                  </td>
-
-                  {/* Price & Change */}
-                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3.5 px-2.5'} text-right whitespace-nowrap font-mono`}>
-                    <div className="font-bold text-slate-100">
-                      ¥{stock.price.toLocaleString()}
-                    </div>
-                    <div className={`text-[10px] font-medium ${
-                      stock.change >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                  {/* 3. 前日比 */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono`}>
+                    <div className={`text-xs font-semibold ${
+                      stock.change > 0 ? 'text-emerald-400' : stock.change < 0 ? 'text-rose-400' : 'text-slate-400'
                     }`}>
-                      {stock.change >= 0 ? `+${stock.change}` : stock.change} ({stock.changePercent >= 0 ? `+${stock.changePercent}%` : `${stock.changePercent}%`})
+                      {stock.change > 0 ? `+${stock.change}` : stock.change}円
+                    </div>
+                    <div className={`text-[10px] ${
+                      stock.changePercent > 0 ? 'text-emerald-400/90' : stock.changePercent < 0 ? 'text-rose-400/90' : 'text-slate-500'
+                    }`}>
+                      ({stock.changePercent >= 0 ? `+${stock.changePercent}%` : `${stock.changePercent}%`})
                     </div>
                   </td>
 
-                  {/* Dividend Yield */}
-                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3.5 px-2.5'} text-right whitespace-nowrap font-mono`}>
+                  {/* 5. 時価総額 */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono text-slate-300 text-xs`}>
+                    {formatMarketCap(stock.marketCap)}
+                  </td>
+
+                  {/* 6. PER (調整後 PER から「調整後」は消去) */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono`}>
+                    <span className={`font-medium ${stock.per <= 10.0 ? 'text-amber-400 font-bold' : 'text-slate-200'}`}>
+                      {stock.per.toFixed(1)}倍
+                    </span>
+                  </td>
+
+                  {/* 7. PBR */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono`}>
+                    <span className={`font-bold ${stock.pbr < 0.7 ? 'text-amber-400' : 'text-slate-200'}`}>
+                      {stock.pbr.toFixed(2)}倍
+                    </span>
+                  </td>
+
+                  {/* 8. ROE */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono`}>
+                    <span className="font-bold text-indigo-300">
+                      {stock.roe ? `${stock.roe.toFixed(1)}%` : '-'}
+                    </span>
+                  </td>
+
+                  {/* 9. 3年平均売上成長率 */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono text-slate-300`}>
+                    <span className={stock.salesCagr3y >= 5 ? 'text-emerald-400 font-semibold' : 'text-slate-300'}>
+                      {stock.salesCagr3y !== undefined ? `+${stock.salesCagr3y.toFixed(1)}%` : '-'}
+                    </span>
+                  </td>
+
+                  {/* 10. 配当利回り */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono`}>
                     <div className="font-extrabold text-sm text-emerald-400">
                       {stock.dividendYield.toFixed(2)}%
                     </div>
-                    {!isCompact && <div className="text-[10px] text-slate-500 font-sans">予想年間</div>}
                   </td>
 
-                  {/* PBR & PER */}
-                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3.5 px-2.5'} text-right whitespace-nowrap font-mono`}>
-                    <div className="text-slate-200">
-                      <span className="text-[10px] text-slate-500 mr-1 font-sans">PBR</span>
-                      <strong className={`${stock.pbr < 0.7 ? 'text-amber-400' : 'text-slate-200'} font-bold`}>
-                        {stock.pbr.toFixed(2)}倍
-                      </strong>
-                    </div>
-                    <div className="text-[10px] text-slate-400">
-                      <span className="text-slate-500 mr-1 font-sans">PER</span>
-                      {stock.per.toFixed(1)}倍
-                    </div>
+                  {/* 11. 自己資本比率 */}
+                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono text-slate-300`}>
+                    <span className={stock.equityRatio >= 60 ? 'text-emerald-300 font-semibold' : 'text-slate-300'}>
+                      {stock.equityRatio.toFixed(1)}%
+                    </span>
                   </td>
 
-                  {/* Minkabu Theoretical Price & Undervalued Score */}
-                  <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3.5 px-2.5'} text-right whitespace-nowrap font-mono`}>
-                    <div className="font-medium text-slate-200">
-                      ¥{stock.minkabuTheoreticalPrice.toLocaleString()}
-                    </div>
-                    <div className={`text-[10px] font-bold ${
-                      stock.undervaluedScore >= 30 ? 'text-emerald-400' : 'text-slate-400'
-                    }`}>
-                      +{stock.undervaluedScore.toFixed(1)}% 割安
-                    </div>
-                  </td>
-
-                  {/* Consecutive Hikes & Health (hidden in compact mode) */}
-                  {!isCompact && (
-                    <td className="py-3.5 px-2.5 whitespace-nowrap">
-                      <div className="text-slate-300 font-medium text-[11px]">
-                        {stock.consecutiveDividendHikeYears > 0 ? (
-                          <span className="inline-flex items-center text-indigo-300 bg-indigo-950/60 border border-indigo-500/30 px-1.5 py-0.2 rounded text-[10px] font-bold">
-                            <TrendingUp className="w-3 h-3 mr-0.5" />
-                            {stock.consecutiveDividendHikeYears}期連続増配
-                          </span>
-                        ) : (
-                          <span className="text-slate-500 text-[10px]">安定維持</span>
-                        )}
-                      </div>
-                      <div className="text-[10px] text-slate-400 mt-0.5 flex items-center gap-1">
-                        <ShieldCheck className="w-3 h-3 text-emerald-400 inline" />
-                        自己資本 {stock.equityRatio.toFixed(0)}%
-                      </div>
-                    </td>
-                  )}
-
-                  {/* Actions */}
-                  <td className={`${isCompact ? 'py-2 px-3' : 'py-3.5 px-3'} text-center whitespace-nowrap`} onClick={(e) => e.stopPropagation()}>
+                  {/* 13. 滞在日数 & AI・操作 */}
+                  <td className={`${isCompact ? 'py-2 px-3' : 'py-3 px-3'} text-center whitespace-nowrap`} onClick={(e) => e.stopPropagation()}>
                     <div className="flex items-center justify-center space-x-1.5">
+                      <div className="hidden sm:block">
+                        {renderStatusBadge(stock)}
+                      </div>
+                      
                       {onOpenAiSummary && (
                         <button
                           onClick={() => onOpenAiSummary(stock)}
                           className="px-2 py-1 text-[11px] font-semibold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/80 border border-emerald-500/30 rounded transition-colors inline-flex items-center"
-                          title="AI決算サマリー & ChatGPT相談"
+                          title="AI財務サマリー & 診断"
                         >
                           <Sparkles className="w-3 h-3 mr-0.5" />
                           AI
                         </button>
                       )}
+
                       <button
                         id={`view-detail-btn-${stock.code}`}
                         onClick={() => onSelectStock(stock)}
@@ -344,10 +397,10 @@ export const StockTable: React.FC<StockTableProps> = ({
       {/* Footer Info */}
       <div className="px-5 py-3 bg-slate-900/60 border-t border-slate-700/80 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
         <div className="flex items-center space-x-2">
-          <Info className="w-3.5 h-3.5 text-slate-500" />
-          <span>※ 各列ヘッダーをクリックすると昇順・降順ソートできます。「★」でport4rio保有・ウォッチに保存。</span>
+          <Info className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+          <span>※ 各列ヘッダーをクリックすると昇順・降順ソートできます。「★」でport4rio保有・ウォッチ銘柄に登録。</span>
         </div>
-        <span className="font-mono font-medium text-slate-300">表示件数: {stocks.length} 件</span>
+        <span className="font-mono font-medium text-slate-300 shrink-0">表示件数: {stocks.length} 件</span>
       </div>
 
     </div>

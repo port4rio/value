@@ -25,6 +25,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,6 +33,7 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '../public/data');
 const STOCKS_FILE = path.join(DATA_DIR, 'stocks.json');
 const SNAPSHOTS_FILE = path.join(DATA_DIR, 'snapshots.json');
+const COOKIE_FILE = path.join(__dirname, 'minkabu_cookies.txt');
 
 // 日本標準時 (JST) での「今日」の日付 (YYYY-MM-DD)
 const getTodayJST = () => {
@@ -48,7 +50,7 @@ const today = getTodayJST();
 
 // ランダムな待機時間 (ミリ秒) - サーバー負荷軽減とブロック防止
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const randomDelay = (min = 2500, max = 4500) => {
+const randomDelay = (min = 2500, max = 5000) => {
   const ms = Math.floor(Math.random() * (max - min + 1)) + min;
   return sleep(ms);
 };
@@ -58,32 +60,103 @@ const buildSearchUrl = (page) => {
   return `https://minkabu.jp/stock/search?view=result&page=${page}&sort_key=roe&order=desc&minimum_purchase_price[0]=min&minimum_purchase_price[1]=max&market_capitalization[0]=min&market_capitalization[1]=max&per[0]=min&per[1]=15&pbr[0]=min&pbr[1]=1&dividend_yield[0]=3&dividend_yield[1]=max&capital_adequacy_ratio[0]=50&capital_adequacy_ratio[1]=max&sales_cagr_3y[0]=2&sales_cagr_3y[1]=max&roe[0]=8&roe[1]=max`;
 };
 
-// ブラウザを装うリクエストヘッダー (Anti-Scraping対策)
-const getBrowserHeaders = (page) => {
-  const userAgents = [
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15'
-  ];
-  const userAgent = userAgents[Math.floor(Math.random() * userAgents.length)];
+const USER_AGENTS = [
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15'
+];
 
-  return {
-    'User-Agent': userAgent,
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Sec-Ch-Ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
-    'Sec-Ch-Ua-Mobile': '?0',
-    'Sec-Ch-Ua-Platform': '"macOS"',
-    'Sec-Fetch-Dest': 'document',
-    'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-Site': page > 1 ? 'same-origin' : 'none',
-    'Sec-Fetch-User': '?1',
-    'Upgrade-Insecure-Requests': '1',
-    'Cache-Control': 'max-age=0',
-    'Referer': page > 1 ? buildSearchUrl(page - 1) : 'https://minkabu.jp/'
-  };
-};
+/**
+ * curlコマンドを使用した耐WAFリクエスト取得
+ */
+function fetchWithCurl(url, userAgent, referer = 'https://minkabu.jp/') {
+  try {
+    const cmd = `curl -s -L --compressed --max-time 25 \
+      -c "${COOKIE_FILE}" -b "${COOKIE_FILE}" \
+      -H "User-Agent: ${userAgent}" \
+      -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" \
+      -H "Accept-Language: ja,en-US;q=0.9,en;q=0.8" \
+      -H "Sec-Fetch-Dest: document" \
+      -H "Sec-Fetch-Mode: navigate" \
+      -H "Sec-Fetch-Site: same-origin" \
+      -H "Sec-Fetch-User: ?1" \
+      -H "Upgrade-Insecure-Requests: 1" \
+      -H "Referer: ${referer}" \
+      "${url}"`;
+
+    const html = execSync(cmd, { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024 });
+    return html;
+  } catch (err) {
+    console.warn(`[WARN] curl fetch failed for ${url}:`, err.message);
+    return null;
+  }
+}
+
+/**
+ * Node.js標準fetchを使用したフォールバック
+ */
+async function fetchWithNode(url, userAgent, referer = 'https://minkabu.jp/') {
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': userAgent,
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+        'Referer': referer
+      }
+    });
+    if (!res.ok) {
+      console.warn(`[WARN] Node fetch returned status ${res.status}`);
+      return null;
+    }
+    return await res.text();
+  } catch (err) {
+    console.warn(`[WARN] Node fetch error for ${url}:`, err.message);
+    return null;
+  }
+}
+
+/**
+ * みんかぶトップページでCookieセッションを初期化
+ */
+async function initSession() {
+  console.log('[INIT] Initializing Minkabu session cookies...');
+  const ua = USER_AGENTS[0];
+  const curlRes = fetchWithCurl('https://minkabu.jp/', ua, 'https://www.google.com/');
+  if (!curlRes) {
+    await fetchWithNode('https://minkabu.jp/', ua, 'https://www.google.com/');
+  }
+  await sleep(1500);
+}
+
+/**
+ * ページHTMLの取得（curl優先 + Node fetchリトライ）
+ */
+async function fetchPageHtml(url, page) {
+  const ua = USER_AGENTS[page % USER_AGENTS.length];
+  const referer = page > 1 ? buildSearchUrl(page - 1) : 'https://minkabu.jp/';
+
+  // 1. curlで試行
+  let html = fetchWithCurl(url, ua, referer);
+  if (html && html.includes('<table') && (html.includes('/stock/') || html.includes('銘柄'))) {
+    return html;
+  }
+
+  // 2. 失敗時は待機して別UAでリトライ
+  console.warn(`[WARN] Page ${page} first attempt empty or blocked. Retrying with mobile UA...`);
+  await randomDelay(3000, 6000);
+
+  const mobileUa = USER_AGENTS[2];
+  html = fetchWithCurl(url, mobileUa, referer);
+  if (html && html.includes('<table')) {
+    return html;
+  }
+
+  // 3. Node fetch でリトライ
+  html = await fetchWithNode(url, ua, referer);
+  return html;
+}
 
 /**
  * みんかぶHTMLの簡易パーサー
@@ -192,33 +265,23 @@ async function scrapeAllPages() {
   console.log(`[INFO] Starting Minkabu scraper at ${today} (Pages 1 to 3)...`);
   const allScrapedStocks = [];
 
+  // セッション初期化 (Cookie取得)
+  await initSession();
+
   for (let page = 1; page <= 3; page++) {
     const url = buildSearchUrl(page);
     console.log(`[SCRAPE] Fetching Page ${page}: ${url}`);
 
     try {
-      const response = await fetch(url, {
-        headers: getBrowserHeaders(page)
-      });
-
-      if (!response.ok) {
-        console.warn(`[WARN] Page ${page} returned status HTTP ${response.status}. Retrying once...`);
-        await randomDelay(3000, 6000);
-        const retryRes = await fetch(url, { headers: getBrowserHeaders(page) });
-        if (!retryRes.ok) {
-          console.error(`[ERROR] Failed to fetch Page ${page} after retry (Status: ${retryRes.status})`);
-          continue;
-        }
-        const html = await retryRes.text();
-        const stocksOnPage = parseMinkabuHtml(html);
-        console.log(`[SUCCESS] Page ${page} extracted ${stocksOnPage.length} stocks.`);
-        allScrapedStocks.push(...stocksOnPage);
-      } else {
-        const html = await response.text();
-        const stocksOnPage = parseMinkabuHtml(html);
-        console.log(`[SUCCESS] Page ${page} extracted ${stocksOnPage.length} stocks.`);
-        allScrapedStocks.push(...stocksOnPage);
+      const html = await fetchPageHtml(url, page);
+      if (!html) {
+        console.warn(`[WARN] Page ${page} failed to return HTML.`);
+        continue;
       }
+
+      const stocksOnPage = parseMinkabuHtml(html);
+      console.log(`[SUCCESS] Page ${page} extracted ${stocksOnPage.length} stocks.`);
+      allScrapedStocks.push(...stocksOnPage);
     } catch (err) {
       console.error(`[ERROR] Network error fetching page ${page}:`, err.message);
     }

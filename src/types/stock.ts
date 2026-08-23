@@ -23,6 +23,7 @@ export interface Stock {
   code: string; // e.g. "8058"
   name: string; // e.g. "三菱商事"
   market: 'プライム' | 'スタンダード' | 'グロース';
+  marketShort?: string; // '東P' | '東S' | '東G'
   sector: string; // e.g. "卸売業"
   price: number; // 現在値 (円)
   change: number; // 前日比 (円)
@@ -31,6 +32,7 @@ export interface Stock {
   per: number; // 予想PER (倍)
   pbr: number; // 実績PBR (倍)
   roe: number; // ROE (%)
+  salesCagr3y: number; // 3年平均売上成長率 (%)
   equityRatio: number; // 自己資本比率 (%)
   marketCap: number; // 時価総額 (億円)
   
@@ -87,6 +89,8 @@ export type SortKey =
   | 'dividendYield' 
   | 'pbr' 
   | 'per' 
+  | 'roe'
+  | 'salesCagr3y'
   | 'price' 
   | 'consecutiveDays' 
   | 'undervaluedScore' 

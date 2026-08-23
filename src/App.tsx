@@ -133,7 +133,7 @@ export default function App() {
     maxPbr: 1.8,
     minMarketCap: 0,
     minEquityRatio: 0,
-    sortBy: 'dividendYield',
+    sortBy: 'roe',
     sortOrder: 'desc',
     onlyHighFinancialHealth: false,
     onlyDividendHike: false,
@@ -214,7 +214,7 @@ export default function App() {
       maxPbr: 1.8,
       minMarketCap: 0,
       minEquityRatio: 0,
-      sortBy: 'dividendYield',
+      sortBy: 'roe',
       sortOrder: 'desc',
       onlyHighFinancialHealth: false,
       onlyDividendHike: false,
@@ -288,6 +288,14 @@ export default function App() {
         case 'per':
           valA = a.per;
           valB = b.per;
+          break;
+        case 'roe':
+          valA = a.roe || 0;
+          valB = b.roe || 0;
+          break;
+        case 'salesCagr3y':
+          valA = a.salesCagr3y || 0;
+          valB = b.salesCagr3y || 0;
           break;
         case 'undervaluedScore':
           valA = a.undervaluedScore;

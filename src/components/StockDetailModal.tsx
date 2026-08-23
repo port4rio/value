@@ -300,7 +300,11 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                 </div>
                 <div className="flex justify-between py-1 border-b border-slate-700/60">
                   <span className="text-slate-400">ROE (自己資本利益率)</span>
-                  <strong className="font-mono text-slate-200">{stock.roe.toFixed(1)}%</strong>
+                  <strong className="font-mono text-indigo-300 font-bold">{stock.roe ? `${stock.roe.toFixed(1)}%` : '-'}</strong>
+                </div>
+                <div className="flex justify-between py-1 border-b border-slate-700/60">
+                  <span className="text-slate-400">3年平均売上成長率</span>
+                  <strong className="font-mono text-emerald-400 font-semibold">{stock.salesCagr3y !== undefined ? `+${stock.salesCagr3y.toFixed(1)}%` : '-'}</strong>
                 </div>
                 <div className="flex justify-between py-1 border-b border-slate-700/60">
                   <span className="text-slate-400">配当性向</span>
