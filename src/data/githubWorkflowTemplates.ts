@@ -43,7 +43,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add public/data/
+          mkdir -p public/data
+          git add -A public/data
           if git diff --staged --quiet; then
             echo "本日のデータに変更はありませんでした（二重実行時は既存データ保持）。"
           else
@@ -110,7 +111,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add public/data/ai_summaries.json
+          mkdir -p public/data
+          git add -A public/data/ai_summaries.json
           if git diff --staged --quiet; then
             echo "AI診断データに変更はありませんでした。"
           else

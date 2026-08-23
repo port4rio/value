@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-08-23",
+    "totalCount": 48,
+    "chronicCount": 18,
+    "rareNewCount": 12,
+    "normalCount": 18,
+    "graduatedCount": 4,
+    "avgYield": 4.12,
+    "avgPer": 8.9,
+    "avgPbr": 0.72,
+    "topYieldStock": {
+      "code": "5401",
+      "name": "日本製鉄",
+      "yield": 4.85
+    },
+    "stockCodes": [
+      "5401",
+      "8058"
+    ]
+  }
+]
