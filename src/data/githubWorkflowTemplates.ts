@@ -30,10 +30,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: 依存パッケージをインストール
-        run: npm ci
+        run: npm install
 
       - name: みんかぶ割安高配当スクリーニングを実行 (15:37 JST)
         run: node scripts/fetch_minkabu.mjs
@@ -54,6 +53,11 @@ jobs:
 
       - name: 静的サイトをビルド
         run: npm run build
+
+      - name: GitHub Pages用アーティファクトのアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
 
       - name: GitHub Pagesにデプロイ
         uses: actions/deploy-pages@v4
@@ -92,10 +96,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: 依存パッケージをインストール
-        run: npm ci
+        run: npm install
 
       - name: スクリーニング銘柄のAI決算・財務サマリーを一括生成
         run: node scripts/run_ai_diagnosis.mjs
@@ -117,6 +120,11 @@ jobs:
 
       - name: 静的サイトをビルド
         run: npm run build
+
+      - name: GitHub Pages用アーティファクトのアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
 
       - name: GitHub Pagesにデプロイ
         uses: actions/deploy-pages@v4
@@ -152,15 +160,13 @@ const today = new Intl.DateTimeFormat('ja-JP', {
 const buildSearchUrl = (page) => {
   return \`https://minkabu.jp/stock/search?view=result&page=\${page}&sort_key=roe&order=desc&minimum_purchase_price[0]=min&minimum_purchase_price[1]=max&market_capitalization[0]=min&market_capitalization[1]=max&per[0]=min&per[1]=15&pbr[0]=min&pbr[1]=1&dividend_yield[0]=3&dividend_yield[1]=max&capital_adequacy_ratio[0]=50&capital_adequacy_ratio[1]=max&sales_cagr_3y[0]=2&sales_cagr_3y[1]=max&roe[0]=8&roe[1]=max\`;
 };
-
-// ... (詳細ロジックは scripts/fetch_minkabu.mjs 参照)
 `;
 
 export const GITHUB_SETUP_STEPS = [
   {
     step: 1,
     title: 'リポジトリにコードをプッシュ',
-    description: 'GitHubリポジトリ（port4rio/port4rio.github.io 等）にプロジェクトコード一式をプッシュします。'
+    description: 'GitHubリポジトリ（port4rio/value）にプロジェクトコード一式をプッシュします。'
   },
   {
     step: 2,

@@ -29,10 +29,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: 依存パッケージのインストール
-        run: npm ci
+        run: npm install
 
       - name: スクリーニング銘柄のAI決算・財務サマリーを一括生成
         run: node scripts/run_ai_diagnosis.mjs
@@ -54,6 +53,11 @@ jobs:
 
       - name: 静的サイトをビルド
         run: npm run build
+
+      - name: GitHub Pages用アーティファクトのアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
 
       - name: GitHub Pagesに自動デプロイ
         uses: actions/deploy-pages@v4
