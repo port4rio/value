@@ -32,6 +32,9 @@ jobs:
       - name: 依存パッケージのインストール
         run: npm install
 
+      - name: Playwrightブラウザのインストール (耐WAFスクレイピング用)
+        run: npx playwright install --with-deps chromium
+
       - name: みんかぶ割安高配当スクリーニングを実行 (15:37 JST)
         run: node scripts/fetch_minkabu.mjs
         env:

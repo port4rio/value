@@ -26,6 +26,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { chromium } from 'playwright';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -259,37 +260,138 @@ function parseMinkabuHtml(html) {
 }
 
 /**
- * ページ1〜3を順次スクレイピング
+ * Playwright (Chromium 実ブラウザ) を使用したスクレイピング
+ * GitHub ActionsのクラウドIPに対するWAF/Bot検知 (HTTP 403) を完全に回避
+ */
+async function scrapeWithPlaywright() {
+  console.log('[PLAYWRIGHT] Launching Chromium headless browser for Anti-WAF scraping...');
+  let browser = null;
+  const allScrapedStocks = [];
+
+  try {
+    browser = await chromium.launch({
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-blink-features=AutomationControlled',
+        '--disable-infobars',
+        '--window-size=1280,800'
+      ]
+    });
+
+    const context = await browser.newContext({
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+      locale: 'ja-JP',
+      timezoneId: 'Asia/Tokyo',
+      viewport: { width: 1280, height: 800 },
+      extraHTTPHeaders: {
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8'
+      }
+    });
+
+    // 自動操作フラグを隠蔽 (Anti-Detection)
+    await context.addInitScript(() => {
+      Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    });
+
+    const page = await context.newPage();
+
+    // 1. トップページへアクセスして自然なセッション・Cookieを確立
+    console.log('[PLAYWRIGHT] Establishing session on Minkabu top page...');
+    try {
+      await page.goto('https://minkabu.jp/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await page.waitForTimeout(2000);
+    } catch (e) {
+      console.warn('[WARN] Top page navigation notice:', e.message);
+    }
+
+    // 2. ページ 1 〜 3 を順次巡回
+    for (let p = 1; p <= 3; p++) {
+      const searchUrl = buildSearchUrl(p);
+      console.log(`[PLAYWRIGHT] Navigating to Page ${p}: ${searchUrl}`);
+
+      try {
+        await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 40000 });
+
+        // テーブルまたはコンテンツの描画待機
+        try {
+          await page.waitForSelector('table', { timeout: 12000 });
+        } catch {
+          console.warn(`[WARN] Table selector not immediately found on page ${p}, proceeding with rendered DOM...`);
+        }
+
+        await page.waitForTimeout(2000);
+        const html = await page.content();
+
+        if (html && (html.includes('<table') || html.includes('銘柄'))) {
+          const stocksOnPage = parseMinkabuHtml(html);
+          console.log(`[SUCCESS] [PLAYWRIGHT] Page ${p} extracted ${stocksOnPage.length} stocks.`);
+          allScrapedStocks.push(...stocksOnPage);
+        } else {
+          console.warn(`[WARN] [PLAYWRIGHT] Page ${p} did not contain valid stock table.`);
+        }
+      } catch (pageErr) {
+        console.error(`[ERROR] [PLAYWRIGHT] Error on page ${p}:`, pageErr.message);
+      }
+
+      if (p < 3) {
+        const sleepMs = 2500 + Math.floor(Math.random() * 2500);
+        console.log(`[WAIT] Sleeping ${sleepMs}ms before next page...`);
+        await page.waitForTimeout(sleepMs);
+      }
+    }
+  } catch (err) {
+    console.error('[ERROR] Playwright launch/execution failed:', err.message);
+  } finally {
+    if (browser) {
+      await browser.close();
+    }
+  }
+
+  return allScrapedStocks;
+}
+
+/**
+ * ページ1〜3を順次スクレイピング (Playwright優先 + HTTPフォールバック)
  */
 async function scrapeAllPages() {
   console.log(`[INFO] Starting Minkabu scraper at ${today} (Pages 1 to 3)...`);
-  const allScrapedStocks = [];
+  let allScrapedStocks = [];
 
-  // セッション初期化 (Cookie取得)
-  await initSession();
+  // 1. Playwright (実ブラウザ) による取得を試行
+  try {
+    allScrapedStocks = await scrapeWithPlaywright();
+  } catch (pwErr) {
+    console.warn('[WARN] Playwright method failed, falling back to HTTP fetcher:', pwErr.message);
+  }
 
-  for (let page = 1; page <= 3; page++) {
-    const url = buildSearchUrl(page);
-    console.log(`[SCRAPE] Fetching Page ${page}: ${url}`);
+  // 2. Playwright で0件だった場合、HTTP/curl フォールバック
+  if (!allScrapedStocks || allScrapedStocks.length === 0) {
+    console.log('[FALLBACK] Attempting HTTP/curl fallback scraper...');
+    await initSession();
 
-    try {
-      const html = await fetchPageHtml(url, page);
-      if (!html) {
-        console.warn(`[WARN] Page ${page} failed to return HTML.`);
-        continue;
+    for (let page = 1; page <= 3; page++) {
+      const url = buildSearchUrl(page);
+      console.log(`[SCRAPE-FALLBACK] Fetching Page ${page}: ${url}`);
+
+      try {
+        const html = await fetchPageHtml(url, page);
+        if (!html) {
+          console.warn(`[WARN] Page ${page} failed to return HTML.`);
+          continue;
+        }
+
+        const stocksOnPage = parseMinkabuHtml(html);
+        console.log(`[SUCCESS] Page ${page} extracted ${stocksOnPage.length} stocks.`);
+        allScrapedStocks.push(...stocksOnPage);
+      } catch (err) {
+        console.error(`[ERROR] Network error fetching page ${page}:`, err.message);
       }
 
-      const stocksOnPage = parseMinkabuHtml(html);
-      console.log(`[SUCCESS] Page ${page} extracted ${stocksOnPage.length} stocks.`);
-      allScrapedStocks.push(...stocksOnPage);
-    } catch (err) {
-      console.error(`[ERROR] Network error fetching page ${page}:`, err.message);
-    }
-
-    // ページ間にランダム待機を挟む
-    if (page < 3) {
-      console.log('[WAIT] Sleeping to avoid rate limits...');
-      await randomDelay(3000, 5000);
+      if (page < 3) {
+        await randomDelay(3000, 5000);
+      }
     }
   }
 
