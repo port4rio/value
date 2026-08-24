@@ -1,6 +1,6 @@
 {
   "name": "割安高配当株トラッカー (port4rio)",
-  "description": "みんかぶの割安高配当スクリーニング結果を日次記録・追跡。コンパクト表表示・ソート・1行株価推移スパークライン、AI決算サマリー、ログイン不要LocalStorage保有銘柄管理、ChatGPT相談URLエンコーダーを搭載。",
+  "description": "TradingView Pythonスクリーナーによる日本株（PER15倍以下・PBR1倍以下・ROE8%以上・自己資本比率50%以上・配当利回り4%以上・利益成長率1%以上）の日次追跡。コンパクト表表示・ソート・1行株価推移スパークライン、AI決算サマリー、LocalStorage保有銘柄管理、ChatGPT相談URLエンコーダーを搭載。",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

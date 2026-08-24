@@ -44,25 +44,25 @@ export const Header: React.FC<HeaderProps> = ({
             <div>
               <div className="flex items-center space-x-2.5">
                 <h1 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                  みんかぶ割安高配当トラッカー
+                  日本株 割安高配当トラッカー
                 </h1>
                 <a
                   href="https://github.com/port4rio/port4rio.github.io"
                   target="_blank"
                   rel="noreferrer"
                   className="hidden md:inline-flex items-center px-2 py-0.5 rounded text-xs font-mono bg-indigo-950/60 text-indigo-300 border border-indigo-500/30 hover:text-white transition-colors"
-                  title="port4rio.github.io 新機能"
+                  title="port4rio.github.io"
                 >
-                  <span>port4rio</span>
+                  <span>TradingView</span>
                   <ExternalLink className="w-2.5 h-2.5 ml-1 opacity-70" />
                 </a>
                 <span className="hidden lg:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-500/30">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-                  日次自動追跡中
+                  日次自動更新中
                 </span>
               </div>
               <p className="text-xs text-slate-400 flex items-center gap-1.5 mt-0.5">
-                <span>ずっと割安・新着割安・卒業銘柄 & AI決算サマリー</span>
+                <span>PER≤15倍・PBR≤1倍・ROE≥8%・自己資本≥50%・配当≥4%・成長≥1%</span>
                 <span className="text-slate-600 hidden sm:inline">•</span>
                 <span className="hidden sm:flex items-center gap-1 font-mono text-emerald-400 text-[11px]">
                   <Calendar className="w-3 h-3 text-slate-500" />

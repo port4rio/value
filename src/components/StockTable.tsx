@@ -201,13 +201,13 @@ export const StockTable: React.FC<StockTableProps> = ({
                 {renderSortIndicator('roe')}
               </th>
 
-              {/* 9. 3年平均売上成長率 */}
+              {/* 9. 営業利益成長率 */}
               <th 
                 className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
-                onClick={() => handleHeaderClick('salesCagr3y')}
+                onClick={() => handleHeaderClick('operatingGrowth')}
               >
-                <span>3年平均売上成長率</span>
-                {renderSortIndicator('salesCagr3y')}
+                <span>営業利益成長率</span>
+                {renderSortIndicator('operatingGrowth')}
               </th>
 
               {/* 10. 配当利回り */}
@@ -337,11 +337,24 @@ export const StockTable: React.FC<StockTableProps> = ({
                     </span>
                   </td>
 
-                  {/* 9. 3年平均売上成長率 */}
+                  {/* 9. 営業利益成長率 */}
                   <td className={`${isCompact ? 'py-2 px-2.5' : 'py-3 px-2.5'} text-right whitespace-nowrap font-mono text-slate-300`}>
-                    <span className={stock.salesCagr3y >= 5 ? 'text-emerald-400 font-semibold' : 'text-slate-300'}>
-                      {stock.salesCagr3y !== undefined ? `+${stock.salesCagr3y.toFixed(1)}%` : '-'}
-                    </span>
+                    <div className={
+                      (stock.operatingGrowth !== undefined && stock.operatingGrowth >= 1) 
+                        ? 'text-emerald-400 font-semibold' 
+                        : (stock.operatingGrowth !== undefined && stock.operatingGrowth < 0) 
+                          ? 'text-rose-400' 
+                          : 'text-slate-300'
+                    }>
+                      {stock.operatingGrowth !== undefined 
+                        ? (stock.operatingGrowth > 0 ? `+${stock.operatingGrowth.toFixed(1)}%` : `${stock.operatingGrowth.toFixed(1)}%`)
+                        : (stock.salesCagr3y !== undefined ? `+${stock.salesCagr3y.toFixed(1)}%` : '-')}
+                    </div>
+                    {stock.salesCagr3y !== undefined && (
+                      <div className="text-[10px] text-slate-500">
+                        (売上 {stock.salesCagr3y >= 0 ? `+${stock.salesCagr3y.toFixed(1)}%` : `${stock.salesCagr3y.toFixed(1)}%`})
+                      </div>
+                    )}
                   </td>
 
                   {/* 10. 配当利回り */}

@@ -33,6 +33,7 @@ export interface Stock {
   pbr: number; // 実績PBR (倍)
   roe: number; // ROE (%)
   salesCagr3y: number; // 3年平均売上成長率 (%)
+  operatingGrowth?: number; // 営業利益成長率 (%)
   equityRatio: number; // 自己資本比率 (%)
   marketCap: number; // 時価総額 (億円)
   
@@ -91,6 +92,7 @@ export type SortKey =
   | 'per' 
   | 'roe'
   | 'salesCagr3y'
+  | 'operatingGrowth'
   | 'price' 
   | 'consecutiveDays' 
   | 'undervaluedScore' 

@@ -1,5 +1,230 @@
 [
   {
+    "code": "6675",
+    "name": "サクサ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "電子テクノロジー",
+    "price": 2165,
+    "change": 5,
+    "changePercent": 0.23,
+    "dividendYield": 4.71,
+    "per": 2.3,
+    "pbr": 0.8,
+    "roe": 41.5,
+    "salesCagr3y": 0.3,
+    "operatingGrowth": -38.6,
+    "equityRatio": 66.3,
+    "marketCap": 396,
+    "minkabuTheoreticalPrice": 2706,
+    "undervaluedScore": 25,
+    "targetPrice": 2598,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2165,
+        "dividendYield": 4.71,
+        "per": 2.3,
+        "pbr": 0.8,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "3640",
+    "name": "電算",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "テクノロジーサービス",
+    "price": 2812,
+    "change": 34,
+    "changePercent": 1.22,
+    "dividendYield": 5.04,
+    "per": 3.4,
+    "pbr": 0.99,
+    "roe": 33.1,
+    "salesCagr3y": 49.3,
+    "operatingGrowth": 122,
+    "equityRatio": 73.5,
+    "marketCap": 139,
+    "minkabuTheoreticalPrice": 3515,
+    "undervaluedScore": 25,
+    "targetPrice": 3374,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2812,
+        "dividendYield": 5.04,
+        "per": 3.4,
+        "pbr": 0.99,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "5351",
+    "name": "品川リフラ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非エネルギー鉱物",
+    "price": 2100,
+    "change": 33,
+    "changePercent": 1.6,
+    "dividendYield": 4.35,
+    "per": 3.3,
+    "pbr": 0.87,
+    "roe": 29.3,
+    "salesCagr3y": 23.4,
+    "operatingGrowth": 18,
+    "equityRatio": 50.9,
+    "marketCap": 973,
+    "minkabuTheoreticalPrice": 2625,
+    "undervaluedScore": 25,
+    "targetPrice": 2520,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2100,
+        "dividendYield": 4.35,
+        "per": 3.3,
+        "pbr": 0.87,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "7463",
+    "name": "アドヴァングループ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "流通サービス",
+    "price": 961,
+    "change": 11,
+    "changePercent": 1.16,
+    "dividendYield": 4.21,
+    "per": 2.8,
+    "pbr": 0.53,
+    "roe": 20.7,
+    "salesCagr3y": -8,
+    "operatingGrowth": -9.4,
+    "equityRatio": 69.9,
+    "marketCap": 284,
+    "minkabuTheoreticalPrice": 1201,
+    "undervaluedScore": 25,
+    "targetPrice": 1153,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 961,
+        "dividendYield": 4.21,
+        "per": 2.8,
+        "pbr": 0.53,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "9193",
+    "name": "東京汽船",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "交通・輸送",
+    "price": 878,
+    "change": 21,
+    "changePercent": 2.45,
+    "dividendYield": 5.83,
+    "per": 1.7,
+    "pbr": 0.31,
+    "roe": 20.2,
+    "salesCagr3y": 9.2,
+    "operatingGrowth": 40.5,
+    "equityRatio": 81.9,
+    "marketCap": 85,
+    "minkabuTheoreticalPrice": 1098,
+    "undervaluedScore": 25,
+    "targetPrice": 1054,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 878,
+        "dividendYield": 5.83,
+        "per": 1.7,
+        "pbr": 0.31,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
     "code": "8001",
     "name": "伊藤忠商事",
     "market": "プライム",
@@ -23,7 +248,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 26,
     "totalAppearances": 26,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 7600,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 10,
@@ -60,7 +285,56 @@
         "pbr": 1,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 7850,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "2112",
+    "name": "塩水港精糖",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "素材産業",
+    "price": 475,
+    "change": 6,
+    "changePercent": 1.28,
+    "dividendYield": 4.26,
+    "per": 4.6,
+    "pbr": 0.59,
+    "roe": 14.6,
+    "salesCagr3y": 1.4,
+    "operatingGrowth": 9.6,
+    "equityRatio": 65.5,
+    "marketCap": 128,
+    "minkabuTheoreticalPrice": 594,
+    "undervaluedScore": 25,
+    "targetPrice": 570,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 475,
+        "dividendYield": 4.26,
+        "per": 4.6,
+        "pbr": 0.59,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "8058",
@@ -86,7 +360,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 13,
     "totalAppearances": 13,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 2980,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 9,
@@ -115,7 +389,11 @@
         "pbr": 0.98,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3050,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "8015",
@@ -141,7 +419,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 22,
     "totalAppearances": 22,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 2750,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 12,
@@ -169,7 +447,101 @@
         "pbr": 0.99,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2840,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "1828",
+    "name": "田辺工業",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "産業サービス",
+    "price": 2315,
+    "change": 0,
+    "changePercent": 0,
+    "dividendYield": 4.32,
+    "per": 6.7,
+    "pbr": 0.87,
+    "roe": 13.9,
+    "salesCagr3y": 3,
+    "operatingGrowth": 29.7,
+    "equityRatio": 59.9,
+    "marketCap": 248,
+    "minkabuTheoreticalPrice": 2894,
+    "undervaluedScore": 25,
+    "targetPrice": 2778,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2315,
+        "dividendYield": 4.32,
+        "per": 6.7,
+        "pbr": 0.87,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "1964",
+    "name": "中外炉工業",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 4070,
+    "change": 15,
+    "changePercent": 0.37,
+    "dividendYield": 4.09,
+    "per": 7.6,
+    "pbr": 0.97,
+    "roe": 13.9,
+    "salesCagr3y": 3,
+    "operatingGrowth": 0.3,
+    "equityRatio": 62.8,
+    "marketCap": 311,
+    "minkabuTheoreticalPrice": 5088,
+    "undervaluedScore": 25,
+    "targetPrice": 4884,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 4070,
+        "dividendYield": 4.09,
+        "per": 7.6,
+        "pbr": 0.97,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "8031",
@@ -195,7 +567,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 39,
     "totalAppearances": 39,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 3250,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 5,
@@ -223,7 +595,11 @@
         "pbr": 0.95,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3320,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "7272",
@@ -249,7 +625,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 74,
     "totalAppearances": 74,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 1320,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -277,7 +653,146 @@
         "pbr": 0.95,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1380,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "6402",
+    "name": "兼松エンジニアリング",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "耐久消費財",
+    "price": 1590,
+    "change": -8,
+    "changePercent": -0.5,
+    "dividendYield": 4.63,
+    "per": 7.6,
+    "pbr": 1,
+    "roe": 13.7,
+    "salesCagr3y": 6,
+    "operatingGrowth": 19.3,
+    "equityRatio": 62.8,
+    "marketCap": 89,
+    "minkabuTheoreticalPrice": 1988,
+    "undervaluedScore": 25,
+    "targetPrice": 1908,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1590,
+        "dividendYield": 4.63,
+        "per": 7.6,
+        "pbr": 1,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "7058",
+    "name": "共栄セキュリティ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "商業サービス",
+    "price": 2946,
+    "change": 18,
+    "changePercent": 0.61,
+    "dividendYield": 4.1,
+    "per": 6.7,
+    "pbr": 0.85,
+    "roe": 13.5,
+    "salesCagr3y": 14.5,
+    "operatingGrowth": 83.5,
+    "equityRatio": 70.4,
+    "marketCap": 42,
+    "minkabuTheoreticalPrice": 3683,
+    "undervaluedScore": 25,
+    "targetPrice": 3535,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2946,
+        "dividendYield": 4.1,
+        "per": 6.7,
+        "pbr": 0.85,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "1768",
+    "name": "ソネック",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "産業サービス",
+    "price": 1025,
+    "change": 5,
+    "changePercent": 0.49,
+    "dividendYield": 4.9,
+    "per": 5.8,
+    "pbr": 0.73,
+    "roe": 13.5,
+    "salesCagr3y": 49.7,
+    "operatingGrowth": 86.2,
+    "equityRatio": 72.4,
+    "marketCap": 75,
+    "minkabuTheoreticalPrice": 1281,
+    "undervaluedScore": 25,
+    "targetPrice": 1230,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1025,
+        "dividendYield": 4.9,
+        "per": 5.8,
+        "pbr": 0.73,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "5334",
@@ -303,7 +818,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 18,
     "totalAppearances": 18,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 4400,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -331,7 +846,11 @@
         "pbr": 0.99,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 4520,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "8002",
@@ -357,7 +876,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 97,
     "totalAppearances": 97,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 2410,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -385,7 +904,11 @@
         "pbr": 0.92,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2480,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "7270",
@@ -411,7 +934,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 166,
     "totalAppearances": 166,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 2850,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 2,
@@ -440,7 +963,56 @@
         "pbr": 0.78,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2920,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "8700",
+    "name": "丸八証券",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "金融",
+    "price": 1959,
+    "change": 9,
+    "changePercent": 0.46,
+    "dividendYield": 5.13,
+    "per": 8,
+    "pbr": 0.94,
+    "roe": 12.3,
+    "salesCagr3y": 18.3,
+    "operatingGrowth": 197.8,
+    "equityRatio": 58.3,
+    "marketCap": 78,
+    "minkabuTheoreticalPrice": 2449,
+    "undervaluedScore": 25,
+    "targetPrice": 2351,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1959,
+        "dividendYield": 5.13,
+        "per": 8,
+        "pbr": 0.94,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "8020",
@@ -466,7 +1038,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 52,
     "totalAppearances": 52,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 2280,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 6,
@@ -494,7 +1066,56 @@
         "pbr": 0.95,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2350,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "5445",
+    "name": "東京鐵鋼",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非エネルギー鉱物",
+    "price": 2016,
+    "change": 1,
+    "changePercent": 0.05,
+    "dividendYield": 4.96,
+    "per": 7,
+    "pbr": 0.8,
+    "roe": 11.9,
+    "salesCagr3y": -12.2,
+    "operatingGrowth": -19.4,
+    "equityRatio": 74.5,
+    "marketCap": 510,
+    "minkabuTheoreticalPrice": 2520,
+    "undervaluedScore": 25,
+    "targetPrice": 2419,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2016,
+        "dividendYield": 4.96,
+        "per": 7,
+        "pbr": 0.8,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "7202",
@@ -520,7 +1141,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 133,
     "totalAppearances": 133,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 1920,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -548,7 +1169,11 @@
         "pbr": 0.88,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1980,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "8053",
@@ -574,7 +1199,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 105,
     "totalAppearances": 105,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 3580,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -602,7 +1227,11 @@
         "pbr": 0.88,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3680,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "9302",
@@ -628,7 +1257,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 44,
     "totalAppearances": 44,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 6600,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 5,
@@ -656,7 +1285,56 @@
         "pbr": 0.88,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 6850,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "8150",
+    "name": "三信電気",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "流通サービス",
+    "price": 3090,
+    "change": -15,
+    "changePercent": -0.48,
+    "dividendYield": 6.12,
+    "per": 7.8,
+    "pbr": 0.83,
+    "roe": 11.4,
+    "salesCagr3y": 9.5,
+    "operatingGrowth": 31.2,
+    "equityRatio": 55.1,
+    "marketCap": 130,
+    "minkabuTheoreticalPrice": 3863,
+    "undervaluedScore": 25,
+    "targetPrice": 3708,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 3090,
+        "dividendYield": 6.12,
+        "per": 7.8,
+        "pbr": 0.83,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "1928",
@@ -682,7 +1360,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 15,
     "totalAppearances": 15,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 3450,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 13,
@@ -710,7 +1388,56 @@
         "pbr": 0.98,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3520,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7722",
+    "name": "国際計測器",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "電子テクノロジー",
+    "price": 795,
+    "change": 5,
+    "changePercent": 0.63,
+    "dividendYield": 4.43,
+    "per": 8.1,
+    "pbr": 0.86,
+    "roe": 11.2,
+    "salesCagr3y": 13.2,
+    "operatingGrowth": -1.6,
+    "equityRatio": 63.4,
+    "marketCap": 109,
+    "minkabuTheoreticalPrice": 994,
+    "undervaluedScore": 25,
+    "targetPrice": 954,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 795,
+        "dividendYield": 4.43,
+        "per": 8.1,
+        "pbr": 0.86,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "8078",
@@ -736,7 +1463,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 276,
     "totalAppearances": 276,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 5400,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 2,
@@ -764,7 +1491,11 @@
         "pbr": 0.68,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 5850,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 6.4
   },
   {
     "code": "8425",
@@ -790,7 +1521,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 220,
     "totalAppearances": 220,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 920,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 22,
@@ -818,7 +1549,101 @@
         "pbr": 0.78,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 980,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 6.5
+  },
+  {
+    "code": "7812",
+    "name": "クレステック",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "商業サービス",
+    "price": 2144,
+    "change": 14,
+    "changePercent": 0.66,
+    "dividendYield": 4.88,
+    "per": 6.5,
+    "pbr": 0.65,
+    "roe": 11.1,
+    "salesCagr3y": -2.7,
+    "operatingGrowth": 3.7,
+    "equityRatio": 54.2,
+    "marketCap": 66,
+    "minkabuTheoreticalPrice": 2680,
+    "undervaluedScore": 25,
+    "targetPrice": 2573,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2144,
+        "dividendYield": 4.88,
+        "per": 6.5,
+        "pbr": 0.65,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "7239",
+    "name": "タチエス",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 2349,
+    "change": 11,
+    "changePercent": 0.47,
+    "dividendYield": 4.49,
+    "per": 8.7,
+    "pbr": 0.74,
+    "roe": 10.8,
+    "salesCagr3y": -5.7,
+    "operatingGrowth": 14.5,
+    "equityRatio": 61.8,
+    "marketCap": 802,
+    "minkabuTheoreticalPrice": 2936,
+    "undervaluedScore": 25,
+    "targetPrice": 2819,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2349,
+        "dividendYield": 4.49,
+        "per": 8.7,
+        "pbr": 0.74,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "2768",
@@ -844,7 +1669,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 186,
     "totalAppearances": 186,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 3200,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -872,7 +1697,11 @@
         "pbr": 0.72,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3380,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5.6
   },
   {
     "code": "7525",
@@ -898,7 +1727,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 59,
     "totalAppearances": 59,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 3500,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -926,7 +1755,101 @@
         "pbr": 0.85,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3650,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "2902",
+    "name": "太陽化学",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非耐久消費財",
+    "price": 2692,
+    "change": 2,
+    "changePercent": 0.07,
+    "dividendYield": 4.05,
+    "per": 8.1,
+    "pbr": 0.81,
+    "roe": 10.6,
+    "salesCagr3y": 4.9,
+    "operatingGrowth": 10.5,
+    "equityRatio": 82.6,
+    "marketCap": 473,
+    "minkabuTheoreticalPrice": 3365,
+    "undervaluedScore": 25,
+    "targetPrice": 3230,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2692,
+        "dividendYield": 4.05,
+        "per": 8.1,
+        "pbr": 0.81,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "7673",
+    "name": "ダイコー通産",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "電子テクノロジー",
+    "price": 1642,
+    "change": 6,
+    "changePercent": 0.37,
+    "dividendYield": 4.28,
+    "per": 9.6,
+    "pbr": 0.97,
+    "roe": 10.5,
+    "salesCagr3y": 1.2,
+    "operatingGrowth": 7.6,
+    "equityRatio": 50.9,
+    "marketCap": 87,
+    "minkabuTheoreticalPrice": 2053,
+    "undervaluedScore": 25,
+    "targetPrice": 1970,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1642,
+        "dividendYield": 4.28,
+        "per": 9.6,
+        "pbr": 0.97,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "5406",
@@ -952,7 +1875,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 356,
     "totalAppearances": 356,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 1720,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 0,
@@ -980,7 +1903,11 @@
         "pbr": 0.58,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1820,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "8424",
@@ -1006,7 +1933,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 175,
     "totalAppearances": 175,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 11200,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 19,
@@ -1034,7 +1961,236 @@
         "pbr": 0.82,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 11800,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5.4
+  },
+  {
+    "code": "4246",
+    "name": "ダイキョーニシカワ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 1122,
+    "change": 4,
+    "changePercent": 0.36,
+    "dividendYield": 4.65,
+    "per": 8.4,
+    "pbr": 0.83,
+    "roe": 10.4,
+    "salesCagr3y": -1.7,
+    "operatingGrowth": 3.9,
+    "equityRatio": 57.1,
+    "marketCap": 762,
+    "minkabuTheoreticalPrice": 1403,
+    "undervaluedScore": 25,
+    "targetPrice": 1346,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1122,
+        "dividendYield": 4.65,
+        "per": 8.4,
+        "pbr": 0.83,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "3375",
+    "name": "ＺＯＡ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "小売業",
+    "price": 1750,
+    "change": 20,
+    "changePercent": 1.16,
+    "dividendYield": 4.34,
+    "per": 7,
+    "pbr": 0.7,
+    "roe": 10.3,
+    "salesCagr3y": 2.7,
+    "operatingGrowth": 14.3,
+    "equityRatio": 63.8,
+    "marketCap": 25,
+    "minkabuTheoreticalPrice": 2188,
+    "undervaluedScore": 25,
+    "targetPrice": 2100,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1750,
+        "dividendYield": 4.34,
+        "per": 7,
+        "pbr": 0.7,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "6505",
+    "name": "東洋電機製造",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 2426,
+    "change": 36,
+    "changePercent": 1.51,
+    "dividendYield": 4.18,
+    "per": 7.4,
+    "pbr": 0.72,
+    "roe": 10.3,
+    "salesCagr3y": -0.1,
+    "operatingGrowth": 23.7,
+    "equityRatio": 56.9,
+    "marketCap": 214,
+    "minkabuTheoreticalPrice": 3033,
+    "undervaluedScore": 25,
+    "targetPrice": 2911,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2426,
+        "dividendYield": 4.18,
+        "per": 7.4,
+        "pbr": 0.72,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "7296",
+    "name": "エフ・シー・シー",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "生産財製造",
+    "price": 4160,
+    "change": -10,
+    "changePercent": -0.24,
+    "dividendYield": 4.65,
+    "per": 10.1,
+    "pbr": 0.97,
+    "roe": 10.2,
+    "salesCagr3y": 1.6,
+    "operatingGrowth": 8.1,
+    "equityRatio": 78.1,
+    "marketCap": 2019,
+    "minkabuTheoreticalPrice": 5200,
+    "undervaluedScore": 25,
+    "targetPrice": 4992,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 4160,
+        "dividendYield": 4.65,
+        "per": 10.1,
+        "pbr": 0.97,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "4725",
+    "name": "ＣＡＣ　ＨＯＬＤＩＮＧＳ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "テクノロジーサービス",
+    "price": 1939,
+    "change": -21,
+    "changePercent": -1.07,
+    "dividendYield": 5.1,
+    "per": 9.2,
+    "pbr": 0.92,
+    "roe": 10.2,
+    "salesCagr3y": -2.8,
+    "operatingGrowth": -19.9,
+    "equityRatio": 65.1,
+    "marketCap": 331,
+    "minkabuTheoreticalPrice": 2424,
+    "undervaluedScore": 25,
+    "targetPrice": 2327,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1939,
+        "dividendYield": 5.1,
+        "per": 9.2,
+        "pbr": 0.92,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "1925",
@@ -1060,7 +2216,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 34,
     "totalAppearances": 34,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 4250,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 14,
@@ -1088,7 +2244,11 @@
         "pbr": 0.97,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 4350,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "6230",
@@ -1114,7 +2274,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 11,
     "totalAppearances": 11,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 3750,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -1143,7 +2303,101 @@
         "pbr": 0.74,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3850,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "6915",
+    "name": "千代田インテグレ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 3515,
+    "change": 10,
+    "changePercent": 0.29,
+    "dividendYield": 4.56,
+    "per": 8.1,
+    "pbr": 0.76,
+    "roe": 10.1,
+    "salesCagr3y": -7.7,
+    "operatingGrowth": -6.6,
+    "equityRatio": 79.7,
+    "marketCap": 320,
+    "minkabuTheoreticalPrice": 4394,
+    "undervaluedScore": 25,
+    "targetPrice": 4218,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 3515,
+        "dividendYield": 4.56,
+        "per": 8.1,
+        "pbr": 0.76,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "4619",
+    "name": "日本特殊塗料",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 2740,
+    "change": 28,
+    "changePercent": 1.03,
+    "dividendYield": 4.61,
+    "per": 10,
+    "pbr": 0.96,
+    "roe": 10.1,
+    "salesCagr3y": -6.3,
+    "operatingGrowth": -1.4,
+    "equityRatio": 77.2,
+    "marketCap": 589,
+    "minkabuTheoreticalPrice": 3425,
+    "undervaluedScore": 25,
+    "targetPrice": 3288,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2740,
+        "dividendYield": 4.61,
+        "per": 10,
+        "pbr": 0.96,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "8439",
@@ -1169,7 +2423,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 90,
     "totalAppearances": 90,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 1580,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 20,
@@ -1197,61 +2451,101 @@
         "pbr": 0.85,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1650,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
-    "code": "7451",
-    "name": "三菱食品",
+    "code": "6430",
+    "name": "ダイコク電機",
     "market": "スタンダード",
     "marketShort": "東S",
-    "sector": "卸売業",
-    "price": 4950,
-    "change": 20,
-    "changePercent": 0.41,
-    "dividendYield": 3.4,
-    "per": 11.5,
-    "pbr": 0.96,
-    "roe": 9.8,
-    "salesCagr3y": 3.5,
-    "equityRatio": 55.4,
-    "marketCap": 2100,
-    "minkabuTheoreticalPrice": 6200,
-    "undervaluedScore": 25.3,
-    "targetPrice": 5500,
+    "sector": "テクノロジーサービス",
+    "price": 2460,
+    "change": -2,
+    "changePercent": -0.08,
+    "dividendYield": 4.06,
+    "per": 7.4,
+    "pbr": 0.72,
+    "roe": 9.9,
+    "salesCagr3y": -5.5,
+    "operatingGrowth": -12.8,
+    "equityRatio": 86.5,
+    "marketCap": 365,
+    "minkabuTheoreticalPrice": 3075,
+    "undervaluedScore": 25,
+    "targetPrice": 2952,
     "minkabuRating": "割安",
-    "firstDetectedDate": "2026-08-03",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 20,
-    "totalAppearances": 20,
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
     "status": "rare_new",
-    "entryPrice": 4850,
-    "dividendTrend": "up",
-    "consecutiveDividendHikeYears": 5,
-    "payoutRatio": 39,
-    "notes": "食品卸トップ。三菱商事グループの流通中核。物流効率化とPB強化で利益率改善。",
-    "tags": [
-      "東証スタンダード",
-      "食品卸首位",
-      "三菱系優良"
-    ],
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
     "history": [
       {
-        "date": "2026-08-03",
-        "price": 4850,
-        "dividendYield": 3.47,
-        "per": 11.3,
-        "pbr": 0.94,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 4950,
-        "dividendYield": 3.4,
-        "per": 11.5,
-        "pbr": 0.96,
+        "date": "2026-08-24",
+        "price": 2460,
+        "dividendYield": 4.06,
+        "per": 7.4,
+        "pbr": 0.72,
         "inScreener": true
       }
-    ]
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "1972",
+    "name": "三晃金属工業",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "産業サービス",
+    "price": 1322,
+    "change": -3,
+    "changePercent": -0.23,
+    "dividendYield": 5.21,
+    "per": 9.8,
+    "pbr": 0.94,
+    "roe": 9.9,
+    "salesCagr3y": 3.7,
+    "operatingGrowth": -11.4,
+    "equityRatio": 69.6,
+    "marketCap": 261,
+    "minkabuTheoreticalPrice": 1653,
+    "undervaluedScore": 25,
+    "targetPrice": 1586,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1322,
+        "dividendYield": 5.21,
+        "per": 9.8,
+        "pbr": 0.94,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "4220",
@@ -1277,7 +2571,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 69,
     "totalAppearances": 69,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 1010,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -1305,7 +2599,69 @@
         "pbr": 0.85,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1040,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7451",
+    "name": "三菱食品",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "卸売業",
+    "price": 4950,
+    "change": 20,
+    "changePercent": 0.41,
+    "dividendYield": 3.4,
+    "per": 11.5,
+    "pbr": 0.96,
+    "roe": 9.8,
+    "salesCagr3y": 3.5,
+    "equityRatio": 55.4,
+    "marketCap": 2100,
+    "minkabuTheoreticalPrice": 6200,
+    "undervaluedScore": 25.3,
+    "targetPrice": 5500,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-03",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 20,
+    "totalAppearances": 20,
+    "status": "graduated",
+    "entryPrice": 4850,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 5,
+    "payoutRatio": 39,
+    "notes": "食品卸トップ。三菱商事グループの流通中核。物流効率化とPB強化で利益率改善。",
+    "tags": [
+      "東証スタンダード",
+      "食品卸首位",
+      "三菱系優良"
+    ],
+    "history": [
+      {
+        "date": "2026-08-03",
+        "price": 4850,
+        "dividendYield": 3.47,
+        "per": 11.3,
+        "pbr": 0.94,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 4950,
+        "dividendYield": 3.4,
+        "per": 11.5,
+        "pbr": 0.96,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 4950,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "8591",
@@ -1331,7 +2687,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 36,
     "totalAppearances": 36,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 3380,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -1359,7 +2715,101 @@
         "pbr": 0.95,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3450,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7927",
+    "name": "ムトー精工",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 2258,
+    "change": -2,
+    "changePercent": -0.09,
+    "dividendYield": 5.09,
+    "per": 8.3,
+    "pbr": 0.74,
+    "roe": 9.7,
+    "salesCagr3y": 7.7,
+    "operatingGrowth": 2.6,
+    "equityRatio": 66.9,
+    "marketCap": 162,
+    "minkabuTheoreticalPrice": 2823,
+    "undervaluedScore": 25,
+    "targetPrice": 2710,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2258,
+        "dividendYield": 5.09,
+        "per": 8.3,
+        "pbr": 0.74,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "6658",
+    "name": "シライ電子工業",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "電子テクノロジー",
+    "price": 450,
+    "change": 1,
+    "changePercent": 0.22,
+    "dividendYield": 7.8,
+    "per": 7.1,
+    "pbr": 0.62,
+    "roe": 9.5,
+    "salesCagr3y": -0.7,
+    "operatingGrowth": -20.4,
+    "equityRatio": 54.8,
+    "marketCap": 68,
+    "minkabuTheoreticalPrice": 563,
+    "undervaluedScore": 25,
+    "targetPrice": 540,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 450,
+        "dividendYield": 7.8,
+        "per": 7.1,
+        "pbr": 0.62,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "1812",
@@ -1385,7 +2835,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 12,
     "totalAppearances": 12,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 2800,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -1413,7 +2863,56 @@
         "pbr": 0.99,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2850,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7971",
+    "name": "東リ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "耐久消費財",
+    "price": 712,
+    "change": 6,
+    "changePercent": 0.85,
+    "dividendYield": 4.82,
+    "per": 8.8,
+    "pbr": 0.78,
+    "roe": 9.4,
+    "salesCagr3y": 6.3,
+    "operatingGrowth": 19.5,
+    "equityRatio": 53.5,
+    "marketCap": 385,
+    "minkabuTheoreticalPrice": 890,
+    "undervaluedScore": 25,
+    "targetPrice": 854,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 712,
+        "dividendYield": 4.82,
+        "per": 8.8,
+        "pbr": 0.78,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "7282",
@@ -1439,7 +2938,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 194,
     "totalAppearances": 194,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 2880,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -1467,7 +2966,56 @@
         "pbr": 0.68,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2980,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "1718",
+    "name": "美樹工業",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "産業サービス",
+    "price": 6800,
+    "change": 20,
+    "changePercent": 0.29,
+    "dividendYield": 5.16,
+    "per": 4.7,
+    "pbr": 0.42,
+    "roe": 9.2,
+    "salesCagr3y": 32.5,
+    "operatingGrowth": 4.7,
+    "equityRatio": 57.1,
+    "marketCap": 74,
+    "minkabuTheoreticalPrice": 8500,
+    "undervaluedScore": 25,
+    "targetPrice": 8160,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 6800,
+        "dividendYield": 5.16,
+        "per": 4.7,
+        "pbr": 0.42,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "1802",
@@ -1493,7 +3041,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 29,
     "totalAppearances": 29,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 1720,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 2,
@@ -1521,7 +3069,11 @@
         "pbr": 0.98,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1780,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "9310",
@@ -1547,7 +3099,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 312,
     "totalAppearances": 312,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 870,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -1575,7 +3127,56 @@
         "pbr": 0.58,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 920,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "5184",
+    "name": "ニチリン",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 4145,
+    "change": 5,
+    "changePercent": 0.12,
+    "dividendYield": 4.57,
+    "per": 10.1,
+    "pbr": 0.87,
+    "roe": 9.1,
+    "salesCagr3y": 3.2,
+    "operatingGrowth": 3.8,
+    "equityRatio": 77.6,
+    "marketCap": 589,
+    "minkabuTheoreticalPrice": 5181,
+    "undervaluedScore": 25,
+    "targetPrice": 4974,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 4145,
+        "dividendYield": 4.57,
+        "per": 10.1,
+        "pbr": 0.87,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "9837",
@@ -1601,7 +3202,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 83,
     "totalAppearances": 83,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 1380,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -1629,7 +3230,204 @@
         "pbr": 0.89,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1420,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "6677",
+    "name": "エスケーエレクトロニクス",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "電子テクノロジー",
+    "price": 3190,
+    "change": 15,
+    "changePercent": 0.47,
+    "dividendYield": 4.09,
+    "per": 10.3,
+    "pbr": 0.88,
+    "roe": 9,
+    "salesCagr3y": 13.4,
+    "operatingGrowth": -11.6,
+    "equityRatio": 82.7,
+    "marketCap": 333,
+    "minkabuTheoreticalPrice": 3988,
+    "undervaluedScore": 25,
+    "targetPrice": 3828,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 3190,
+        "dividendYield": 4.09,
+        "per": 10.3,
+        "pbr": 0.88,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "6209",
+    "name": "リケンＮＰＲ",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "生産財製造",
+    "price": 3995,
+    "change": 45,
+    "changePercent": 1.14,
+    "dividendYield": 5.32,
+    "per": 7.8,
+    "pbr": 0.65,
+    "roe": 9,
+    "salesCagr3y": -4.2,
+    "operatingGrowth": -9.7,
+    "equityRatio": 71.1,
+    "marketCap": 1062,
+    "minkabuTheoreticalPrice": 4994,
+    "undervaluedScore": 25,
+    "targetPrice": 4794,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 3995,
+        "dividendYield": 5.32,
+        "per": 7.8,
+        "pbr": 0.65,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "3611",
+    "name": "マツオカコーポレーション",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非耐久消費財",
+    "price": 2494,
+    "change": 11,
+    "changePercent": 0.44,
+    "dividendYield": 4.03,
+    "per": 8.5,
+    "pbr": 0.66,
+    "roe": 8.9,
+    "salesCagr3y": 5.2,
+    "operatingGrowth": 44,
+    "equityRatio": 55.8,
+    "marketCap": 256,
+    "minkabuTheoreticalPrice": 3118,
+    "undervaluedScore": 25,
+    "targetPrice": 2993,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2494,
+        "dividendYield": 4.03,
+        "per": 8.5,
+        "pbr": 0.66,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "1801",
+    "name": "大成建設",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "建設業",
+    "price": 5200,
+    "change": 30,
+    "changePercent": 0.58,
+    "dividendYield": 3.5,
+    "per": 12.8,
+    "pbr": 0.92,
+    "roe": 8.9,
+    "salesCagr3y": 3.8,
+    "equityRatio": 52.3,
+    "marketCap": 11200,
+    "minkabuTheoreticalPrice": 6500,
+    "undervaluedScore": 25,
+    "targetPrice": 5800,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-07-12",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 42,
+    "totalAppearances": 42,
+    "status": "graduated",
+    "entryPrice": 5050,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 2,
+    "payoutRatio": 45,
+    "notes": "スーパーゼネコンの一角。都市再開発や大型土木工事で実績多数。自己資本比率52%。",
+    "tags": [
+      "スーパーゼネコン",
+      "都市再開発",
+      "安定配当"
+    ],
+    "history": [
+      {
+        "date": "2026-07-12",
+        "price": 5050,
+        "dividendYield": 3.6,
+        "per": 12.4,
+        "pbr": 0.89,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 5200,
+        "dividendYield": 3.5,
+        "per": 12.8,
+        "pbr": 0.92,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 5200,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "5401",
@@ -1655,7 +3453,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 468,
     "totalAppearances": 468,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 2950,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 0,
@@ -1684,61 +3482,56 @@
         "pbr": 0.61,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3180,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
-    "code": "1801",
-    "name": "大成建設",
-    "market": "プライム",
-    "marketShort": "東P",
-    "sector": "建設業",
-    "price": 5200,
-    "change": 30,
-    "changePercent": 0.58,
-    "dividendYield": 3.5,
-    "per": 12.8,
-    "pbr": 0.92,
-    "roe": 8.9,
-    "salesCagr3y": 3.8,
-    "equityRatio": 52.3,
-    "marketCap": 11200,
-    "minkabuTheoreticalPrice": 6500,
+    "code": "6730",
+    "name": "アクセル",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "電子テクノロジー",
+    "price": 1185,
+    "change": -14,
+    "changePercent": -1.17,
+    "dividendYield": 4.75,
+    "per": 10.7,
+    "pbr": 0.91,
+    "roe": 8.8,
+    "salesCagr3y": -3.9,
+    "operatingGrowth": -6.5,
+    "equityRatio": 85.3,
+    "marketCap": 130,
+    "minkabuTheoreticalPrice": 1481,
     "undervaluedScore": 25,
-    "targetPrice": 5800,
+    "targetPrice": 1422,
     "minkabuRating": "割安",
-    "firstDetectedDate": "2026-07-12",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 42,
-    "totalAppearances": 42,
-    "status": "normal_active",
-    "entryPrice": 5050,
-    "dividendTrend": "up",
-    "consecutiveDividendHikeYears": 2,
-    "payoutRatio": 45,
-    "notes": "スーパーゼネコンの一角。都市再開発や大型土木工事で実績多数。自己資本比率52%。",
-    "tags": [
-      "スーパーゼネコン",
-      "都市再開発",
-      "安定配当"
-    ],
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
     "history": [
       {
-        "date": "2026-07-12",
-        "price": 5050,
-        "dividendYield": 3.6,
-        "per": 12.4,
-        "pbr": 0.89,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 5200,
-        "dividendYield": 3.5,
-        "per": 12.8,
-        "pbr": 0.92,
+        "date": "2026-08-24",
+        "price": 1185,
+        "dividendYield": 4.75,
+        "per": 10.7,
+        "pbr": 0.91,
         "inScreener": true
       }
-    ]
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "6472",
@@ -1764,7 +3557,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 215,
     "totalAppearances": 215,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 330,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 1,
@@ -1792,7 +3585,56 @@
         "pbr": 0.61,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 345,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7226",
+    "name": "極東開発工業",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 2362,
+    "change": 16,
+    "changePercent": 0.68,
+    "dividendYield": 5.97,
+    "per": 9.5,
+    "pbr": 0.81,
+    "roe": 8.7,
+    "salesCagr3y": 14.9,
+    "operatingGrowth": 33.9,
+    "equityRatio": 59.1,
+    "marketCap": 874,
+    "minkabuTheoreticalPrice": 2953,
+    "undervaluedScore": 25,
+    "targetPrice": 2834,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2362,
+        "dividendYield": 5.97,
+        "per": 9.5,
+        "pbr": 0.81,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "6473",
@@ -1818,7 +3660,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 199,
     "totalAppearances": 199,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 1080,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 2,
@@ -1846,7 +3688,11 @@
         "pbr": 0.62,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1120,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "7751",
@@ -1872,7 +3718,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 9,
     "totalAppearances": 9,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 4580,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -1900,7 +3746,101 @@
         "pbr": 0.99,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 4650,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "9856",
+    "name": "ケーユーホールディングス",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "小売業",
+    "price": 1246,
+    "change": 3,
+    "changePercent": 0.24,
+    "dividendYield": 4.67,
+    "per": 7.1,
+    "pbr": 0.56,
+    "roe": 8.6,
+    "salesCagr3y": 5.7,
+    "operatingGrowth": 4.4,
+    "equityRatio": 74.2,
+    "marketCap": 396,
+    "minkabuTheoreticalPrice": 1558,
+    "undervaluedScore": 25,
+    "targetPrice": 1495,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1246,
+        "dividendYield": 4.67,
+        "per": 7.1,
+        "pbr": 0.56,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "5541",
+    "name": "大平洋金属",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非エネルギー鉱物",
+    "price": 2661,
+    "change": 38,
+    "changePercent": 1.45,
+    "dividendYield": 5.15,
+    "per": 9,
+    "pbr": 0.75,
+    "roe": 8.6,
+    "salesCagr3y": -28.5,
+    "operatingGrowth": 73,
+    "equityRatio": 93.3,
+    "marketCap": 456,
+    "minkabuTheoreticalPrice": 3326,
+    "undervaluedScore": 25,
+    "targetPrice": 3193,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 2661,
+        "dividendYield": 5.15,
+        "per": 9,
+        "pbr": 0.75,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "5411",
@@ -1926,7 +3866,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 448,
     "totalAppearances": 448,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 2020,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 0,
@@ -1954,61 +3894,11 @@
         "pbr": 0.52,
         "inScreener": true
       }
-    ]
-  },
-  {
-    "code": "8593",
-    "name": "三菱HCキャピタル",
-    "market": "プライム",
-    "marketShort": "東P",
-    "sector": "その他金融業",
-    "price": 1045,
-    "change": 6,
-    "changePercent": 0.58,
-    "dividendYield": 3.85,
-    "per": 11.8,
-    "pbr": 0.88,
-    "roe": 8.6,
-    "salesCagr3y": 4.8,
-    "equityRatio": 50.2,
-    "marketCap": 14900,
-    "minkabuTheoreticalPrice": 1480,
-    "undervaluedScore": 41.6,
-    "targetPrice": 1250,
-    "minkabuRating": "割安",
-    "firstDetectedDate": "2026-04-05",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 140,
-    "totalAppearances": 140,
-    "status": "chronic",
-    "entryPrice": 1010,
-    "dividendTrend": "up",
-    "consecutiveDividendHikeYears": 25,
-    "payoutRatio": 45,
-    "notes": "国内屈指の配当貴族（25期連続増配）。三菱UFJ・日立系の総合リース大手。",
-    "tags": [
-      "25期連続増配",
-      "配当貴族",
-      "三菱グループ"
     ],
-    "history": [
-      {
-        "date": "2026-04-05",
-        "price": 1010,
-        "dividendYield": 3.98,
-        "per": 11.4,
-        "pbr": 0.85,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 1045,
-        "dividendYield": 3.85,
-        "per": 11.8,
-        "pbr": 0.88,
-        "inScreener": true
-      }
-    ]
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2140,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "7979",
@@ -2034,7 +3924,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 7,
     "totalAppearances": 7,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 3600,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -2062,7 +3952,159 @@
         "pbr": 0.99,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3680,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "8593",
+    "name": "三菱HCキャピタル",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "その他金融業",
+    "price": 1045,
+    "change": 6,
+    "changePercent": 0.58,
+    "dividendYield": 3.85,
+    "per": 11.8,
+    "pbr": 0.88,
+    "roe": 8.6,
+    "salesCagr3y": 4.8,
+    "equityRatio": 50.2,
+    "marketCap": 14900,
+    "minkabuTheoreticalPrice": 1480,
+    "undervaluedScore": 41.6,
+    "targetPrice": 1250,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-04-05",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 140,
+    "totalAppearances": 140,
+    "status": "graduated",
+    "entryPrice": 1010,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 25,
+    "payoutRatio": 45,
+    "notes": "国内屈指の配当貴族（25期連続増配）。三菱UFJ・日立系の総合リース大手。",
+    "tags": [
+      "25期連続増配",
+      "配当貴族",
+      "三菱グループ"
+    ],
+    "history": [
+      {
+        "date": "2026-04-05",
+        "price": 1010,
+        "dividendYield": 3.98,
+        "per": 11.4,
+        "pbr": 0.85,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 1045,
+        "dividendYield": 3.85,
+        "per": 11.8,
+        "pbr": 0.88,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1045,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "1914",
+    "name": "日本基礎技術",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "産業サービス",
+    "price": 758,
+    "change": 13,
+    "changePercent": 1.74,
+    "dividendYield": 4.03,
+    "per": 6.9,
+    "pbr": 0.56,
+    "roe": 8.5,
+    "salesCagr3y": -9.7,
+    "operatingGrowth": 5.6,
+    "equityRatio": 65,
+    "marketCap": 158,
+    "minkabuTheoreticalPrice": 948,
+    "undervaluedScore": 25,
+    "targetPrice": 910,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 758,
+        "dividendYield": 4.03,
+        "per": 6.9,
+        "pbr": 0.56,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "4918",
+    "name": "アイビー化粧品",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非耐久消費財",
+    "price": 297,
+    "change": -4,
+    "changePercent": -1.33,
+    "dividendYield": 4.98,
+    "per": 10.5,
+    "pbr": 0.82,
+    "roe": 8.5,
+    "salesCagr3y": -9.8,
+    "operatingGrowth": -41,
+    "equityRatio": 67.7,
+    "marketCap": 17,
+    "minkabuTheoreticalPrice": 371,
+    "undervaluedScore": 25,
+    "targetPrice": 356,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 297,
+        "dividendYield": 4.98,
+        "per": 10.5,
+        "pbr": 0.82,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "3302",
@@ -2088,7 +4130,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 85,
     "totalAppearances": 85,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 2680,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
@@ -2116,7 +4158,11 @@
         "pbr": 0.82,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2750,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "5202",
@@ -2142,7 +4188,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 161,
     "totalAppearances": 161,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 650,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 1,
@@ -2170,169 +4216,101 @@
         "pbr": 0.62,
         "inScreener": true
       }
-    ]
-  },
-  {
-    "code": "7951",
-    "name": "ヤマハ",
-    "market": "プライム",
-    "marketShort": "東P",
-    "sector": "その他製品",
-    "price": 3250,
-    "change": 20,
-    "changePercent": 0.62,
-    "dividendYield": 3.1,
-    "per": 14.5,
-    "pbr": 0.98,
-    "roe": 8.4,
-    "salesCagr3y": 3.2,
-    "equityRatio": 72.4,
-    "marketCap": 5400,
-    "minkabuTheoreticalPrice": 4200,
-    "undervaluedScore": 29.2,
-    "targetPrice": 3800,
-    "minkabuRating": "割安",
-    "firstDetectedDate": "2026-08-01",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 22,
-    "totalAppearances": 22,
-    "status": "rare_new",
-    "entryPrice": 3180,
-    "dividendTrend": "up",
-    "consecutiveDividendHikeYears": 5,
-    "payoutRatio": 45,
-    "notes": "楽器世界首位。音響機器や車載オーディオも展開。自己資本72.4%の超優良企業。PBR1倍割れ。",
-    "tags": [
-      "楽器世界首位",
-      "自己資本72%",
-      "新着割安"
     ],
-    "history": [
-      {
-        "date": "2026-08-01",
-        "price": 3180,
-        "dividendYield": 3.17,
-        "per": 14.2,
-        "pbr": 0.96,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 3250,
-        "dividendYield": 3.1,
-        "per": 14.5,
-        "pbr": 0.98,
-        "inScreener": true
-      }
-    ]
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 680,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
-    "code": "8151",
-    "name": "東陽テクニカ",
+    "code": "1810",
+    "name": "松井建設",
     "market": "スタンダード",
     "marketShort": "東S",
-    "sector": "卸売業",
-    "price": 1580,
-    "change": 14,
-    "changePercent": 0.89,
-    "dividendYield": 3.8,
-    "per": 12.8,
-    "pbr": 0.82,
+    "sector": "産業サービス",
+    "price": 1506,
+    "change": 15,
+    "changePercent": 1.01,
+    "dividendYield": 5.23,
+    "per": 9.4,
+    "pbr": 0.74,
     "roe": 8.4,
-    "salesCagr3y": 3.5,
-    "equityRatio": 76.5,
-    "marketCap": 410,
-    "minkabuTheoreticalPrice": 2200,
-    "undervaluedScore": 39.2,
-    "targetPrice": 1850,
+    "salesCagr3y": -3.2,
+    "operatingGrowth": 29.7,
+    "equityRatio": 64,
+    "marketCap": 455,
+    "minkabuTheoreticalPrice": 1883,
+    "undervaluedScore": 25,
+    "targetPrice": 1807,
     "minkabuRating": "割安",
-    "firstDetectedDate": "2026-06-20",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 64,
-    "totalAppearances": 64,
-    "status": "normal_active",
-    "entryPrice": 1520,
-    "dividendTrend": "up",
-    "consecutiveDividendHikeYears": 4,
-    "payoutRatio": 48,
-    "notes": "電子計測器の技術商社。自動運転・EV評価システムや情報通信セキュリティ機器で高利益率。自己資本76%。",
-    "tags": [
-      "東証スタンダード",
-      "自己資本76%",
-      "高配当3.8%"
-    ],
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
     "history": [
       {
-        "date": "2026-06-20",
-        "price": 1520,
-        "dividendYield": 3.95,
-        "per": 12.3,
-        "pbr": 0.79,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 1580,
-        "dividendYield": 3.8,
-        "per": 12.8,
-        "pbr": 0.82,
+        "date": "2026-08-24",
+        "price": 1506,
+        "dividendYield": 5.23,
+        "per": 9.4,
+        "pbr": 0.74,
         "inScreener": true
       }
-    ]
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
-    "code": "9303",
-    "name": "住友倉庫",
-    "market": "プライム",
-    "marketShort": "東P",
-    "sector": "倉庫・運輸関連業",
-    "price": 2450,
-    "change": -10,
-    "changePercent": -0.41,
-    "dividendYield": 4.25,
-    "per": 12.2,
-    "pbr": 0.75,
+    "code": "7235",
+    "name": "東京ラヂエーター製造",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "生産財製造",
+    "price": 1585,
+    "change": 4,
+    "changePercent": 0.25,
+    "dividendYield": 4.11,
+    "per": 7.8,
+    "pbr": 0.61,
     "roe": 8.4,
-    "salesCagr3y": 2.8,
-    "equityRatio": 58.9,
-    "marketCap": 1950,
-    "minkabuTheoreticalPrice": 3400,
-    "undervaluedScore": 38.8,
-    "targetPrice": 2850,
+    "salesCagr3y": 3.9,
+    "operatingGrowth": 4.2,
+    "equityRatio": 79.3,
+    "marketCap": 149,
+    "minkabuTheoreticalPrice": 1981,
+    "undervaluedScore": 25,
+    "targetPrice": 1902,
     "minkabuRating": "割安",
-    "firstDetectedDate": "2026-03-25",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 151,
-    "totalAppearances": 151,
-    "status": "chronic",
-    "entryPrice": 2380,
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 3,
-    "payoutRatio": 50,
-    "notes": "住友系倉庫大手。情報管理・文書保管やアーカイブ事業にも強み。利回り4.25%、PBR0.7倍台。",
-    "tags": [
-      "住友グループ",
-      "高配当4.25%",
-      "PBR0.7倍台"
-    ],
+    "payoutRatio": 35,
     "history": [
       {
-        "date": "2026-03-25",
-        "price": 2380,
-        "dividendYield": 4.38,
-        "per": 11.8,
-        "pbr": 0.73,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 2450,
-        "dividendYield": 4.25,
-        "per": 12.2,
-        "pbr": 0.75,
+        "date": "2026-08-24",
+        "price": 1585,
+        "dividendYield": 4.11,
+        "per": 7.8,
+        "pbr": 0.61,
         "inScreener": true
       }
-    ]
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "4208",
@@ -2358,7 +4336,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 127,
     "totalAppearances": 127,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 2580,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 2,
@@ -2386,7 +4364,185 @@
         "pbr": 0.65,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2650,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7951",
+    "name": "ヤマハ",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "その他製品",
+    "price": 3250,
+    "change": 20,
+    "changePercent": 0.62,
+    "dividendYield": 3.1,
+    "per": 14.5,
+    "pbr": 0.98,
+    "roe": 8.4,
+    "salesCagr3y": 3.2,
+    "equityRatio": 72.4,
+    "marketCap": 5400,
+    "minkabuTheoreticalPrice": 4200,
+    "undervaluedScore": 29.2,
+    "targetPrice": 3800,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-01",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 22,
+    "totalAppearances": 22,
+    "status": "graduated",
+    "entryPrice": 3180,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 5,
+    "payoutRatio": 45,
+    "notes": "楽器世界首位。音響機器や車載オーディオも展開。自己資本72.4%の超優良企業。PBR1倍割れ。",
+    "tags": [
+      "楽器世界首位",
+      "自己資本72%",
+      "新着割安"
+    ],
+    "history": [
+      {
+        "date": "2026-08-01",
+        "price": 3180,
+        "dividendYield": 3.17,
+        "per": 14.2,
+        "pbr": 0.96,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 3250,
+        "dividendYield": 3.1,
+        "per": 14.5,
+        "pbr": 0.98,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3250,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "8151",
+    "name": "東陽テクニカ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "卸売業",
+    "price": 1580,
+    "change": 14,
+    "changePercent": 0.89,
+    "dividendYield": 3.8,
+    "per": 12.8,
+    "pbr": 0.82,
+    "roe": 8.4,
+    "salesCagr3y": 3.5,
+    "equityRatio": 76.5,
+    "marketCap": 410,
+    "minkabuTheoreticalPrice": 2200,
+    "undervaluedScore": 39.2,
+    "targetPrice": 1850,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-06-20",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 64,
+    "totalAppearances": 64,
+    "status": "graduated",
+    "entryPrice": 1520,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 4,
+    "payoutRatio": 48,
+    "notes": "電子計測器の技術商社。自動運転・EV評価システムや情報通信セキュリティ機器で高利益率。自己資本76%。",
+    "tags": [
+      "東証スタンダード",
+      "自己資本76%",
+      "高配当3.8%"
+    ],
+    "history": [
+      {
+        "date": "2026-06-20",
+        "price": 1520,
+        "dividendYield": 3.95,
+        "per": 12.3,
+        "pbr": 0.79,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 1580,
+        "dividendYield": 3.8,
+        "per": 12.8,
+        "pbr": 0.82,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1580,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "9303",
+    "name": "住友倉庫",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "倉庫・運輸関連業",
+    "price": 2450,
+    "change": -10,
+    "changePercent": -0.41,
+    "dividendYield": 4.25,
+    "per": 12.2,
+    "pbr": 0.75,
+    "roe": 8.4,
+    "salesCagr3y": 2.8,
+    "equityRatio": 58.9,
+    "marketCap": 1950,
+    "minkabuTheoreticalPrice": 3400,
+    "undervaluedScore": 38.8,
+    "targetPrice": 2850,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-03-25",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 151,
+    "totalAppearances": 151,
+    "status": "graduated",
+    "entryPrice": 2380,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 50,
+    "notes": "住友系倉庫大手。情報管理・文書保管やアーカイブ事業にも強み。利回り4.25%、PBR0.7倍台。",
+    "tags": [
+      "住友グループ",
+      "高配当4.25%",
+      "PBR0.7倍台"
+    ],
+    "history": [
+      {
+        "date": "2026-03-25",
+        "price": 2380,
+        "dividendYield": 4.38,
+        "per": 11.8,
+        "pbr": 0.73,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 2450,
+        "dividendYield": 4.25,
+        "per": 12.2,
+        "pbr": 0.75,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 2450,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "6471",
@@ -2412,7 +4568,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 189,
     "totalAppearances": 189,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 790,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 1,
@@ -2440,7 +4596,11 @@
         "pbr": 0.64,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 820,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "7943",
@@ -2466,7 +4626,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 100,
     "totalAppearances": 100,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 3150,
     "dividendTrend": "up",
     "consecutiveDividendHikeYears": 4,
@@ -2494,61 +4654,146 @@
         "pbr": 0.75,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3250,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
-    "code": "5214",
-    "name": "日本電気硝子",
+    "code": "7240",
+    "name": "ＮＯＫ",
     "market": "プライム",
     "marketShort": "東P",
-    "sector": "ガラス・土石製品",
-    "price": 3680,
-    "change": 20,
-    "changePercent": 0.55,
-    "dividendYield": 3.9,
-    "per": 12.4,
-    "pbr": 0.68,
+    "sector": "生産財製造",
+    "price": 3023,
+    "change": 12,
+    "changePercent": 0.4,
+    "dividendYield": 4.32,
+    "per": 9.9,
+    "pbr": 0.76,
     "roe": 8.2,
-    "salesCagr3y": 2.5,
-    "equityRatio": 68.5,
-    "marketCap": 3200,
-    "minkabuTheoreticalPrice": 5200,
-    "undervaluedScore": 41.3,
-    "targetPrice": 4300,
+    "salesCagr3y": -3.7,
+    "operatingGrowth": -2.3,
+    "equityRatio": 70.5,
+    "marketCap": 4547,
+    "minkabuTheoreticalPrice": 3779,
+    "undervaluedScore": 25,
+    "targetPrice": 3628,
     "minkabuRating": "割安",
-    "firstDetectedDate": "2026-04-10",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 135,
-    "totalAppearances": 135,
-    "status": "chronic",
-    "entryPrice": 3550,
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
     "dividendTrend": "stable",
-    "consecutiveDividendHikeYears": 2,
-    "payoutRatio": 48,
-    "notes": "特殊ガラス大手。ディスプレイ用ガラス・電子部品用ガラス。自己資本68.5%と好財務。",
-    "tags": [
-      "自己資本68%",
-      "PBR0.68倍",
-      "放置割安"
-    ],
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
     "history": [
       {
-        "date": "2026-04-10",
-        "price": 3550,
-        "dividendYield": 4.04,
-        "per": 12,
-        "pbr": 0.66,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 3680,
-        "dividendYield": 3.9,
-        "per": 12.4,
-        "pbr": 0.68,
+        "date": "2026-08-24",
+        "price": 3023,
+        "dividendYield": 4.32,
+        "per": 9.9,
+        "pbr": 0.76,
         "inScreener": true
       }
-    ]
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "4644",
+    "name": "イマジニア",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "テクノロジーサービス",
+    "price": 1055,
+    "change": 2,
+    "changePercent": 0.19,
+    "dividendYield": 5.7,
+    "per": 10.3,
+    "pbr": 0.83,
+    "roe": 8.2,
+    "salesCagr3y": -12.3,
+    "operatingGrowth": 2.8,
+    "equityRatio": 93.2,
+    "marketCap": 101,
+    "minkabuTheoreticalPrice": 1319,
+    "undervaluedScore": 25,
+    "targetPrice": 1266,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1055,
+        "dividendYield": 5.7,
+        "per": 10.3,
+        "pbr": 0.83,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
+  },
+  {
+    "code": "5357",
+    "name": "ヨータイ",
+    "market": "スタンダード",
+    "marketShort": "東S",
+    "sector": "非エネルギー鉱物",
+    "price": 1776,
+    "change": 14,
+    "changePercent": 0.79,
+    "dividendYield": 5.11,
+    "per": 11.9,
+    "pbr": 0.94,
+    "roe": 8.2,
+    "salesCagr3y": 1,
+    "operatingGrowth": 9.5,
+    "equityRatio": 79.6,
+    "marketCap": 261,
+    "minkabuTheoreticalPrice": 2220,
+    "undervaluedScore": 25,
+    "targetPrice": 2131,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-08-24",
+    "lastSeenDate": "2026-08-24",
+    "consecutiveDays": 1,
+    "totalAppearances": 1,
+    "status": "rare_new",
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 1,
+    "payoutRatio": 35,
+    "history": [
+      {
+        "date": "2026-08-24",
+        "price": 1776,
+        "dividendYield": 5.11,
+        "per": 11.9,
+        "pbr": 0.94,
+        "inScreener": true
+      }
+    ],
+    "tags": [
+      "TradingView",
+      "割安高配当"
+    ],
+    "notes": ""
   },
   {
     "code": "3105",
@@ -2574,7 +4819,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 117,
     "totalAppearances": 117,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 1040,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 2,
@@ -2602,7 +4847,11 @@
         "pbr": 0.65,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1080,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "4967",
@@ -2628,7 +4877,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 8,
     "totalAppearances": 8,
-    "status": "rare_new",
+    "status": "graduated",
     "entryPrice": 4900,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 25,
@@ -2656,61 +4905,69 @@
         "pbr": 0.95,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 4950,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
-    "code": "7201",
-    "name": "日産自動車",
+    "code": "5214",
+    "name": "日本電気硝子",
     "market": "プライム",
     "marketShort": "東P",
-    "sector": "輸送用機器",
-    "price": 420,
-    "change": 3,
-    "changePercent": 0.72,
-    "dividendYield": 4.8,
-    "per": 6.5,
-    "pbr": 0.32,
-    "roe": 8.1,
-    "salesCagr3y": 2.2,
-    "equityRatio": 51.5,
-    "marketCap": 16500,
-    "minkabuTheoreticalPrice": 780,
-    "undervaluedScore": 85.7,
-    "targetPrice": 550,
+    "sector": "ガラス・土石製品",
+    "price": 3680,
+    "change": 20,
+    "changePercent": 0.55,
+    "dividendYield": 3.9,
+    "per": 12.4,
+    "pbr": 0.68,
+    "roe": 8.2,
+    "salesCagr3y": 2.5,
+    "equityRatio": 68.5,
+    "marketCap": 3200,
+    "minkabuTheoreticalPrice": 5200,
+    "undervaluedScore": 41.3,
+    "targetPrice": 4300,
     "minkabuRating": "割安",
-    "firstDetectedDate": "2025-07-01",
+    "firstDetectedDate": "2026-04-10",
     "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 418,
-    "totalAppearances": 418,
-    "status": "chronic",
-    "entryPrice": 400,
+    "consecutiveDays": 135,
+    "totalAppearances": 135,
+    "status": "graduated",
+    "entryPrice": 3550,
     "dividendTrend": "stable",
-    "consecutiveDividendHikeYears": 0,
-    "payoutRatio": 31,
-    "notes": "PBR0.3倍台の歴史的割安水準。EV戦略推進とホンダとの提携検討。配当利回り4.8%。",
+    "consecutiveDividendHikeYears": 2,
+    "payoutRatio": 48,
+    "notes": "特殊ガラス大手。ディスプレイ用ガラス・電子部品用ガラス。自己資本68.5%と好財務。",
     "tags": [
-      "PBR0.3倍台",
-      "利回り4.8%",
-      "ディープバリュー"
+      "自己資本68%",
+      "PBR0.68倍",
+      "放置割安"
     ],
     "history": [
       {
-        "date": "2026-02-01",
-        "price": 410,
-        "dividendYield": 4.92,
-        "per": 6.3,
-        "pbr": 0.31,
+        "date": "2026-04-10",
+        "price": 3550,
+        "dividendYield": 4.04,
+        "per": 12,
+        "pbr": 0.66,
         "inScreener": true
       },
       {
         "date": "2026-08-23",
-        "price": 420,
-        "dividendYield": 4.8,
-        "per": 6.5,
-        "pbr": 0.32,
+        "price": 3680,
+        "dividendYield": 3.9,
+        "per": 12.4,
+        "pbr": 0.68,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3680,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "1803",
@@ -2736,7 +4993,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 114,
     "totalAppearances": 114,
-    "status": "chronic",
+    "status": "graduated",
     "entryPrice": 940,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 1,
@@ -2764,61 +5021,11 @@
         "pbr": 0.78,
         "inScreener": true
       }
-    ]
-  },
-  {
-    "code": "9304",
-    "name": "澁澤倉庫",
-    "market": "プライム",
-    "marketShort": "東P",
-    "sector": "倉庫・運輸関連業",
-    "price": 3150,
-    "change": 20,
-    "changePercent": 0.64,
-    "dividendYield": 3.8,
-    "per": 11,
-    "pbr": 0.65,
-    "roe": 8.1,
-    "salesCagr3y": 3.1,
-    "equityRatio": 56.4,
-    "marketCap": 480,
-    "minkabuTheoreticalPrice": 4700,
-    "undervaluedScore": 49.2,
-    "targetPrice": 3800,
-    "minkabuRating": "割安",
-    "firstDetectedDate": "2026-04-01",
-    "lastSeenDate": "2026-08-23",
-    "consecutiveDays": 144,
-    "totalAppearances": 144,
-    "status": "chronic",
-    "entryPrice": 3050,
-    "dividendTrend": "up",
-    "consecutiveDividendHikeYears": 3,
-    "payoutRatio": 42,
-    "notes": "渋沢栄一創業の倉庫名門。物流・不動産賃貸の二本柱。PBR0.65倍・自己資本56%。",
-    "tags": [
-      "名門倉庫",
-      "PBR0.65倍",
-      "安定配当"
     ],
-    "history": [
-      {
-        "date": "2026-04-01",
-        "price": 3050,
-        "dividendYield": 3.92,
-        "per": 10.7,
-        "pbr": 0.63,
-        "inScreener": true
-      },
-      {
-        "date": "2026-08-23",
-        "price": 3150,
-        "dividendYield": 3.8,
-        "per": 11,
-        "pbr": 0.65,
-        "inScreener": true
-      }
-    ]
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 980,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   },
   {
     "code": "5938",
@@ -2844,7 +5051,7 @@
     "lastSeenDate": "2026-08-23",
     "consecutiveDays": 74,
     "totalAppearances": 74,
-    "status": "normal_active",
+    "status": "graduated",
     "entryPrice": 1740,
     "dividendTrend": "stable",
     "consecutiveDividendHikeYears": 0,
@@ -2872,6 +5079,126 @@
         "pbr": 0.82,
         "inScreener": true
       }
-    ]
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 1780,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "7201",
+    "name": "日産自動車",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "輸送用機器",
+    "price": 420,
+    "change": 3,
+    "changePercent": 0.72,
+    "dividendYield": 4.8,
+    "per": 6.5,
+    "pbr": 0.32,
+    "roe": 8.1,
+    "salesCagr3y": 2.2,
+    "equityRatio": 51.5,
+    "marketCap": 16500,
+    "minkabuTheoreticalPrice": 780,
+    "undervaluedScore": 85.7,
+    "targetPrice": 550,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2025-07-01",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 418,
+    "totalAppearances": 418,
+    "status": "graduated",
+    "entryPrice": 400,
+    "dividendTrend": "stable",
+    "consecutiveDividendHikeYears": 0,
+    "payoutRatio": 31,
+    "notes": "PBR0.3倍台の歴史的割安水準。EV戦略推進とホンダとの提携検討。配当利回り4.8%。",
+    "tags": [
+      "PBR0.3倍台",
+      "利回り4.8%",
+      "ディープバリュー"
+    ],
+    "history": [
+      {
+        "date": "2026-02-01",
+        "price": 410,
+        "dividendYield": 4.92,
+        "per": 6.3,
+        "pbr": 0.31,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 420,
+        "dividendYield": 4.8,
+        "per": 6.5,
+        "pbr": 0.32,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 420,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
+  },
+  {
+    "code": "9304",
+    "name": "澁澤倉庫",
+    "market": "プライム",
+    "marketShort": "東P",
+    "sector": "倉庫・運輸関連業",
+    "price": 3150,
+    "change": 20,
+    "changePercent": 0.64,
+    "dividendYield": 3.8,
+    "per": 11,
+    "pbr": 0.65,
+    "roe": 8.1,
+    "salesCagr3y": 3.1,
+    "equityRatio": 56.4,
+    "marketCap": 480,
+    "minkabuTheoreticalPrice": 4700,
+    "undervaluedScore": 49.2,
+    "targetPrice": 3800,
+    "minkabuRating": "割安",
+    "firstDetectedDate": "2026-04-01",
+    "lastSeenDate": "2026-08-23",
+    "consecutiveDays": 144,
+    "totalAppearances": 144,
+    "status": "graduated",
+    "entryPrice": 3050,
+    "dividendTrend": "up",
+    "consecutiveDividendHikeYears": 3,
+    "payoutRatio": 42,
+    "notes": "渋沢栄一創業の倉庫名門。物流・不動産賃貸の二本柱。PBR0.65倍・自己資本56%。",
+    "tags": [
+      "名門倉庫",
+      "PBR0.65倍",
+      "安定配当"
+    ],
+    "history": [
+      {
+        "date": "2026-04-01",
+        "price": 3050,
+        "dividendYield": 3.92,
+        "per": 10.7,
+        "pbr": 0.63,
+        "inScreener": true
+      },
+      {
+        "date": "2026-08-23",
+        "price": 3150,
+        "dividendYield": 3.8,
+        "per": 11,
+        "pbr": 0.65,
+        "inScreener": true
+      }
+    ],
+    "graduationDate": "2026-08-24",
+    "graduationPrice": 3150,
+    "graduationReason": "割安基準脱出・株価上昇",
+    "graduationReturnPercent": 5
   }
 ]

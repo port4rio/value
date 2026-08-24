@@ -303,8 +303,12 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                   <strong className="font-mono text-indigo-300 font-bold">{stock.roe ? `${stock.roe.toFixed(1)}%` : '-'}</strong>
                 </div>
                 <div className="flex justify-between py-1 border-b border-slate-700/60">
-                  <span className="text-slate-400">3年平均売上成長率</span>
-                  <strong className="font-mono text-emerald-400 font-semibold">{stock.salesCagr3y !== undefined ? `+${stock.salesCagr3y.toFixed(1)}%` : '-'}</strong>
+                  <span className="text-slate-400">営業利益成長率</span>
+                  <strong className="font-mono text-emerald-400 font-semibold">{stock.operatingGrowth !== undefined ? (stock.operatingGrowth > 0 ? `+${stock.operatingGrowth.toFixed(1)}%` : `${stock.operatingGrowth.toFixed(1)}%`) : '-'}</strong>
+                </div>
+                <div className="flex justify-between py-1 border-b border-slate-700/60">
+                  <span className="text-slate-400">売上高成長率</span>
+                  <strong className="font-mono text-slate-200">{stock.salesCagr3y !== undefined ? `+${stock.salesCagr3y.toFixed(1)}%` : '-'}</strong>
                 </div>
                 <div className="flex justify-between py-1 border-b border-slate-700/60">
                   <span className="text-slate-400">配当性向</span>

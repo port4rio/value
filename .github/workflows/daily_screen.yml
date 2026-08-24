@@ -1,10 +1,10 @@
-name: Daily Minkabu Screener & Deploy
+name: Daily TradingView Stock Screener & Deploy
 
 on:
   schedule:
-    # 毎週月〜金曜日 日本時間 15:37 (UTC 06:37) 東京市場引け(15:30)直後に定期実行
+    # 毎週月〜金曜日 日本時間 15:37 (UTC 06:37) 東京市場大引け(15:30)直後に自動スクリーニング
     - cron: '37 6 * * 1-5'
-  workflow_dispatch: # GitHub管理画面から手動実行可能（二重カウント防止済み）
+  workflow_dispatch: # GitHub Actions管理画面から手動実行可能
 
 permissions:
   contents: write
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scrape-and-update:
+  screen-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: リポジトリをチェックアウト
@@ -24,19 +24,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Node.js 20のセットアップ
-        uses: actions/setup-node@v4
+      - name: Python 3.10のセットアップ
+        uses: actions/setup-python@v5
         with:
-          node-version: 20
+          python-version: '3.10'
 
-      - name: 依存パッケージのインストール
-        run: npm install
+      - name: Python依存ライブラリのインストール (tradingview-screener)
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas tradingview-screener
 
-      - name: Playwrightブラウザのインストール (耐WAFスクレイピング用)
-        run: npx playwright install --with-deps chromium
-
-      - name: みんかぶ割安高配当スクリーニングを実行 (15:37 JST)
-        run: node scripts/fetch_minkabu.mjs
+      - name: TradingView日本株スクリーニング実行 (PER<=15, PBR<=1, ROE>=8%, 自己資本比率>=50%, 配当>=4%, 営業利益成長>=1%)
+        run: python scripts/screener.py
         env:
           TZ: 'Asia/Tokyo'
 
@@ -47,11 +46,19 @@ jobs:
           mkdir -p public/data
           git add -A public/data
           if git diff --staged --quiet; then
-            echo "本日のデータに変更はありませんでした（または二重実行による既存データ保持）。"
+            echo "本日のデータに変更はありませんでした。"
           else
-            git commit -m "chore(data): 割安高配当スクリーニング日次データ自動更新 [$(date +'%Y-%m-%d')]"
+            git commit -m "chore(data): TradingView割安高配当スクリーニング日次自動更新 [$(date +'%Y-%m-%d')]"
             git push
           fi
+
+      - name: Node.js 20のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 依存パッケージのインストール
+        run: npm install
 
       - name: 静的サイトをビルド
         run: npm run build

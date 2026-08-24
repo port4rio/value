@@ -1,12 +1,12 @@
 export const DAILY_WORKFLOW_YML = `# .github/workflows/daily_screen.yml
-# みんかぶ「割安高配当」日次自動スクリーニング＆GitHub Pages自動更新ワークフロー
-name: Daily Minkabu Screener & Deploy
+# TradingView「割安高配当・高ROE・財務健全」日次自動スクリーニング＆GitHub Pages自動更新ワークフロー
+name: Daily TradingView Stock Screener & Deploy
 
 on:
   schedule:
-    # 毎週月〜金曜日 日本時間 15:37 (UTC 06:37) 東京市場引け(15:30)直後に自動実行
+    # 毎週月〜金曜日 日本時間 15:37 (UTC 06:37) 東京市場大引け(15:30)直後に自動スクリーニング
     - cron: '37 6 * * 1-5'
-  workflow_dispatch: # GitHub管理画面からいつでも手動実行可能（二重カウント防止設計）
+  workflow_dispatch: # GitHub Actions管理画面からいつでも手動実行可能
 
 permissions:
   contents: write
@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scrape-and-update:
+  screen-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: リポジトリをチェックアウト
@@ -26,31 +26,41 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Node.js 20のセットアップ
-        uses: actions/setup-node@v4
+      - name: Python 3.10のセットアップ
+        uses: actions/setup-python@v5
         with:
-          node-version: 20
+          python-version: '3.10'
 
-      - name: 依存パッケージをインストール
-        run: npm install
+      - name: Python依存ライブラリのインストール (tradingview-screener)
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas tradingview-screener
 
-      - name: みんかぶ割安高配当スクリーニングを実行 (15:37 JST)
-        run: node scripts/fetch_minkabu.mjs
+      - name: TradingView日本株スクリーニング実行 (PER<=15, PBR<=1, ROE>=8%, 自己資本比率>=50%, 配当>=4%, 営業利益成長>=1%)
+        run: python scripts/screener.py
         env:
           TZ: 'Asia/Tokyo'
 
-      - name: 差分データをGitリポジトリにコミット＆プッシュ
+      - name: 差分データをGitリポジトリに自動コミット＆プッシュ
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           mkdir -p public/data
           git add -A public/data
           if git diff --staged --quiet; then
-            echo "本日のデータに変更はありませんでした（二重実行時は既存データ保持）。"
+            echo "本日のデータに変更はありませんでした。"
           else
-            git commit -m "chore(data): 割安高配当スクリーニング日次データ自動更新 [$(date +'%Y-%m-%d')]"
+            git commit -m "chore(data): TradingView割安高配当スクリーニング日次自動更新 [$(date +'%Y-%m-%d')]"
             git push
           fi
+
+      - name: Node.js 20のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 依存パッケージのインストール
+        run: npm install
 
       - name: 静的サイトをビルド
         run: npm run build
@@ -60,7 +70,7 @@ jobs:
         with:
           path: './dist'
 
-      - name: GitHub Pagesにデプロイ
+      - name: GitHub Pagesに自動デプロイ
         uses: actions/deploy-pages@v4
 `;
 
@@ -132,59 +142,59 @@ jobs:
         uses: actions/deploy-pages@v4
 `;
 
-export const SCRAPER_SCRIPT = `// scripts/fetch_minkabu.mjs
-/**
- * みんかぶ「割安高配当」銘柄スクリーニング自動取得 & 履歴差分集計スクリプト
- * 
- * 条件: PER<=15, PBR<=1.0, 利回り>=3.0%, 自己資本>=50%, 3年売上成長>=2%, ROE>=8%
- * 巡回: page 1〜3 (ROE降順、上位約50〜60銘柄)
- * 実行: 平日 15:37 JST (二重カウント防止 & ユーザーエージェント偽装済み)
- */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+export const SCRAPER_SCRIPT = `# scripts/screener.py
+"""
+TradingView 日本株スクリーナー (Python / tradingview-screener)
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+スクリーニング条件:
+- 日本株 (東証上場 普通株)
+- 予想/実績 PER 15倍以下
+- 実績 PBR 1倍以下
+- ROE (自己資本利益率) 8%以上
+- 自己資本比率 50%以上
+- 配当利回り 4%以上
+- 営業利益・利益成長率 1%以上
+"""
 
-const DATA_DIR = path.resolve(__dirname, '../public/data');
-const STOCKS_FILE = path.join(DATA_DIR, 'stocks.json');
-const SNAPSHOTS_FILE = path.join(DATA_DIR, 'snapshots.json');
+import os
+import sys
+import json
+import datetime
+from pathlib import Path
+import requests
 
-const today = new Intl.DateTimeFormat('ja-JP', {
-  timeZone: 'Asia/Tokyo',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit'
-}).format(new Date()).replace(/\\//g, '-');
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "public" / "data"
+STOCKS_FILE = DATA_DIR / "stocks.json"
+SNAPSHOTS_FILE = DATA_DIR / "snapshots.json"
 
-// みんかぶ検索URL生成 (page 1〜3)
-const buildSearchUrl = (page) => {
-  return \`https://minkabu.jp/stock/search?view=result&page=\${page}&sort_key=roe&order=desc&minimum_purchase_price[0]=min&minimum_purchase_price[1]=max&market_capitalization[0]=min&market_capitalization[1]=max&per[0]=min&per[1]=15&pbr[0]=min&pbr[1]=1&dividend_yield[0]=3&dividend_yield[1]=max&capital_adequacy_ratio[0]=50&capital_adequacy_ratio[1]=max&sales_cagr_3y[0]=2&sales_cagr_3y[1]=max&roe[0]=8&roe[1]=max\`;
-};
+def get_today_jst():
+    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    jst_now = utc_now + datetime.timedelta(hours=9)
+    return jst_now.strftime("%Y-%m-%d")
+
+# [TradingView日本株スキャン処理実行...]
 `;
 
 export const GITHUB_SETUP_STEPS = [
   {
     step: 1,
-    title: 'リポジトリにコードをプッシュ',
-    description: 'GitHubリポジトリ（port4rio/value）にプロジェクトコード一式をプッシュします。'
+    title: 'リポジトリに workflow とスクリプトをコミット',
+    description: '`.github/workflows/daily_screen.yml` と `scripts/screener.py` をリポジトリにプッシュします。'
   },
   {
     step: 2,
-    title: 'Pagesデプロイソースを「GitHub Actions」に設定',
-    description: 'リポジトリの [Settings] > [Pages] > [Build and deployment] で [Source] を「GitHub Actions」に切り替えます。'
+    title: 'GitHub Pages の Build and deployment を設定',
+    description: 'リポジトリの「Settings」>「Pages」を開き、Build and deployment の Source を「GitHub Actions」に設定します。'
   },
   {
     step: 3,
-    title: 'Actions書き込み権限の付与',
-    description: '[Settings] > [Actions] > [General] > [Workflow permissions] で「Read and write permissions」を有効にして保存します。'
+    title: 'Actions 権限（Read and write permissions）の確認',
+    description: '「Settings」>「Actions」>「General」最下部の「Workflow permissions」を「Read and write permissions」にして Save します。'
   },
   {
     step: 4,
-    title: 'GEMINI_API_KEYの登録（土曜AI診断用）',
-    description: '[Settings] > [Secrets and variables] > [Actions] に「GEMINI_API_KEY」を追加すれば、土曜9:07に無料枠で自動AI診断が行われます。'
+    title: 'Actions タブから手動実行で即座に初回反映',
+    description: '「Actions」タブから「Daily TradingView Stock Screener & Deploy」を選択し「Run workflow」をクリックします。'
   }
 ];
-
-export const WORKFLOW_YML = DAILY_WORKFLOW_YML;

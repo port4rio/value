@@ -297,6 +297,10 @@ export default function App() {
           valA = a.salesCagr3y || 0;
           valB = b.salesCagr3y || 0;
           break;
+        case 'operatingGrowth':
+          valA = a.operatingGrowth || 0;
+          valB = b.operatingGrowth || 0;
+          break;
         case 'undervaluedScore':
           valA = a.undervaluedScore;
           valB = b.undervaluedScore;
