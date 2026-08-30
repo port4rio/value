@@ -1,3 +1,16 @@
+export interface AiSummaryItem {
+  code: string;
+  name: string;
+  updatedAt: string;
+  valuationReason: string;
+  dividendSafety: string;
+  catalyst: string;
+  riskFactor: string;
+  healthScore: number;
+  aiVerdict: string;
+  model?: string;
+}
+
 export type StockStatus = 'chronic' | 'rare_new' | 'normal_active' | 'graduated';
 
 export type ViewMode = 'standard' | 'compact';

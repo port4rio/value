@@ -7,25 +7,26 @@ import {
   ShieldCheck, 
   AlertTriangle, 
   CheckCircle2, 
-  ExternalLink, 
+  Zap,
   Copy, 
   Check, 
   ArrowUpRight,
-  HelpCircle,
-  FileText,
-  DollarSign
+  Activity,
+  Award
 } from 'lucide-react';
-import { Stock } from '../types/stock';
-import { generateStockConsultationPrompt, buildChatGPTUrl, HoldingItem } from '../utils/chatGptUrlEncoder';
+import { Stock, AiSummaryItem, HoldingItem } from '../types/stock';
+import { generateStockConsultationPrompt, buildChatGPTUrl } from '../utils/chatGptUrlEncoder';
 
 interface AiFinancialSummaryModalProps {
   stock: Stock | null;
+  aiSummary?: AiSummaryItem | null;
   holding?: HoldingItem;
   onClose: () => void;
 }
 
 export const AiFinancialSummaryModal: React.FC<AiFinancialSummaryModalProps> = ({
   stock,
+  aiSummary,
   holding,
   onClose
 }) => {
@@ -87,6 +88,43 @@ export const AiFinancialSummaryModal: React.FC<AiFinancialSummaryModalProps> = (
 
         {/* Body Content */}
         <div className="p-5 sm:p-6 space-y-6">
+
+          {/* AI Banner if ai_summaries.json exists */}
+          {aiSummary ? (
+            <div className="bg-gradient-to-r from-emerald-950/60 via-indigo-950/40 to-slate-900 border border-emerald-500/40 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-emerald-400 font-semibold">Gemini AI診断判定</span>
+                    <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-mono px-2 py-0.5 rounded-full border border-emerald-500/30">
+                      {aiSummary.updatedAt} 更新
+                    </span>
+                  </div>
+                  <div className="text-base sm:text-lg font-extrabold text-white mt-0.5">
+                    {aiSummary.aiVerdict}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 bg-slate-900/80 px-3.5 py-2 rounded-lg border border-slate-700/80 self-stretch sm:self-auto justify-between sm:justify-start">
+                <span className="text-xs text-slate-400 font-sans">財務・割安健全度</span>
+                <span className="text-lg font-mono font-black text-emerald-400">
+                  {aiSummary.healthScore} <span className="text-xs text-slate-500 font-normal">/ 100点</span>
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-slate-800/40 border border-slate-700/80 rounded-xl p-3.5 flex items-center justify-between text-xs text-slate-400">
+              <div className="flex items-center gap-2">
+                <Bot className="w-4 h-4 text-indigo-400" />
+                <span>リアルタイム財務指標から自動判定したサマリーを表示中</span>
+              </div>
+              <span className="text-[11px] text-slate-500 font-mono">リアルタイム算出</span>
+            </div>
+          )}
           
           {/* Quick AI Diagnostics Scorecard */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
@@ -125,43 +163,88 @@ export const AiFinancialSummaryModal: React.FC<AiFinancialSummaryModalProps> = (
 
           {/* AI Structured Overview */}
           <div className="bg-slate-800/50 p-5 rounded-xl border border-slate-700 space-y-4">
-            <h4 className="text-sm font-bold text-white flex items-center gap-2">
-              <Bot className="w-4 h-4 text-indigo-400" />
-              AIアナリストによる要点サマリー
+            <h4 className="text-sm font-bold text-white flex items-center justify-between">
+              <span className="flex items-center gap-2">
+                <Bot className="w-4 h-4 text-indigo-400" />
+                AIアナリストによる決算・財務診断サマリー
+              </span>
+              {aiSummary?.model && (
+                <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-700">
+                  {aiSummary.model}
+                </span>
+              )}
             </h4>
 
             <div className="space-y-3 text-xs leading-relaxed">
-              <div className="p-3 bg-slate-800 rounded-lg border border-slate-700/80">
+              {/* 1. 割安・投資妙味 */}
+              <div className="p-3.5 bg-slate-800 rounded-lg border border-slate-700/80">
                 <strong className="text-indigo-300 block mb-1 font-semibold flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                   1. 投資妙味と割安の背景
                 </strong>
                 <p className="text-slate-300">
-                  {stock.notes} 
-                  現在のみんかぶ理論株価 ¥{stock.minkabuTheoreticalPrice.toLocaleString()} に対し、+{stock.undervaluedScore.toFixed(1)}% の大幅なディスカウント水準にあります。
-                  {stock.status === 'chronic' && ' 90日以上の長期にわたり割安圏で推移しているため、東証のPBR1倍割れ要請や自社株買い発表が大きな株価見直しカタリストとなります。'}
-                  {stock.status === 'rare_new' && ' 直近で急落または増配により突如スクリーナーにランクインした優良銘柄であり、リバウンド局面でのキャピタル＋インカムのダブルゲインが期待されます。'}
+                  {aiSummary?.valuationReason ? (
+                    aiSummary.valuationReason
+                  ) : (
+                    <>
+                      {stock.notes} 
+                      現在のみんかぶ理論株価 ¥{stock.minkabuTheoreticalPrice.toLocaleString()} に対し、+{stock.undervaluedScore.toFixed(1)}% の大幅なディスカウント水準にあります。
+                      {stock.status === 'chronic' && ' 90日以上の長期にわたり割安圏で推移しているため、東証のPBR1倍割れ要請や自社株買い発表が大きな株価見直しカタリストとなります。'}
+                      {stock.status === 'rare_new' && ' 直近で急落または増配により突如スクリーナーにランクインした優良銘柄であり、リバウンド局面でのキャピタル＋インカムのダブルゲインが期待されます。'}
+                    </>
+                  )}
                 </p>
               </div>
 
-              <div className="p-3 bg-slate-800 rounded-lg border border-slate-700/80">
+              {/* 2. 配当持続力 */}
+              <div className="p-3.5 bg-slate-800 rounded-lg border border-slate-700/80">
                 <strong className="text-emerald-300 block mb-1 font-semibold flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                   2. 配当の持続性と株主還元方針
                 </strong>
                 <p className="text-slate-300">
-                  自己資本比率は <span className="font-mono text-emerald-400 font-bold">{stock.equityRatio.toFixed(1)}%</span>、配当性向は <span className="font-mono text-slate-200 font-bold">{stock.payoutRatio.toFixed(1)}%</span> で推移。
-                  {isDividendHiker ? `${stock.consecutiveDividendHikeYears}期連続増配を継続しており、累進的な還元姿勢が強固です。` : '配当は安定的であり、無理のない利益還元水準を保っています。'}
+                  {aiSummary?.dividendSafety ? (
+                    aiSummary.dividendSafety
+                  ) : (
+                    <>
+                      自己資本比率は <span className="font-mono text-emerald-400 font-bold">{stock.equityRatio.toFixed(1)}%</span>、配当性向は <span className="font-mono text-slate-200 font-bold">{stock.payoutRatio.toFixed(1)}%</span> で推移。
+                      {isDividendHiker ? `${stock.consecutiveDividendHikeYears}期連続増配を継続しており、累進的な還元姿勢が強固です。` : '配当は安定的であり、無理のない利益還元水準を保っています。'}
+                    </>
+                  )}
                 </p>
               </div>
 
-              <div className="p-3 bg-slate-800 rounded-lg border border-slate-700/80">
-                <strong className="text-amber-300 block mb-1 font-semibold flex items-center gap-1.5">
-                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
-                  3. 注視すべきリスク要因
+              {/* 3. カタリスト */}
+              <div className="p-3.5 bg-slate-800 rounded-lg border border-slate-700/80">
+                <strong className="text-blue-300 block mb-1 font-semibold flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-amber-400" />
+                  3. PBR是正・株価上昇カタリスト
                 </strong>
                 <p className="text-slate-300">
-                  業種特性（{stock.sector}）による市況変動や為替・金利動向の影響。次回の四半期決算発表における進捗率および通期会社予想の据え置き・上方修正動向を必ずご確認ください。
+                  {aiSummary?.catalyst ? (
+                    aiSummary.catalyst
+                  ) : (
+                    <>
+                      東証の資本コスト経営要請（PBR1倍是正）を背景に、自社株買い・増配の発表や資本効率改善策の開示が株価評価見直しの契機となります。
+                    </>
+                  )}
+                </p>
+              </div>
+
+              {/* 4. リスク要因 */}
+              <div className="p-3.5 bg-slate-800 rounded-lg border border-slate-700/80">
+                <strong className="text-amber-300 block mb-1 font-semibold flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
+                  4. 注視すべきリスク要因
+                </strong>
+                <p className="text-slate-300">
+                  {aiSummary?.riskFactor ? (
+                    aiSummary.riskFactor
+                  ) : (
+                    <>
+                      業種特性（{stock.sector}）による市況変動や為替・金利動向の影響。次回の四半期決算発表における進捗率および通期会社予想の据え置き・上方修正動向を必ずご確認ください。
+                    </>
+                  )}
                 </p>
               </div>
             </div>
@@ -235,3 +318,4 @@ export const AiFinancialSummaryModal: React.FC<AiFinancialSummaryModalProps> = (
     </div>
   );
 };
+

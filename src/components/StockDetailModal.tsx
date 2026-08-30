@@ -15,7 +15,8 @@ import {
   Info,
   Star,
   Bot,
-  ArrowUpRight
+  ArrowUpRight,
+  Award
 } from 'lucide-react';
 import { 
   ResponsiveContainer, 
@@ -27,11 +28,12 @@ import {
   CartesianGrid, 
   Legend 
 } from 'recharts';
-import { Stock, HoldingItem } from '../types/stock';
+import { Stock, HoldingItem, AiSummaryItem } from '../types/stock';
 import { generateStockConsultationPrompt, buildChatGPTUrl } from '../utils/chatGptUrlEncoder';
 
 interface StockDetailModalProps {
   stock: Stock | null;
+  aiSummary?: AiSummaryItem | null;
   holding?: HoldingItem;
   onToggleHolding?: (stock: Stock) => void;
   onOpenAiSummary?: (stock: Stock) => void;
@@ -40,6 +42,7 @@ interface StockDetailModalProps {
 
 export const StockDetailModal: React.FC<StockDetailModalProps> = ({
   stock,
+  aiSummary,
   holding,
   onToggleHolding,
   onOpenAiSummary,
@@ -126,6 +129,44 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
         {/* Modal Body Content */}
         <div className="p-5 sm:p-6 space-y-6">
           
+          {/* AI Diagnosis Card (if available from ai_summaries.json) */}
+          {aiSummary && (
+            <div className="bg-gradient-to-r from-emerald-950/40 via-indigo-950/30 to-slate-900 border border-emerald-500/40 rounded-xl p-4 shadow-lg space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-emerald-400" />
+                  <h4 className="text-sm font-bold text-white">
+                    AI決算診断判定: <span className="text-emerald-300 font-extrabold">{aiSummary.aiVerdict}</span>
+                  </h4>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-700">
+                    スコア: {aiSummary.healthScore}点 / {aiSummary.updatedAt}
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs">
+                <div className="p-2.5 bg-slate-800/80 rounded-lg border border-slate-700/80">
+                  <span className="text-indigo-300 font-bold block mb-0.5">💡 投資妙味と割安の背景</span>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">{aiSummary.valuationReason}</p>
+                </div>
+                <div className="p-2.5 bg-slate-800/80 rounded-lg border border-slate-700/80">
+                  <span className="text-emerald-300 font-bold block mb-0.5">🛡️ 配当の持続性と還元余力</span>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">{aiSummary.dividendSafety}</p>
+                </div>
+                <div className="p-2.5 bg-slate-800/80 rounded-lg border border-slate-700/80">
+                  <span className="text-blue-300 font-bold block mb-0.5">⚡ PBR改革カタリスト</span>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">{aiSummary.catalyst}</p>
+                </div>
+                <div className="p-2.5 bg-slate-800/80 rounded-lg border border-slate-700/80">
+                  <span className="text-amber-300 font-bold block mb-0.5">⚠️ 注視すべきリスク要因</span>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">{aiSummary.riskFactor}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Quick AI & ChatGPT Consultation Action Bar */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-gradient-to-r from-indigo-950/60 to-slate-800 border border-indigo-500/30 rounded-xl">
             <div className="flex items-center space-x-2">

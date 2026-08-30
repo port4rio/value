@@ -11,12 +11,13 @@ import {
   Info,
   Layers
 } from 'lucide-react';
-import { Stock, ViewMode, HoldingItem, SortKey } from '../types/stock';
+import { Stock, ViewMode, HoldingItem, SortKey, AiSummaryItem } from '../types/stock';
 
 interface StockTableProps {
   stocks: Stock[];
   viewMode?: ViewMode;
   holdings?: Record<string, HoldingItem>;
+  aiSummaries?: Record<string, AiSummaryItem>;
   onToggleHolding?: (stock: Stock) => void;
   onSelectStock: (stock: Stock) => void;
   onOpenAiSummary?: (stock: Stock) => void;
@@ -29,6 +30,7 @@ export const StockTable: React.FC<StockTableProps> = ({
   stocks,
   viewMode = 'standard',
   holdings = {},
+  aiSummaries = {},
   onToggleHolding,
   onSelectStock,
   onOpenAiSummary,
@@ -381,11 +383,18 @@ export const StockTable: React.FC<StockTableProps> = ({
                       {onOpenAiSummary && (
                         <button
                           onClick={() => onOpenAiSummary(stock)}
-                          className="px-2 py-1 text-[11px] font-semibold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/80 border border-emerald-500/30 rounded transition-colors inline-flex items-center"
-                          title="AI財務サマリー & 診断"
+                          className={`px-2 py-1 text-[11px] font-semibold rounded transition-all inline-flex items-center gap-1 cursor-pointer ${
+                            aiSummaries[stock.code]
+                              ? 'text-emerald-200 bg-emerald-900/80 hover:bg-emerald-800 border border-emerald-400/50 shadow-xs shadow-emerald-500/20'
+                              : 'text-slate-400 bg-slate-800 hover:bg-slate-700 border border-slate-700'
+                          }`}
+                          title={aiSummaries[stock.code] ? `AI診断: ${aiSummaries[stock.code].aiVerdict} (スコア: ${aiSummaries[stock.code].healthScore}点)` : "AI財務サマリー & 診断"}
                         >
-                          <Sparkles className="w-3 h-3 mr-0.5" />
-                          AI
+                          <Sparkles className={`w-3 h-3 ${aiSummaries[stock.code] ? 'text-emerald-300 fill-emerald-400/30' : 'text-slate-400'}`} />
+                          <span>AI</span>
+                          {aiSummaries[stock.code] && (
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse hidden xl:inline-block" />
+                          )}
                         </button>
                       )}
 

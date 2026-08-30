@@ -42,7 +42,7 @@ import {
   DataManagementModal 
 } from './components/DataManagementModal';
 
-import { Stock, FilterState, ScreeningSnapshot, TabType, HoldingItem, SortKey } from './types/stock';
+import { Stock, FilterState, ScreeningSnapshot, TabType, HoldingItem, SortKey, AiSummaryItem } from './types/stock';
 import { INITIAL_STOCKS, MOCK_SNAPSHOTS } from './data/mockStocks';
 
 export default function App() {
@@ -59,7 +59,9 @@ export default function App() {
     return INITIAL_STOCKS;
   });
 
-  // Attempt to fetch fresh static data from public/data/stocks.json and snapshots.json (when deployed on GitHub Pages)
+  const [aiSummaries, setAiSummaries] = useState<Record<string, AiSummaryItem>>({});
+
+  // Attempt to fetch fresh static data from public/data/stocks.json, snapshots.json, and ai_summaries.json
   useEffect(() => {
     async function loadStaticData() {
       try {
@@ -81,6 +83,18 @@ export default function App() {
           const freshSnapshots = await snapshotsRes.json();
           if (Array.isArray(freshSnapshots) && freshSnapshots.length > 0) {
             setSnapshots(freshSnapshots);
+          }
+        }
+      } catch (err) {
+        // Fallback silently
+      }
+
+      try {
+        const aiRes = await fetch('./data/ai_summaries.json', { cache: 'no-cache' });
+        if (aiRes.ok) {
+          const freshAi = await aiRes.json();
+          if (freshAi && typeof freshAi === 'object') {
+            setAiSummaries(freshAi);
           }
         }
       } catch (err) {
@@ -407,6 +421,7 @@ export default function App() {
               stocks={filteredStocks}
               viewMode={filter.viewMode}
               holdings={holdings}
+              aiSummaries={aiSummaries}
               onToggleHolding={handleToggleHolding}
               onSelectStock={(stock) => setSelectedStock(stock)}
               onOpenAiSummary={(stock) => setAiSummaryStock(stock)}
@@ -438,6 +453,7 @@ export default function App() {
                 stocks={filteredStocks}
                 viewMode={filter.viewMode}
                 holdings={holdings}
+                aiSummaries={aiSummaries}
                 onToggleHolding={handleToggleHolding}
                 onSelectStock={(stock) => setSelectedStock(stock)}
                 onOpenAiSummary={(stock) => setAiSummaryStock(stock)}
@@ -470,6 +486,7 @@ export default function App() {
                 stocks={filteredStocks}
                 viewMode={filter.viewMode}
                 holdings={holdings}
+                aiSummaries={aiSummaries}
                 onToggleHolding={handleToggleHolding}
                 onSelectStock={(stock) => setSelectedStock(stock)}
                 onOpenAiSummary={(stock) => setAiSummaryStock(stock)}
@@ -502,6 +519,7 @@ export default function App() {
                 stocks={filteredStocks}
                 viewMode={filter.viewMode}
                 holdings={holdings}
+                aiSummaries={aiSummaries}
                 onToggleHolding={handleToggleHolding}
                 onSelectStock={(stock) => setSelectedStock(stock)}
                 onOpenAiSummary={(stock) => setAiSummaryStock(stock)}
@@ -579,6 +597,7 @@ export default function App() {
       {selectedStock && (
         <StockDetailModal
           stock={selectedStock}
+          aiSummary={aiSummaries[selectedStock.code]}
           holding={holdings[selectedStock.code]}
           onToggleHolding={handleToggleHolding}
           onOpenAiSummary={(stock) => {
@@ -592,6 +611,7 @@ export default function App() {
       {aiSummaryStock && (
         <AiFinancialSummaryModal
           stock={aiSummaryStock}
+          aiSummary={aiSummaries[aiSummaryStock.code]}
           holding={holdings[aiSummaryStock.code]}
           onClose={() => setAiSummaryStock(null)}
         />
