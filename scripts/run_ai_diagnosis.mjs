@@ -88,15 +88,19 @@ async function main() {
     let summaryData = null;
 
     if (ai) {
-      try {
-        const prompt = `あなたは日本株のプロのバリュー高配当株アナリストです。
-以下の銘柄の財務指標とみんかぶ割安データを分析し、JSONフォーマットのみで簡潔に出力してください。
+      const candidateModels = process.env.GEMINI_MODEL 
+        ? [process.env.GEMINI_MODEL] 
+        : ['gemini-3.5-flash-lite', 'gemini-3.6-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash'];
+      
+      const prompt = `あなたは日本株のプロのバリュー高配当株アナリストです。
+以下の銘柄の財務指標と割安データを分析し、JSONフォーマットのみで簡潔に出力してください。
 
 【対象銘柄データ】
 - 銘柄: ${stock.name} (${stock.code}) / 市場: ${stock.market} / 業種: ${stock.sector}
-- 現在株価: ${stock.price}円 / みんかぶ理論株価: ${stock.minkabuTheoreticalPrice}円 (割安度: +${stock.undervaluedScore}%)
+- 現在株価: ${stock.price}円 / 理論株価: ${stock.minkabuTheoreticalPrice || stock.price * 1.25}円 (割安度: +${stock.undervaluedScore || 25}%)
 - 配当利回り: ${stock.dividendYield}% / 連続増配年数: ${stock.consecutiveDividendHikeYears || 0}年 / 配当性向: ${stock.payoutRatio || 35}%
 - PBR: ${stock.pbr}倍 / PER: ${stock.per}倍 / ROE: ${stock.roe || 8.5}% / 自己資本比率: ${stock.equityRatio || 55}%
+- 営業利益成長率: ${stock.operatingGrowth || 0}% / 売上成長率: ${stock.salesCagr3y || 0}%
 - スクリーニング滞在日数: ${stock.consecutiveDays}日 (${stock.status === 'chronic' ? '90日以上ずっと割安放置' : '直近の新着割安'})
 
 【出力JSONスキーマ】
@@ -109,24 +113,30 @@ async function main() {
   "aiVerdict": "積極買い検討" // または "押し目買い" / "様子見" / "減配警戒"
 }`;
 
-        const response = await ai.models.generateContent({
-          model: 'gemini-2.5-flash',
-          contents: prompt,
-          config: {
-            responseMimeType: 'application/json'
-          }
-        });
+      for (const modelName of candidateModels) {
+        try {
+          const response = await ai.models.generateContent({
+            model: modelName,
+            contents: prompt,
+            config: {
+              responseMimeType: 'application/json'
+            }
+          });
 
-        const text = response.text();
-        const parsed = JSON.parse(text);
-        summaryData = {
-          code: stock.code,
-          name: stock.name,
-          updatedAt: today,
-          ...parsed
-        };
-      } catch (err) {
-        console.error(`[WARN] Gemini API call failed for ${stock.code}:`, err.message);
+          const text = response.text();
+          const parsed = JSON.parse(text);
+          summaryData = {
+            code: stock.code,
+            name: stock.name,
+            model: modelName,
+            updatedAt: today,
+            ...parsed
+          };
+          // 成功したらループを抜ける
+          break;
+        } catch (err) {
+          console.warn(`[WARN] Gemini model ${modelName} failed for ${stock.code}:`, err.message);
+        }
       }
     }
 
