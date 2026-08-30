@@ -59,13 +59,26 @@ export default function App() {
     return INITIAL_STOCKS;
   });
 
-  const [aiSummaries, setAiSummaries] = useState<Record<string, AiSummaryItem>>({});
+  const [aiSummaries, setAiSummaries] = useState<Record<string, AiSummaryItem>>(() => {
+    const saved = localStorage.getItem('ai_financial_summaries');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error('Failed to parse cached ai summaries', e);
+      }
+    }
+    return {};
+  });
 
   // Attempt to fetch fresh static data from public/data/stocks.json, snapshots.json, and ai_summaries.json
   useEffect(() => {
     async function loadStaticData() {
+      const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+      const timestamp = Date.now();
+
       try {
-        const stocksRes = await fetch('./data/stocks.json', { cache: 'no-cache' });
+        const stocksRes = await fetch(`${baseUrl}data/stocks.json?t=${timestamp}`, { cache: 'no-cache' });
         if (stocksRes.ok) {
           const freshStocks = await stocksRes.json();
           if (Array.isArray(freshStocks) && freshStocks.length > 0) {
@@ -78,7 +91,7 @@ export default function App() {
       }
 
       try {
-        const snapshotsRes = await fetch('./data/snapshots.json', { cache: 'no-cache' });
+        const snapshotsRes = await fetch(`${baseUrl}data/snapshots.json?t=${timestamp}`, { cache: 'no-cache' });
         if (snapshotsRes.ok) {
           const freshSnapshots = await snapshotsRes.json();
           if (Array.isArray(freshSnapshots) && freshSnapshots.length > 0) {
@@ -90,11 +103,12 @@ export default function App() {
       }
 
       try {
-        const aiRes = await fetch('./data/ai_summaries.json', { cache: 'no-cache' });
+        const aiRes = await fetch(`${baseUrl}data/ai_summaries.json?t=${timestamp}`, { cache: 'no-cache' });
         if (aiRes.ok) {
           const freshAi = await aiRes.json();
-          if (freshAi && typeof freshAi === 'object') {
+          if (freshAi && typeof freshAi === 'object' && Object.keys(freshAi).length > 0) {
             setAiSummaries(freshAi);
+            localStorage.setItem('ai_financial_summaries', JSON.stringify(freshAi));
           }
         }
       } catch (err) {
