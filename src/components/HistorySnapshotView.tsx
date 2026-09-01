@@ -47,14 +47,15 @@ export const HistorySnapshotView: React.FC<HistorySnapshotViewProps> = ({
               日次スナップショット・履歴アーカイブ
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              過去の特定日付時点におけるみんかぶ割安高配当スクリーニングの記録を再現・比較します。
+              過去の特定日付時点における割安高配当スクリーニングの記録を再現・比較します。
             </p>
           </div>
 
           {/* Date Selector Pills */}
           <div className="flex items-center space-x-2 overflow-x-auto pb-1">
-            {snapshots.map((snap) => {
+            {snapshots.map((snap, idx) => {
               const isSelected = snap.date === selectedDate;
+              const isLatest = idx === snapshots.length - 1;
               return (
                 <button
                   key={snap.date}
@@ -66,7 +67,7 @@ export const HistorySnapshotView: React.FC<HistorySnapshotViewProps> = ({
                       : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border-slate-700'
                   }`}
                 >
-                  {snap.date} {snap.date === '2026-08-22' ? '(最新)' : ''}
+                  {snap.date} {isLatest ? '(最新)' : ''}
                 </button>
               );
             })}

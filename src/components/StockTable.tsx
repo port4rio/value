@@ -134,7 +134,7 @@ export const StockTable: React.FC<StockTableProps> = ({
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           
-          {/* Table Header: みんかぶスクリーニング結果順 */}
+          {/* Table Header */}
           <thead>
             <tr className="bg-slate-800/80 border-b border-slate-700 text-[11px] font-semibold text-slate-400 select-none">
               
@@ -176,7 +176,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                 {renderSortIndicator('marketCap')}
               </th>
 
-              {/* 6. PER (調整後の文字は消去) */}
+              {/* 6. PER */}
               <th 
                 className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
                 onClick={() => handleHeaderClick('per')}
@@ -194,7 +194,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                 {renderSortIndicator('pbr')}
               </th>
 
-              {/* 8. ROE (みんかぶのソート順) */}
+              {/* 8. ROE */}
               <th 
                 className="py-3 px-2.5 text-right cursor-pointer hover:bg-slate-700/50 transition-colors group/th whitespace-nowrap"
                 onClick={() => handleHeaderClick('roe')}

@@ -48,7 +48,7 @@ import { INITIAL_STOCKS, MOCK_SNAPSHOTS } from './data/mockStocks';
 export default function App() {
   // 1. Data States
   const [stocks, setStocks] = useState<Stock[]>(() => {
-    const saved = localStorage.getItem('minkabu_tracker_stocks');
+    const saved = localStorage.getItem('port4rio_tracker_stocks') || localStorage.getItem('minkabu_tracker_stocks');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -71,11 +71,45 @@ export default function App() {
     return {};
   });
 
+  // 2. port4rio Holdings State (LocalStorage, no login required)
+  const [holdings, setHoldings] = useState<Record<string, HoldingItem>>(() => {
+    const saved = localStorage.getItem('port4rio_holdings');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error('Failed to parse port4rio holdings', e);
+      }
+    }
+    return {};
+  });
+
+  const [snapshots, setSnapshots] = useState<ScreeningSnapshot[]>(MOCK_SNAPSHOTS);
+  
+  // Calculate initial latest date dynamically
+  const initialLatestDate = React.useMemo(() => {
+    if (MOCK_SNAPSHOTS && MOCK_SNAPSHOTS.length > 0) {
+      return MOCK_SNAPSHOTS[MOCK_SNAPSHOTS.length - 1].date;
+    }
+    return '2026-08-29';
+  }, []);
+
+  const [lastUpdated, setLastUpdated] = useState(`${initialLatestDate} 18:00 (JST)`);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  // 3. Navigation & Selection States
+  const [activeTab, setActiveTab] = useState<TabType>('all');
+  const [selectedStock, setSelectedStock] = useState<Stock | null>(null);
+  const [aiSummaryStock, setAiSummaryStock] = useState<Stock | null>(null);
+  const [selectedSnapshotDate, setSelectedSnapshotDate] = useState<string>(initialLatestDate);
+
   // Attempt to fetch fresh static data from public/data/stocks.json, snapshots.json, and ai_summaries.json
   useEffect(() => {
     async function loadStaticData() {
       const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
       const timestamp = Date.now();
+
+      let latestDateFound = '';
 
       try {
         const stocksRes = await fetch(`${baseUrl}data/stocks.json?t=${timestamp}`, { cache: 'no-cache' });
@@ -83,7 +117,14 @@ export default function App() {
           const freshStocks = await stocksRes.json();
           if (Array.isArray(freshStocks) && freshStocks.length > 0) {
             setStocks(freshStocks);
-            localStorage.setItem('minkabu_tracker_stocks', JSON.stringify(freshStocks));
+            localStorage.setItem('port4rio_tracker_stocks', JSON.stringify(freshStocks));
+            
+            // Find newest lastSeenDate
+            freshStocks.forEach((s: Stock) => {
+              if (s.lastSeenDate && (!latestDateFound || s.lastSeenDate > latestDateFound)) {
+                latestDateFound = s.lastSeenDate;
+              }
+            });
           }
         }
       } catch (err) {
@@ -96,10 +137,19 @@ export default function App() {
           const freshSnapshots = await snapshotsRes.json();
           if (Array.isArray(freshSnapshots) && freshSnapshots.length > 0) {
             setSnapshots(freshSnapshots);
+            const latestSnap = freshSnapshots[freshSnapshots.length - 1];
+            if (latestSnap?.date) {
+              latestDateFound = latestSnap.date;
+              setSelectedSnapshotDate(latestSnap.date);
+            }
           }
         }
       } catch (err) {
         // Fallback silently
+      }
+
+      if (latestDateFound) {
+        setLastUpdated(`${latestDateFound} 18:00 (JST)`);
       }
 
       try {
@@ -118,33 +168,6 @@ export default function App() {
 
     loadStaticData();
   }, []);
-
-  // 2. port4rio Holdings State (LocalStorage, no login required)
-  const [holdings, setHoldings] = useState<Record<string, HoldingItem>>(() => {
-    const saved = localStorage.getItem('port4rio_holdings');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error('Failed to parse port4rio holdings', e);
-      }
-    }
-    // Pre-populate with a couple of default holdings for a great initial experience
-    return {
-      '8058': { code: '8058', shares: 200, avgPrice: 2850, addedAt: '2026-08-01', notes: '商社セクター主力・累進配当' },
-      '5401': { code: '5401', shares: 300, avgPrice: 3200, addedAt: '2026-08-10', notes: 'PBR0.6倍台・割安高配当' }
-    };
-  });
-
-  const [snapshots, setSnapshots] = useState<ScreeningSnapshot[]>(MOCK_SNAPSHOTS);
-  const [lastUpdated, setLastUpdated] = useState('2026-08-22 18:00 (JST)');
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
-  // 3. Navigation & Selection States
-  const [activeTab, setActiveTab] = useState<TabType>('all');
-  const [selectedStock, setSelectedStock] = useState<Stock | null>(null);
-  const [aiSummaryStock, setAiSummaryStock] = useState<Stock | null>(null);
-  const [selectedSnapshotDate, setSelectedSnapshotDate] = useState<string>('2026-08-22');
 
   // 4. Modals
   const [isGitHubSetupModalOpen, setIsGitHubSetupModalOpen] = useState(false);
@@ -170,7 +193,7 @@ export default function App() {
 
   // Save to localStorage when stocks or holdings change
   useEffect(() => {
-    localStorage.setItem('minkabu_tracker_stocks', JSON.stringify(stocks));
+    localStorage.setItem('port4rio_tracker_stocks', JSON.stringify(stocks));
   }, [stocks]);
 
   useEffect(() => {
@@ -576,11 +599,11 @@ export default function App() {
       <footer className="bg-[#0f172a] border-t border-slate-800 py-6 mt-12 text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span>みんかぶ割安高配当トラッカー | </span>
+            <span>日本株 割安高配当トラッカー | </span>
             <a href="https://github.com/port4rio/port4rio.github.io" target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 transition-colors">
               port4rio
             </a>
-            <span> (日次自動集計 & GitHub Actions / Pages 連携)</span>
+            <span> (TradingView日次自動スクリーニング & GitHub Actions / Pages 連携)</span>
           </div>
           <div className="flex items-center space-x-4">
             <button

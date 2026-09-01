@@ -63,96 +63,110 @@ export const GraduatedStocksView: React.FC<GraduatedStocksViewProps> = ({
       </div>
 
       {/* Graduated Stocks Table & Story Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {graduatedStocks.map((stock) => {
-          return (
-            <div
-              key={stock.code}
-              id={`graduated-card-${stock.code}`}
-              onClick={() => onSelectStock(stock)}
-              className="bg-[#1e293b] border border-slate-700 hover:border-purple-500/60 rounded-xl p-5 shadow-xl hover:shadow-2xl transition-all cursor-pointer flex flex-col justify-between group relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full -z-0"></div>
+      {graduatedStocks.length === 0 ? (
+        <div className="bg-[#1e293b] border border-slate-700 rounded-xl p-8 text-center shadow-xl">
+          <div className="w-12 h-12 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center mx-auto mb-3">
+            <GraduationCap className="w-6 h-6" />
+          </div>
+          <h3 className="text-base font-bold text-slate-200">
+            現在、割安卒業銘柄はありません
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-md mx-auto leading-relaxed">
+            過去にスクリーニングされた銘柄が株価上昇・PBR1倍超へ是正されてスクリーナーから抜けた場合、ここに卒業実績として自動集計されます。
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {graduatedStocks.map((stock) => {
+            return (
+              <div
+                key={stock.code}
+                id={`graduated-card-${stock.code}`}
+                onClick={() => onSelectStock(stock)}
+                className="bg-[#1e293b] border border-slate-700 hover:border-purple-500/60 rounded-xl p-5 shadow-xl hover:shadow-2xl transition-all cursor-pointer flex flex-col justify-between group relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full -z-0"></div>
 
-              <div className="relative z-10">
-                
-                {/* Header */}
-                <div className="flex items-start justify-between">
-                  <div>
-                    <div className="flex items-center space-x-2">
-                      <span className="font-mono text-xs font-bold px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded border border-purple-500/30">
-                        {stock.code}
-                      </span>
-                      <span className="font-bold text-base text-slate-100 group-hover:text-purple-400 transition-colors">
-                        {stock.name}
+                <div className="relative z-10">
+                  
+                  {/* Header */}
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <div className="flex items-center space-x-2">
+                        <span className="font-mono text-xs font-bold px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded border border-purple-500/30">
+                          {stock.code}
+                        </span>
+                        <span className="font-bold text-base text-slate-100 group-hover:text-purple-400 transition-colors">
+                          {stock.name}
+                        </span>
+                      </div>
+                      <span className="text-xs text-slate-400 font-medium mt-0.5 block">
+                        {stock.sector} • {stock.market}
                       </span>
                     </div>
-                    <span className="text-xs text-slate-400 font-medium mt-0.5 block">
-                      {stock.sector} • {stock.market}
-                    </span>
+
+                    {/* Return Badge */}
+                    <div className="text-right">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-sm font-mono font-extrabold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-md">
+                        <TrendingUp className="w-4 h-4 mr-1 text-emerald-400" />
+                        +{stock.graduationReturnPercent}%
+                      </span>
+                      <span className="text-[10px] text-slate-400 block mt-0.5">
+                        卒業日: {stock.graduationDate}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Return Badge */}
-                  <div className="text-right">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-sm font-mono font-extrabold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-md">
-                      <TrendingUp className="w-4 h-4 mr-1 text-emerald-400" />
-                      +{stock.graduationReturnPercent}%
-                    </span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">
-                      卒業日: {stock.graduationDate}
-                    </span>
+                  {/* Price Journey: Entry vs Exit */}
+                  <div className="my-4 p-3 bg-slate-800/80 rounded-lg border border-purple-500/20 grid grid-cols-3 gap-2 text-center font-mono">
+                    <div>
+                      <span className="text-[10px] text-slate-400 block">スクリーニング検出時</span>
+                      <span className="font-bold text-sm text-slate-300">¥{stock.entryPrice?.toLocaleString()}</span>
+                    </div>
+                    <div className="flex items-center justify-center text-purple-400 font-bold">
+                      ➔
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-slate-400 block">卒業時株価 / 現在値</span>
+                      <span className="font-extrabold text-sm text-purple-300">¥{stock.price.toLocaleString()}</span>
+                    </div>
                   </div>
+
+                  {/* Graduation Reason */}
+                  <div className="bg-slate-800/60 p-3 rounded-lg border border-slate-700">
+                    <span className="text-[11px] font-bold text-purple-300 flex items-center mb-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-emerald-400" />
+                      卒業理由・上昇要因
+                    </span>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {stock.graduationReason}
+                    </p>
+                  </div>
+
+                  {/* Current Valuation Metrics (Post-Graduation) */}
+                  <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                    <span>現在PBR: <strong className="text-slate-200 font-bold">{stock.pbr.toFixed(2)}倍</strong></span>
+                    <span>現在PER: <strong className="text-slate-200 font-bold">{stock.per.toFixed(1)}倍</strong></span>
+                    <span>現在利回り: <strong className="text-slate-200 font-bold">{stock.dividendYield.toFixed(2)}%</strong></span>
+                  </div>
+
                 </div>
 
-                {/* Price Journey: Entry vs Exit */}
-                <div className="my-4 p-3 bg-slate-800/80 rounded-lg border border-purple-500/20 grid grid-cols-3 gap-2 text-center font-mono">
-                  <div>
-                    <span className="text-[10px] text-slate-400 block">スクリーニング検出時</span>
-                    <span className="font-bold text-sm text-slate-300">¥{stock.entryPrice?.toLocaleString()}</span>
-                  </div>
-                  <div className="flex items-center justify-center text-purple-400 font-bold">
-                    ➔
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-slate-400 block">卒業時株価 / 現在値</span>
-                    <span className="font-extrabold text-sm text-purple-300">¥{stock.price.toLocaleString()}</span>
-                  </div>
-                </div>
-
-                {/* Graduation Reason */}
-                <div className="bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                  <span className="text-[11px] font-bold text-purple-300 flex items-center mb-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-emerald-400" />
-                    卒業理由・上昇要因
+                {/* Footer */}
+                <div className="mt-4 pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs relative z-10">
+                  <span className="text-slate-400 font-mono text-[11px]">
+                    通算滞在 {stock.totalAppearances} 日間
                   </span>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    {stock.graduationReason}
-                  </p>
-                </div>
-
-                {/* Current Valuation Metrics (Post-Graduation) */}
-                <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                  <span>現在PBR: <strong className="text-slate-200 font-bold">{stock.pbr.toFixed(2)}倍</strong></span>
-                  <span>現在PER: <strong className="text-slate-200 font-bold">{stock.per.toFixed(1)}倍</strong></span>
-                  <span>現在利回り: <strong className="text-slate-200 font-bold">{stock.dividendYield.toFixed(2)}%</strong></span>
+                  <span className="font-semibold text-purple-400 group-hover:underline flex items-center">
+                    詳細履歴を見る <ArrowUpRight className="w-3 h-3 ml-0.5" />
+                  </span>
                 </div>
 
               </div>
-
-              {/* Footer */}
-              <div className="mt-4 pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs relative z-10">
-                <span className="text-slate-400 font-mono text-[11px]">
-                  通算滞在 {stock.totalAppearances} 日間
-                </span>
-                <span className="font-semibold text-purple-400 group-hover:underline flex items-center">
-                  詳細履歴を見る <ArrowUpRight className="w-3 h-3 ml-0.5" />
-                </span>
-              </div>
-
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
 
     </div>
   );

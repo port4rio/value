@@ -69,10 +69,10 @@ export const GitHubSetupModal: React.FC<GitHubSetupModalProps> = ({
     setTimeout(() => {
       setSimulationLog(prev => [
         ...prev, 
-        '✓ Step 2: Executing scripts/fetch_minkabu.mjs...',
-        '  > Target: Minkabu Screener (PER<=15, PBR<=1.0, Yield>=3%, Equity>=50%, SalesCAGR>=2%, ROE>=8%)',
-        '  > Fetching Pages 1 to 3 with browser user-agent & delay jitter...',
-        '  > Total 48 valid undervalued high-dividend stocks detected.',
+        '✓ Step 2: Executing scripts/screener.py (TradingView Screener)...',
+        '  > Target: TradingView Japan Stock Screener (PER<=15, PBR<=1.0, ROE>=8%, EquityRatio>=50%, Yield>=4%, ProfitGrowth>=1%)',
+        '  > Scanning Tokyo Stock Exchange (Prime / Standard) with live market metrics...',
+        '  > Total 41 valid undervalued high-dividend stocks detected.',
         '  > [Idempotency Check] Verified lastSeenDate to prevent double-counting consecutive days.'
       ]);
     }, 1100);

@@ -381,16 +381,16 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
 
           {/* External Links */}
           <div className="pt-2 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
-            <span className="text-xs text-slate-400 font-medium">外部サービスで最新情報を確認:</span>
-            <div className="flex items-center space-x-2">
+            <span className="text-xs text-slate-400 font-medium">外部サービスで最新チャート・情報を確認:</span>
+            <div className="flex flex-wrap items-center gap-2">
               <a
-                href={`https://minkabu.jp/stock/${stock.code}`}
+                href={`https://jp.tradingview.com/symbols/TSE-${stock.code}/`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
+                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold text-indigo-300 bg-indigo-950/50 hover:bg-indigo-900/60 border border-indigo-500/30 transition-colors"
               >
-                みんかぶ
-                <ExternalLink className="w-3 h-3 ml-1 text-slate-400" />
+                TradingView
+                <ExternalLink className="w-3 h-3 ml-1 text-indigo-400" />
               </a>
               <a
                 href={`https://finance.yahoo.co.jp/quote/${stock.code}.T`}
@@ -408,6 +408,15 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                 className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
               >
                 株探 (Kabutan)
+                <ExternalLink className="w-3 h-3 ml-1 text-slate-400" />
+              </a>
+              <a
+                href={`https://minkabu.jp/stock/${stock.code}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
+              >
+                みんかぶ
                 <ExternalLink className="w-3 h-3 ml-1 text-slate-400" />
               </a>
             </div>
