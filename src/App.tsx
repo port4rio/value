@@ -51,12 +51,15 @@ export default function App() {
     const saved = localStorage.getItem('port4rio_tracker_stocks') || localStorage.getItem('minkabu_tracker_stocks');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          return parsed.filter(s => s.graduationDate !== '2026-08-24');
+        }
       } catch (e) {
         console.error('Failed to parse saved stocks', e);
       }
     }
-    return INITIAL_STOCKS;
+    return INITIAL_STOCKS.filter(s => s.graduationDate !== '2026-08-24');
   });
 
   const [aiSummaries, setAiSummaries] = useState<Record<string, AiSummaryItem>>(() => {
@@ -76,7 +79,19 @@ export default function App() {
     const saved = localStorage.getItem('port4rio_holdings');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        // Clean out legacy mock holdings (日本製鉄, 三菱商事 dummy initial items)
+        const cleaned: Record<string, HoldingItem> = {};
+        for (const [key, val] of Object.entries(parsed as Record<string, HoldingItem>)) {
+          const isLegacyDummy = 
+            (key === '8058' && (val.notes?.includes('商社セクター') || val.addedAt === '2026-08-01')) ||
+            (key === '5401' && (val.notes?.includes('PBR0.6倍') || val.addedAt === '2026-08-10'));
+          if (!isLegacyDummy) {
+            cleaned[key] = val;
+          }
+        }
+        localStorage.setItem('port4rio_holdings', JSON.stringify(cleaned));
+        return cleaned;
       } catch (e) {
         console.error('Failed to parse port4rio holdings', e);
       }
