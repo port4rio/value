@@ -3,9 +3,9 @@ name: Daily TradingView Stock Screener & Deploy
 on:
   schedule:
     # 毎週月〜金曜日 日本時間 15:30 (UTC 06:30) 東京市場大引け後に自動スクリーニング
-    - cron: '37 15 * * 1-5'
+    - cron: '36 9 * * 1-5'
       timezone: 'Asia/Tokyo'
-    - cron: '53 16 * * 1-5'
+    - cron: '36 15 * * 1-5'
       timezone: 'Asia/Tokyo'
   workflow_dispatch: # GitHub Actions管理画面から手動実行可能
 
