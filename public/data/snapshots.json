@@ -561,11 +561,11 @@
     "graduatedCount": 0,
     "avgYield": 4.84,
     "avgPer": 7.9,
-    "avgPbr": 0.79,
+    "avgPbr": 0.78,
     "topYieldStock": {
       "code": "6658",
       "name": "シライ電子工業",
-      "yield": 7.73
+      "yield": 7.8
     },
     "stockCodes": [
       "6675",
