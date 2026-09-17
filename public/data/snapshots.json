@@ -1170,18 +1170,18 @@
   },
   {
     "date": "2026-09-17",
-    "totalCount": 47,
+    "totalCount": 46,
     "chronicCount": 0,
     "rareNewCount": 7,
-    "normalCount": 40,
+    "normalCount": 39,
     "graduatedCount": 0,
-    "avgYield": 4.82,
-    "avgPer": 8.1,
-    "avgPbr": 0.79,
+    "avgYield": 4.81,
+    "avgPer": 8.0,
+    "avgPbr": 0.78,
     "topYieldStock": {
       "code": "6658",
       "name": "シライ電子工業",
-      "yield": 7.73
+      "yield": 7.66
     },
     "stockCodes": [
       "6675",
@@ -1216,7 +1216,6 @@
       "1718",
       "4041",
       "5184",
-      "6677",
       "6209",
       "3611",
       "5110",
