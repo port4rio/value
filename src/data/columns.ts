@@ -144,12 +144,12 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
   {
     key: 'de_ratio',
     label: 'D/Eレシオ',
-    unit: '%',
-    tooltip: '負債資本倍率（有利子負債 / 株主資本） (100%以下は健全、50%以下は優良)',
+    unit: '倍',
+    tooltip: '負債資本倍率（有利子負債 / 株主資本） (1倍以下は健全、0.5倍以下は優良)',
     align: 'right',
     minWidth: 'min-w-[80px]',
     priority: 'low',
-    format: (v) => (v != null ? `${Number(v).toFixed(1)}%` : '-'),
+    format: (v) => (v != null ? `${Number(v).toFixed(2)}倍` : '-'),
   },
   {
     key: 'current_ratio',

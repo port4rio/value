@@ -201,9 +201,21 @@ export const StockTable: React.FC<StockTableProps> = ({
                         'name'
                       )}`}
                     >
-                      <span className="truncate block" title={stock.name}>
+                      <span
+                        className="truncate block"
+                        title={
+                          stock.category === 'sotsugyo' && stock.graduationReason
+                            ? `${stock.name} (卒業理由: ${stock.graduationReason})`
+                            : stock.name
+                        }
+                      >
                         {stock.name}
                       </span>
+                      {stock.category === 'sotsugyo' && stock.graduationReason && (
+                        <span className="text-[9.5px] text-[#f472b6] truncate block leading-none mt-0.5 font-normal">
+                          {stock.graduationReason.split('（')[0]}
+                        </span>
+                      )}
                     </td>
 
                     {/* Column 3: 滞在日数 (銘柄名の右に追加) */}
@@ -213,7 +225,16 @@ export const StockTable: React.FC<StockTableProps> = ({
                       )}`}
                     >
                       {stock.category === 'sotsugyo' ? (
-                        <span className="text-[#f472b6] text-[11px]">卒業</span>
+                        <span
+                          className="text-[#f472b6] text-[11px] underline decoration-dotted cursor-help"
+                          title={
+                            stock.graduationReason
+                              ? `卒業日: ${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
+                              : '卒業生'
+                          }
+                        >
+                          🎓卒業
+                        </span>
                       ) : stock.stayDays != null ? (
                         <span
                           className={
@@ -342,7 +363,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       )}`}
                       style={{ color: deStyle.color, fontWeight: deStyle.fontWeight }}
                     >
-                      {stock.de_ratio != null ? `${stock.de_ratio.toFixed(1)}%` : '-'}
+                      {stock.de_ratio != null ? `${stock.de_ratio.toFixed(2)}倍` : '-'}
                     </td>
 
                     {/* Column 15: 流動比率 (高い方が良い、1位〜30位ヒートマップグラデーション) */}

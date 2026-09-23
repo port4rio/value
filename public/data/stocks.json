@@ -1,6 +1,7 @@
 {
-  "updatedAt": "2026/09/23 14:27",
-  "count": 59,
+  "updatedAt": "2026/09/24 00:23",
+  "lastIncrementDate": "2026-09-24",
+  "count": 60,
   "stocks": [
     {
       "code": "4644",
@@ -8,7 +9,7 @@
       "close": 1053,
       "change": -0.47,
       "market_cap": 101,
-      "per": 10.29,
+      "per": 20.3,
       "pbr": 0.83,
       "roe": 8.19,
       "dividend_yield": 5.7,
@@ -18,8 +19,9 @@
       "de_ratio": 0,
       "equity_ratio": 93.17,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6675",
@@ -27,8 +29,8 @@
       "close": 2224,
       "change": 0.54,
       "market_cap": 408,
-      "per": 2.41,
-      "pbr": 0.82,
+      "per": 2.4,
+      "pbr": 0.83,
       "roe": 41.49,
       "dividend_yield": 5.62,
       "payout_ratio": 128.7,
@@ -37,8 +39,9 @@
       "de_ratio": 0.03,
       "equity_ratio": 66.27,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4246",
@@ -46,8 +49,8 @@
       "close": 1093,
       "change": -1.26,
       "market_cap": 745,
-      "per": 8.18,
-      "pbr": 0.81,
+      "per": 7,
+      "pbr": 0.79,
       "roe": 10.38,
       "dividend_yield": 5.31,
       "payout_ratio": 41.18,
@@ -56,8 +59,9 @@
       "de_ratio": 0.37,
       "equity_ratio": 57.08,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6209",
@@ -65,7 +69,7 @@
       "close": 3970,
       "change": 0.51,
       "market_cap": 1068,
-      "per": 7.72,
+      "per": 11.9,
       "pbr": 0.65,
       "roe": 9.01,
       "dividend_yield": 5.29,
@@ -75,8 +79,9 @@
       "de_ratio": 0.16,
       "equity_ratio": 71.14,
       "category": "tennyu",
-      "stayDays": 4,
-      "entryDate": "2026-09-23"
+      "stayDays": 5,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4725",
@@ -95,7 +100,8 @@
       "equity_ratio": 65.1,
       "category": "tennyu",
       "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "entryDate": "2026-09-24",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7226",
@@ -103,7 +109,7 @@
       "close": 2312,
       "change": -0.64,
       "market_cap": 861,
-      "per": 9.3,
+      "per": 17.8,
       "pbr": 0.79,
       "roe": 8.71,
       "dividend_yield": 5.19,
@@ -113,8 +119,9 @@
       "de_ratio": 0.36,
       "equity_ratio": 59.08,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5357",
@@ -122,7 +129,7 @@
       "close": 1745,
       "change": -0.29,
       "market_cap": 258,
-      "per": 11.72,
+      "per": 12.4,
       "pbr": 0.93,
       "roe": 8.18,
       "dividend_yield": 5.16,
@@ -132,8 +139,9 @@
       "de_ratio": 0.03,
       "equity_ratio": 79.56,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7722",
@@ -141,7 +149,7 @@
       "close": 781,
       "change": 0.39,
       "market_cap": 107,
-      "per": 7.95,
+      "per": 10.5,
       "pbr": 0.85,
       "roe": 11.23,
       "dividend_yield": 5.12,
@@ -151,27 +159,29 @@
       "de_ratio": 0.19,
       "equity_ratio": 63.44,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
-      "code": "4918",
-      "name": "アイビー化粧品",
-      "close": 300,
-      "change": 1.35,
-      "market_cap": 17,
-      "per": 10.65,
-      "pbr": 0.83,
-      "roe": 8.55,
-      "dividend_yield": 5,
-      "payout_ratio": 66.81,
-      "ebitda_growth": -46.59,
-      "current_ratio": 270.53,
-      "de_ratio": 0.16,
-      "equity_ratio": 67.69,
+      "code": "5284",
+      "name": "ヤマウホールディングス",
+      "close": 2219,
+      "change": -0.18,
+      "market_cap": 136,
+      "per": 6,
+      "pbr": 1,
+      "roe": 16.7,
+      "dividend_yield": 5.05,
+      "payout_ratio": 30.25,
+      "ebitda_growth": -4.01,
+      "current_ratio": 206.29,
+      "de_ratio": 0.23,
+      "equity_ratio": 64.9,
       "category": "tennyu",
       "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "entryDate": "2026-09-24",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "9622",
@@ -179,7 +189,7 @@
       "close": 1444,
       "change": 1.12,
       "market_cap": 357,
-      "per": 9.2,
+      "per": 10.7,
       "pbr": 1,
       "roe": 11.14,
       "dividend_yield": 4.99,
@@ -189,8 +199,9 @@
       "de_ratio": 0,
       "equity_ratio": 80.6,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7246",
@@ -198,7 +209,7 @@
       "close": 1008,
       "change": -0.98,
       "market_cap": 932,
-      "per": 10.41,
+      "per": 12.3,
       "pbr": 0.82,
       "roe": 8.2,
       "dividend_yield": 4.96,
@@ -208,8 +219,9 @@
       "de_ratio": 0.05,
       "equity_ratio": 64.7,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5965",
@@ -217,7 +229,7 @@
       "close": 1210,
       "change": 0.17,
       "market_cap": 159,
-      "per": 3.86,
+      "per": 3.8,
       "pbr": 0.55,
       "roe": 15.3,
       "dividend_yield": 4.96,
@@ -227,8 +239,9 @@
       "de_ratio": 0.21,
       "equity_ratio": 57.89,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7927",
@@ -236,7 +249,7 @@
       "close": 2369,
       "change": 0.34,
       "market_cap": 170,
-      "per": 8.72,
+      "per": 5.5,
       "pbr": 0.78,
       "roe": 9.74,
       "dividend_yield": 4.94,
@@ -246,8 +259,9 @@
       "de_ratio": 0.24,
       "equity_ratio": 66.91,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "1972",
@@ -255,7 +269,7 @@
       "close": 1312,
       "change": -0.53,
       "market_cap": 258,
-      "per": 9.69,
+      "per": 10.3,
       "pbr": 0.93,
       "roe": 9.85,
       "dividend_yield": 4.88,
@@ -265,8 +279,9 @@
       "de_ratio": 0.04,
       "equity_ratio": 69.65,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5541",
@@ -274,7 +289,7 @@
       "close": 2667,
       "change": -0.04,
       "market_cap": 464,
-      "per": 8.98,
+      "per": 346,
       "pbr": 0.75,
       "roe": 8.61,
       "dividend_yield": 4.87,
@@ -284,8 +299,9 @@
       "de_ratio": 0,
       "equity_ratio": 93.32,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7971",
@@ -293,7 +309,7 @@
       "close": 698,
       "change": -0.14,
       "market_cap": 380,
-      "per": 8.66,
+      "per": 11.6,
       "pbr": 0.76,
       "roe": 9.37,
       "dividend_yield": 4.87,
@@ -303,8 +319,9 @@
       "de_ratio": 0.21,
       "equity_ratio": 53.53,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "9312",
@@ -312,7 +329,7 @@
       "close": 2876,
       "change": 0.74,
       "market_cap": 188,
-      "per": 5.68,
+      "per": 5.5,
       "pbr": 0.53,
       "roe": 10.08,
       "dividend_yield": 4.87,
@@ -322,8 +339,9 @@
       "de_ratio": 0.33,
       "equity_ratio": 59.12,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5445",
@@ -331,7 +349,7 @@
       "close": 2060,
       "change": -0.63,
       "market_cap": 522,
-      "per": 7.18,
+      "per": 7.3,
       "pbr": 0.82,
       "roe": 11.93,
       "dividend_yield": 4.85,
@@ -341,8 +359,9 @@
       "de_ratio": 0.14,
       "equity_ratio": 74.46,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7235",
@@ -350,7 +369,7 @@
       "close": 1590,
       "change": -0.25,
       "market_cap": 150,
-      "per": 7.79,
+      "per": 8.5,
       "pbr": 0.62,
       "roe": 8.39,
       "dividend_yield": 4.84,
@@ -360,8 +379,9 @@
       "de_ratio": 0.01,
       "equity_ratio": 79.31,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7239",
@@ -369,7 +389,7 @@
       "close": 2376,
       "change": -0.17,
       "market_cap": 815,
-      "per": 8.8,
+      "per": 9.5,
       "pbr": 0.75,
       "roe": 10.77,
       "dividend_yield": 4.84,
@@ -379,8 +399,9 @@
       "de_ratio": 0.04,
       "equity_ratio": 61.84,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "3611",
@@ -388,7 +409,7 @@
       "close": 2384,
       "change": -0.5,
       "market_cap": 246,
-      "per": 8.1,
+      "per": 7.4,
       "pbr": 0.63,
       "roe": 8.9,
       "dividend_yield": 4.82,
@@ -398,8 +419,9 @@
       "de_ratio": 0.4,
       "equity_ratio": 55.83,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4619",
@@ -407,7 +429,7 @@
       "close": 2696,
       "change": -0.66,
       "market_cap": 586,
-      "per": 9.82,
+      "per": 10.8,
       "pbr": 0.94,
       "roe": 10.09,
       "dividend_yield": 4.82,
@@ -417,8 +439,9 @@
       "de_ratio": 0.06,
       "equity_ratio": 77.24,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "1768",
@@ -426,7 +449,7 @@
       "close": 1037,
       "change": 0.19,
       "market_cap": 76,
-      "per": 5.82,
+      "per": 9.2,
       "pbr": 0.74,
       "roe": 13.46,
       "dividend_yield": 4.82,
@@ -436,8 +459,9 @@
       "de_ratio": 0,
       "equity_ratio": 72.43,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "8700",
@@ -446,7 +470,7 @@
       "change": 0.05,
       "market_cap": 83,
       "per": 8.52,
-      "pbr": 1,
+      "pbr": 0.93,
       "roe": 12.29,
       "dividend_yield": 4.8,
       "payout_ratio": 58.34,
@@ -455,8 +479,9 @@
       "de_ratio": 0.06,
       "equity_ratio": 58.3,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "1810",
@@ -464,7 +489,7 @@
       "close": 1467,
       "change": -0.47,
       "market_cap": 448,
-      "per": 9.18,
+      "per": 10.5,
       "pbr": 0.73,
       "roe": 8.41,
       "dividend_yield": 4.77,
@@ -474,8 +499,9 @@
       "de_ratio": 0.1,
       "equity_ratio": 64,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6505",
@@ -483,8 +509,8 @@
       "close": 2437,
       "change": 0.54,
       "market_cap": 218,
-      "per": 7.39,
-      "pbr": 0.72,
+      "per": 9,
+      "pbr": 0.76,
       "roe": 10.26,
       "dividend_yield": 4.76,
       "payout_ratio": 30.33,
@@ -493,8 +519,9 @@
       "de_ratio": 0.33,
       "equity_ratio": 56.89,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6677",
@@ -502,7 +529,7 @@
       "close": 3225,
       "change": -0.46,
       "market_cap": 338,
-      "per": 10.36,
+      "per": 10.5,
       "pbr": 0.89,
       "roe": 9.04,
       "dividend_yield": 4.71,
@@ -512,8 +539,9 @@
       "de_ratio": 0.03,
       "equity_ratio": 82.67,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "9856",
@@ -521,8 +549,8 @@
       "close": 1231,
       "change": -0.89,
       "market_cap": 392,
-      "per": 6.97,
-      "pbr": 0.55,
+      "per": 7,
+      "pbr": 0.56,
       "roe": 8.62,
       "dividend_yield": 4.71,
       "payout_ratio": 32.91,
@@ -531,8 +559,9 @@
       "de_ratio": 0.17,
       "equity_ratio": 74.17,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4008",
@@ -540,7 +569,7 @@
       "close": 1507,
       "change": 0,
       "market_cap": 972,
-      "per": 9.91,
+      "per": 12.1,
       "pbr": 0.92,
       "roe": 9.91,
       "dividend_yield": 4.64,
@@ -550,8 +579,9 @@
       "de_ratio": 0.23,
       "equity_ratio": 65.78,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6915",
@@ -559,7 +589,7 @@
       "close": 3465,
       "change": -0.14,
       "market_cap": 316,
-      "per": 7.98,
+      "per": 8.3,
       "pbr": 0.75,
       "roe": 10.14,
       "dividend_yield": 4.62,
@@ -569,8 +599,9 @@
       "de_ratio": 0.02,
       "equity_ratio": 79.72,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5351",
@@ -578,7 +609,7 @@
       "close": 2060,
       "change": -0.53,
       "market_cap": 970,
-      "per": 3.24,
+      "per": 9,
       "pbr": 0.85,
       "roe": 29.3,
       "dividend_yield": 4.61,
@@ -588,8 +619,9 @@
       "de_ratio": 0.46,
       "equity_ratio": 50.88,
       "category": "tennyu",
-      "stayDays": 4,
-      "entryDate": "2026-09-23"
+      "stayDays": 5,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5184",
@@ -597,7 +629,7 @@
       "close": 4130,
       "change": -0.24,
       "market_cap": 588,
-      "per": 10.1,
+      "per": 9.6,
       "pbr": 0.86,
       "roe": 9.08,
       "dividend_yield": 4.6,
@@ -607,8 +639,9 @@
       "de_ratio": 0.03,
       "equity_ratio": 77.6,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "1964",
@@ -616,7 +649,7 @@
       "close": 3930,
       "change": -0.76,
       "market_cap": 302,
-      "per": 7.31,
+      "per": 10.9,
       "pbr": 0.94,
       "roe": 13.87,
       "dividend_yield": 4.58,
@@ -626,8 +659,9 @@
       "de_ratio": 0.17,
       "equity_ratio": 62.81,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7670",
@@ -645,8 +679,9 @@
       "de_ratio": 0.21,
       "equity_ratio": 54.71,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "2408",
@@ -654,7 +689,7 @@
       "close": 819,
       "change": -0.97,
       "market_cap": 59,
-      "per": 12.03,
+      "per": 12.3,
       "pbr": 0.98,
       "roe": 8.37,
       "dividend_yield": 4.52,
@@ -664,8 +699,9 @@
       "de_ratio": 0,
       "equity_ratio": 87.06,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6678",
@@ -673,8 +709,8 @@
       "close": 2060,
       "change": -0.87,
       "market_cap": 176,
-      "per": 11.65,
-      "pbr": 1,
+      "per": 17,
+      "pbr": 0.95,
       "roe": 8.78,
       "dividend_yield": 4.51,
       "payout_ratio": 83.08,
@@ -683,8 +719,29 @@
       "de_ratio": 0,
       "equity_ratio": 84.42,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
+    },
+    {
+      "code": "8011",
+      "name": "三陽商会",
+      "close": 1368,
+      "change": 0,
+      "market_cap": 417,
+      "per": 9,
+      "pbr": 0.93,
+      "roe": 10.85,
+      "dividend_yield": 4.48,
+      "payout_ratio": 35.45,
+      "ebitda_growth": -34.75,
+      "current_ratio": 327.67,
+      "de_ratio": 0.19,
+      "equity_ratio": 68.34,
+      "category": "tennyu",
+      "stayDays": 1,
+      "entryDate": "2026-09-24",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7812",
@@ -692,7 +749,7 @@
       "close": 2143,
       "change": 5.62,
       "market_cap": 66,
-      "per": 6.52,
+      "per": 6.8,
       "pbr": 0.65,
       "roe": 11.12,
       "dividend_yield": 4.48,
@@ -702,8 +759,9 @@
       "de_ratio": 0.65,
       "equity_ratio": 54.2,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4028",
@@ -722,7 +780,8 @@
       "equity_ratio": 53.9,
       "category": "tennyu",
       "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "entryDate": "2026-09-24",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6658",
@@ -730,7 +789,7 @@
       "close": 451,
       "change": -1.31,
       "market_cap": 68,
-      "per": 7.1,
+      "per": 11.3,
       "pbr": 0.63,
       "roe": 9.47,
       "dividend_yield": 4.43,
@@ -740,8 +799,9 @@
       "de_ratio": 0.27,
       "equity_ratio": 54.76,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5363",
@@ -749,7 +809,7 @@
       "close": 693,
       "change": 0.29,
       "market_cap": 306,
-      "per": 8.27,
+      "per": 6.8,
       "pbr": 0.61,
       "roe": 8.11,
       "dividend_yield": 4.42,
@@ -759,8 +819,9 @@
       "de_ratio": 0.07,
       "equity_ratio": 79.33,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "2153",
@@ -768,7 +829,7 @@
       "close": 1891,
       "change": -0.05,
       "market_cap": 340,
-      "per": 10.2,
+      "per": 9.2,
       "pbr": 0.84,
       "roe": 9.07,
       "dividend_yield": 4.34,
@@ -778,8 +839,9 @@
       "de_ratio": 0.17,
       "equity_ratio": 70.98,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7296",
@@ -787,8 +849,8 @@
       "close": 4200,
       "change": -0.24,
       "market_cap": 1992,
-      "per": 10.22,
-      "pbr": 0.98,
+      "per": 11.7,
+      "pbr": 0.96,
       "roe": 10.23,
       "dividend_yield": 4.29,
       "payout_ratio": 50.08,
@@ -797,8 +859,9 @@
       "de_ratio": 0.03,
       "equity_ratio": 78.15,
       "category": "tennyu",
-      "stayDays": 4,
-      "entryDate": "2026-09-23"
+      "stayDays": 5,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "8150",
@@ -806,7 +869,7 @@
       "close": 3300,
       "change": -1.35,
       "market_cap": 404,
-      "per": 8.34,
+      "per": 11.2,
       "pbr": 0.89,
       "roe": 11.37,
       "dividend_yield": 4.24,
@@ -816,8 +879,9 @@
       "de_ratio": 0.36,
       "equity_ratio": 55.06,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5110",
@@ -825,7 +889,7 @@
       "close": 1985.5,
       "change": -1.71,
       "market_cap": 5219,
-      "per": 8.43,
+      "per": 9.5,
       "pbr": 0.69,
       "roe": 8.87,
       "dividend_yield": 4.23,
@@ -835,8 +899,9 @@
       "de_ratio": 0.46,
       "equity_ratio": 51.23,
       "category": "tennyu",
-      "stayDays": 4,
-      "entryDate": "2026-09-23"
+      "stayDays": 5,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "1718",
@@ -844,7 +909,7 @@
       "close": 7130,
       "change": 1.13,
       "market_cap": 78,
-      "per": 4.97,
+      "per": 7,
       "pbr": 0.44,
       "roe": 9.24,
       "dividend_yield": 4.21,
@@ -854,8 +919,9 @@
       "de_ratio": 0.38,
       "equity_ratio": 57.11,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6517",
@@ -863,8 +929,8 @@
       "close": 4070,
       "change": 0.62,
       "market_cap": 809,
-      "per": 12.13,
-      "pbr": 0.99,
+      "per": 13.8,
+      "pbr": 0.98,
       "roe": 8.57,
       "dividend_yield": 4.18,
       "payout_ratio": 36.17,
@@ -873,8 +939,9 @@
       "de_ratio": 0.04,
       "equity_ratio": 81.72,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4251",
@@ -882,7 +949,7 @@
       "close": 1198,
       "change": -0.17,
       "market_cap": 231,
-      "per": 7.42,
+      "per": 10.7,
       "pbr": 0.89,
       "roe": 12.79,
       "dividend_yield": 4.17,
@@ -892,8 +959,9 @@
       "de_ratio": 0.07,
       "equity_ratio": 80.06,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7217",
@@ -901,7 +969,7 @@
       "close": 435,
       "change": 0.23,
       "market_cap": 42,
-      "per": 7.92,
+      "per": 12.3,
       "pbr": 0.62,
       "roe": 8.35,
       "dividend_yield": 4.14,
@@ -911,8 +979,9 @@
       "de_ratio": 0.08,
       "equity_ratio": 76.07,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "3375",
@@ -920,8 +989,8 @@
       "close": 1814,
       "change": 0,
       "market_cap": 26,
-      "per": 7.29,
-      "pbr": 0.72,
+      "per": 6.7,
+      "pbr": 0.73,
       "roe": 10.32,
       "dividend_yield": 4.13,
       "payout_ratio": 28.8,
@@ -930,8 +999,9 @@
       "de_ratio": 0.25,
       "equity_ratio": 63.8,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4041",
@@ -939,7 +1009,7 @@
       "close": 3870,
       "change": -1.02,
       "market_cap": 2103,
-      "per": 11.39,
+      "per": 13.1,
       "pbr": 0.98,
       "roe": 9.21,
       "dividend_yield": 4.13,
@@ -949,8 +1019,9 @@
       "de_ratio": 0.26,
       "equity_ratio": 66.38,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7175",
@@ -968,8 +1039,9 @@
       "de_ratio": 0.11,
       "equity_ratio": 51.56,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7990",
@@ -977,7 +1049,7 @@
       "close": 2426,
       "change": -1.14,
       "market_cap": 513,
-      "per": 10.84,
+      "per": 9.4,
       "pbr": 0.8,
       "roe": 8.02,
       "dividend_yield": 4.12,
@@ -987,8 +1059,9 @@
       "de_ratio": 0.48,
       "equity_ratio": 52.93,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "4540",
@@ -996,7 +1069,7 @@
       "close": 3848,
       "change": -0.98,
       "market_cap": 2944,
-      "per": 9.49,
+      "per": 10.9,
       "pbr": 0.88,
       "roe": 9.81,
       "dividend_yield": 4.11,
@@ -1006,8 +1079,9 @@
       "de_ratio": 0.45,
       "equity_ratio": 62.92,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "1828",
@@ -1015,7 +1089,7 @@
       "close": 2445,
       "change": -0.61,
       "market_cap": 262,
-      "per": 7.05,
+      "per": 9.5,
       "pbr": 0.92,
       "roe": 13.89,
       "dividend_yield": 4.09,
@@ -1025,8 +1099,9 @@
       "de_ratio": 0.05,
       "equity_ratio": 59.87,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "6430",
@@ -1034,7 +1109,7 @@
       "close": 2468,
       "change": -1.32,
       "market_cap": 366,
-      "per": 7.47,
+      "per": 11.7,
       "pbr": 0.72,
       "roe": 9.92,
       "dividend_yield": 4.05,
@@ -1044,8 +1119,9 @@
       "de_ratio": 0,
       "equity_ratio": 86.49,
       "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23"
+      "stayDays": 4,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "7463",
@@ -1064,7 +1140,8 @@
       "equity_ratio": 69.88,
       "category": "tennyu",
       "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "entryDate": "2026-09-24",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "8014",
@@ -1072,7 +1149,7 @@
       "close": 4250,
       "change": -1.05,
       "market_cap": 1046,
-      "per": 8.31,
+      "per": 10,
       "pbr": 1,
       "roe": 12.87,
       "dividend_yield": 4.02,
@@ -1082,8 +1159,9 @@
       "de_ratio": 0.01,
       "equity_ratio": 68.99,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "8935",
@@ -1091,7 +1169,7 @@
       "close": 1992,
       "change": -0.6,
       "market_cap": 651,
-      "per": 5.5,
+      "per": 6.2,
       "pbr": 0.78,
       "roe": 15.04,
       "dividend_yield": 4.02,
@@ -1101,8 +1179,9 @@
       "de_ratio": 0.19,
       "equity_ratio": 72.3,
       "category": "tennyu",
-      "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
     },
     {
       "code": "5280",
@@ -1110,8 +1189,8 @@
       "close": 2249,
       "change": 1.22,
       "market_cap": 163,
-      "per": 6.93,
-      "pbr": 0.55,
+      "per": 5.6,
+      "pbr": 0.56,
       "roe": 8.31,
       "dividend_yield": 4,
       "payout_ratio": 22.51,
@@ -1120,8 +1199,32 @@
       "de_ratio": 0.56,
       "equity_ratio": 61.04,
       "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-24"
+    },
+    {
+      "code": "4918",
+      "name": "アイビー化粧品",
+      "close": 300,
+      "change": 1.35,
+      "market_cap": 17,
+      "per": 8.6,
+      "pbr": 1.15,
+      "roe": 8.55,
+      "dividend_yield": 5,
+      "payout_ratio": 66.81,
+      "ebitda_growth": -46.59,
+      "current_ratio": 270.53,
+      "de_ratio": 0.16,
+      "equity_ratio": 67.69,
+      "category": "sotsugyo",
       "stayDays": 1,
-      "entryDate": "2026-09-23"
+      "entryDate": "2026-09-23",
+      "graduationDate": "2026-09-24",
+      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.15倍）",
+      "graduationPrice": 300,
+      "graduationReturn": 0
     }
   ]
 }

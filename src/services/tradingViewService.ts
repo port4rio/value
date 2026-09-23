@@ -183,7 +183,7 @@ export async function fetchScreeningStocks(
                 payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
                 ebitda_growth: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
                 current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
-                de_ratio: d[12] != null ? Number((Number(d[12]) * 100).toFixed(2)) : null,
+                de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
                 equity_ratio: equityRatio != null ? Number(equityRatio.toFixed(2)) : null,
                 category,
                 stayDays,

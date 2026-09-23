@@ -13,7 +13,7 @@ export interface StockItem {
   roe: number | null; // %
   ebitda_growth: number | null; // %
   equity_ratio: number | null; // %
-  de_ratio: number | null; // %
+  de_ratio: number | null; // 倍
   current_ratio: number | null; // %
   sector?: string;
   updatedAt?: string;

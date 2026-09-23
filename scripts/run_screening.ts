@@ -22,14 +22,15 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       { left: 'market_cap_basic', operation: 'nempty' },
       { left: 'type', operation: 'equal', right: 'stock' },
       { left: 'subtype', operation: 'in_range', right: ['common'] },
-      // PBR 1.05以下、ROE 7.5%以上で一次絞り込み
-      { left: 'price_book_fq', operation: 'less', right: 1.05 },
-      { left: 'return_on_equity_fq', operation: 'egreater', right: 7.5 },
+      // 一次選別での取りこぼし予防: 条件を緩める（PBR 1.20以下、ROE 7.0%以上、配当3.5%以上）
+      { left: 'price_book_fq', operation: 'less', right: 1.2 },
+      { left: 'return_on_equity_fq', operation: 'egreater', right: 7.0 },
+      { left: 'dividends_yield', operation: 'egreater', right: 3.5 },
     ],
     options: { lang: 'ja' },
     symbols: { query: { types: [] }, tickers: [] },
     columns: [
-      'name',                     // 0: コード（例: TSE:7226）
+      'name',                     // 0: コード（例: TSE:7226, TSE:256A）
       'description',              // 1: 銘柄名
       'close',                    // 2: 終値
       'change',                   // 3: 前日比%
@@ -63,7 +64,8 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
     for (const r of rows) {
       const ticker = String(r.s || '');
       const code = ticker.replace(/^TSE:/, '');
-      if (!/^\d{4}$/.test(code)) continue;
+      // 新証券コード対応: 4桁数字（7226）または数字3桁+英数字（256A, 391A 等）
+      if (!/^[0-9]{3}[0-9A-Za-z]$/.test(code)) continue;
 
       const d = r.d || [];
       const rawName = String(d[1] || d[0] || code);
@@ -83,11 +85,15 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       const dy = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
       const ebitdaGrowth = d[10] != null ? Number(Number(d[10]).toFixed(2)) : null;
 
-      // 厳格足切り（自己資本比率 50%以上、PBR 1.0倍以下、ROE 8%以上、利回り3.8%以上）
-      if (equityRatio == null || equityRatio < DEFAULT_CRITERIA.minEquityRatio) continue;
-      if (pbr != null && pbr > DEFAULT_CRITERIA.maxPbr) continue;
-      if (roe != null && roe < DEFAULT_CRITERIA.minRoe) continue;
-      if (dy != null && dy < 3.8) continue; // 後段のYahoo Financeで4%以上判定
+      // 一次選別での取りこぼし予防（緩めの条件で通過させ、Kabutanの正確な値で最終選別）
+      // 自己資本比率: 48%以上（計算誤差を考慮）
+      if (equityRatio == null || equityRatio < 48.0) continue;
+      // PBR: 1.20以下
+      if (pbr != null && pbr > 1.20) continue;
+      // ROE: 7.5%以上
+      if (roe != null && roe < 7.5) continue;
+      // 予想配当利回り: 3.8%以上
+      if (dy != null && dy < 3.8) continue;
 
       candidates.push({
         code,
@@ -160,17 +166,34 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       });
       if (kRes.ok) {
         const html = await kRes.text();
-        const idx = html.indexOf('help-label" data-help="PER">PER');
+        const idx = html.indexOf('id="stockinfo_i3"');
         if (idx !== -1) {
-          const slice = html.substring(idx, idx + 450);
-          const matches = [...slice.matchAll(/<td[^>]*>\s*([\d\.\-]+)\s*<span/g)].map((m) => m[1]);
-          const forwardPer = matches[0] && !isNaN(Number(matches[0])) ? Number(matches[0]) : null;
-          const pbr = matches[1] && !isNaN(Number(matches[1])) ? Number(matches[1]) : null;
-          const forwardYield = matches[2] && !isNaN(Number(matches[2])) ? Number(matches[2]) : null;
+          const tbodyIdx = html.indexOf('<tbody>', idx);
+          const tbodyEnd = html.indexOf('</tbody>', tbodyIdx);
+          if (tbodyIdx !== -1 && tbodyEnd !== -1) {
+            const tbodyHtml = html.substring(tbodyIdx, tbodyEnd);
+            const firstRowMatch = tbodyHtml.match(/<tr>([\s\S]*?)<\/tr>/i);
+            if (firstRowMatch) {
+              const tdMatches = [
+                ...firstRowMatch[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi),
+              ].map((m) => m[1]);
 
-          if (forwardPer != null && forwardPer > 0) s.per = forwardPer;
-          if (pbr != null && pbr > 0) s.pbr = pbr;
-          if (forwardYield != null && forwardYield > 0) s.dividend_yield = forwardYield;
+              const parseVal = (tdStr?: string): number | null => {
+                if (!tdStr) return null;
+                const textBefore = tdStr.split('<')[0].trim();
+                const numMatch = textBefore.match(/([0-9]+(?:\.[0-9]+)?)/);
+                return numMatch ? Number(numMatch[1]) : null;
+              };
+
+              const forwardPer = parseVal(tdMatches[0]);
+              const pbr = parseVal(tdMatches[1]);
+              const forwardYield = parseVal(tdMatches[2]);
+
+              if (forwardPer != null && forwardPer > 0) s.per = forwardPer;
+              if (pbr != null && pbr > 0) s.pbr = pbr;
+              if (forwardYield != null && forwardYield > 0) s.dividend_yield = forwardYield;
+            }
+          }
         }
       }
     } catch {
@@ -459,6 +482,51 @@ function isTokyoMarketHoliday(year: number, month: number, day: number): boolean
   return holidays.has(`${month}-${day}`);
 }
 
+/**
+ * 卒業理由の判定
+ * 株価上昇（名誉の卒業）や利回り低下・業績変化などの理由を具体的に明示
+ */
+function determineGraduationReason(s: StockItem): string {
+  const reasons: string[] = [];
+
+  // 1. PBR 1倍突破（株価上昇による名誉の卒業！）
+  if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) {
+    reasons.push(`PBR1倍突破（株価上昇によりPBR ${s.pbr.toFixed(2)}倍）`);
+  }
+
+  // 2. 配当利回り 4%割れ
+  if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) {
+    if (s.pbr != null && s.pbr >= 0.95) {
+      reasons.push(`利回り4%割れ（株価上昇に伴い利回り ${s.dividend_yield.toFixed(2)}%）`);
+    } else {
+      reasons.push(`利回り4%割れ（今期予想利回り ${s.dividend_yield.toFixed(2)}%）`);
+    }
+  }
+
+  // 3. ROE 8%割れ
+  if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) {
+    reasons.push(`ROE8%割れ（実績ROE ${s.roe.toFixed(2)}%）`);
+  }
+
+  // 4. 自己資本比率 50%割れ
+  if (s.equity_ratio != null && s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) {
+    reasons.push(`自己資本比率50%割れ（自己資本比率 ${s.equity_ratio.toFixed(1)}%）`);
+  }
+
+  return reasons.length > 0 ? reasons.join('、') : 'スクリーニング基準未達';
+}
+
+/**
+ * 最終スクリーニング合格判定（5大条件すべてをクリア）
+ */
+function isQualifying(s: StockItem): boolean {
+  if (s.equity_ratio == null || s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) return false;
+  if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) return false;
+  if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) return false;
+  if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) return false;
+  return true;
+}
+
 async function main() {
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -469,7 +537,7 @@ async function main() {
   const isMarketOpenToday = !isTokyoMarketHoliday(jstNow.year, jstNow.month, jstNow.day);
   console.log(`📅 JST Date: ${jstNow.dateStr}, Market Open Day: ${isMarketOpenToday ? 'YES (平日・営業日)' : 'NO (休業日/祝日)'}`);
 
-  // 1. 既存銘柄データの読み込み（在籍日数の引き継ぎ用）
+  // 1. 既存銘柄データの読み込み（前日在籍銘柄の引き継ぎ・卒業検出用）
   let existingStocks: StockItem[] = [];
   let prevLastIncrementDate: string | undefined;
   if (fs.existsSync(STOCKS_FILE)) {
@@ -483,65 +551,119 @@ async function main() {
   }
   const existingMap = new Map<string, StockItem>(existingStocks.map((s) => [s.code, s]));
 
-  // 2. TradingView から自己資本比率50%以上・PBR1.0以下などの候補銘柄を取得
-  const candidates = await fetchTradingViewCandidates();
-  if (candidates.length === 0 && existingStocks.length === 0) {
+  // 2. TradingView から一次選別（取りこぼし予防のため緩めの基準）で候補銘柄を取得
+  const tvCandidates = await fetchTradingViewCandidates();
+
+  // 前日存在していた銘柄で、今回のTradingView候補に含まれなかった銘柄も調査対象に統合
+  // （前日銘柄の卒業理由を最新データで正確に特定するため）
+  const candidateCodeSet = new Set(tvCandidates.map((c) => c.code));
+  const missingPreviousStocks = existingStocks.filter((s) => !candidateCodeSet.has(s.code));
+  const baseList: StockItem[] = [...tvCandidates, ...missingPreviousStocks];
+
+  if (baseList.length === 0) {
     console.log('No candidates fetched and no existing stocks.');
     return;
   }
 
-  const baseList = candidates.length > 0 ? candidates : existingStocks;
-
-  // 3. 最新株価・会社予想PER・会社予想配当利回りを更新
+  // 3. Kabutan から会社発表の今期予想PER、最新PBR、今期予想配当利回りを正確に取得して上書き
   const enriched = await enrichWithMarketForecasts(baseList);
 
-  // 4. 5大基準で最終絞り込み（配当利回り 4%以上、PBR 1.0倍以下、ROE 8%以上、自己資本比率 50%以上）
-  const screened = enriched.filter((s) => {
-    if (s.category === 'sotsugyo') return true;
-    if (s.equity_ratio == null || s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) return false;
-    if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) return false;
-    if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) return false;
-    if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) return false;
-    return true;
-  });
-
-  console.log(`🎯 Strictly screened stocks: ${screened.length} stocks qualify.`);
-
-  // 5. 滞在日数 (stayDays) の計算
-  // 【条件】
-  // - 営業日（土日祝日・年末年始でない）かつ、本日まだインクリメントされていない初回実行時のみ +1
-  // - 営業日外（休日）の手動実行や、平日同日の二度実行・トラブル再実行では日数を増やさず維持
+  // 4. 滞在日数 (stayDays) の計算フラグ
   const todayStr = jstNow.dateStr;
   const shouldIncrementStayDays = isMarketOpenToday && prevLastIncrementDate !== todayStr;
   console.log(`⏳ StayDays Increment Mode: ${shouldIncrementStayDays ? '+1 (営業日の初回実行)' : '維持 (休日または同日再実行のため加算なし)'}`);
 
-  const finalStocks = screened.map((s) => {
-    const prev = existingMap.get(s.code);
-    if (prev) {
-      // 営業日の初回実行のみ+1、それ以外は前回の滞在日数を厳格に維持
-      const stayDays = shouldIncrementStayDays ? (prev.stayDays || 0) + 1 : (prev.stayDays || 1);
-      const lastIncrementDate = shouldIncrementStayDays ? todayStr : (prev.lastIncrementDate || prevLastIncrementDate);
-      const category: StockItem['category'] =
-        prev.category === 'sotsugyo' ? 'sotsugyo' : stayDays >= 90 ? 'inokori' : 'tennyu';
-      return {
-        ...s,
-        stayDays,
-        category,
-        entryDate: prev.entryDate || todayStr,
-        lastIncrementDate,
-      };
-    } else {
-      return {
-        ...s,
-        stayDays: 1,
-        category: 'tennyu' as StockItem['category'],
-        entryDate: todayStr,
-        lastIncrementDate: isMarketOpenToday ? todayStr : undefined,
-      };
-    }
-  });
+  // 5. 最終選別 & 卒業検出 & 卒業後の再転入判定
+  const activeStocks: StockItem[] = [];
+  const graduatedStocks: StockItem[] = [];
 
-  // 6. JSON に保存
+  for (const s of enriched) {
+    const prev = existingMap.get(s.code);
+    const passes = isQualifying(s);
+
+    if (passes) {
+      // スクリーニング条件をクリアしている銘柄
+      if (prev && prev.category === 'sotsugyo') {
+        // ★ 卒業後の再転入！
+        console.log(`🎉 再転入検出: [${s.code}] ${s.name} が再びスクリーニング条件をクリアして再転入しました！`);
+        activeStocks.push({
+          ...s,
+          category: 'tennyu',
+          stayDays: 1,
+          entryDate: todayStr,
+          lastIncrementDate: isMarketOpenToday ? todayStr : undefined,
+          graduationDate: undefined,
+          graduationReason: undefined,
+          graduationPrice: undefined,
+          graduationReturn: undefined,
+        });
+      } else if (prev) {
+        // 在籍継続（営業日の初回実行のみ滞在日数+1）
+        const stayDays = shouldIncrementStayDays ? (prev.stayDays || 0) + 1 : (prev.stayDays || 1);
+        const lastIncrementDate = shouldIncrementStayDays ? todayStr : (prev.lastIncrementDate || prevLastIncrementDate);
+        const category: StockItem['category'] = stayDays >= 90 ? 'inokori' : 'tennyu';
+        activeStocks.push({
+          ...s,
+          stayDays,
+          category,
+          entryDate: prev.entryDate || todayStr,
+          lastIncrementDate,
+          graduationDate: undefined,
+          graduationReason: undefined,
+        });
+      } else {
+        // 新規転入生
+        activeStocks.push({
+          ...s,
+          stayDays: 1,
+          category: 'tennyu',
+          entryDate: todayStr,
+          lastIncrementDate: isMarketOpenToday ? todayStr : undefined,
+        });
+      }
+    } else {
+      // スクリーニング条件を満たさなくなった、または満たしていない銘柄
+      if (prev && prev.category !== 'sotsugyo') {
+        // ★ 前日在籍していたが、今日は条件落ち → 新規卒業！
+        const reason = determineGraduationReason(s);
+        console.log(`🎓 卒業検出: [${s.code}] ${s.name} (理由: ${reason})`);
+        graduatedStocks.push({
+          ...s,
+          category: 'sotsugyo',
+          stayDays: prev.stayDays || 1,
+          entryDate: prev.entryDate || todayStr,
+          graduationDate: todayStr,
+          graduationReason: reason,
+          graduationPrice: s.close || prev.close,
+          graduationReturn: 0,
+        });
+      } else if (prev && prev.category === 'sotsugyo') {
+        // 過去に卒業した卒業生の継続追跡（最新株価・リターンを更新）
+        const gradPrice = prev.graduationPrice || prev.close || s.close;
+        let gradReturn: number | undefined = prev.graduationReturn;
+        if (gradPrice && s.close) {
+          gradReturn = Number((((s.close - gradPrice) / gradPrice) * 100).toFixed(2));
+        }
+        graduatedStocks.push({
+          ...s,
+          category: 'sotsugyo',
+          stayDays: prev.stayDays,
+          entryDate: prev.entryDate,
+          graduationDate: prev.graduationDate || todayStr,
+          graduationReason: prev.graduationReason || determineGraduationReason(s),
+          graduationPrice: gradPrice,
+          graduationReturn: gradReturn,
+        });
+      }
+      // 前日に存在せず、条件も満たさない場合はリストに含めない
+    }
+  }
+
+  // 6. 銘柄リストの統合（在籍銘柄 + 卒業生）
+  const finalStocks = [...activeStocks, ...graduatedStocks];
+  console.log(`🎯 Active stocks: ${activeStocks.length}, Graduated stocks: ${graduatedStocks.length}, Total: ${finalStocks.length}`);
+
+  // 7. JSON に保存
   const now = new Date().toLocaleString('ja-JP', {
     timeZone: 'Asia/Tokyo',
     year: 'numeric',
@@ -554,7 +676,7 @@ async function main() {
   const outputData = {
     updatedAt: now,
     lastIncrementDate: shouldIncrementStayDays ? todayStr : prevLastIncrementDate,
-    count: finalStocks.length,
+    count: activeStocks.length,
     stocks: finalStocks,
   };
 
