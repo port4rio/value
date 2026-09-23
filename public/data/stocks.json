@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026/09/23 04:30",
+  "updatedAt": "2026/09/23 04:48",
   "count": 49,
   "stocks": [
     {
@@ -18,7 +18,7 @@
       "de_ratio": 0.27,
       "equity_ratio": 54.76,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -37,7 +37,7 @@
       "de_ratio": 0,
       "equity_ratio": 84.42,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -56,7 +56,7 @@
       "de_ratio": 0.36,
       "equity_ratio": 59.08,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -75,7 +75,7 @@
       "de_ratio": 0,
       "equity_ratio": 80.6,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -94,7 +94,7 @@
       "de_ratio": 0.36,
       "equity_ratio": 55.06,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -113,7 +113,7 @@
       "de_ratio": 0,
       "equity_ratio": 93.17,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -132,7 +132,7 @@
       "de_ratio": 0.09,
       "equity_ratio": 81.92,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -151,7 +151,7 @@
       "de_ratio": 0.1,
       "equity_ratio": 64,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -170,7 +170,7 @@
       "de_ratio": 0.16,
       "equity_ratio": 71.14,
       "category": "tennyu",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-09-23"
     },
     {
@@ -189,7 +189,7 @@
       "de_ratio": 0.04,
       "equity_ratio": 69.65,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -208,7 +208,7 @@
       "de_ratio": 0.18,
       "equity_ratio": 65.1,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -227,7 +227,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 79.56,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -246,7 +246,7 @@
       "de_ratio": 0,
       "equity_ratio": 93.32,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -265,7 +265,7 @@
       "de_ratio": 0.16,
       "equity_ratio": 67.69,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -284,7 +284,7 @@
       "de_ratio": 0.09,
       "equity_ratio": 73.49,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -303,7 +303,7 @@
       "de_ratio": 0.38,
       "equity_ratio": 57.11,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -322,7 +322,7 @@
       "de_ratio": 0.21,
       "equity_ratio": 53.53,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -341,7 +341,7 @@
       "de_ratio": 0.24,
       "equity_ratio": 66.91,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -360,7 +360,7 @@
       "de_ratio": 0.14,
       "equity_ratio": 74.46,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -379,7 +379,7 @@
       "de_ratio": 0.65,
       "equity_ratio": 54.2,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -398,7 +398,7 @@
       "de_ratio": 0,
       "equity_ratio": 72.43,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -417,7 +417,7 @@
       "de_ratio": 0.06,
       "equity_ratio": 58.3,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -436,7 +436,7 @@
       "de_ratio": 0.37,
       "equity_ratio": 57.08,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -455,7 +455,7 @@
       "de_ratio": 0.17,
       "equity_ratio": 74.17,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -474,7 +474,7 @@
       "de_ratio": 0,
       "equity_ratio": 85.35,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -493,7 +493,7 @@
       "de_ratio": 0.06,
       "equity_ratio": 77.24,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -512,7 +512,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 78.15,
       "category": "tennyu",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-09-23"
     },
     {
@@ -531,7 +531,7 @@
       "de_ratio": 0.02,
       "equity_ratio": 79.72,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -550,7 +550,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 77.6,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -569,7 +569,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 66.27,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -588,7 +588,7 @@
       "de_ratio": 0.19,
       "equity_ratio": 63.44,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -607,7 +607,7 @@
       "de_ratio": 0.04,
       "equity_ratio": 61.84,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -626,7 +626,7 @@
       "de_ratio": 0,
       "equity_ratio": 87.06,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -645,7 +645,7 @@
       "de_ratio": 0.46,
       "equity_ratio": 50.88,
       "category": "tennyu",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-09-23"
     },
     {
@@ -664,7 +664,7 @@
       "de_ratio": 0.1,
       "equity_ratio": 70.49,
       "category": "tennyu",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-09-23"
     },
     {
@@ -683,7 +683,7 @@
       "de_ratio": 0.3,
       "equity_ratio": 65.52,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -702,7 +702,7 @@
       "de_ratio": 0.46,
       "equity_ratio": 51.23,
       "category": "tennyu",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-09-23"
     },
     {
@@ -721,7 +721,7 @@
       "de_ratio": 0.17,
       "equity_ratio": 62.81,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -740,7 +740,7 @@
       "de_ratio": 0.4,
       "equity_ratio": 55.83,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -759,7 +759,7 @@
       "de_ratio": 0.25,
       "equity_ratio": 63.8,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -778,7 +778,7 @@
       "de_ratio": 0.26,
       "equity_ratio": 66.38,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -797,7 +797,7 @@
       "de_ratio": 0.53,
       "equity_ratio": 53.9,
       "category": "tennyu",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-09-23"
     },
     {
@@ -816,7 +816,7 @@
       "de_ratio": 0.33,
       "equity_ratio": 56.89,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -835,7 +835,7 @@
       "de_ratio": 0.05,
       "equity_ratio": 59.87,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -854,7 +854,7 @@
       "de_ratio": 0.01,
       "equity_ratio": 79.31,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -873,7 +873,7 @@
       "de_ratio": 0.11,
       "equity_ratio": 70.25,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -892,7 +892,7 @@
       "de_ratio": 0,
       "equity_ratio": 86.49,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -911,7 +911,7 @@
       "de_ratio": 0.36,
       "equity_ratio": 69.88,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -930,7 +930,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 82.67,
       "category": "tennyu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     }
   ]
