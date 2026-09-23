@@ -1,0 +1,7 @@
+{
+  "name": "バリュー株同窓会",
+  "description": "厳選された財務健全性・高配当・低PBR・高ROE条件に基づく日本株日次バリュースクリーニング",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

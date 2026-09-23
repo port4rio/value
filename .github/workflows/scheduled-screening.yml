@@ -1,0 +1,56 @@
+name: Value Stocks Screening & AI Diagnosis
+
+on:
+  # 手動実行
+  workflow_dispatch:
+    inputs:
+      with_ai:
+        description: '土曜AI診断（Gemini）も同時に実行する'
+        type: boolean
+        default: false
+
+  # 定期自動実行
+  schedule:
+    # 平日(月〜金) 18:30 JST (09:30 UTC): 日次スクリーニング
+    - cron: '30 9 * * 1-5'
+    # 毎週土曜日 09:00 JST (00:00 UTC): 土曜AI診断付きスクリーニング
+    - cron: '0 0 * * 6'
+
+permissions:
+  contents: write
+
+jobs:
+  run-screener:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Screening (and optional Saturday AI diagnosis)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 6' || inputs.with_ai }}
+        run: |
+          if [ "$SATURDAY_DIAGNOSIS" = "true" ]; then
+            echo "🚀 Running screening with Saturday AI Diagnosis..."
+            npx tsx scripts/run_screening.ts --with-ai
+          else
+            echo "🚀 Running daily screening..."
+            npx tsx scripts/run_screening.ts
+          fi
+
+      - name: Commit and push updated data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/stocks.json public/data/ai_diagnosis.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto-update screening data [skip ci]" && git push)
