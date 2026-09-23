@@ -37,7 +37,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       'price_earnings_ttm',       // 5: PER
       'price_book_fq',            // 6: PBR
       'return_on_equity_fq',       // 7: ROE
-      'dividends_yield_current',  // 8: 配当利回り%
+      'dividends_yield',          // 8: 予想配当利回り%（会社発表予想ベース）
       'dividend_payout_ratio_fy', // 9: 配当性向%
       'ebitda_yoy_growth_fy',     // 10: EBITDA成長率%
       'current_ratio_fq',         // 11: 流動比率
@@ -45,7 +45,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       'total_assets_fq',          // 13: 総資産
       'total_liabilities_fq',     // 14: 負債合計
     ],
-    sort: { sortBy: 'dividends_yield_current', sortOrder: 'desc' },
+    sort: { sortBy: 'dividends_yield', sortOrder: 'desc' },
     range: [0, 500],
   };
 
@@ -119,14 +119,15 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
 }
 
 /**
- * Yahoo Finance で最新株価・予想PER・配当利回りを更新（User-Agentヘッダーを付与して直接取得）
+ * 最新株価、会社予想PER、会社予想配当利回りを東証市場データおよびYahoo Financeから取得・更新
  */
-async function enrichWithYahooFinance(stocks: StockItem[]): Promise<StockItem[]> {
-  console.log(`📊 Updating ${stocks.length} stocks with Yahoo Finance quotes...`);
+async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem[]> {
+  console.log(`📊 Updating ${stocks.length} stocks with live quotes, forward PER, and forward dividend yield...`);
   const enriched: StockItem[] = [];
 
   for (const s of stocks) {
     try {
+      // 1. Yahoo Finance から最新株価と変動率を取得
       const url = `https://query1.finance.yahoo.com/v8/finance/chart/${s.code}.T?range=1d&interval=1d`;
       const res = await fetch(url, {
         headers: {
@@ -146,9 +147,38 @@ async function enrichWithYahooFinance(stocks: StockItem[]): Promise<StockItem[]>
         }
       }
     } catch {
-      // 取得失敗時はTradingViewの正確な数値をそのまま使用
+      // ignore
     }
+
+    try {
+      // 2. Kabutan から会社発表の今期予想PER、最新PBR、今期予想配当利回りを正確に取得
+      const kRes = await fetch(`https://kabutan.jp/stock/?code=${s.code}`, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
+      });
+      if (kRes.ok) {
+        const html = await kRes.text();
+        const idx = html.indexOf('help-label" data-help="PER">PER');
+        if (idx !== -1) {
+          const slice = html.substring(idx, idx + 450);
+          const matches = [...slice.matchAll(/<td[^>]*>\s*([\d\.\-]+)\s*<span/g)].map((m) => m[1]);
+          const forwardPer = matches[0] && !isNaN(Number(matches[0])) ? Number(matches[0]) : null;
+          const pbr = matches[1] && !isNaN(Number(matches[1])) ? Number(matches[1]) : null;
+          const forwardYield = matches[2] && !isNaN(Number(matches[2])) ? Number(matches[2]) : null;
+
+          if (forwardPer != null && forwardPer > 0) s.per = forwardPer;
+          if (pbr != null && pbr > 0) s.pbr = pbr;
+          if (forwardYield != null && forwardYield > 0) s.dividend_yield = forwardYield;
+        }
+      }
+    } catch {
+      // 取得失敗時はTradingViewの値をそのまま保持
+    }
+
     enriched.push(s);
+    await new Promise((r) => setTimeout(r, 60));
   }
 
   return enriched;
@@ -349,8 +379,8 @@ async function main() {
 
   const baseList = candidates.length > 0 ? candidates : existingStocks;
 
-  // 3. Yahoo Finance で株価・最新配当利回り・予想PER等を更新
-  const enriched = await enrichWithYahooFinance(baseList);
+  // 3. 最新株価・会社予想PER・会社予想配当利回りを更新
+  const enriched = await enrichWithMarketForecasts(baseList);
 
   // 4. 5大基準で最終絞り込み（配当利回り 4%以上、PBR 1.0倍以下、ROE 8%以上、自己資本比率 50%以上）
   const screened = enriched.filter((s) => {
