@@ -3,13 +3,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import yahooFinance from 'yahoo-finance2';
 import { GoogleGenAI } from '@google/genai';
-import { StockItem, DEFAULT_CRITERIA } from '../src/types';
+import { StockItem, DEFAULT_CRITERIA, StockChartData, ChartPoint } from '../src/types';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '../public/data');
 const STOCKS_FILE = path.join(DATA_DIR, 'stocks.json');
 const AI_FILE = path.join(DATA_DIR, 'ai_diagnosis.json');
+const CHARTS_FILE = path.join(DATA_DIR, 'charts.json');
 
 // TradingView Japan Scanner endpoint
 const TV_SCANNER_URL = 'https://scanner.tradingview.com/japan/scan';
@@ -21,9 +22,9 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       { left: 'market_cap_basic', operation: 'nempty' },
       { left: 'type', operation: 'equal', right: 'stock' },
       { left: 'subtype', operation: 'in_range', right: ['common'] },
-      { left: 'price_book_fq', operation: 'less', right: Math.max(DEFAULT_CRITERIA.maxPbr, 1.05) },
-      { left: 'return_on_equity_fq', operation: 'egreater', right: Math.min(DEFAULT_CRITERIA.minRoe, 7.0) },
-      { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: DEFAULT_CRITERIA.minEbitdaGrowth },
+      // PBR 1.05以下、ROE 7.5%以上で一次絞り込み
+      { left: 'price_book_fq', operation: 'less', right: 1.05 },
+      { left: 'return_on_equity_fq', operation: 'egreater', right: 7.5 },
     ],
     options: { lang: 'ja' },
     symbols: { query: { types: [] }, tickers: [] },
@@ -45,7 +46,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       'total_liabilities_fq',     // 14: 負債合計
     ],
     sort: { sortBy: 'dividends_yield_current', sortOrder: 'desc' },
-    range: [0, 400],
+    range: [0, 500],
   };
 
   try {
@@ -69,13 +70,24 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       const cleanName = rawName.replace(/^[A-Z0-9\s]+(?=[一-龥ぁ-んァ-ヶ])/, '').trim();
       const marketCapOku = d[4] ? Math.round(Number(d[4]) / 100000000) : null;
 
-      // 自己資本比率の計算: ((総資産 - 負債合計) / 総資産) * 100
+      // 自己資本比率の算出: ((総資産 - 負債合計) / 総資産) * 100
       const totalAssets = d[13] != null ? Number(d[13]) : null;
       const totalLiabilities = d[14] != null ? Number(d[14]) : 0;
       let equityRatio: number | null = null;
       if (totalAssets && totalAssets > 0) {
         equityRatio = Number((((totalAssets - totalLiabilities) / totalAssets) * 100).toFixed(2));
       }
+
+      const pbr = d[6] != null ? Number(Number(d[6]).toFixed(2)) : null;
+      const roe = d[7] != null ? Number(Number(d[7]).toFixed(2)) : null;
+      const dy = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
+      const ebitdaGrowth = d[10] != null ? Number(Number(d[10]).toFixed(2)) : null;
+
+      // 厳格足切り（自己資本比率 50%以上、PBR 1.0倍以下、ROE 8%以上、利回り3.8%以上）
+      if (equityRatio == null || equityRatio < DEFAULT_CRITERIA.minEquityRatio) continue;
+      if (pbr != null && pbr > DEFAULT_CRITERIA.maxPbr) continue;
+      if (roe != null && roe < DEFAULT_CRITERIA.minRoe) continue;
+      if (dy != null && dy < 3.8) continue; // 後段のYahoo Financeで4%以上判定
 
       candidates.push({
         code,
@@ -84,11 +96,11 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
         change: d[3] != null ? Number(Number(d[3]).toFixed(2)) : null,
         market_cap: marketCapOku,
         per: d[5] != null ? Number(Number(d[5]).toFixed(2)) : null,
-        pbr: d[6] != null ? Number(Number(d[6]).toFixed(2)) : null,
-        roe: d[7] != null ? Number(Number(d[7]).toFixed(2)) : null,
-        dividend_yield: d[8] != null ? Number(Number(d[8]).toFixed(2)) : null,
+        pbr,
+        roe,
+        dividend_yield: dy,
         payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
-        ebitda_growth: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
+        ebitda_growth: ebitdaGrowth,
         current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
         de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
         equity_ratio: equityRatio,
@@ -98,7 +110,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       });
     }
 
-    console.log(`✅ Fetched ${candidates.length} raw candidates from TradingView.`);
+    console.log(`✅ Filtered ${candidates.length} strong candidates from TradingView (equity ratio >= 50%).`);
     return candidates;
   } catch (err) {
     console.warn('⚠️ TradingView fetch failed:', err);
@@ -106,46 +118,131 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
   }
 }
 
+/**
+ * Yahoo Finance で最新株価・予想PER・配当利回りを更新（User-Agentヘッダーを付与して直接取得）
+ */
 async function enrichWithYahooFinance(stocks: StockItem[]): Promise<StockItem[]> {
-  console.log(`📊 Enriching ${stocks.length} stocks with Yahoo Finance quotes...`);
+  console.log(`📊 Updating ${stocks.length} stocks with Yahoo Finance quotes...`);
   const enriched: StockItem[] = [];
 
   for (const s of stocks) {
     try {
-      const q: any = await yahooFinance.quote(`${s.code}.T`);
-      if (q) {
-        if (q.regularMarketPrice != null) s.close = q.regularMarketPrice;
-        if (q.regularMarketChangePercent != null) s.change = Number(q.regularMarketChangePercent.toFixed(2));
-        if (q.marketCap != null) s.market_cap = Math.round(q.marketCap / 100000000);
-        
-        // Yahoo Finance の配当利回り（最新実績または予想）
-        if (q.dividendYield != null && q.dividendYield > 0) {
-          s.dividend_yield = Number(q.dividendYield.toFixed(2));
-        } else if (q.trailingAnnualDividendYield != null && q.trailingAnnualDividendYield > 0) {
-          s.dividend_yield = Number((q.trailingAnnualDividendYield * 100).toFixed(2));
-        }
-
-        // Yahoo Finance の会社予想PER（forwardPE優先）
-        if (q.forwardPE != null && q.forwardPE > 0) {
-          s.per = Number(q.forwardPE.toFixed(2));
-        } else if (q.trailingPE != null && q.trailingPE > 0) {
-          s.per = Number(q.trailingPE.toFixed(2));
-        }
-
-        if (q.priceToBook != null && q.priceToBook > 0) {
-          s.pbr = Number(q.priceToBook.toFixed(2));
-        }
-        if (q.payoutRatio != null) {
-          s.payout_ratio = Number((q.payoutRatio * 100).toFixed(1));
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${s.code}.T?range=1d&interval=1d`;
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
+      });
+      if (res.ok) {
+        const json: any = await res.json();
+        const meta = json?.chart?.result?.[0]?.meta;
+        if (meta) {
+          if (meta.regularMarketPrice != null) s.close = meta.regularMarketPrice;
+          if (meta.chartPreviousClose != null && meta.regularMarketPrice != null) {
+            const diff = meta.regularMarketPrice - meta.chartPreviousClose;
+            s.change = Number(((diff / meta.chartPreviousClose) * 100).toFixed(2));
+          }
         }
       }
     } catch {
-      // 個別エラーはスキップ
+      // 取得失敗時はTradingViewの正確な数値をそのまま使用
     }
     enriched.push(s);
   }
 
   return enriched;
+}
+
+/**
+ * 6ヶ月の日足チャートデータを収集して charts.json に保存
+ */
+async function fetchAndSaveCharts(stocks: StockItem[]) {
+  console.log(`📈 Fetching 6-month chart historical data for ${stocks.length} stocks via Yahoo Finance API...`);
+  const chartsMap: Record<string, StockChartData> = {};
+
+  // 既存キャッシュがあれば読み込み
+  if (fs.existsSync(CHARTS_FILE)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(CHARTS_FILE, 'utf-8'));
+      Object.assign(chartsMap, existing);
+    } catch {
+      // ignore
+    }
+  }
+
+  for (const s of stocks) {
+    try {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${s.code}.T?range=6mo&interval=1d`;
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
+      });
+
+      if (res.ok) {
+        const json: any = await res.json();
+        const result = json?.chart?.result?.[0];
+        const timestamps: number[] = result?.timestamp || [];
+        const quote = result?.indicators?.quote?.[0];
+        const closes: (number | null)[] = quote?.close || [];
+        const opens: (number | null)[] = quote?.open || [];
+        const highs: (number | null)[] = quote?.high || [];
+        const lows: (number | null)[] = quote?.low || [];
+        const volumes: (number | null)[] = quote?.volume || [];
+
+        const points: ChartPoint[] = [];
+        for (let i = 0; i < timestamps.length; i++) {
+          const c = closes[i];
+          if (c == null) continue;
+          const t = timestamps[i] * 1000;
+          const d = new Date(t);
+          points.push({
+            date: d.toISOString().split('T')[0],
+            timestamp: t,
+            open: Math.round(opens[i] ?? c),
+            high: Math.round(highs[i] ?? c),
+            low: Math.round(lows[i] ?? c),
+            close: Math.round(c),
+            volume: Math.round(volumes[i] ?? 0),
+          });
+        }
+
+        if (points.length > 5) {
+          const validCloses = points.map((p) => p.close);
+          const highPrice = Math.max(...validCloses);
+          const lowPrice = Math.min(...validCloses);
+          const latestPrice = points[points.length - 1].close;
+          const initialPrice = points[0].close;
+          const periodChange = latestPrice - initialPrice;
+          const periodChangePercent = Number(((periodChange / initialPrice) * 100).toFixed(2));
+
+          chartsMap[s.code] = {
+            symbol: `${s.code}.T`,
+            name: s.name,
+            currency: 'JPY',
+            points,
+            highPrice,
+            lowPrice,
+            latestPrice,
+            periodChange,
+            periodChangePercent,
+            startDate: points[0].date,
+            endDate: points[points.length - 1].date,
+            fromCache: true,
+          };
+        }
+      }
+    } catch {
+      // ignore
+    }
+    // API負荷軽減
+    await new Promise((r) => setTimeout(r, 100));
+  }
+
+  fs.writeFileSync(CHARTS_FILE, JSON.stringify(chartsMap, null, 2), 'utf-8');
+  console.log(`✅ Successfully saved ${Object.keys(chartsMap).length} charts to ${CHARTS_FILE}`);
 }
 
 async function generateAiDiagnosis(stocks: StockItem[]) {
@@ -243,7 +340,7 @@ async function main() {
   }
   const existingMap = new Map<string, StockItem>(existingStocks.map((s) => [s.code, s]));
 
-  // 2. TradingView から候補銘柄取得
+  // 2. TradingView から自己資本比率50%以上・PBR1.0以下などの候補銘柄を取得
   const candidates = await fetchTradingViewCandidates();
   if (candidates.length === 0 && existingStocks.length === 0) {
     console.log('No candidates fetched and no existing stocks.');
@@ -252,48 +349,22 @@ async function main() {
 
   const baseList = candidates.length > 0 ? candidates : existingStocks;
 
-  // 3. 5大基準で初期足切り（特に自己資本比率 50% 以上、PBR 1.0倍以下、ROE 8%以上）
-  const initialFiltered = baseList.filter((s) => {
-    if (s.category === 'sotsugyo') return true;
-    // 自己資本比率: 50%以上厳格判定（null または 50% 未満は除外）
-    if (s.equity_ratio == null || s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) {
-      return false;
-    }
-    // PBR: 1.0倍以下
-    if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) {
-      return false;
-    }
-    // ROE: 8%以上
-    if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) {
-      return false;
-    }
-    // EBITDA成長率: 1%以上
-    if (s.ebitda_growth != null && s.ebitda_growth < DEFAULT_CRITERIA.minEbitdaGrowth) {
-      return false;
-    }
-    return true;
-  });
+  // 3. Yahoo Finance で株価・最新配当利回り・予想PER等を更新
+  const enriched = await enrichWithYahooFinance(baseList);
 
-  console.log(`🔍 After fundamental filtering: ${initialFiltered.length} stocks remain.`);
-
-  // 4. Yahoo Finance で株価・最新配当利回り・予想PER等を更新
-  const enriched = await enrichWithYahooFinance(initialFiltered);
-
-  // 5. 配当利回り（4%以上）等の最終判定
+  // 4. 5大基準で最終絞り込み（配当利回り 4%以上、PBR 1.0倍以下、ROE 8%以上、自己資本比率 50%以上）
   const screened = enriched.filter((s) => {
     if (s.category === 'sotsugyo') return true;
-    if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) {
-      return false;
-    }
-    if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) {
-      return false;
-    }
+    if (s.equity_ratio == null || s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) return false;
+    if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) return false;
+    if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) return false;
+    if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) return false;
     return true;
   });
 
-  console.log(`🎯 Final strictly screened stocks count: ${screened.length}`);
+  console.log(`🎯 Strictly screened stocks: ${screened.length} stocks qualify.`);
 
-  // 6. 滞在日数 (stayDays) と 居残り (>=90日) / 転入 (<90日) を計算
+  // 5. 滞在日数 (stayDays) と 居残り (>=90日) / 転入 (<90日) を計算
   const todayStr = new Date().toISOString().split('T')[0];
   const finalStocks = screened.map((s) => {
     const prev = existingMap.get(s.code);
@@ -317,7 +388,7 @@ async function main() {
     }
   });
 
-  // 7. JSON に保存
+  // 6. JSON に保存
   const now = new Date().toLocaleString('ja-JP', {
     year: 'numeric',
     month: '2-digit',
@@ -334,6 +405,9 @@ async function main() {
 
   fs.writeFileSync(STOCKS_FILE, JSON.stringify(outputData, null, 2), 'utf-8');
   console.log(`✅ Successfully saved ${finalStocks.length} screened stocks to ${STOCKS_FILE}`);
+
+  // 7. チャートデータを収集・保存
+  await fetchAndSaveCharts(finalStocks);
 
   // 8. 土曜診断オプション（--with-ai または SATURDAY_DIAGNOSIS=true）
   const withAi = process.argv.includes('--with-ai') || process.env.SATURDAY_DIAGNOSIS === 'true';

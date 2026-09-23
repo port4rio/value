@@ -70,10 +70,10 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
         if (res && res.success) {
           setAiData(res);
         } else {
-          setAiError('診断データの取得に失敗しました');
+          setAiError('未生成（毎週土曜日のバッチ処理で自動生成されます）');
         }
       } catch (err: any) {
-        setAiError(err.message || 'AI診断通信エラー');
+        setAiError('未生成（毎週土曜日のバッチ処理で自動生成されます）');
       } finally {
         setIsAiLoading(false);
       }
@@ -290,16 +290,19 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
             )}
 
             {aiError && !isAiLoading && (
-              <div className="p-3 rounded-lg bg-[#271515] border border-[#542525] text-xs text-[#fca5a5] flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 shrink-0" />
-                <span className="flex-1">{aiError}</span>
-                <button
-                  type="button"
-                  onClick={() => loadAiDiagnosis(stock, true)}
-                  className="text-xs underline font-medium hover:text-white"
+              <div className="p-3 rounded-lg bg-[#14231b] border border-[#234232] text-xs text-[#a3c9b3] flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-[#34d399] shrink-0" />
+                  <span>{aiError}</span>
+                </div>
+                <a
+                  href={chatGptUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] px-2 py-1 rounded bg-[#10b981]/20 hover:bg-[#10b981]/30 text-[#86efac] border border-[#10b981]/30 font-medium whitespace-nowrap shrink-0 transition-colors"
                 >
-                  再試行
-                </button>
+                  ChatGPTで即時分析 ↗
+                </a>
               </div>
             )}
 

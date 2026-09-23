@@ -3,31 +3,121 @@ import {
   StockAiDiagnosisResponse,
   StockAiDiagnosisData,
   StockChartData,
+  ChartPoint,
 } from '../types';
 
 /**
  * 銘柄の6ヶ月チャートデータを取得
+ * 1. public/data/charts.json (GitHub Actionsで収集した静的データ) を最優先
+ * 2. なければ CORS プロキシ経由で Yahoo Finance / Stooq から取得
+ * 3. 開発環境なら /api/yfinance/chart/:code
  */
 export async function fetchStockChart(
   symbol: string
 ): Promise<StockChartData | null> {
   if (!symbol) return null;
-  try {
-    const clean = symbol.replace(/\.T$/i, '');
-    const res = await fetch(`/api/yfinance/chart/${clean}`);
-    if (!res.ok) {
-      console.warn(`Chart fetch failed: HTTP ${res.status}`);
-      return null;
+  const clean = symbol.replace(/\.T$/i, '');
+
+  // 1. 静的 charts.json からの取得（GitHub Pages用・最優先・CORS不要）
+  const baseUrl = (import.meta as any).env?.BASE_URL || './';
+  const candidatePaths = [
+    `${baseUrl}data/charts.json`.replace(/\/+/g, '/'),
+    './data/charts.json',
+    'data/charts.json',
+  ];
+
+  for (const path of candidatePaths) {
+    try {
+      const res = await fetch(path, { cache: 'no-cache' });
+      if (res.ok) {
+        const chartsMap = await res.json();
+        if (chartsMap && chartsMap[clean]) {
+          return chartsMap[clean] as StockChartData;
+        }
+      }
+    } catch {
+      // try next
     }
-    const data = await res.json();
-    if (data && data.success) {
-      return data as StockChartData;
-    }
-    return null;
-  } catch (err) {
-    console.warn('Error fetching chart data:', err);
-    return null;
   }
+
+  // 2. 開発環境（Node.jsプロキシが動いている場合）
+  try {
+    const res = await fetch(`/api/yfinance/chart/${clean}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.success) {
+        return data as StockChartData;
+      }
+    }
+  } catch {
+    // ignore
+  }
+
+  // 3. クライアント側フォールバック (Stooq / 公開CORSプロキシ)
+  try {
+    const stooqUrl = `https://stooq.com/q/d/l/?s=${clean}.jp&i=d`;
+    // Stooqから直近6ヶ月の日足をCSVパース
+    const res = await fetch(stooqUrl);
+    if (res.ok) {
+      const csv = await res.text();
+      const lines = csv.trim().split('\n');
+      if (lines.length > 5) {
+        // ヘッダー: Date,Open,High,Low,Close,Volume
+        const dataLines = lines.slice(1).reverse().slice(-130); // 直近約6ヶ月分
+        const points: ChartPoint[] = [];
+
+        for (const line of dataLines) {
+          const parts = line.split(',');
+          if (parts.length >= 5) {
+            const date = parts[0].trim();
+            const open = parseFloat(parts[1]);
+            const high = parseFloat(parts[2]);
+            const low = parseFloat(parts[3]);
+            const close = parseFloat(parts[4]);
+            const volume = parseInt(parts[5] || '0', 10);
+            if (!isNaN(close)) {
+              points.push({
+                date,
+                timestamp: new Date(date).getTime(),
+                open: Math.round(open),
+                high: Math.round(high),
+                low: Math.round(low),
+                close: Math.round(close),
+                volume,
+              });
+            }
+          }
+        }
+
+        if (points.length > 0) {
+          const closes = points.map((p) => p.close);
+          const highPrice = Math.max(...closes);
+          const lowPrice = Math.min(...closes);
+          const latestPrice = points[points.length - 1].close;
+          const initialPrice = points[0].close;
+          const periodChange = latestPrice - initialPrice;
+          const periodChangePercent = Number(((periodChange / initialPrice) * 100).toFixed(2));
+
+          return {
+            symbol: `${clean}.T`,
+            points,
+            highPrice,
+            lowPrice,
+            latestPrice,
+            periodChange,
+            periodChangePercent,
+            startDate: points[0].date,
+            endDate: points[points.length - 1].date,
+            fromCache: false,
+          };
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('Fallback chart fetch failed:', err);
+  }
+
+  return null;
 }
 
 /**
@@ -74,6 +164,7 @@ export async function fetchAiDiagnosis(
     }
   }
 
+  // 2. サーバーサイドAPI（Node.js動態サーバー環境の場合）
   try {
     const res = await fetch('/api/ai/diagnosis', {
       method: 'POST',
@@ -95,7 +186,6 @@ export async function fetchAiDiagnosis(
     });
 
     if (!res.ok) {
-      console.warn(`AI diagnosis fetch failed: HTTP ${res.status}`);
       return null;
     }
 
@@ -104,37 +194,32 @@ export async function fetchAiDiagnosis(
       return data as StockAiDiagnosisResponse;
     }
     return null;
-  } catch (err) {
-    console.warn('Error calling AI diagnosis API:', err);
+  } catch {
     return null;
   }
 }
 
 /**
- * カード内容をURLエンコードして「ChatGPTに相談」するためのリンクURLを生成
- * （AI診断サマリーは省き、財務データと投資判断相談に特化したシンプルな依頼文に調整）
+ * ChatGPTでこの銘柄について相談するためのプロンプト付きURLを生成
  */
 export function createChatGptConsultUrl(stock: StockItem): string {
-  const categoryLabel =
-    stock.category === 'inokori'
-      ? `居残り組（在籍${stock.stayDays ?? 90}日）`
-      : stock.category === 'tennyu'
-      ? `転入生`
-      : `卒業生`;
+  const prompt = `日本株の投資分析をお願いします。
 
-  let prompt = `【日本株バリュー投資相談】\n`;
-  prompt += `以下の銘柄について、中長期のバリュー投資としての魅力度やエントリー判断（買い時の目安・リスク）を相談させてください。\n\n`;
-  prompt += `■ 銘柄情報\n`;
-  prompt += `・銘柄名: ${stock.name}（コード: ${stock.code}）\n`;
-  prompt += `・分類: ${categoryLabel}\n`;
-  prompt += `・株価: ${stock.close != null ? `${stock.close.toLocaleString()}円` : '-'}\n`;
-  prompt += `・予想配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '-'}\n`;
-  prompt += `・予想PER: ${stock.per != null ? `${stock.per}倍` : '-'}\n`;
-  prompt += `・PBR: ${stock.pbr != null ? `${stock.pbr}倍` : '-'}\n`;
-  prompt += `・ROE: ${stock.roe != null ? `${stock.roe}%` : '-'}\n`;
-  prompt += `・自己資本比率: ${stock.equity_ratio != null ? `${stock.equity_ratio}%` : '-'}\n`;
-  prompt += `・EBITDA成長率: ${stock.ebitda_growth != null ? `${stock.ebitda_growth}%` : '-'}\n\n`;
-  prompt += `上記の財務数値を踏まえ、投資妙味と注意すべき点について客観的なアドバイスをお願いします。`;
+【銘柄情報】
+・銘柄コード: ${stock.code}
+・企業名: ${stock.name}
+・現在株価: ${stock.close != null ? `${stock.close}円` : '不明'}
+・予想PER: ${stock.per != null ? `${stock.per}倍` : '不明'}
+・実績PBR: ${stock.pbr != null ? `${stock.pbr}倍` : '不明'}
+・配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
+・ROE: ${stock.roe != null ? `${stock.roe}%` : '不明'}
+・自己資本比率: ${stock.equity_ratio != null ? `${stock.equity_ratio}%` : '不明'}
+
+【質問事項】
+1. この企業の主力の収益源（ビジネスモデル）と競合優位性は何ですか？
+2. PBR1倍割れ・低PERで推移している背景や理由は何が考えられますか？
+3. 配当の維持・増配余力（財務健全性やキャッシュ創出力）はどう評価できますか？
+4. 今後、株価が見直されるカタリスト（株主還元方針、東証要請対応など）と投資上の留意点・リスクを教えてください。`;
 
   return `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
 }

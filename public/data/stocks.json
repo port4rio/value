@@ -1,7 +1,26 @@
 {
-  "updatedAt": "2026/09/23 04:15",
-  "count": 31,
+  "updatedAt": "2026/09/23 04:30",
+  "count": 49,
   "stocks": [
+    {
+      "code": "6658",
+      "name": "シライ電子工業",
+      "close": 451,
+      "change": -1.31,
+      "market_cap": 68,
+      "per": 7.1,
+      "pbr": 0.63,
+      "roe": 9.47,
+      "dividend_yield": 7.76,
+      "payout_ratio": 40.04,
+      "ebitda_growth": -16.46,
+      "current_ratio": 140.42,
+      "de_ratio": 0.27,
+      "equity_ratio": 54.76,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
     {
       "code": "6678",
       "name": "テクノメディカ",
@@ -18,7 +37,7 @@
       "de_ratio": 0,
       "equity_ratio": 84.42,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -37,7 +56,7 @@
       "de_ratio": 0.36,
       "equity_ratio": 59.08,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -56,7 +75,7 @@
       "de_ratio": 0,
       "equity_ratio": 80.6,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -75,7 +94,26 @@
       "de_ratio": 0.36,
       "equity_ratio": 55.06,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "4644",
+      "name": "イマジニア",
+      "close": 1053,
+      "change": -0.47,
+      "market_cap": 101,
+      "per": 10.29,
+      "pbr": 0.83,
+      "roe": 8.19,
+      "dividend_yield": 5.7,
+      "payout_ratio": 77.48,
+      "ebitda_growth": -66.89,
+      "current_ratio": 1309.24,
+      "de_ratio": 0,
+      "equity_ratio": 93.17,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -94,7 +132,7 @@
       "de_ratio": 0.09,
       "equity_ratio": 81.92,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -113,7 +151,7 @@
       "de_ratio": 0.1,
       "equity_ratio": 64,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -132,7 +170,45 @@
       "de_ratio": 0.16,
       "equity_ratio": 71.14,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 3,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "1972",
+      "name": "三晃金属工業",
+      "close": 1312,
+      "change": -0.53,
+      "market_cap": 258,
+      "per": 9.69,
+      "pbr": 0.93,
+      "roe": 9.85,
+      "dividend_yield": 5.26,
+      "payout_ratio": 50.29,
+      "ebitda_growth": -6.66,
+      "current_ratio": 349.37,
+      "de_ratio": 0.04,
+      "equity_ratio": 69.65,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "4725",
+      "name": "ＣＡＣ　ＨＯＬＤＩＮＧＳ",
+      "close": 1914,
+      "change": -1.29,
+      "market_cap": 323,
+      "per": 9.04,
+      "pbr": 0.91,
+      "roe": 10.22,
+      "dividend_yield": 5.22,
+      "payout_ratio": 52.28,
+      "ebitda_growth": -17.32,
+      "current_ratio": 273.85,
+      "de_ratio": 0.18,
+      "equity_ratio": 65.1,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -151,7 +227,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 79.56,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -170,7 +246,26 @@
       "de_ratio": 0,
       "equity_ratio": 93.32,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "4918",
+      "name": "アイビー化粧品",
+      "close": 300,
+      "change": 1.35,
+      "market_cap": 17,
+      "per": 10.65,
+      "pbr": 0.83,
+      "roe": 8.55,
+      "dividend_yield": 5,
+      "payout_ratio": 66.81,
+      "ebitda_growth": -46.59,
+      "current_ratio": 270.53,
+      "de_ratio": 0.16,
+      "equity_ratio": 67.69,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -189,7 +284,7 @@
       "de_ratio": 0.09,
       "equity_ratio": 73.49,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -208,7 +303,7 @@
       "de_ratio": 0.38,
       "equity_ratio": 57.11,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -227,7 +322,7 @@
       "de_ratio": 0.21,
       "equity_ratio": 53.53,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -246,7 +341,26 @@
       "de_ratio": 0.24,
       "equity_ratio": 66.91,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "5445",
+      "name": "東京鐵鋼",
+      "close": 2060,
+      "change": -0.63,
+      "market_cap": 522,
+      "per": 7.18,
+      "pbr": 0.82,
+      "roe": 11.93,
+      "dividend_yield": 4.85,
+      "payout_ratio": 31.69,
+      "ebitda_growth": -13.97,
+      "current_ratio": 296.63,
+      "de_ratio": 0.14,
+      "equity_ratio": 74.46,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -265,7 +379,7 @@
       "de_ratio": 0.65,
       "equity_ratio": 54.2,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -284,7 +398,7 @@
       "de_ratio": 0,
       "equity_ratio": 72.43,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -303,7 +417,45 @@
       "de_ratio": 0.06,
       "equity_ratio": 58.3,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "4246",
+      "name": "ダイキョーニシカワ",
+      "close": 1093,
+      "change": -1.26,
+      "market_cap": 745,
+      "per": 8.18,
+      "pbr": 0.81,
+      "roe": 10.38,
+      "dividend_yield": 4.76,
+      "payout_ratio": 41.18,
+      "ebitda_growth": 0.05,
+      "current_ratio": 183.52,
+      "de_ratio": 0.37,
+      "equity_ratio": 57.08,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "9856",
+      "name": "ケーユーホールディングス",
+      "close": 1231,
+      "change": -0.89,
+      "market_cap": 392,
+      "per": 6.97,
+      "pbr": 0.55,
+      "roe": 8.62,
+      "dividend_yield": 4.71,
+      "payout_ratio": 32.91,
+      "ebitda_growth": -3.16,
+      "current_ratio": 282.13,
+      "de_ratio": 0.17,
+      "equity_ratio": 74.17,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -322,7 +474,102 @@
       "de_ratio": 0,
       "equity_ratio": 85.35,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "4619",
+      "name": "日本特殊塗料",
+      "close": 2696,
+      "change": -0.66,
+      "market_cap": 586,
+      "per": 9.82,
+      "pbr": 0.94,
+      "roe": 10.09,
+      "dividend_yield": 4.64,
+      "payout_ratio": 51.58,
+      "ebitda_growth": -7.92,
+      "current_ratio": 251.93,
+      "de_ratio": 0.06,
+      "equity_ratio": 77.24,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "7296",
+      "name": "エフ・シー・シー",
+      "close": 4200,
+      "change": -0.24,
+      "market_cap": 1992,
+      "per": 10.22,
+      "pbr": 0.98,
+      "roe": 10.23,
+      "dividend_yield": 4.62,
+      "payout_ratio": 50.08,
+      "ebitda_growth": 0.04,
+      "current_ratio": 348.18,
+      "de_ratio": 0.03,
+      "equity_ratio": 78.15,
+      "category": "tennyu",
+      "stayDays": 3,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "6915",
+      "name": "千代田インテグレ",
+      "close": 3465,
+      "change": -0.14,
+      "market_cap": 316,
+      "per": 7.98,
+      "pbr": 0.75,
+      "roe": 10.14,
+      "dividend_yield": 4.62,
+      "payout_ratio": 58.74,
+      "ebitda_growth": -15.53,
+      "current_ratio": 424.49,
+      "de_ratio": 0.02,
+      "equity_ratio": 79.72,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "5184",
+      "name": "ニチリン",
+      "close": 4130,
+      "change": -0.24,
+      "market_cap": 588,
+      "per": 10.1,
+      "pbr": 0.86,
+      "roe": 9.08,
+      "dividend_yield": 4.58,
+      "payout_ratio": 42.08,
+      "ebitda_growth": 0.47,
+      "current_ratio": 395.51,
+      "de_ratio": 0.03,
+      "equity_ratio": 77.6,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "6675",
+      "name": "サクサ",
+      "close": 2224,
+      "change": 0.54,
+      "market_cap": 408,
+      "per": 2.41,
+      "pbr": 0.82,
+      "roe": 41.49,
+      "dividend_yield": 4.57,
+      "payout_ratio": 128.7,
+      "ebitda_growth": -24.27,
+      "current_ratio": 241.71,
+      "de_ratio": 0.03,
+      "equity_ratio": 66.27,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -341,7 +588,7 @@
       "de_ratio": 0.19,
       "equity_ratio": 63.44,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -360,7 +607,7 @@
       "de_ratio": 0.04,
       "equity_ratio": 61.84,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -379,7 +626,7 @@
       "de_ratio": 0,
       "equity_ratio": 87.06,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -398,7 +645,26 @@
       "de_ratio": 0.46,
       "equity_ratio": 50.88,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 3,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "7240",
+      "name": "ＮＯＫ",
+      "close": 2991.5,
+      "change": -1.95,
+      "market_cap": 4518,
+      "per": 9.76,
+      "pbr": 0.75,
+      "roe": 8.2,
+      "dividend_yield": 4.35,
+      "payout_ratio": 45.64,
+      "ebitda_growth": -2.56,
+      "current_ratio": 218.62,
+      "de_ratio": 0.1,
+      "equity_ratio": 70.49,
+      "category": "tennyu",
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -417,7 +683,26 @@
       "de_ratio": 0.3,
       "equity_ratio": 65.52,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "5110",
+      "name": "住友ゴム工業",
+      "close": 1985.5,
+      "change": -1.71,
+      "market_cap": 5219,
+      "per": 8.43,
+      "pbr": 0.69,
+      "roe": 8.87,
+      "dividend_yield": 4.23,
+      "payout_ratio": 40.18,
+      "ebitda_growth": -0.97,
+      "current_ratio": 177.39,
+      "de_ratio": 0.46,
+      "equity_ratio": 51.23,
+      "category": "tennyu",
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -436,7 +721,7 @@
       "de_ratio": 0.17,
       "equity_ratio": 62.81,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -455,7 +740,7 @@
       "de_ratio": 0.4,
       "equity_ratio": 55.83,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -474,7 +759,26 @@
       "de_ratio": 0.25,
       "equity_ratio": 63.8,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "4041",
+      "name": "日本曹達",
+      "close": 3870,
+      "change": -1.02,
+      "market_cap": 2103,
+      "per": 11.39,
+      "pbr": 0.98,
+      "roe": 9.21,
+      "dividend_yield": 4.13,
+      "payout_ratio": 47.54,
+      "ebitda_growth": -3.25,
+      "current_ratio": 233.6,
+      "de_ratio": 0.26,
+      "equity_ratio": 66.38,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -493,7 +797,7 @@
       "de_ratio": 0.53,
       "equity_ratio": 53.9,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 3,
       "entryDate": "2026-09-23"
     },
     {
@@ -512,7 +816,7 @@
       "de_ratio": 0.33,
       "equity_ratio": 56.89,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -531,7 +835,7 @@
       "de_ratio": 0.05,
       "equity_ratio": 59.87,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -550,7 +854,7 @@
       "de_ratio": 0.01,
       "equity_ratio": 79.31,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -569,7 +873,45 @@
       "de_ratio": 0.11,
       "equity_ratio": 70.25,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "6430",
+      "name": "ダイコク電機",
+      "close": 2468,
+      "change": -1.32,
+      "market_cap": 366,
+      "per": 7.47,
+      "pbr": 0.72,
+      "roe": 9.92,
+      "dividend_yield": 4.05,
+      "payout_ratio": 25.28,
+      "ebitda_growth": -17.7,
+      "current_ratio": 567.94,
+      "de_ratio": 0,
+      "equity_ratio": 86.49,
+      "category": "tennyu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
+    },
+    {
+      "code": "7463",
+      "name": "アドヴァングループ",
+      "close": 990,
+      "change": -0.6,
+      "market_cap": 296,
+      "per": 2.9,
+      "pbr": 0.55,
+      "roe": 20.73,
+      "dividend_yield": 4.04,
+      "payout_ratio": 16.99,
+      "ebitda_growth": -18.06,
+      "current_ratio": 299.65,
+      "de_ratio": 0.36,
+      "equity_ratio": 69.88,
+      "category": "tennyu",
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     },
     {
@@ -588,7 +930,7 @@
       "de_ratio": 0.03,
       "equity_ratio": 82.67,
       "category": "tennyu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-23"
     }
   ]
