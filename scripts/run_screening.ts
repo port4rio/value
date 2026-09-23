@@ -296,6 +296,13 @@ async function generateAiDiagnosis(stocks: StockItem[]) {
   }
 
   for (const s of stocks) {
+    // 既存の診断があり、強制更新でなければスキップ
+    const forceAi = process.argv.includes('--force-ai');
+    if (!forceAi && diagnosisMap[s.code] && diagnosisMap[s.code].diagnosis?.business_summary) {
+      console.log(`⏩ [${s.code}] ${s.name} already diagnosed, using cached.`);
+      continue;
+    }
+
     console.log(`Analyzing [${s.code}] ${s.name}...`);
     const prompt = `あなたは日本株のバリュー株投資に精通したシニア・クオンツアナリストです。
 以下の銘柄のファンダメンタルズ数値および企業の実際の事業内容を詳細に分析し、投資家向けの「週次AIバリュースコープ診断」を作成してください。
@@ -315,35 +322,53 @@ ROE: ${s.roe}%
 以下の5つの項目について、客観的かつプロの視点で日本語で簡潔・明快に分析してください。
 各項目は2〜3文（80〜120文字程度）で具体的に記述してください。
 
-1. businessSummary: 【企業の特色・稼ぎ頭】（主力事業・強みなど）
-2. investmentAttractiveness: 【投資妙味・バリュー度】（割安放置の背景、還元の旨みなど）
-3. dividendSustainability: 【配当の持続性・還元姿勢】（配当利回り、減配リスクの低さなど）
-4. catalyst: 【見直し・再評価の契機（カタリスト）】（PBR1倍是正、自社株買いなど）
-5. risk: 【留意点・ダウンサイドリスク】（業績変動要因、注意すべき点）
+1. business_summary: 【事業特色・主力収益源】（主力事業、業界シェア、強み）
+2. valuation_appeal: 【投資妙味と割安要因】（割安放置の背景、低PBR/PERの理由、株価下値の堅さ）
+3. dividend_sustainability: 【配当の持続性と株主還元方針】（配当利回りの妙味、減配リスクの低さ、還元意欲）
+4. catalyst: 【PBR是正・株価上昇カタリスト】（PBR1倍割れ是正策、資本効率改善、自社株買い、増配期待など）
+5. risks: 【注意すべきリスク要因】（景気敏感度、原材料高、顧客依存度などの留意点）
 
-必ず以下のJSON形式のみを出力してください。マークダウン不要。
+必ず以下のキー名を持つ有効なJSON形式のみを出力してください。マークダウンや余計な文は含めないでください。
 {
-  "businessSummary": "...",
-  "investmentAttractiveness": "...",
-  "dividendSustainability": "...",
+  "business_summary": "...",
+  "valuation_appeal": "...",
+  "dividend_sustainability": "...",
   "catalyst": "...",
-  "risk": "..."
+  "risks": "..."
 }`;
 
     try {
-      const res = await ai.models.generateContent({
-        model: 'models/gemini-3.8-flash',
-        contents: prompt,
-        config: { responseMimeType: 'application/json' },
-      });
-      const parsed = JSON.parse(res.text?.trim() || '{}');
-      diagnosisMap[s.code] = {
-        code: s.code,
-        name: s.name,
-        diagnosisDate: new Date().toISOString().split('T')[0],
-        diagnosis: parsed,
-      };
-      await new Promise((r) => setTimeout(r, 1200));
+      let success = false;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          const res = await ai.models.generateContent({
+            model: 'gemini-3.1-flash-lite',
+            contents: prompt,
+            config: { responseMimeType: 'application/json' },
+          });
+          const parsed = JSON.parse(res.text?.trim() || '{}');
+          if (parsed && (parsed.business_summary || parsed.valuation_appeal)) {
+            diagnosisMap[s.code] = {
+              code: s.code,
+              name: s.name,
+              diagnosisDate: new Date().toISOString().split('T')[0],
+              diagnosis: parsed,
+            };
+            console.log(`✅ Analyzed [${s.code}] ${s.name}`);
+            fs.writeFileSync(AI_FILE, JSON.stringify(diagnosisMap, null, 2), 'utf-8');
+            success = true;
+            break;
+          }
+        } catch (attemptErr: any) {
+          console.warn(`Attempt ${attempt + 1} failed for ${s.code}:`, attemptErr.message);
+          await new Promise((r) => setTimeout(r, 1000));
+        }
+      }
+      if (!success) {
+        console.warn(`Could not analyze ${s.code}`);
+      }
+      // Gemini 15 RPM レート制限順守のためのウェイト
+      await new Promise((r) => setTimeout(r, 4200));
     } catch (e: any) {
       console.warn(`Diagnosis error for ${s.code}:`, e.message);
     }
@@ -539,10 +564,14 @@ async function main() {
   // 7. チャートデータを収集・保存
   await fetchAndSaveCharts(finalStocks);
 
-  // 8. 土曜診断オプション（--with-ai または SATURDAY_DIAGNOSIS=true）
+  // 8. AI診断（土曜定期更新、明示的な--with-ai指定、または未診断データがある場合に自動生成）
   const withAi = process.argv.includes('--with-ai') || process.env.SATURDAY_DIAGNOSIS === 'true';
-  if (withAi) {
+  const hasEmptyAiFile = !fs.existsSync(AI_FILE) || fs.readFileSync(AI_FILE, 'utf-8').trim() === '{}' || fs.readFileSync(AI_FILE, 'utf-8').trim() === '';
+  if ((withAi || hasEmptyAiFile) && process.env.GEMINI_API_KEY) {
+    console.log(`🤖 Triggering AI Diagnosis (withAi=${withAi}, hasEmptyAiFile=${hasEmptyAiFile})...`);
     await generateAiDiagnosis(finalStocks);
+  } else if (!process.env.GEMINI_API_KEY) {
+    console.log('ℹ️ GEMINI_API_KEY is not set. Skipping AI diagnosis.');
   }
 }
 

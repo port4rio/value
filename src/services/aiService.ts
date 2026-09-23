@@ -19,11 +19,14 @@ export async function fetchStockChart(
   const clean = symbol.replace(/\.T$/i, '');
 
   // 1. 静的 charts.json からの取得（GitHub Pages用・最優先・CORS不要）
-  const baseUrl = (import.meta as any).env?.BASE_URL || './';
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
   const candidatePaths = [
-    `${baseUrl}data/charts.json`.replace(/\/+/g, '/'),
+    `${cleanBase}data/charts.json`,
     './data/charts.json',
     'data/charts.json',
+    '/value/data/charts.json',
+    '/data/charts.json',
   ];
 
   for (const path of candidatePaths) {
@@ -131,11 +134,14 @@ export async function fetchAiDiagnosis(
 
   // 1. 静的ホスティング（GitHub Pages等）向け: public/data/ai_diagnosis.json があれば利用
   if (!forceRefresh) {
-    const baseUrl = (import.meta as any).env?.BASE_URL || './';
+    const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
     const candidatePaths = [
-      `${baseUrl}data/ai_diagnosis.json`.replace(/\/+/g, '/'),
+      `${cleanBase}data/ai_diagnosis.json`,
       './data/ai_diagnosis.json',
       'data/ai_diagnosis.json',
+      '/value/data/ai_diagnosis.json',
+      '/data/ai_diagnosis.json',
     ];
 
     for (const path of candidatePaths) {
@@ -145,15 +151,30 @@ export async function fetchAiDiagnosis(
           const map = await staticRes.json();
           if (map && map[stock.code]) {
             const item = map[stock.code];
+            const rawDiag = item.diagnosis || {};
+            // キー名の表記ゆれを吸収（スネークケース / キャメルケース双方に対応）
+            const normalizedDiagnosis: StockAiDiagnosisData = {
+              business_summary:
+                rawDiag.business_summary || rawDiag.businessSummary || '特色分析中',
+              valuation_appeal:
+                rawDiag.valuation_appeal || rawDiag.investmentAttractiveness || '割安度分析中',
+              dividend_sustainability:
+                rawDiag.dividend_sustainability || rawDiag.dividendSustainability || '配当持続性分析中',
+              catalyst:
+                rawDiag.catalyst || 'カタリスト分析中',
+              risks:
+                rawDiag.risks || rawDiag.risk || 'リスク要因分析中',
+            };
+
             return {
               success: true,
               code: stock.code,
               name: stock.name,
-              diagnosis: item.diagnosis,
+              diagnosis: normalizedDiagnosis,
               diagnosedDateLabel: item.diagnosisDate || '直近土曜日',
               nextDiagnosisLabel: '次回: 来週土曜日',
               diagnosedAt: item.diagnosisDate || new Date().toISOString(),
-              model: 'gemini-3.8-flash',
+              model: 'gemini-3.6-flash',
               fromCache: true,
             };
           }

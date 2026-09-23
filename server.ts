@@ -467,10 +467,10 @@ JSON形式例:
 
     if (!isPrimaryCooldown) {
       try {
-        // Primary: gemini-3.8-flash を短縮タイムアウト(3秒)で素早く判定
+        // Primary: gemini-3.6-flash を短縮タイムアウト(5秒)で判定
         const callWithTimeout = Promise.race([
           ai.models.generateContent({
-            model: 'gemini-3.8-flash',
+            model: 'gemini-3.6-flash',
             contents: prompt,
             config: {
               responseMimeType: 'application/json',
@@ -478,7 +478,7 @@ JSON形式例:
             },
           }),
           new Promise<never>((_, reject) =>
-            setTimeout(() => reject(new Error('3.8-flash timeout (3s)')), 3000)
+            setTimeout(() => reject(new Error('3.6-flash timeout (5s)')), 5000)
           ),
         ]);
 
