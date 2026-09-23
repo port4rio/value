@@ -78,22 +78,31 @@ export async function fetchScreeningStocks(
   criteria: ScreeningCriteria = DEFAULT_CRITERIA
 ): Promise<ScreeningResult> {
   // 1. 静的ホスティング（GitHub Pages等）向け: public/data/stocks.json があれば優先読み込み
-  try {
-    const staticRes = await fetch('./data/stocks.json', { cache: 'no-cache' });
-    if (staticRes.ok) {
-      const staticData = await staticRes.json();
-      if (staticData && Array.isArray(staticData.stocks) && staticData.stocks.length > 0) {
-        const screened = applyScreeningCriteria(staticData.stocks, criteria);
-        return {
-          stocks: screened,
-          allCandidates: staticData.stocks,
-          isLive: true,
-          timestamp: staticData.updatedAt || 'バッチ更新データ',
-        };
+  const baseUrl = (import.meta as any).env?.BASE_URL || './';
+  const candidatePaths = [
+    `${baseUrl}data/stocks.json`.replace(/\/+/g, '/'),
+    './data/stocks.json',
+    'data/stocks.json',
+  ];
+
+  for (const path of candidatePaths) {
+    try {
+      const staticRes = await fetch(path, { cache: 'no-cache' });
+      if (staticRes.ok) {
+        const staticData = await staticRes.json();
+        if (staticData && Array.isArray(staticData.stocks) && staticData.stocks.length > 0) {
+          const screened = applyScreeningCriteria(staticData.stocks, criteria);
+          return {
+            stocks: screened,
+            allCandidates: staticData.stocks,
+            isLive: true,
+            timestamp: staticData.updatedAt || 'バッチ更新データ',
+          };
+        }
       }
+    } catch {
+      // try next path
     }
-  } catch {
-    // static file fetch error -> continue to live/fallback
   }
 
   try {

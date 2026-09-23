@@ -41,27 +41,36 @@ export async function fetchAiDiagnosis(
 
   // 1. 静的ホスティング（GitHub Pages等）向け: public/data/ai_diagnosis.json があれば利用
   if (!forceRefresh) {
-    try {
-      const staticRes = await fetch('./data/ai_diagnosis.json', { cache: 'no-cache' });
-      if (staticRes.ok) {
-        const map = await staticRes.json();
-        if (map && map[stock.code]) {
-          const item = map[stock.code];
-          return {
-            success: true,
-            code: stock.code,
-            name: stock.name,
-            diagnosis: item.diagnosis,
-            diagnosedDateLabel: item.diagnosisDate || '直近土曜日',
-            nextDiagnosisLabel: '次回: 来週土曜日',
-            diagnosedAt: item.diagnosisDate || new Date().toISOString(),
-            model: 'gemini-3.8-flash',
-            fromCache: true,
-          };
+    const baseUrl = (import.meta as any).env?.BASE_URL || './';
+    const candidatePaths = [
+      `${baseUrl}data/ai_diagnosis.json`.replace(/\/+/g, '/'),
+      './data/ai_diagnosis.json',
+      'data/ai_diagnosis.json',
+    ];
+
+    for (const path of candidatePaths) {
+      try {
+        const staticRes = await fetch(path, { cache: 'no-cache' });
+        if (staticRes.ok) {
+          const map = await staticRes.json();
+          if (map && map[stock.code]) {
+            const item = map[stock.code];
+            return {
+              success: true,
+              code: stock.code,
+              name: stock.name,
+              diagnosis: item.diagnosis,
+              diagnosedDateLabel: item.diagnosisDate || '直近土曜日',
+              nextDiagnosisLabel: '次回: 来週土曜日',
+              diagnosedAt: item.diagnosisDate || new Date().toISOString(),
+              model: 'gemini-3.8-flash',
+              fromCache: true,
+            };
+          }
         }
+      } catch {
+        // try next
       }
-    } catch {
-      // ignore
     }
   }
 
