@@ -353,17 +353,105 @@ ROE: ${s.roe}%
   console.log(`✅ Saved AI diagnosis to ${AI_FILE}`);
 }
 
+function getJstDateParts(date = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(date);
+  const m = Object.fromEntries(parts.map((p) => [p.type, p.value]));
+  return {
+    year: parseInt(m.year, 10),
+    month: parseInt(m.month, 10),
+    day: parseInt(m.day, 10),
+    dateStr: `${m.year}-${m.month}-${m.day}`,
+  };
+}
+
+function getNthMonday(year: number, month: number, n: number): number {
+  const firstDay = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
+  const offset = (1 - firstDay + 7) % 7;
+  return 1 + offset + (n - 1) * 7;
+}
+
+/**
+ * 日本の株式市場（東証）の休業日判定（土日、祝日、振替休日、国民の休日、年末年始）
+ */
+function isTokyoMarketHoliday(year: number, month: number, day: number): boolean {
+  const d = new Date(Date.UTC(year, month - 1, day));
+  const dayOfWeek = d.getUTCDay();
+  // 1. 土曜日(6) or 日曜日(0)
+  if (dayOfWeek === 0 || dayOfWeek === 6) return true;
+
+  // 2. 年末年始休業 (12/31, 1/2, 1/3)
+  if (month === 12 && day === 31) return true;
+  if (month === 1 && (day === 2 || day === 3)) return true;
+
+  // 3. 国民の祝日判定
+  const holidays = new Set<string>();
+  const addH = (m: number, dNum: number) => holidays.add(`${m}-${dNum}`);
+
+  addH(1, 1); // 元日
+  addH(1, getNthMonday(year, 1, 2)); // 成人の日
+  addH(2, 11); // 建国記念の日
+  addH(2, 23); // 天皇誕生日
+
+  const shunbun = Math.floor(20.8431 + 0.242194 * (year - 1980) - Math.floor((year - 1980) / 4));
+  addH(3, shunbun); // 春分の日
+
+  addH(4, 29); // 昭和の日
+  addH(5, 3); // 憲法記念日
+  addH(5, 4); // みどりの日
+  addH(5, 5); // こどもの日
+  addH(7, getNthMonday(year, 7, 3)); // 海の日
+  addH(8, 11); // 山の日
+  addH(9, getNthMonday(year, 9, 3)); // 敬老の日
+
+  const shubun = Math.floor(23.2488 + 0.242194 * (year - 1980) - Math.floor((year - 1980) / 4));
+  addH(9, shubun); // 秋分の日
+
+  addH(10, getNthMonday(year, 10, 2)); // スポーツの日
+  addH(11, 3); // 文化の日
+  addH(11, 23); // 勤労感謝の日
+
+  // 振替休日判定（日曜が祝日の場合、その後の直近平日が休み）
+  for (let dNum = 1; dNum <= 31; dNum++) {
+    const cur = new Date(Date.UTC(year, month - 1, dNum));
+    if (cur.getUTCMonth() !== month - 1) break;
+    if (cur.getUTCDay() === 0 && holidays.has(`${month}-${dNum}`)) {
+      let sub = dNum + 1;
+      while (holidays.has(`${month}-${sub}`)) sub++;
+      if (sub === day) return true;
+    }
+  }
+
+  // 国民の休日判定（祝日と祝日に挟まれた平日）
+  if (holidays.has(`${month}-${day - 1}`) && holidays.has(`${month}-${day + 1}`)) {
+    return true;
+  }
+
+  return holidays.has(`${month}-${day}`);
+}
+
 async function main() {
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
 
+  // JST現在日時の取得
+  const jstNow = getJstDateParts();
+  const isMarketOpenToday = !isTokyoMarketHoliday(jstNow.year, jstNow.month, jstNow.day);
+  console.log(`📅 JST Date: ${jstNow.dateStr}, Market Open Day: ${isMarketOpenToday ? 'YES (平日・営業日)' : 'NO (休業日/祝日)'}`);
+
   // 1. 既存銘柄データの読み込み（在籍日数の引き継ぎ用）
   let existingStocks: StockItem[] = [];
+  let prevLastIncrementDate: string | undefined;
   if (fs.existsSync(STOCKS_FILE)) {
     try {
       const raw = JSON.parse(fs.readFileSync(STOCKS_FILE, 'utf-8'));
       existingStocks = raw.stocks || [];
+      prevLastIncrementDate = raw.lastIncrementDate;
     } catch {
       // ignore
     }
@@ -394,12 +482,20 @@ async function main() {
 
   console.log(`🎯 Strictly screened stocks: ${screened.length} stocks qualify.`);
 
-  // 5. 滞在日数 (stayDays) と 居残り (>=90日) / 転入 (<90日) を計算
-  const todayStr = new Date().toISOString().split('T')[0];
+  // 5. 滞在日数 (stayDays) の計算
+  // 【条件】
+  // - 営業日（土日祝日・年末年始でない）かつ、本日まだインクリメントされていない初回実行時のみ +1
+  // - 営業日外（休日）の手動実行や、平日同日の二度実行・トラブル再実行では日数を増やさず維持
+  const todayStr = jstNow.dateStr;
+  const shouldIncrementStayDays = isMarketOpenToday && prevLastIncrementDate !== todayStr;
+  console.log(`⏳ StayDays Increment Mode: ${shouldIncrementStayDays ? '+1 (営業日の初回実行)' : '維持 (休日または同日再実行のため加算なし)'}`);
+
   const finalStocks = screened.map((s) => {
     const prev = existingMap.get(s.code);
     if (prev) {
-      const stayDays = (prev.stayDays || 0) + 1;
+      // 営業日の初回実行のみ+1、それ以外は前回の滞在日数を厳格に維持
+      const stayDays = shouldIncrementStayDays ? (prev.stayDays || 0) + 1 : (prev.stayDays || 1);
+      const lastIncrementDate = shouldIncrementStayDays ? todayStr : (prev.lastIncrementDate || prevLastIncrementDate);
       const category: StockItem['category'] =
         prev.category === 'sotsugyo' ? 'sotsugyo' : stayDays >= 90 ? 'inokori' : 'tennyu';
       return {
@@ -407,6 +503,7 @@ async function main() {
         stayDays,
         category,
         entryDate: prev.entryDate || todayStr,
+        lastIncrementDate,
       };
     } else {
       return {
@@ -414,12 +511,14 @@ async function main() {
         stayDays: 1,
         category: 'tennyu' as StockItem['category'],
         entryDate: todayStr,
+        lastIncrementDate: isMarketOpenToday ? todayStr : undefined,
       };
     }
   });
 
   // 6. JSON に保存
   const now = new Date().toLocaleString('ja-JP', {
+    timeZone: 'Asia/Tokyo',
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -429,6 +528,7 @@ async function main() {
 
   const outputData = {
     updatedAt: now,
+    lastIncrementDate: shouldIncrementStayDays ? todayStr : prevLastIncrementDate,
     count: finalStocks.length,
     stocks: finalStocks,
   };
