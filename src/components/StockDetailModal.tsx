@@ -430,12 +430,12 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                 <ExternalLink className="w-3 h-3 shrink-0" />
               </a>
               <a
-                href={`https://kabutan.jp/stock/?code=${stock.code}`}
+                href={`https://minkabu.jp/stock/${stock.code}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] hover:border-[#3d5948] text-[#9fc7b0] hover:text-[#f0f5f2] text-xs font-medium flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
               >
-                <span>株探</span>
+                <span>みんかぶ</span>
                 <ExternalLink className="w-3 h-3 shrink-0" />
               </a>
               <button

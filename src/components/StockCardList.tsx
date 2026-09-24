@@ -65,7 +65,7 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                         )}
                         {stock.category === 'sotsugyo' && (
                           <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
-                            🎓 卒業生
+                            卒業生
                           </span>
                         )}
                       </div>

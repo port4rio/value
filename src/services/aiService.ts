@@ -195,13 +195,15 @@ export async function fetchAiDiagnosis(
       body: JSON.stringify({
         code: stock.code,
         name: stock.name,
-        price: stock.close,
         per: stock.per,
         pbr: stock.pbr,
         dividendYield: stock.dividend_yield,
+        payoutRatio: stock.payout_ratio,
         roe: stock.roe,
         equityRatio: stock.equity_ratio,
-        category: stock.category,
+        ebitdaGrowth: stock.ebitda_growth,
+        deRatio: stock.de_ratio,
+        currentRatio: stock.current_ratio,
         forceRefresh,
       }),
     });
@@ -229,12 +231,15 @@ export function createChatGptConsultUrl(stock: StockItem): string {
 【銘柄情報】
 ・銘柄コード: ${stock.code}
 ・企業名: ${stock.name}
-・現在株価: ${stock.close != null ? `${stock.close}円` : '不明'}
 ・予想PER: ${stock.per != null ? `${stock.per}倍` : '不明'}
 ・実績PBR: ${stock.pbr != null ? `${stock.pbr}倍` : '不明'}
 ・配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
+・配当性向: ${stock.payout_ratio != null ? `${stock.payout_ratio}%` : '不明'}
 ・ROE: ${stock.roe != null ? `${stock.roe}%` : '不明'}
 ・自己資本比率: ${stock.equity_ratio != null ? `${stock.equity_ratio}%` : '不明'}
+・EBITDA成長率: ${stock.ebitda_growth != null ? `${stock.ebitda_growth}%` : '不明'}
+・D/Eレシオ: ${stock.de_ratio != null ? `${stock.de_ratio}倍` : '不明'}
+・流動比率: ${stock.current_ratio != null ? `${stock.current_ratio}%` : '不明'}
 
 【質問事項】
 1. この企業の主力の収益源（ビジネスモデル）と競合優位性は何ですか？

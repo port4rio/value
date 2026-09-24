@@ -91,7 +91,7 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
     key: 'per',
     label: 'PER',
     unit: '倍',
-    tooltip: '最新予想PER（参考指標）',
+    tooltip: '実績PER（参考指標）',
     align: 'right',
     minWidth: 'min-w-[68px]',
     priority: 'high',

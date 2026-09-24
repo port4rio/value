@@ -389,13 +389,15 @@ app.post('/api/ai/diagnosis', async (req, res) => {
     const {
       code,
       name,
-      price,
       per,
       pbr,
       dividendYield,
+      payoutRatio,
       roe,
       equityRatio,
-      category,
+      ebitdaGrowth,
+      deRatio,
+      currentRatio,
       forceRefresh,
     } = req.body;
 
@@ -434,13 +436,15 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 【対象銘柄】
 ・証券コード: ${cleanCode}
 ・銘柄名: ${name || '不明'}
-・現在株価: ${price != null ? `${price}円` : '不明'}
 ・予想配当利回り: ${dividendYield != null ? `${dividendYield}%` : '不明'}
 ・予想PER: ${per != null ? `${per}倍` : '不明'}
 ・PBR: ${pbr != null ? `${pbr}倍` : '不明'}
+・配当性向: ${payoutRatio != null ? `${payoutRatio}%` : '不明'}
 ・ROE: ${roe != null ? `${roe}%` : '不明'}
 ・自己資本比率: ${equityRatio != null ? `${equityRatio}%` : '不明'}
-・在籍区分: ${category === 'inokori' ? '居残り組（割安常連）' : category === 'tennyu' ? '転入生（新着割安）' : '卒業生（追跡枠）'}
+・EBITDA成長率: ${ebitdaGrowth != null ? `${ebitdaGrowth}%` : '不明'}
+・D/Eレシオ: ${deRatio != null ? `${deRatio}倍` : '不明'}
+・流動比率: ${currentRatio != null ? `${currentRatio}%` : '不明'}
 
 【出力要件】
 以下の5つの項目を、具体的かつ説得力のある日本語で解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
@@ -467,10 +471,10 @@ JSON形式例:
 
     if (!isPrimaryCooldown) {
       try {
-        // Primary: gemini-3.6-flash を短縮タイムアウト(5秒)で判定
+        // Primary: gemini-3.8-flash をタイムアウト(8秒)で判定
         const callWithTimeout = Promise.race([
           ai.models.generateContent({
-            model: 'gemini-3.6-flash',
+            model: 'gemini-3.8-flash',
             contents: prompt,
             config: {
               responseMimeType: 'application/json',
@@ -478,7 +482,7 @@ JSON形式例:
             },
           }),
           new Promise<never>((_, reject) =>
-            setTimeout(() => reject(new Error('3.6-flash timeout (5s)')), 5000)
+            setTimeout(() => reject(new Error('3.8-flash timeout (8s)')), 8000)
           ),
         ]);
 
@@ -486,30 +490,36 @@ JSON形式例:
         aiResponseText = genResult.text || '';
       } catch (modelErr: any) {
         const errMsg = String(modelErr?.message || modelErr);
-        console.warn('Primary 3.8-flash failed or timed out, quickly falling back to gemini-3.5-flash-lite:', errMsg);
-        // レート制限(429/quota)や一時高負荷(503)を検知した場合、次回から即座に3.5-flash-liteへ直接流す
+        console.warn('Primary 3.8-flash failed or timed out, quickly falling back to gemini-3.1-flash-lite:', errMsg);
+        // レート制限(429/quota)や一時高負荷(503)を検知した場合、次回から即座に3.1-flash-liteへ直接流す
         if (errMsg.includes('429') || errMsg.includes('quota') || errMsg.includes('RESOURCE_EXHAUSTED') || errMsg.includes('503') || errMsg.includes('high demand')) {
           primaryCooldownUntil = Date.now() + 15 * 60 * 1000; // 15分間クールダウン
         }
       }
     } else {
-      console.log('Primary 3.8 is on cooldown (quota/rate-limit). Routing directly to gemini-3.5-flash-lite.');
+      console.log('Primary 3.8 is on cooldown (quota/rate-limit). Routing directly to gemini-3.1-flash-lite.');
     }
 
-    // Fallback / Direct: gemini-3.5-flash-lite (高速・大容量枠)
+    // Fallback / Direct: gemini-3.1-flash-lite (高速・大容量枠)
     if (!aiResponseText) {
       try {
-        const fallbackResult = await ai.models.generateContent({
-          model: 'gemini-3.5-flash-lite',
-          contents: prompt,
-          config: {
-            responseMimeType: 'application/json',
-            temperature: 0.3,
-          },
-        });
+        const fallbackCall = Promise.race([
+          ai.models.generateContent({
+            model: 'gemini-3.1-flash-lite',
+            contents: prompt,
+            config: {
+              responseMimeType: 'application/json',
+              temperature: 0.3,
+            },
+          }),
+          new Promise<never>((_, reject) =>
+            setTimeout(() => reject(new Error('3.1-flash-lite timeout (10s)')), 10000)
+          ),
+        ]);
+        const fallbackResult = await fallbackCall;
         aiResponseText = fallbackResult.text || '';
       } catch (fallbackErr: any) {
-        console.warn('Fallback gemini-3.5-flash-lite also failed:', fallbackErr?.message || fallbackErr);
+        console.warn('Fallback gemini-3.1-flash-lite also failed:', fallbackErr?.message || fallbackErr);
       }
     }
 

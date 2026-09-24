@@ -189,7 +189,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       )}`}
                     >
                       <div className="w-full flex items-center justify-center">
-                        <span className="font-mono text-[#86efac] tracking-wide text-center">
+                        <span className="font-mono text-[13px] font-semibold text-[#86efac] text-center">
                           {stock.code}
                         </span>
                       </div>
@@ -226,14 +226,14 @@ export const StockTable: React.FC<StockTableProps> = ({
                     >
                       {stock.category === 'sotsugyo' ? (
                         <span
-                          className="text-[#f472b6] text-[11px] underline decoration-dotted cursor-help"
+                          className="text-[#f472b6] text-[11px]"
                           title={
                             stock.graduationReason
                               ? `卒業日: ${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
-                              : '卒業生'
+                              : '卒業'
                           }
                         >
-                          🎓卒業
+                          卒業
                         </span>
                       ) : stock.stayDays != null ? (
                         <span
@@ -252,7 +252,7 @@ export const StockTable: React.FC<StockTableProps> = ({
 
                     {/* Column 4: 現在値 */}
                     <td
-                      className={`px-2 py-2 text-right whitespace-nowrap font-semibold text-[#edf4ef] ${sortedColBg(
+                      className={`px-2 py-2 text-right whitespace-nowrap text-[13px] font-semibold text-[#edf4ef] ${sortedColBg(
                         'close'
                       )}`}
                     >
