@@ -33,7 +33,7 @@ export interface ScreeningCriteria {
   maxPbr: number; // デフォルト: 1.0 (資産割安)
   minRoe: number; // デフォルト: 8 (%) (資本効率)
   minDividendYield: number; // デフォルト: 4 (%) (株主還元)
-  minEbitdaGrowth: number; // デフォルト: 1 (%) (収益成長)
+  minEbitdaGrowth: number; // デフォルト: -999 (指定なし・全表示)
   minEquityRatio: number; // デフォルト: 50 (%) (財務健全性)
 }
 
@@ -41,7 +41,7 @@ export const DEFAULT_CRITERIA: ScreeningCriteria = {
   maxPbr: 1.0,
   minRoe: 8,
   minDividendYield: 4.0,
-  minEbitdaGrowth: 1,
+  minEbitdaGrowth: -999, // 初期値は指定なし（stocks.json の合格銘柄を全件表示）
   minEquityRatio: 50,
 };
 

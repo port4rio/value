@@ -57,8 +57,14 @@ export function applyScreeningCriteria(
     if (s.pbr != null && s.pbr > criteria.maxPbr) return false;
     // ROE (資本効率)
     if (s.roe != null && s.roe < criteria.minRoe) return false;
-    // EBITDA成長率
-    if (s.ebitda_growth != null && s.ebitda_growth < criteria.minEbitdaGrowth) return false;
+    // EBITDA成長率（指定がある場合のみ適用、-10以下や-999は不問）
+    if (
+      criteria.minEbitdaGrowth > -10 &&
+      s.ebitda_growth != null &&
+      s.ebitda_growth < criteria.minEbitdaGrowth
+    ) {
+      return false;
+    }
     // 自己資本比率
     if (s.equity_ratio != null && s.equity_ratio < criteria.minEquityRatio) return false;
 
@@ -113,7 +119,9 @@ export async function fetchScreeningStocks(
       filter: [
         { left: 'price_book_fq', operation: 'less', right: Math.max(criteria.maxPbr, 1.2) },
         { left: 'return_on_equity_fq', operation: 'egreater', right: Math.min(criteria.minRoe, 6.0) },
-        { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: criteria.minEbitdaGrowth },
+        ...(criteria.minEbitdaGrowth > -10
+          ? [{ left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: criteria.minEbitdaGrowth }]
+          : []),
       ],
       options: { lang: 'ja' },
       symbols: { query: { types: [] } },

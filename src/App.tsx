@@ -169,7 +169,7 @@ export default function App() {
       <footer className="bg-[#141e18] border-t border-[#24372c] mt-auto py-2 text-center text-xs text-[#739180]">
         <div className="w-full px-4">
           <p className="text-[#5c7767] text-[11px]">
-            スクリーニング条件: PBR≦1.0倍・ROE≧8%・配当利回り≧4%・EBITDA成長率≧1%・自己資本比率≧50%（PERは参考表示）
+            スクリーニング条件: PBR≦1.0倍・ROE≧8%・配当利回り≧4%・自己資本比率≧50%（EBITDA成長率・PERは参考表示）
           </p>
         </div>
       </footer>
