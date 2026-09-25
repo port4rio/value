@@ -13,12 +13,13 @@ on:
         default: false
 
   # 定期自動実行（タイムゾーン: timezone: 'Asia/Tokyo'）
-  # ※ GitHub Actions の cron は UTC 換算で定義（JST - 9時間）
   schedule:
-    # 平日(月〜金) 10:53 JST (01:53 UTC) - timezone: 'Asia/Tokyo'
-    - cron: '53 1 * * 1-5'
-    # 毎週土曜日 08:23 JST (金曜 23:23 UTC) - timezone: 'Asia/Tokyo'
-    - cron: '23 23 * * 5'
+    # 平日(月〜金) 11:13 JST
+    - cron: '13 11 * * 1-5'
+      timezone: 'Asia/Tokyo'
+    # 毎週土曜日 08:23 JST
+    - cron: '23 8 * * 5'
+      timezone: 'Asia/Tokyo'
 
 permissions:
   contents: write
@@ -51,7 +52,7 @@ jobs:
         env:
           TZ: 'Asia/Tokyo'
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && github.event.schedule == '23 23 * * 5' || inputs.with_ai }}
+          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && (github.event.schedule == '23 8 * * 5' || github.event.schedule == '23 23 * * 5') || inputs.with_ai }}
         run: |
           if [ "$SATURDAY_DIAGNOSIS" = "true" ]; then
             echo "🚀 Running screening with Saturday AI Diagnosis..."
