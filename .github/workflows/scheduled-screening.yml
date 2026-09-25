@@ -17,9 +17,8 @@ on:
     # 平日(月〜金) 11:13 JST
     - cron: '13 11 * * 1-5'
       timezone: 'Asia/Tokyo'
-    # 毎週土曜日 08:23 JST
-    - cron: '23 8 * * 5'
-      timezone: 'Asia/Tokyo'
+    # 毎週土曜日 08:23 JST (金曜 23:23 UTC)
+    - cron: '23 23 * * 5'
 
 permissions:
   contents: write
@@ -52,7 +51,7 @@ jobs:
         env:
           TZ: 'Asia/Tokyo'
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && (github.event.schedule == '23 8 * * 5' || github.event.schedule == '23 23 * * 5') || inputs.with_ai }}
+          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && github.event.schedule == '23 23 * * 5' || inputs.with_ai }}
         run: |
           if [ "$SATURDAY_DIAGNOSIS" = "true" ]; then
             echo "🚀 Running screening with Saturday AI Diagnosis..."
