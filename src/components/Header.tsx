@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
 
               {/* Tab 2: バリュー株同窓会 (アクティブタブ) */}
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#20362b] border border-[#3b5745] text-white shadow-sm select-none relative">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#203a2c] border border-[#3a684e] text-white shadow-sm select-none relative">
                 <span className="text-base leading-none">🗿</span>
                 <h1 className="text-sm sm:text-base font-bold tracking-tight text-[#f3f7f4] font-display whitespace-nowrap">
                   バリュー株同窓会
@@ -218,7 +218,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span>CSV</span>
             </button>
 
-            {/* Refresh Button */}
+            {/* Refresh Button - Icon only */}
             <button
               type="button"
               onClick={(e) => {
@@ -226,11 +226,11 @@ export const Header: React.FC<HeaderProps> = ({
                 onRefresh();
               }}
               disabled={isLoading}
-              className="flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-lg bg-[#243a2e] border border-[#3b5947] text-[#86efac] hover:bg-[#2b4437] transition-colors disabled:opacity-40 outline-none focus:outline-none"
+              className="flex items-center justify-center p-1.5 rounded-lg bg-[#192720] border border-[#2c4034] text-[#86efac] hover:bg-[#203129] hover:text-[#bbf7d0] transition-colors disabled:opacity-40 outline-none focus:outline-none"
               title="最新データを再取得（ページ再読み込み）"
+              aria-label="最新データを再取得"
             >
-              <RefreshCw className={`w-3 h-3 ${isLoading ? 'animate-spin' : ''}`} />
-              <span>{isLoading ? '取得中' : '更新'}</span>
+              <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
             </button>
           </div>
         </div>

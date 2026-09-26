@@ -104,12 +104,24 @@ export default function App() {
 
     // Sorting
     list = [...list].sort((a, b) => {
-      const aVal = a[sortConfig.key];
-      const bVal = b[sortConfig.key];
+      let aVal = a[sortConfig.key];
+      let bVal = b[sortConfig.key];
 
       // Always push null or undefined values to the end
       if (aVal === null || aVal === undefined) return 1;
       if (bVal === null || bVal === undefined) return -1;
+
+      // Normalize stayDays for graduates (always negative numbers)
+      if (sortConfig.key === 'stayDays') {
+        if (a.category === 'sotsugyo' && aVal != null) {
+          const n = Number(aVal);
+          aVal = n > 0 ? -n : n;
+        }
+        if (b.category === 'sotsugyo' && bVal != null) {
+          const n = Number(bVal);
+          bVal = n > 0 ? -n : n;
+        }
+      }
 
       if (typeof aVal === 'string' && typeof bVal === 'string') {
         const cmp = aVal.localeCompare(bVal, 'ja');
@@ -120,7 +132,10 @@ export default function App() {
       const numB = Number(bVal);
       if (isNaN(numA) || isNaN(numB)) return 0;
 
-      return sortConfig.direction === 'asc' ? numA - numB : numB - numA;
+      if (numA !== numB) {
+        return sortConfig.direction === 'asc' ? numA - numB : numB - numA;
+      }
+      return a.code.localeCompare(b.code);
     });
 
     return list;
