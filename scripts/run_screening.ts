@@ -422,34 +422,31 @@ async function generateAiDiagnosis(stocks: StockItem[]) {
     }
 
     console.log(`Analyzing [${s.code}] ${s.name}...`);
-    const prompt = `あなたは日本株のバリュー株投資に精通したシニア・クオンツアナリストです。
-以下の銘柄の最新ファンダメンタルズ数値および企業の実際の事業特性を詳細に分析し、投資家向けの「週次AIバリュースコープ診断」を作成してください。
-表面的な会社概要の羅列や一般的な定型句は避け、なぜ現在PBR ${s.pbr != null ? `${s.pbr}倍` : '1倍割れ'}やPER ${s.per != null ? `${s.per}倍` : '割安水準'}にとどまっているのか、ネットキャッシュや財務体質、株主還元方針や東証PBR改善要請への対応期待など、具体的かつ本質的な投資判断材料を鋭く記述してください。
+    const prompt = `あなたは辛口で深い洞察力を持つプロの株式アナリストです。
+以下の銘柄を、今後も割安か将来上昇を見込めるか、必要に応じ最新動向も検索して審査してください。
 
 【対象銘柄】
-証券コード: ${s.code}
-銘柄名: ${s.name}
-実績PER: ${s.per != null ? `${s.per}倍` : '－'}
-実績PBR: ${s.pbr != null ? `${s.pbr}倍` : '－'}
-配当利回り: ${s.dividend_yield != null ? `${s.dividend_yield}%` : '－'}
-配当性向: ${s.payout_ratio != null ? `${s.payout_ratio}%` : '－'}
-ROE: ${s.roe != null ? `${s.roe}%` : '－'}
-自己資本比率: ${s.equity_ratio != null ? `${s.equity_ratio}%` : '－'}
-EBITDA成長率: ${s.ebitda_growth != null ? `${s.ebitda_growth}%` : '－'}
-D/Eレシオ: ${s.de_ratio != null ? `${s.de_ratio}倍` : '－'}
-流動比率: ${s.current_ratio != null ? `${s.current_ratio}%` : '－'}
+・証券コード: ${s.code}
+・銘柄名: ${s.name}
+・予想配当利回り: ${s.dividend_yield != null ? `${s.dividend_yield}%` : '不明'}
+・実績PER: ${s.per != null ? `${s.per}倍` : '不明'}
+・実績PBR: ${s.pbr != null ? `${s.pbr}倍` : '不明'}
+・配当性向: ${s.payout_ratio != null ? `${s.payout_ratio}%` : '不明'}
+・ROE: ${s.roe != null ? `${s.roe}%` : '不明'}
+・自己資本比率: ${s.equity_ratio != null ? `${s.equity_ratio}%` : '不明'}
+・EBITDA成長率: ${s.ebitda_growth != null ? `${s.ebitda_growth}%` : '不明'}
+・D/Eレシオ: ${s.de_ratio != null ? `${s.de_ratio}倍` : '不明'}
+・流動比率: ${s.current_ratio != null ? `${s.current_ratio}%` : '不明'}
 
-【出力指示】
-以下の5つの項目について、客観的かつプロの視点で日本語で簡潔・明快に分析してください。
-各項目は2〜3文（80〜120文字程度）で具体的に記述してください。
+【出力要件】
+以下の5つの項目を、具体的かつ説得力のある日本語で解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
+1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
+2. "valuation_appeal": 投資妙味と割安要因。ただし市場が安値放置している理由も必ず説明
+3. "dividend_sustainability": 配当の持続性と株主還元方針。減配リスクの低さ、DOE導入や自社株買いの積極性など
+4. "catalyst": 割安是正の可能性を審査。東証改革、資本効率向上、政策保有株売却、海外展開など
+5. "risks": 弱点や下振れリスクを率直に記載。『市場が正しく評価している可能性』も考慮
 
-1. business_summary: 【事業特色・主力収益源】（主力事業、業界シェア、強み）
-2. valuation_appeal: 【投資妙味と割安要因】（割安放置の背景、低PBR/PERの理由、株価下値の堅さ）
-3. dividend_sustainability: 【配当の持続性と株主還元方針】（配当利回りの妙味、減配リスクの低さ、還元意欲）
-4. catalyst: 【PBR是正・株価上昇カタリスト】（PBR1倍割れ是正策、資本効率改善、自社株買い、増配期待など）
-5. risks: 【注意すべきリスク要因】（景気敏感度、原材料高、顧客依存度などの留意点）
-
-必ず以下のキー名を持つ有効なJSON形式のみを出力してください。マークダウンや余計な文は含めないでください。
+JSON形式例:
 {
   "business_summary": "...",
   "valuation_appeal": "...",
