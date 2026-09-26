@@ -124,7 +124,62 @@ export async function fetchStockChart(
 }
 
 /**
- * 銘柄の毎週土曜 AI診断（gemini）を取得
+ * 静的JSON (public/data/ai_diagnosis.json) から診断データを取得
+ */
+async function loadStaticDiagnosis(code: string, bustCache = false): Promise<StockAiDiagnosisResponse | null> {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  const t = bustCache ? `?_t=${Date.now()}` : '';
+  const candidatePaths = [
+    `${cleanBase}data/ai_diagnosis.json${t}`,
+    `./data/ai_diagnosis.json${t}`,
+    `data/ai_diagnosis.json${t}`,
+    `/data/ai_diagnosis.json${t}`,
+  ];
+
+  for (const path of candidatePaths) {
+    try {
+      const staticRes = await fetch(path, { cache: 'no-cache' });
+      if (staticRes.ok) {
+        const map = await staticRes.json();
+        if (map && map[code]) {
+          const item = map[code];
+          const rawDiag = item.diagnosis || {};
+          const normalizedDiagnosis: StockAiDiagnosisData = {
+            business_summary:
+              rawDiag.business_summary || rawDiag.businessSummary || '特色分析中',
+            valuation_appeal:
+              rawDiag.valuation_appeal || rawDiag.investmentAttractiveness || '割安度分析中',
+            dividend_sustainability:
+              rawDiag.dividend_sustainability || rawDiag.dividendSustainability || '配当持続性分析中',
+            catalyst:
+              rawDiag.catalyst || 'カタリスト分析中',
+            risks:
+              rawDiag.risks || rawDiag.risk || 'リスク要因分析中',
+          };
+
+          return {
+            success: true,
+            code,
+            name: item.name || code,
+            diagnosis: normalizedDiagnosis,
+            diagnosedDateLabel: item.diagnosisDate || '直近土曜日',
+            nextDiagnosisLabel: '次回: 来週土曜日',
+            diagnosedAt: item.diagnosisDate || new Date().toISOString(),
+            model: 'gemini 3.5 Flash-Lite',
+            fromCache: true,
+          };
+        }
+      }
+    } catch {
+      // try next
+    }
+  }
+  return null;
+}
+
+/**
+ * 銘柄の毎週土曜 AI診断（gemini 3.5 Flash-Lite）を取得
  */
 export async function fetchAiDiagnosis(
   stock: StockItem,
@@ -132,66 +187,22 @@ export async function fetchAiDiagnosis(
 ): Promise<StockAiDiagnosisResponse | null> {
   if (!stock || !stock.code) return null;
 
-  // 1. 静的ホスティング（GitHub Pages等）向け: public/data/ai_diagnosis.json があれば利用
+  // 1. 通常読み込み時は静的キャッシュを最優先
   if (!forceRefresh) {
-    const baseUrl = (import.meta as any).env?.BASE_URL || '/';
-    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-    const candidatePaths = [
-      `${cleanBase}data/ai_diagnosis.json`,
-      './data/ai_diagnosis.json',
-      'data/ai_diagnosis.json',
-      '/value/data/ai_diagnosis.json',
-      '/data/ai_diagnosis.json',
-    ];
-
-    for (const path of candidatePaths) {
-      try {
-        const staticRes = await fetch(path, { cache: 'no-cache' });
-        if (staticRes.ok) {
-          const map = await staticRes.json();
-          if (map && map[stock.code]) {
-            const item = map[stock.code];
-            const rawDiag = item.diagnosis || {};
-            // キー名の表記ゆれを吸収（スネークケース / キャメルケース双方に対応）
-            const normalizedDiagnosis: StockAiDiagnosisData = {
-              business_summary:
-                rawDiag.business_summary || rawDiag.businessSummary || '特色分析中',
-              valuation_appeal:
-                rawDiag.valuation_appeal || rawDiag.investmentAttractiveness || '割安度分析中',
-              dividend_sustainability:
-                rawDiag.dividend_sustainability || rawDiag.dividendSustainability || '配当持続性分析中',
-              catalyst:
-                rawDiag.catalyst || 'カタリスト分析中',
-              risks:
-                rawDiag.risks || rawDiag.risk || 'リスク要因分析中',
-            };
-
-            return {
-              success: true,
-              code: stock.code,
-              name: stock.name,
-              diagnosis: normalizedDiagnosis,
-              diagnosedDateLabel: item.diagnosisDate || '直近土曜日',
-              nextDiagnosisLabel: '次回: 来週土曜日',
-              diagnosedAt: item.diagnosisDate || new Date().toISOString(),
-              model: 'gemini-3.6-flash',
-              fromCache: true,
-            };
-          }
-        }
-      } catch {
-        // try next
-      }
-    }
+    const staticData = await loadStaticDiagnosis(stock.code, false);
+    if (staticData) return staticData;
   }
 
-  // 2. サーバーサイドAPI（Node.js動態サーバー環境の場合）
+  // 2. サーバーサイドAPI（Node.js動態サーバー環境・GEMINI_API_KEYがある場合）
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
     const res = await fetch('/api/ai/diagnosis', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      signal: controller.signal,
       body: JSON.stringify({
         code: stock.code,
         name: stock.name,
@@ -207,19 +218,23 @@ export async function fetchAiDiagnosis(
         forceRefresh,
       }),
     });
+    clearTimeout(timeoutId);
 
-    if (!res.ok) {
-      return null;
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.success) {
+        return {
+          ...data,
+          model: 'gemini 3.5 Flash-Lite',
+        } as StockAiDiagnosisResponse;
+      }
     }
-
-    const data = await res.json();
-    if (data && data.success) {
-      return data as StockAiDiagnosisResponse;
-    }
-    return null;
   } catch {
-    return null;
+    // サーバーサイドAPIが存在しない（GitHub Pages等の静的ホスティング環境）
   }
+
+  // 3. サーバーAPIがない場合でも、既存の最新静的JSONを再取得して返却（未生成エラー化を防ぐ）
+  return await loadStaticDiagnosis(stock.code, true);
 }
 
 /**
@@ -231,7 +246,7 @@ export function createChatGptConsultUrl(stock: StockItem): string {
 【銘柄情報】
 ・銘柄コード: ${stock.code}
 ・企業名: ${stock.name}
-・予想PER: ${stock.per != null ? `${stock.per}倍` : '不明'}
+・実績PER: ${stock.per != null ? `${stock.per}倍` : '不明'}
 ・実績PBR: ${stock.pbr != null ? `${stock.pbr}倍` : '不明'}
 ・配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
 ・配当性向: ${stock.payout_ratio != null ? `${stock.payout_ratio}%` : '不明'}

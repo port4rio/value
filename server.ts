@@ -471,10 +471,10 @@ JSON形式例:
 
     if (!isPrimaryCooldown) {
       try {
-        // Primary: gemini-3.8-flash をタイムアウト(8秒)で判定
+        // Primary: gemini-3.5-flash-lite をタイムアウト(8秒)で判定
         const callWithTimeout = Promise.race([
           ai.models.generateContent({
-            model: 'gemini-3.8-flash',
+            model: 'gemini-3.5-flash-lite',
             contents: prompt,
             config: {
               responseMimeType: 'application/json',
@@ -482,7 +482,7 @@ JSON形式例:
             },
           }),
           new Promise<never>((_, reject) =>
-            setTimeout(() => reject(new Error('3.8-flash timeout (8s)')), 8000)
+            setTimeout(() => reject(new Error('3.5-flash-lite timeout (8s)')), 8000)
           ),
         ]);
 
@@ -490,14 +490,14 @@ JSON形式例:
         aiResponseText = genResult.text || '';
       } catch (modelErr: any) {
         const errMsg = String(modelErr?.message || modelErr);
-        console.warn('Primary 3.8-flash failed or timed out, quickly falling back to gemini-3.1-flash-lite:', errMsg);
+        console.warn('Primary 3.5-flash-lite failed or timed out, quickly falling back to gemini-3.1-flash-lite:', errMsg);
         // レート制限(429/quota)や一時高負荷(503)を検知した場合、次回から即座に3.1-flash-liteへ直接流す
         if (errMsg.includes('429') || errMsg.includes('quota') || errMsg.includes('RESOURCE_EXHAUSTED') || errMsg.includes('503') || errMsg.includes('high demand')) {
           primaryCooldownUntil = Date.now() + 15 * 60 * 1000; // 15分間クールダウン
         }
       }
     } else {
-      console.log('Primary 3.8 is on cooldown (quota/rate-limit). Routing directly to gemini-3.1-flash-lite.');
+      console.log('Primary 3.5 is on cooldown. Routing directly to gemini-3.1-flash-lite.');
     }
 
     // Fallback / Direct: gemini-3.1-flash-lite (高速・大容量枠)

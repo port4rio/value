@@ -60,8 +60,8 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
 
               {/* Tab 2: バリュー株同窓会 (アクティブタブ) */}
-              <div className="flex items-center gap-1.5 px-3.5 py-1 rounded-lg bg-[#20362b] border border-[#3b5745] text-white shadow-sm select-none relative">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#20362b] border border-[#3b5745] text-white shadow-sm select-none relative">
+                <span className="text-base leading-none">🗿</span>
                 <h1 className="text-sm sm:text-base font-bold tracking-tight text-[#f3f7f4] font-display whitespace-nowrap">
                   バリュー株同窓会
                 </h1>
@@ -194,10 +194,10 @@ export const Header: React.FC<HeaderProps> = ({
                   ? 'bg-[#2a2c17] border-[#6b6727] text-[#fef08a] font-bold'
                   : 'bg-[#192720] border-[#2c4034] text-[#cfded5] hover:bg-[#203129]'
               }`}
-              title="スクリーニング基準の調整"
+              title="スクリーニング基準の調整・絞込"
             >
               <SlidersHorizontal className="w-3 h-3 text-[#9ab3a5]" />
-              <span>条件</span>
+              <span>絞込</span>
               {!isDefaultCriteria && (
                 <span className="w-2 h-2 rounded-full bg-[#facc15] absolute -top-0.5 -right-0.5 shadow-sm"></span>
               )}
@@ -227,10 +227,10 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               disabled={isLoading}
               className="flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-lg bg-[#243a2e] border border-[#3b5947] text-[#86efac] hover:bg-[#2b4437] transition-colors disabled:opacity-40 outline-none focus:outline-none"
-              title="最新データを再取得"
+              title="最新データを再取得（ページ再読み込み）"
             >
               <RefreshCw className={`w-3 h-3 ${isLoading ? 'animate-spin' : ''}`} />
-              <span className="hidden xs:inline">{isLoading ? '取得中' : '更新'}</span>
+              <span>{isLoading ? '取得中' : '更新'}</span>
             </button>
           </div>
         </div>

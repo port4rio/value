@@ -226,14 +226,16 @@ export const StockTable: React.FC<StockTableProps> = ({
                     >
                       {stock.category === 'sotsugyo' ? (
                         <span
-                          className="text-[#f472b6] text-[11px]"
+                          className="text-[#f472b6] font-mono font-semibold"
                           title={
                             stock.graduationReason
                               ? `卒業日: ${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
-                              : '卒業'
+                              : '卒業生'
                           }
                         >
-                          卒業
+                          {stock.stayDays != null
+                            ? `${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日`
+                            : '-1日'}
                         </span>
                       ) : stock.stayDays != null ? (
                         <span

@@ -29,7 +29,10 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
     minWidth: 'w-[72px] min-w-[72px]',
     priority: 'high',
     format: (v, stock) => {
-      if (stock?.category === 'sotsugyo') return '卒業';
+      if (stock?.category === 'sotsugyo') {
+        const days = v != null ? (Number(v) > 0 ? -Number(v) : Number(v)) : null;
+        return days != null ? `${days}日` : '-1日';
+      }
       return v != null ? `${v}日` : '-';
     },
   },

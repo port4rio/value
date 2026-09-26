@@ -423,13 +423,14 @@ async function generateAiDiagnosis(stocks: StockItem[]) {
 
     console.log(`Analyzing [${s.code}] ${s.name}...`);
     const prompt = `あなたは日本株のバリュー株投資に精通したシニア・クオンツアナリストです。
-以下の銘柄のファンダメンタルズ数値および企業の実際の事業内容を詳細に分析し、投資家向けの「週次AIバリュースコープ診断」を作成してください。
+以下の銘柄の最新ファンダメンタルズ数値および企業の実際の事業特性を詳細に分析し、投資家向けの「週次AIバリュースコープ診断」を作成してください。
+表面的な会社概要の羅列や一般的な定型句は避け、なぜ現在PBR ${s.pbr != null ? `${s.pbr}倍` : '1倍割れ'}やPER ${s.per != null ? `${s.per}倍` : '割安水準'}にとどまっているのか、ネットキャッシュや財務体質、株主還元方針や東証PBR改善要請への対応期待など、具体的かつ本質的な投資判断材料を鋭く記述してください。
 
 【対象銘柄】
 証券コード: ${s.code}
 銘柄名: ${s.name}
-PER: ${s.per != null ? `${s.per}倍` : '－'}
-PBR: ${s.pbr != null ? `${s.pbr}倍` : '－'}
+実績PER: ${s.per != null ? `${s.per}倍` : '－'}
+実績PBR: ${s.pbr != null ? `${s.pbr}倍` : '－'}
 配当利回り: ${s.dividend_yield != null ? `${s.dividend_yield}%` : '－'}
 配当性向: ${s.payout_ratio != null ? `${s.payout_ratio}%` : '－'}
 ROE: ${s.roe != null ? `${s.roe}%` : '－'}
@@ -459,7 +460,7 @@ D/Eレシオ: ${s.de_ratio != null ? `${s.de_ratio}倍` : '－'}
 
     try {
       let success = false;
-      const modelsToTry = ['gemini-3.1-flash-lite', 'gemini-3.8-flash'];
+      const modelsToTry = ['gemini-3.5-flash-lite', 'gemini-3.1-flash-lite'];
       for (const model of modelsToTry) {
         if (success) break;
         for (let attempt = 0; attempt < 2; attempt++) {
@@ -741,11 +742,10 @@ async function main() {
         const reason = determineGraduationReason(s);
         console.log(`🎓 卒業検出: [${s.code}] ${s.name} (理由: ${reason})`);
         const effectiveEntryDate = prev.entryDate || todayStr;
-        const stayDays = normalizeStayDays(effectiveEntryDate, prev.stayDays || 1);
         graduatedStocks.push({
           ...s,
           category: 'sotsugyo',
-          stayDays,
+          stayDays: -1,
           entryDate: effectiveEntryDate,
           graduationDate: todayStr,
           graduationReason: reason,
@@ -753,13 +753,21 @@ async function main() {
           graduationReturn: 0,
         });
       } else if (prev && prev.category === 'sotsugyo') {
-        // 過去に卒業した卒業生の継続追跡（最新株価・リターンを更新）
+        // 過去に卒業した卒業生の継続追跡（最新株価・リターンを更新、卒業後日数をマイナス値で進行）
         const gradPrice = prev.graduationPrice || prev.close || s.close;
         let gradReturn: number | undefined = prev.graduationReturn;
         if (gradPrice && s.close) {
           gradReturn = Number((((s.close - gradPrice) / gradPrice) * 100).toFixed(2));
         }
-        const stayDays = normalizeStayDays(prev.entryDate, prev.stayDays || 3);
+        let gradDays = prev.stayDays ? Math.abs(prev.stayDays) : 1;
+        if (shouldIncrementStayDays) {
+          gradDays += 1;
+        } else if (prev.graduationDate === '2026-09-24') {
+          gradDays = 2;
+        } else if (prev.graduationDate === '2026-09-25') {
+          gradDays = 1;
+        }
+        const stayDays = -gradDays;
         graduatedStocks.push({
           ...s,
           category: 'sotsugyo',

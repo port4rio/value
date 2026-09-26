@@ -127,7 +127,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                 )}
                 {stock.category === 'sotsugyo' && (
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
-                    卒業生（追跡）
+                    卒業{stock.stayDays != null ? ` ${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日` : ''}（追跡）
                   </span>
                 )}
               </div>
@@ -299,13 +299,13 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
 
               <div className="flex items-center gap-1.5">
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#182a20] text-[#86efac] border border-[#274433] font-medium">
-                  gemini
+                  gemini 3.5
                 </span>
                 <button
                   type="button"
                   onClick={() => loadAiDiagnosis(stock, true)}
                   disabled={isAiLoading}
-                  title="最新データで再診断"
+                  title="最新データで再診断（または最新キャッシュ再読込）"
                   className="p-1 rounded text-[#719080] hover:text-[#f0f5f2] hover:bg-[#1f3127] transition-colors"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 ${isAiLoading ? 'animate-spin' : ''}`} />
@@ -317,7 +317,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
             {isAiLoading && (
               <div className="py-8 flex flex-col items-center justify-center gap-2 text-xs text-[#80a492]">
                 <RefreshCw className="w-5 h-5 animate-spin text-[#10b981]" />
-                <span>gemini で診断中...</span>
+                <span>gemini 3.5 で診断中...</span>
               </div>
             )}
 
