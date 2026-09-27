@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026/09/27 11:25",
+  "updatedAt": "2026/09/27 15:45",
   "lastIncrementDate": "2026-09-25",
   "count": 57,
   "stocks": [
@@ -844,26 +844,6 @@
       "lastIncrementDate": "2026-09-25"
     },
     {
-      "code": "3375",
-      "name": "ＺＯＡ",
-      "close": 1785,
-      "change": -0.5,
-      "market_cap": 26,
-      "per": 7.17,
-      "pbr": 0.71,
-      "roe": 10.32,
-      "dividend_yield": 4.2,
-      "payout_ratio": 28.8,
-      "ebitda_growth": 12.25,
-      "current_ratio": 256.78,
-      "de_ratio": 0.25,
-      "equity_ratio": 63.8,
-      "category": "tennyu",
-      "stayDays": 3,
-      "entryDate": "2026-09-23",
-      "lastIncrementDate": "2026-09-25"
-    },
-    {
       "code": "1718",
       "name": "美樹工業",
       "close": 7140,
@@ -881,6 +861,26 @@
       "category": "tennyu",
       "stayDays": 1,
       "entryDate": "2026-09-25",
+      "lastIncrementDate": "2026-09-25"
+    },
+    {
+      "code": "3375",
+      "name": "ＺＯＡ",
+      "close": 1785,
+      "change": -0.5,
+      "market_cap": 26,
+      "per": 7.17,
+      "pbr": 0.71,
+      "roe": 10.32,
+      "dividend_yield": 4.2,
+      "payout_ratio": 28.8,
+      "ebitda_growth": 12.25,
+      "current_ratio": 256.78,
+      "de_ratio": 0.25,
+      "equity_ratio": 63.8,
+      "category": "tennyu",
+      "stayDays": 3,
+      "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-25"
     },
     {
@@ -1348,7 +1348,7 @@
       "graduationDate": "2026-03-31",
       "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.44倍）",
       "graduationPrice": 3050,
-      "graduationReturn": 25.6
+      "graduationReturn": 25.57
     },
     {
       "code": "6458",
@@ -1371,13 +1371,13 @@
       "graduationDate": "2026-03-31",
       "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.42倍）",
       "graduationPrice": 1303,
-      "graduationReturn": -4.7
+      "graduationReturn": -4.68
     },
     {
       "code": "8154",
       "name": "加賀電子",
       "close": 5420,
-      "change": 5.85,
+      "change": 5.86,
       "market_cap": 2844,
       "per": 8.63,
       "pbr": 1.55,
@@ -1394,7 +1394,7 @@
       "graduationDate": "2026-03-31",
       "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.55倍）",
       "graduationPrice": 3337,
-      "graduationReturn": 62.4
+      "graduationReturn": 62.42
     },
     {
       "code": "3132",
@@ -1417,19 +1417,19 @@
       "graduationDate": "2026-03-31",
       "graduationReason": "PBR1倍突破（株価急伸によりPBR 2.75倍）",
       "graduationPrice": 2159,
-      "graduationReturn": 98.6
+      "graduationReturn": 98.56
     },
     {
       "code": "9880",
       "name": "イノテック",
       "close": 3565,
-      "change": 2.14,
+      "change": 2.15,
       "market_cap": 488,
       "per": 11.13,
       "pbr": 1.85,
       "roe": 15.6,
       "dividend_yield": 3.64,
-      "payout_ratio": 39.0,
+      "payout_ratio": 39,
       "ebitda_growth": 74.3,
       "current_ratio": 183,
       "de_ratio": 0.18,
@@ -1440,7 +1440,7 @@
       "graduationDate": "2026-03-31",
       "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.85倍）",
       "graduationPrice": 1773,
-      "graduationReturn": 101
+      "graduationReturn": 101.07
     }
   ]
 }
