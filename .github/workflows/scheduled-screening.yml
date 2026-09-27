@@ -8,7 +8,11 @@ on:
   workflow_dispatch:
     inputs:
       with_ai:
-        description: '土曜AI診断（Gemini）も同時に実行する'
+        description: 'AI診断（Gemini）を実行する（未診断銘柄のみ）'
+        type: boolean
+        default: false
+      force_ai:
+        description: '【全銘柄強制再生成】既存の診断も含めて全銘柄を最新プロンプトで再生成する'
         type: boolean
         default: false
 
@@ -47,14 +51,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Screening (and optional Saturday AI diagnosis)
+      - name: Run Screening (and optional AI diagnosis)
         env:
           TZ: 'Asia/Tokyo'
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && github.event.schedule == '13 22 * * 5' || inputs.with_ai }}
+          SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && github.event.schedule == '13 22 * * 5' }}
+          WITH_AI: ${{ inputs.with_ai }}
+          FORCE_AI: ${{ inputs.force_ai }}
         run: |
-          if [ "$SATURDAY_DIAGNOSIS" = "true" ]; then
-            echo "🚀 Running screening with Saturday AI Diagnosis..."
+          if [ "$FORCE_AI" = "true" ]; then
+            echo "🚀 Running screening with FORCED AI Diagnosis for ALL stocks..."
+            npx tsx scripts/run_screening.ts --with-ai --force-ai
+          elif [ "$SATURDAY_DIAGNOSIS" = "true" ] || [ "$WITH_AI" = "true" ]; then
+            echo "🚀 Running screening with AI Diagnosis..."
             npx tsx scripts/run_screening.ts --with-ai
           else
             echo "🚀 Running daily screening..."

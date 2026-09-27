@@ -807,8 +807,8 @@ async function main() {
   // 7. チャートデータを収集・保存
   await fetchAndSaveCharts(finalStocks);
 
-  // 8. AI診断（土曜定期更新、明示的な--with-ai指定、または未診断データがある場合に自動生成）
-  const withAi = process.argv.includes('--with-ai') || process.env.SATURDAY_DIAGNOSIS === 'true';
+  // 8. AI診断（土曜定期更新、明示的な--with-ai指定、--force-ai指定、または未診断データがある場合に自動生成）
+  const withAi = process.argv.includes('--with-ai') || process.argv.includes('--force-ai') || process.env.SATURDAY_DIAGNOSIS === 'true';
   const hasEmptyAiFile = !fs.existsSync(AI_FILE) || fs.readFileSync(AI_FILE, 'utf-8').trim() === '{}' || fs.readFileSync(AI_FILE, 'utf-8').trim() === '';
   if ((withAi || hasEmptyAiFile) && process.env.GEMINI_API_KEY) {
     console.log(`🤖 Triggering AI Diagnosis (withAi=${withAi}, hasEmptyAiFile=${hasEmptyAiFile})...`);
