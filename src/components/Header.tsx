@@ -5,10 +5,10 @@ import { exportStocksToCsv } from '../utils/exportCsv';
 
 interface HeaderProps {
   filteredStocks: StockItem[];
-  allStocksCount: number;
-  inokoriCount: number;
-  tennyuCount: number;
+  wariyasuCount: number;
+  shokakuCount: number;
   sotsugyoCount: number;
+  taigakuCount: number;
   activeCategory: AlumniCategory;
   setActiveCategory: (category: AlumniCategory) => void;
   isLoading: boolean;
@@ -23,10 +23,10 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   filteredStocks,
-  allStocksCount,
-  inokoriCount,
-  tennyuCount,
+  wariyasuCount,
+  shokakuCount,
   sotsugyoCount,
+  taigakuCount,
   activeCategory,
   setActiveCategory,
   isLoading,
@@ -68,63 +68,45 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* Classification Tabs: [全銘柄34] [居残り組**] [転入生**] [卒業生**] */}
+            {/* Classification Tabs: [割安組] [昇格組] [卒業生] [退学者] */}
             <div className="flex items-center gap-1.5 flex-wrap">
-              {/* 全銘柄 */}
+              {/* 割安組 (PBR <= 1.0) */}
               <button
                 type="button"
                 onClick={(e) => {
                   (e.currentTarget as HTMLElement).blur();
-                  setActiveCategory('all');
+                  setActiveCategory('wariyasu');
                 }}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
-                  activeCategory === 'all'
-                    ? 'bg-[#203a2c] text-[#86efac] border border-[#3a684e] shadow-sm ring-1 ring-[#4ade80]/20 font-bold'
+                  activeCategory === 'wariyasu'
+                    ? 'bg-[#1b382b] text-[#86efac] border border-[#2e5941] shadow-sm ring-1 ring-[#4ade80]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
-                title="現在のスクリーニング該当銘柄すべて"
+                title="王道バリュー（PBR≦1.0倍・スクリーニング基準クリア）"
               >
-                <span>全銘柄</span>
-                <span className="font-mono font-bold text-[#fef08a]">{allStocksCount}</span>
+                <span>割安組</span>
+                <span className="font-mono font-bold text-[#86efac]">{wariyasuCount}</span>
               </button>
 
-              {/* 居残り組 */}
+              {/* 昇格組 (1.0 < PBR <= 1.2) */}
               <button
                 type="button"
                 onClick={(e) => {
                   (e.currentTarget as HTMLElement).blur();
-                  setActiveCategory('inokori');
+                  setActiveCategory('shokaku');
                 }}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
-                  activeCategory === 'inokori'
-                    ? 'bg-[#302c17] text-[#fde047] border border-[#635523] shadow-sm ring-1 ring-[#fde047]/20 font-bold'
+                  activeCategory === 'shokaku'
+                    ? 'bg-[#332c16] text-[#fde047] border border-[#665421] shadow-sm ring-1 ring-[#fde047]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
-                title="ずっと割安（スクリーニング在籍60日以上）"
+                title="卒業を目指す有望株（1.0<PBR≦1.2倍・スクリーニング基準クリア）"
               >
-                <span>居残り組</span>
-                <span className="font-mono font-bold text-[#fde047]">{inokoriCount}</span>
+                <span>昇格組</span>
+                <span className="font-mono font-bold text-[#fde047]">{shokakuCount}</span>
               </button>
 
-              {/* 転入生 */}
-              <button
-                type="button"
-                onClick={(e) => {
-                  (e.currentTarget as HTMLElement).blur();
-                  setActiveCategory('tennyu');
-                }}
-                className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
-                  activeCategory === 'tennyu'
-                    ? 'bg-[#152934] text-[#7dd3fc] border border-[#244f65] shadow-sm ring-1 ring-[#38bdf8]/20 font-bold'
-                    : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
-                }`}
-                title="珍しく割安（スクリーニング在籍20日以内）"
-              >
-                <span>転入生</span>
-                <span className="font-mono font-bold text-[#7dd3fc]">{tennyuCount}</span>
-              </button>
-
-              {/* 卒業生 */}
+              {/* 卒業生 (PBR > 1.2, 1年追跡) */}
               <button
                 type="button"
                 onClick={(e) => {
@@ -133,13 +115,31 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
                   activeCategory === 'sotsugyo'
-                    ? 'bg-[#321b2b] text-[#f472b6] border border-[#662754] shadow-sm ring-1 ring-[#f472b6]/20 font-bold'
+                    ? 'bg-[#361a2e] text-[#f472b6] border border-[#6b2554] shadow-sm ring-1 ring-[#f472b6]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
-                title="名誉挽回（PBR1倍超等を達成し割安脱出、卒業後2年間追跡中）"
+                title="名誉の卒業（株価上昇によりPBR1.2倍超達成・1年間追跡中）"
               >
                 <span>卒業生</span>
                 <span className="font-mono font-bold text-[#f472b6]">{sotsugyoCount}</span>
+              </button>
+
+              {/* 退学者 (利回り低下、減配、ROE低下、財務悪化等, 1年追跡) */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  (e.currentTarget as HTMLElement).blur();
+                  setActiveCategory('taigaku');
+                }}
+                className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
+                  activeCategory === 'taigaku'
+                    ? 'bg-[#281b36] text-[#c084fc] border border-[#58337a] shadow-sm ring-1 ring-[#c084fc]/20 font-bold'
+                    : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
+                }`}
+                title="基準未達（利回り低下・減配・ROE低下・財務悪化等により脱落・1年間追跡中）"
+              >
+                <span>退学者</span>
+                <span className="font-mono font-bold text-[#c084fc]">{taigakuCount}</span>
               </button>
             </div>
           </div>

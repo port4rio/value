@@ -47,19 +47,19 @@ export function applyScreeningCriteria(
   criteria: ScreeningCriteria
 ): StockItem[] {
   return stocks.filter((s) => {
-    // 卒業生（名誉挽回、2年追跡枠）はスクリーニング条件外として保持
-    if (s.category === 'sotsugyo') return true;
+    // 卒業生・退学者はスクリーニング条件外として保持（各タブで追跡）
+    if (s.category === 'sotsugyo' || s.category === 'taigaku') return true;
 
-    // yfinance から取得した最新配当利回りによる絞込
+    // yfinance / みんかぶ から取得した最新配当利回りによる絞込
     if (s.dividend_yield != null && s.dividend_yield < criteria.minDividendYield) return false;
 
     // PBR (資産割安)
     if (s.pbr != null && s.pbr > criteria.maxPbr) return false;
     // ROE (資本効率)
     if (s.roe != null && s.roe < criteria.minRoe) return false;
-    // EBITDA成長率（指定がある場合のみ適用、-10以下や-999は不問）
+    // EBITDA成長率（指定がある場合のみ適用、-20以下や-999は不問）
     if (
-      criteria.minEbitdaGrowth > -10 &&
+      criteria.minEbitdaGrowth > -20 &&
       s.ebitda_growth != null &&
       s.ebitda_growth < criteria.minEbitdaGrowth
     ) {
@@ -117,11 +117,10 @@ export async function fetchScreeningStocks(
     // yfinance から取得した最新値を使って後段で厳格に絞り込む
     const payload = {
       filter: [
-        { left: 'price_book_fq', operation: 'less', right: Math.max(criteria.maxPbr, 1.2) },
-        { left: 'return_on_equity_fq', operation: 'egreater', right: Math.min(criteria.minRoe, 6.0) },
-        ...(criteria.minEbitdaGrowth > -10
-          ? [{ left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: criteria.minEbitdaGrowth }]
-          : []),
+        { left: 'price_book_fq', operation: 'less', right: 1.3 },
+        { left: 'return_on_equity_fq', operation: 'egreater', right: 7.4 },
+        { left: 'dividends_yield_current', operation: 'egreater', right: 3.7 },
+        { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: -10 },
       ],
       options: { lang: 'ja' },
       symbols: { query: { types: [] } },
@@ -176,8 +175,13 @@ export async function fetchScreeningStocks(
               const existing = initialMap.get(code);
 
               const stayDays = existing?.stayDays ?? 1;
+              const pbr = d[6] != null ? Number(Number(d[6]).toFixed(2)) : null;
               const category: StockItem['category'] =
-                stayDays >= 60 ? 'inokori' : stayDays <= 20 ? 'tennyu' : 'zaiseki';
+                pbr != null && pbr > 1.2
+                  ? 'sotsugyo'
+                  : pbr != null && pbr > 1.0
+                  ? 'shokaku'
+                  : 'wariyasu';
 
               return {
                 code,
@@ -186,7 +190,7 @@ export async function fetchScreeningStocks(
                 change: d[3] != null ? Number(Number(d[3]).toFixed(2)) : null,
                 market_cap: d[4] != null ? Math.round(Number(d[4]) / 100000000) : null,
                 per: d[5] != null ? Number(Number(d[5]).toFixed(2)) : null,
-                pbr: d[6] != null ? Number(Number(d[6]).toFixed(2)) : null,
+                pbr,
                 roe: d[7] != null ? Number(Number(d[7]).toFixed(2)) : null,
                 dividend_yield: d[8] != null ? Number(Number(d[8]).toFixed(2)) : null,
                 payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
@@ -201,7 +205,7 @@ export async function fetchScreeningStocks(
             })
             .filter(
               (s: StockItem) =>
-                s.equity_ratio !== null && s.equity_ratio >= criteria.minEquityRatio
+                s.equity_ratio !== null && s.equity_ratio >= 47.0
             );
         }
       }

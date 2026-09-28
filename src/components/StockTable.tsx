@@ -230,24 +230,38 @@ export const StockTable: React.FC<StockTableProps> = ({
                           title={
                             stock.graduationReason
                               ? `卒業日:${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
-                              : '卒業生'
+                              : '卒業生（PBR1.2倍超）'
                           }
                         >
-                          {stock.stayDays != null
-                            ? `${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日`
-                            : '-1日'}
+                          {stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : '1日'}
+                        </span>
+                      ) : stock.category === 'taigaku' ? (
+                        <span
+                          className="text-[#c084fc] font-mono font-semibold"
+                          title={
+                            stock.dropoutReason || stock.graduationReason
+                              ? `退学日:${stock.dropoutDate || stock.graduationDate || '直近'}\n理由: ${
+                                  stock.dropoutReason || stock.graduationReason
+                                }`
+                              : '退学者（基準未達）'
+                          }
+                        >
+                          {stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : '1日'}
                         </span>
                       ) : stock.stayDays != null ? (
                         <span
                           className={
-                            stock.category === 'inokori'
+                            stock.category === 'shokaku'
                               ? 'text-[#fde047]'
-                              : stock.category === 'tennyu'
-                              ? 'text-[#7dd3fc]'
                               : 'text-[#86efac]'
                           }
+                          title={
+                            stock.category === 'shokaku'
+                              ? `昇格組 滞在${stock.stayDays}日`
+                              : `割安組 滞在${stock.stayDays}日`
+                          }
                         >
-                          {stock.stayDays}日
+                          {Math.abs(stock.stayDays)}日
                         </span>
                       ) : (
                         <span className="text-[#738d7e]">-</span>

@@ -136,7 +136,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             />
             <div className="flex justify-between text-[10px] text-[#6b8577] mt-0.5">
               <span>2.0%</span>
-              <span className="text-[#a4c2b2] font-medium">初期値: 4.0%</span>
+              <span className="text-[#a4c2b2] font-medium">初期値: 3.8%</span>
               <span>7.0%</span>
             </div>
           </div>
@@ -160,7 +160,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             />
             <div className="flex justify-between text-[10px] text-[#6b8577] mt-0.5">
               <span>0.3倍</span>
-              <span className="text-[#a4c2b2] font-medium">初期値: 1.00倍 (資産割安)</span>
+              <span className="text-[#a4c2b2] font-medium">初期値: 1.20倍</span>
               <span>2.0倍</span>
             </div>
           </div>
@@ -184,7 +184,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             />
             <div className="flex justify-between text-[10px] text-[#6b8577] mt-0.5">
               <span>0%</span>
-              <span className="text-[#a4c2b2] font-medium">初期値: 8.0% (資本効率)</span>
+              <span className="text-[#a4c2b2] font-medium">初期値: 7.5%</span>
               <span>20%</span>
             </div>
           </div>
@@ -194,26 +194,26 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             <div className="flex items-center justify-between mb-1.5">
               <label className="text-xs font-bold text-[#f0f5f2]">EBITDA成長率通期（下限）</label>
               <span className="text-sm font-bold text-[#86efac] font-mono">
-                {draft.minEbitdaGrowth <= -10
+                {draft.minEbitdaGrowth <= -20
                   ? '制限なし（全対象）'
                   : `${draft.minEbitdaGrowth.toFixed(1)}% 以上`}
               </span>
             </div>
             <input
               type="range"
-              min="-10"
+              min="-20"
               max="20"
               step="1"
-              value={draft.minEbitdaGrowth <= -10 ? -10 : draft.minEbitdaGrowth}
+              value={draft.minEbitdaGrowth <= -20 ? -20 : draft.minEbitdaGrowth}
               onChange={(e) => {
                 const val = parseFloat(e.target.value);
-                setDraft({ ...draft, minEbitdaGrowth: val === -10 ? -999 : val });
+                setDraft({ ...draft, minEbitdaGrowth: val === -20 ? -999 : val });
               }}
               className="w-full accent-emerald-400 cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-[#6b8577] mt-0.5">
               <span>制限なし</span>
-              <span className="text-[#a4c2b2] font-medium">初期値: 制限なし</span>
+              <span className="text-[#a4c2b2] font-medium">初期値: -10%</span>
               <span>20%</span>
             </div>
           </div>
@@ -230,7 +230,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
               type="range"
               min="20"
               max="80"
-              step="5"
+              step="1"
               value={draft.minEquityRatio}
               onChange={(e) =>
                 setDraft({ ...draft, minEquityRatio: parseInt(e.target.value, 10) })
@@ -239,7 +239,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             />
             <div className="flex justify-between text-[10px] text-[#6b8577] mt-0.5">
               <span>20%</span>
-              <span className="text-[#a4c2b2] font-medium">初期値: 50% (財務健全)</span>
+              <span className="text-[#a4c2b2] font-medium">初期値: 48%</span>
               <span>80%</span>
             </div>
           </div>

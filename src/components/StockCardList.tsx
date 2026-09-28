@@ -53,24 +53,30 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                         <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#101813] text-[#86efac] border border-[#273a2f]">
                           {stock.code}
                         </span>
-                        {stock.category === 'inokori' && (
-                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2a2614] text-[#fde047] border border-[#52451c]">
-                            居残り{stock.stayDays}日
-                          </span>
-                        )}
-                        {stock.category === 'tennyu' && (
-                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#13232b] text-[#7dd3fc] border border-[#213f4e]">
-                            転入{stock.stayDays}日
-                          </span>
-                        )}
-                        {stock.category === 'zaiseki' && (
+                        {stock.category === 'wariyasu' && (
                           <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#14261d] text-[#86efac] border border-[#274533]">
-                            在籍{stock.stayDays}日
+                            割安{stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : ''}
+                          </span>
+                        )}
+                        {stock.category === 'shokaku' && (
+                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2a2614] text-[#fde047] border border-[#52451c]">
+                            昇格{stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : ''}
                           </span>
                         )}
                         {stock.category === 'sotsugyo' && (
                           <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
-                            卒業 {stock.stayDays != null ? `${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日` : ''}
+                            卒業{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}
+                          </span>
+                        )}
+                        {stock.category === 'taigaku' && (
+                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#22182c] text-[#c084fc] border border-[#482d5e]">
+                            退学{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}
+                          </span>
+                        )}
+                        {/* Legacy fallback */}
+                        {stock.category === 'tennyu' && (
+                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#13232b] text-[#7dd3fc] border border-[#213f4e]">
+                            割安{stock.stayDays}日
                           </span>
                         )}
                       </div>
@@ -80,6 +86,11 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                       {stock.category === 'sotsugyo' && stock.graduationReason && (
                         <p className="text-[11px] text-[#f472b6] truncate max-w-[200px] mt-0.5">
                           {stock.graduationReason}
+                        </p>
+                      )}
+                      {stock.category === 'taigaku' && (stock.dropoutReason || stock.graduationReason) && (
+                        <p className="text-[11px] text-[#c084fc] truncate max-w-[200px] mt-0.5">
+                          {stock.dropoutReason || stock.graduationReason}
                         </p>
                       )}
                     </div>

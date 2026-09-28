@@ -115,24 +115,30 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                 <span className="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-[#101813] text-[#86efac] border border-[#273a2f]">
                   {stock.code}
                 </span>
-                {stock.category === 'inokori' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2a2614] text-[#fde047] border border-[#52451c]">
-                    居残り{stock.stayDays}日
-                  </span>
-                )}
-                {stock.category === 'tennyu' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#13232b] text-[#7dd3fc] border border-[#213f4e]">
-                    転入{stock.stayDays}日
-                  </span>
-                )}
-                {stock.category === 'zaiseki' && (
+                {stock.category === 'wariyasu' && (
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#14261d] text-[#86efac] border border-[#274533]">
-                    在籍{stock.stayDays}日
+                    割安{stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : ''}
+                  </span>
+                )}
+                {stock.category === 'shokaku' && (
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2a2614] text-[#fde047] border border-[#52451c]">
+                    昇格{stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : ''}
                   </span>
                 )}
                 {stock.category === 'sotsugyo' && (
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
-                    卒業{stock.stayDays != null ? ` ${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日` : ''}（追跡）
+                    卒業{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
+                  </span>
+                )}
+                {stock.category === 'taigaku' && (
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#22182c] text-[#c084fc] border border-[#482d5e]">
+                    退学{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
+                  </span>
+                )}
+                {/* Legacy fallback */}
+                {stock.category === 'tennyu' && (
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#13232b] text-[#7dd3fc] border border-[#213f4e]">
+                    割安{stock.stayDays}日
                   </span>
                 )}
               </div>
@@ -238,12 +244,12 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
             );
           })()}
 
-          {/* 卒業生バナー（卒業日・卒業理由・卒業時株価・リターン） */}
+          {/* 卒業生バナー（卒業日・卒業理由・卒業時株価・リターン、1年追跡） */}
           {stock.category === 'sotsugyo' && (
             <div className="bg-[#2a1624] border border-[#6b2554] rounded-lg p-2 sm:p-2.5 mt-2 text-xs">
               <div className="flex items-center justify-between gap-1 mb-1">
                 <div className="flex items-center gap-1 font-bold text-[#f472b6] truncate min-w-0">
-                  <span className="shrink-0">卒業生データ</span>
+                  <span className="shrink-0">卒業生データ（1年追跡中）</span>
                   {stock.graduationDate && (
                     <span className="font-mono font-normal text-[#fbcfe8] text-[11px] shrink-0">
                       （卒業日:{stock.graduationDate}）
@@ -265,6 +271,38 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                 <div className="text-[#fbcfe8] text-[11px] leading-relaxed">
                   <span className="text-[#f9a8d4] font-semibold">卒業理由: </span>
                   {stock.graduationReason}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* 退学者バナー（退学日・退学理由・退学時株価・リターン、1年追跡） */}
+          {stock.category === 'taigaku' && (
+            <div className="bg-[#241a2e] border border-[#542d6b] rounded-lg p-2 sm:p-2.5 mt-2 text-xs">
+              <div className="flex items-center justify-between gap-1 mb-1">
+                <div className="flex items-center gap-1 font-bold text-[#c084fc] truncate min-w-0">
+                  <span className="shrink-0">退学者データ（1年追跡中）</span>
+                  {(stock.dropoutDate || stock.graduationDate) && (
+                    <span className="font-mono font-normal text-[#e9d5ff] text-[11px] shrink-0">
+                      （退学日:{stock.dropoutDate || stock.graduationDate}）
+                    </span>
+                  )}
+                </div>
+                {(stock.dropoutReturn != null || stock.graduationReturn != null) && (
+                  <span
+                    className={`font-mono font-bold shrink-0 text-right ${
+                      (stock.dropoutReturn ?? stock.graduationReturn ?? 0) >= 0 ? 'text-[#4ade80]' : 'text-[#f87171]'
+                    }`}
+                  >
+                    退学後: {(stock.dropoutReturn ?? stock.graduationReturn ?? 0) > 0 ? '+' : ''}
+                    {(stock.dropoutReturn ?? stock.graduationReturn ?? 0).toFixed(2)}%
+                  </span>
+                )}
+              </div>
+              {(stock.dropoutReason || stock.graduationReason) && (
+                <div className="text-[#e9d5ff] text-[11px] leading-relaxed">
+                  <span className="text-[#d8b4fe] font-semibold">退学理由: </span>
+                  {stock.dropoutReason || stock.graduationReason}
                 </div>
               )}
             </div>

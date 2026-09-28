@@ -16,15 +16,14 @@ on:
         type: boolean
         default: false
       force_increment:
-        description: '【滞在日数強制加算】同日再実行時でも滞在日数を強制的に+1/-1する'
+        description: '【滞在日数強制加算】同日再実行時でも滞在日数を強制的に+1する'
         type: boolean
         default: false
 
-  # 定期自動実行（タイムゾーン: timezone: 'Asia/Tokyo'）
+  # 定期自動実行（GitHub ActionsのcronはUTC基準）
   schedule:
-    # 平日(月〜金) 11:13 JST
-    - cron: '13 11 * * 1-5'
-      timezone: 'Asia/Tokyo'
+    # 平日(月〜金) 11:13 JST (02:13 UTC)
+    - cron: '13 2 * * 1-5'
     # 毎週土曜日 07:13 JST (金曜 22:13 UTC)
     - cron: '13 22 * * 5'
 
@@ -72,8 +71,8 @@ jobs:
             echo "🚀 Running screening with AI Diagnosis..."
             ARGS="$ARGS --with-ai"
           fi
-          if [ "$FORCE_INCREMENT" = "true" ]; then
-            echo "⏳ Forcing stayDays increment (+1/-1)..."
+          if [ "$FORCE_INCREMENT" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "⏳ Forcing stayDays increment (+1)..."
             ARGS="$ARGS --force-increment"
           fi
           echo "🚀 Executing: npx tsx scripts/run_screening.ts $ARGS"

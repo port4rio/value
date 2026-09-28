@@ -22,10 +22,15 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       { left: 'market_cap_basic', operation: 'nempty' },
       { left: 'type', operation: 'equal', right: 'stock' },
       { left: 'subtype', operation: 'in_range', right: ['common'] },
-      // 一次選別での取りこぼし予防: 条件を緩める（PBR 1.20以下、ROE 7.0%以上、配当3.5%以上）
-      { left: 'price_book_fq', operation: 'less', right: 1.2 },
-      { left: 'return_on_equity_fq', operation: 'egreater', right: 7.0 },
-      { left: 'dividends_yield', operation: 'egreater', right: 3.5 },
+      // ① TradingViewから取得する条件:
+      // PBR 1.3以下
+      { left: 'price_book_fq', operation: 'less', right: 1.3 },
+      // ROE 7.4以上
+      { left: 'return_on_equity_fq', operation: 'egreater', right: 7.4 },
+      // 配当利回り 3.7以上
+      { left: 'dividends_yield', operation: 'egreater', right: 3.7 },
+      // EBITDA成長率 -10以上
+      { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: -10 },
     ],
     options: { lang: 'ja' },
     symbols: { query: { types: [] }, tickers: [] },
@@ -85,15 +90,19 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       const dy = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
       const ebitdaGrowth = d[10] != null ? Number(Number(d[10]).toFixed(2)) : null;
 
-      // 一次選別での取りこぼし予防（緩めの条件で通過させ、みんかぶの正確な値で最終選別）
-      // 自己資本比率: 48%以上（計算誤差を考慮）
-      if (equityRatio == null || equityRatio < 48.0) continue;
-      // PBR: 1.20以下
-      if (pbr != null && pbr > 1.20) continue;
-      // ROE: 7.5%以上
-      if (roe != null && roe < 7.5) continue;
-      // 予想配当利回り: 3.8%以上
-      if (dy != null && dy < 3.8) continue;
+      // ① 取得時条件に厳密に合致（自己資本比率 47%以上、余計な2重の過剰絞り込みは排除）
+      if (equityRatio == null || equityRatio < 47.0) continue;
+      if (pbr != null && pbr > 1.30) continue;
+      if (roe != null && roe < 7.4) continue;
+      if (dy != null && dy < 3.7) continue;
+      if (ebitdaGrowth != null && ebitdaGrowth < -10.0) continue;
+
+      const category: StockItem['category'] =
+        pbr != null && pbr > 1.2
+          ? 'sotsugyo'
+          : pbr != null && pbr > 1.0
+          ? 'shokaku'
+          : 'wariyasu';
 
       candidates.push({
         code,
@@ -110,13 +119,13 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
         current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
         de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
         equity_ratio: equityRatio,
-        category: 'tennyu',
+        category,
         stayDays: 1,
         entryDate: new Date().toISOString().split('T')[0],
       });
     }
 
-    console.log(`✅ Filtered ${candidates.length} strong candidates from TradingView (equity ratio >= 50%).`);
+    console.log(`✅ Filtered ${candidates.length} candidates from TradingView (PBR<=1.3, ROE>=7.4, 利回り>=3.7, EBITDA>=-10, 自己資本>=47%).`);
     return candidates;
   } catch (err) {
     console.warn('⚠️ TradingView fetch failed:', err);
@@ -582,47 +591,69 @@ function isTokyoMarketHoliday(year: number, month: number, day: number): boolean
 }
 
 /**
- * 卒業理由の判定
- * 株価上昇（名誉の卒業）や利回り低下・業績変化などの理由を具体的に明示
+ * 卒業理由の判定（株価上昇によりPBR1.2倍突破した名誉の卒業）
  */
 function determineGraduationReason(s: StockItem): string {
+  if (s.pbr != null && s.pbr > 1.20) {
+    return `PBR1.2倍突破（株価上昇によりPBR ${s.pbr.toFixed(2)}倍）`;
+  }
+  return 'PBR1.2倍突破（名誉の卒業）';
+}
+
+/**
+ * 退学理由の判定（利回り低下・減配・ROE低下・財務悪化などによる脱落）
+ */
+function determineDropoutReason(s: StockItem): string {
   const reasons: string[] = [];
 
-  // 1. PBR 1倍突破（株価上昇による名誉の卒業！）
-  if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) {
-    reasons.push(`PBR1倍突破（株価上昇によりPBR ${s.pbr.toFixed(2)}倍）`);
+  // 1. 配当利回り 3.8%割れ
+  if (s.dividend_yield != null && s.dividend_yield < 3.8) {
+    reasons.push(`利回り3.8%割れ（予想利回り ${s.dividend_yield.toFixed(2)}%）`);
   }
 
-  // 2. 配当利回り 4%割れ
-  if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) {
-    if (s.pbr != null && s.pbr >= 0.95) {
-      reasons.push(`利回り4%割れ（株価上昇に伴い利回り ${s.dividend_yield.toFixed(2)}%）`);
-    } else {
-      reasons.push(`利回り4%割れ（今期予想利回り ${s.dividend_yield.toFixed(2)}%）`);
-    }
+  // 2. ROE 7.5%割れ
+  if (s.roe != null && s.roe < 7.5) {
+    reasons.push(`ROE7.5%割れ（実績ROE ${s.roe.toFixed(2)}%）`);
   }
 
-  // 3. ROE 8%割れ
-  if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) {
-    reasons.push(`ROE8%割れ（実績ROE ${s.roe.toFixed(2)}%）`);
+  // 3. 自己資本比率 48%割れ（財務悪化）
+  if (s.equity_ratio != null && s.equity_ratio < 48.0) {
+    reasons.push(`自己資本比率48%割れ（財務悪化 ${s.equity_ratio.toFixed(1)}%）`);
   }
 
-  // 4. 自己資本比率 50%割れ
-  if (s.equity_ratio != null && s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) {
-    reasons.push(`自己資本比率50%割れ（自己資本比率 ${s.equity_ratio.toFixed(1)}%）`);
+  // 4. EBITDA成長率 -10%割れ
+  if (s.ebitda_growth != null && s.ebitda_growth < -10.0) {
+    reasons.push(`EBITDA成長率-10%割れ（${s.ebitda_growth.toFixed(1)}%）`);
   }
 
   return reasons.length > 0 ? reasons.join('、') : 'スクリーニング基準未達';
 }
 
 /**
- * 最終スクリーニング合格判定（5大条件すべてをクリア）
+ * 1年（365日）追跡期間の判定
  */
-function isQualifying(s: StockItem): boolean {
-  if (s.equity_ratio == null || s.equity_ratio < DEFAULT_CRITERIA.minEquityRatio) return false;
-  if (s.pbr != null && s.pbr > DEFAULT_CRITERIA.maxPbr) return false;
-  if (s.roe != null && s.roe < DEFAULT_CRITERIA.minRoe) return false;
-  if (s.dividend_yield != null && s.dividend_yield < DEFAULT_CRITERIA.minDividendYield) return false;
+function isWithinOneYear(dateStr?: string, todayStr?: string): boolean {
+  if (!dateStr) return true;
+  try {
+    const d1 = new Date(dateStr).getTime();
+    const d2 = todayStr ? new Date(todayStr).getTime() : Date.now();
+    const diffDays = (d2 - d1) / (1000 * 60 * 60 * 24);
+    return diffDays <= 365;
+  } catch {
+    return true;
+  }
+}
+
+/**
+ * ② みんかぶ値取得後の合格判定
+ * PBR 1.2以下, ROE 7.5以上, 配当利回り 3.8以上, 自己資本比率 48以上, EBITDA成長率 -10以上
+ */
+function isQualifyingActive(s: StockItem): boolean {
+  if (s.equity_ratio == null || s.equity_ratio < 48.0) return false;
+  if (s.pbr != null && s.pbr > 1.20) return false;
+  if (s.roe != null && s.roe < 7.5) return false;
+  if (s.dividend_yield != null && s.dividend_yield < 3.8) return false;
+  if (s.ebitda_growth != null && s.ebitda_growth < -10.0) return false;
   return true;
 }
 
@@ -673,104 +704,189 @@ async function main() {
   const shouldIncrementStayDays = forceIncrement || (isMarketOpenToday && prevLastIncrementDate !== todayStr);
   console.log(`⏳ StayDays Increment Mode: ${shouldIncrementStayDays ? '+1 (営業日の初回実行または強制実行)' : '維持 (休日または同日再実行のため加算なし)'}`);
 
-  // 5. 最終選別 & 卒業検出 & 卒業後の再転入判定
+  // 5. 最終選別 & 組み分け（割安組 / 昇格組 / 卒業生 / 退学者）
   const activeStocks: StockItem[] = [];
   const graduatedStocks: StockItem[] = [];
+  const dropoutStocks: StockItem[] = [];
 
   for (const s of enriched) {
     const prev = existingMap.get(s.code);
-    const passes = isQualifying(s);
+    const passes = isQualifyingActive(s);
 
     if (passes) {
-      // スクリーニング条件をクリアしている銘柄
-      if (prev && prev.category === 'sotsugyo') {
-        // ★ 卒業後の再転入！
-        console.log(`🎉 再転入検出: [${s.code}] ${s.name} が再びスクリーニング条件をクリアして再転入しました！`);
+      // 基準クリア銘柄: PBRにより「割安組（PBR<=1.0）」または「昇格組（1.0<PBR<=1.2）」に配属
+      const targetCategory: 'wariyasu' | 'shokaku' =
+        s.pbr != null && s.pbr <= 1.0 ? 'wariyasu' : 'shokaku';
+
+      if (prev && (prev.category === 'sotsugyo' || prev.category === 'taigaku')) {
+        // ★ 卒業・退学からの再転入！
+        console.log(`🎉 再転入検出: [${s.code}] ${s.name} が再びスクリーニング条件をクリアして${targetCategory === 'wariyasu' ? '割安組' : '昇格組'}に転入しました！`);
         activeStocks.push({
           ...s,
-          category: 'tennyu',
-          stayDays: 1,
+          category: targetCategory,
+          stayDays: 1, // 新組での滞在日数は1から
           entryDate: todayStr,
+          groupEntryDate: todayStr,
           lastIncrementDate: isMarketOpenToday ? todayStr : undefined,
           graduationDate: undefined,
           graduationReason: undefined,
           graduationPrice: undefined,
           graduationReturn: undefined,
+          dropoutDate: undefined,
+          dropoutReason: undefined,
+          dropoutPrice: undefined,
+          dropoutReturn: undefined,
         });
       } else if (prev) {
-        // 在籍継続
+        // 在籍継続または組の移動（割安組 ⇄ 昇格組）
+        const prevNormalizedCategory: 'wariyasu' | 'shokaku' =
+          prev.category === 'shokaku'
+            ? 'shokaku'
+            : prev.category === 'wariyasu'
+            ? 'wariyasu'
+            : prev.pbr != null && prev.pbr > 1.0
+            ? 'shokaku'
+            : 'wariyasu';
+
+        const isSameGroup = prevNormalizedCategory === targetCategory;
         const effectiveEntryDate = prev.entryDate || todayStr;
         const prevDays = prev.stayDays != null && prev.stayDays > 0 ? prev.stayDays : 1;
-        const stayDays = shouldIncrementStayDays ? prevDays + 1 : prevDays;
+
+        let stayDays: number;
+        let groupEntryDate: string;
+        if (isSameGroup) {
+          stayDays = shouldIncrementStayDays ? prevDays + 1 : prevDays;
+          groupEntryDate = prev.groupEntryDate || prev.entryDate || todayStr;
+        } else {
+          console.log(`🔄 組の異動検出: [${s.code}] ${s.name} が ${prevNormalizedCategory} から ${targetCategory} へ移動しました！`);
+          stayDays = 1;
+          groupEntryDate = todayStr;
+        }
+
         const lastIncrementDate = shouldIncrementStayDays ? todayStr : (prev.lastIncrementDate || prevLastIncrementDate);
-        const category: StockItem['category'] =
-          stayDays >= 60 ? 'inokori' : stayDays <= 20 ? 'tennyu' : 'zaiseki';
+
         activeStocks.push({
           ...s,
+          category: targetCategory,
           stayDays,
-          category,
           entryDate: effectiveEntryDate,
+          groupEntryDate,
           lastIncrementDate,
           graduationDate: undefined,
           graduationReason: undefined,
+          graduationPrice: undefined,
+          graduationReturn: undefined,
+          dropoutDate: undefined,
+          dropoutReason: undefined,
+          dropoutPrice: undefined,
+          dropoutReturn: undefined,
         });
       } else {
-        // 新規転入生
+        // 新規転入銘柄
         activeStocks.push({
           ...s,
+          category: targetCategory,
           stayDays: 1,
-          category: 'tennyu',
           entryDate: todayStr,
+          groupEntryDate: todayStr,
           lastIncrementDate: isMarketOpenToday ? todayStr : undefined,
         });
       }
     } else {
-      // スクリーニング条件を満たさなくなった、または満たしていない銘柄
-      if (prev && prev.category !== 'sotsugyo') {
-        // ★ 前日在籍していたが、今日は条件落ち → 新規卒業！
-        const reason = determineGraduationReason(s);
-        console.log(`🎓 卒業検出: [${s.code}] ${s.name} (理由: ${reason})`);
-        const effectiveEntryDate = prev.entryDate || todayStr;
-        graduatedStocks.push({
-          ...s,
-          category: 'sotsugyo',
-          stayDays: -1,
-          entryDate: effectiveEntryDate,
-          graduationDate: todayStr,
-          graduationReason: reason,
-          graduationPrice: s.close || prev.close,
-          graduationReturn: 0,
-        });
+      // スクリーニング基準未達 (PBR > 1.2 または 指標未達)
+      const wasActive = prev && prev.category !== 'sotsugyo' && prev.category !== 'taigaku';
+
+      if (wasActive) {
+        if (s.pbr != null && s.pbr > 1.20) {
+          // ★ 株価上昇による名誉の卒業！ (1年追跡)
+          const reason = determineGraduationReason(s);
+          console.log(`🎓 卒業検出: [${s.code}] ${s.name} (理由: ${reason})`);
+          const effectiveEntryDate = prev.entryDate || todayStr;
+          graduatedStocks.push({
+            ...s,
+            category: 'sotsugyo',
+            stayDays: 1, // 正の数！1からスタート
+            entryDate: effectiveEntryDate,
+            groupEntryDate: todayStr,
+            graduationDate: todayStr,
+            graduationReason: reason,
+            graduationPrice: s.close || prev.close,
+            graduationReturn: 0,
+          });
+        } else {
+          // ★ 指標悪化・基準未達による退学！ (1年追跡)
+          const reason = determineDropoutReason(s);
+          console.log(`⚠️ 退学検出: [${s.code}] ${s.name} (理由: ${reason})`);
+          const effectiveEntryDate = prev.entryDate || todayStr;
+          dropoutStocks.push({
+            ...s,
+            category: 'taigaku',
+            stayDays: 1, // 正の数！1からスタート
+            entryDate: effectiveEntryDate,
+            groupEntryDate: todayStr,
+            dropoutDate: todayStr,
+            dropoutReason: reason,
+            dropoutPrice: s.close || prev.close,
+            dropoutReturn: 0,
+          });
+        }
       } else if (prev && prev.category === 'sotsugyo') {
-        // 過去に卒業した卒業生の継続追跡（最新株価・リターンを更新、卒業後日数をマイナス値で進行）
-        const gradPrice = prev.graduationPrice || prev.close || s.close;
-        let gradReturn: number | undefined = prev.graduationReturn;
-        if (gradPrice && s.close) {
-          gradReturn = Number((((s.close - gradPrice) / gradPrice) * 100).toFixed(2));
+        // 過去の卒業生の継続追跡（1年追跡）
+        const gradDate = prev.graduationDate || todayStr;
+        if (isWithinOneYear(gradDate, todayStr)) {
+          const gradPrice = prev.graduationPrice || prev.close || s.close;
+          let gradReturn: number | undefined = prev.graduationReturn;
+          if (gradPrice && s.close) {
+            gradReturn = Number((((s.close - gradPrice) / gradPrice) * 100).toFixed(2));
+          }
+          const prevDays = prev.stayDays ? Math.abs(prev.stayDays) : 1;
+          const stayDays = shouldIncrementStayDays ? prevDays + 1 : prevDays; // 正の数！+1ずつ加算
+          graduatedStocks.push({
+            ...s,
+            category: 'sotsugyo',
+            stayDays,
+            entryDate: prev.entryDate,
+            groupEntryDate: prev.groupEntryDate || prev.graduationDate,
+            graduationDate: gradDate,
+            graduationReason: prev.graduationReason || determineGraduationReason(s),
+            graduationPrice: gradPrice,
+            graduationReturn: gradReturn,
+          });
+        } else {
+          console.log(`⌛ 卒業生 1年追跡期間終了: [${prev.code}] ${prev.name}`);
         }
-        let gradDays = prev.stayDays ? Math.abs(prev.stayDays) : 1;
-        if (shouldIncrementStayDays) {
-          gradDays += 1;
+      } else if (prev && prev.category === 'taigaku') {
+        // 過去の退学者の継続追跡（1年追跡）
+        const dropDate = prev.dropoutDate || prev.graduationDate || todayStr;
+        if (isWithinOneYear(dropDate, todayStr)) {
+          const dropPrice = prev.dropoutPrice || prev.graduationPrice || prev.close || s.close;
+          let dropReturn: number | undefined = prev.dropoutReturn ?? prev.graduationReturn;
+          if (dropPrice && s.close) {
+            dropReturn = Number((((s.close - dropPrice) / dropPrice) * 100).toFixed(2));
+          }
+          const prevDays = prev.stayDays ? Math.abs(prev.stayDays) : 1;
+          const stayDays = shouldIncrementStayDays ? prevDays + 1 : prevDays; // 正の数！+1ずつ加算
+          dropoutStocks.push({
+            ...s,
+            category: 'taigaku',
+            stayDays,
+            entryDate: prev.entryDate,
+            groupEntryDate: prev.groupEntryDate || prev.dropoutDate,
+            dropoutDate: dropDate,
+            dropoutReason: prev.dropoutReason || prev.graduationReason || determineDropoutReason(s),
+            dropoutPrice: dropPrice,
+            dropoutReturn: dropReturn,
+          });
+        } else {
+          console.log(`⌛ 退学者 1年追跡期間終了: [${prev.code}] ${prev.name}`);
         }
-        const stayDays = -gradDays;
-        graduatedStocks.push({
-          ...s,
-          category: 'sotsugyo',
-          stayDays,
-          entryDate: prev.entryDate,
-          graduationDate: prev.graduationDate || todayStr,
-          graduationReason: prev.graduationReason || determineGraduationReason(s),
-          graduationPrice: gradPrice,
-          graduationReturn: gradReturn,
-        });
       }
-      // 前日に存在せず、条件も満たさない場合はリストに含めない
     }
   }
 
-  // 6. 銘柄リストの統合（在籍銘柄 + 卒業生）
-  const finalStocks = [...activeStocks, ...graduatedStocks];
-  console.log(`🎯 Active stocks: ${activeStocks.length}, Graduated stocks: ${graduatedStocks.length}, Total: ${finalStocks.length}`);
+  // 6. 銘柄リストの統合（在籍銘柄 + 卒業生 + 退学者）
+  const finalStocks = [...activeStocks, ...graduatedStocks, ...dropoutStocks];
+  console.log(`🎯 Active stocks: ${activeStocks.length} (割安: ${activeStocks.filter((s) => s.category === 'wariyasu').length}, 昇格: ${activeStocks.filter((s) => s.category === 'shokaku').length}), Graduated: ${graduatedStocks.length}, Dropout: ${dropoutStocks.length}, Total: ${finalStocks.length}`);
 
   // 7. JSON に保存
   const now = new Date().toLocaleString('ja-JP', {

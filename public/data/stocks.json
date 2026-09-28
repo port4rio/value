@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026/09/28 21:08",
+  "updatedAt": "2026/09/28 17:43",
   "lastIncrementDate": "2026-09-28",
   "count": 58,
   "stocks": [
@@ -18,10 +18,12 @@
       "current_ratio": 1309.24,
       "de_ratio": 0,
       "equity_ratio": 93.17,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "taigaku",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-66.9%）"
     },
     {
       "code": "6675",
@@ -38,10 +40,12 @@
       "current_ratio": 241.71,
       "de_ratio": 0.03,
       "equity_ratio": 66.27,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "taigaku",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-24.3%）"
     },
     {
       "code": "6209",
@@ -58,8 +62,8 @@
       "current_ratio": 253.37,
       "de_ratio": 0.16,
       "equity_ratio": 71.14,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -78,8 +82,8 @@
       "current_ratio": 183.52,
       "de_ratio": 0.37,
       "equity_ratio": 57.08,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -98,8 +102,8 @@
       "current_ratio": 224.36,
       "de_ratio": 0.36,
       "equity_ratio": 59.08,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -118,8 +122,8 @@
       "current_ratio": 506.45,
       "de_ratio": 0.03,
       "equity_ratio": 79.56,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -138,10 +142,12 @@
       "current_ratio": 273.85,
       "de_ratio": 0.18,
       "equity_ratio": 65.1,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "taigaku",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-17.3%）"
     },
     {
       "code": "7722",
@@ -158,8 +164,8 @@
       "current_ratio": 264.11,
       "de_ratio": 0.19,
       "equity_ratio": 63.44,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -178,10 +184,12 @@
       "current_ratio": 270.53,
       "de_ratio": 0.16,
       "equity_ratio": 67.69,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "taigaku",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-46.6%）"
     },
     {
       "code": "5965",
@@ -198,8 +206,8 @@
       "current_ratio": 187.45,
       "de_ratio": 0.21,
       "equity_ratio": 57.89,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -218,8 +226,8 @@
       "current_ratio": 382.98,
       "de_ratio": 0,
       "equity_ratio": 80.6,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -238,8 +246,8 @@
       "current_ratio": 157.72,
       "de_ratio": 0.05,
       "equity_ratio": 64.7,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -258,8 +266,8 @@
       "current_ratio": 158.18,
       "de_ratio": 0.21,
       "equity_ratio": 53.53,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -278,8 +286,8 @@
       "current_ratio": 259.6,
       "de_ratio": 0.24,
       "equity_ratio": 66.91,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -298,8 +306,8 @@
       "current_ratio": 363.31,
       "de_ratio": 0.01,
       "equity_ratio": 79.31,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -318,8 +326,8 @@
       "current_ratio": 349.37,
       "de_ratio": 0.04,
       "equity_ratio": 69.65,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -338,10 +346,12 @@
       "current_ratio": 296.63,
       "de_ratio": 0.14,
       "equity_ratio": 74.46,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "taigaku",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-14.0%）"
     },
     {
       "code": "1768",
@@ -358,8 +368,8 @@
       "current_ratio": 306.19,
       "de_ratio": 0,
       "equity_ratio": 72.43,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -378,8 +388,8 @@
       "current_ratio": 251.93,
       "de_ratio": 0.06,
       "equity_ratio": 77.24,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -398,8 +408,8 @@
       "current_ratio": 188.09,
       "de_ratio": 0.1,
       "equity_ratio": 64,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -418,8 +428,8 @@
       "current_ratio": 214.88,
       "de_ratio": 0.04,
       "equity_ratio": 61.84,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -438,8 +448,8 @@
       "current_ratio": 2268.47,
       "de_ratio": 0,
       "equity_ratio": 93.32,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -458,8 +468,8 @@
       "current_ratio": 228.7,
       "de_ratio": 0.4,
       "equity_ratio": 55.83,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -478,8 +488,8 @@
       "current_ratio": 255.19,
       "de_ratio": 0.33,
       "equity_ratio": 56.89,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -498,8 +508,8 @@
       "current_ratio": 282.13,
       "de_ratio": 0.17,
       "equity_ratio": 74.17,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -518,8 +528,8 @@
       "current_ratio": 357.84,
       "de_ratio": 0.03,
       "equity_ratio": 82.67,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -538,8 +548,8 @@
       "current_ratio": 395.51,
       "de_ratio": 0.03,
       "equity_ratio": 77.6,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -558,8 +568,8 @@
       "current_ratio": 126.05,
       "de_ratio": 0.33,
       "equity_ratio": 59.12,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -578,8 +588,8 @@
       "current_ratio": 259.67,
       "de_ratio": 0.17,
       "equity_ratio": 62.81,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -598,8 +608,8 @@
       "current_ratio": 622.89,
       "de_ratio": 0,
       "equity_ratio": 84.42,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -618,8 +628,8 @@
       "current_ratio": 191.58,
       "de_ratio": 0.46,
       "equity_ratio": 50.88,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -638,8 +648,8 @@
       "current_ratio": 204.91,
       "de_ratio": 0.65,
       "equity_ratio": 54.2,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -658,8 +668,8 @@
       "current_ratio": 232.43,
       "de_ratio": 0.23,
       "equity_ratio": 65.78,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -678,8 +688,8 @@
       "current_ratio": 303.31,
       "de_ratio": 0.53,
       "equity_ratio": 53.9,
-      "category": "tennyu",
-      "stayDays": 3,
+      "category": "wariyasu",
+      "stayDays": 2,
       "entryDate": "2026-09-24",
       "lastIncrementDate": "2026-09-28"
     },
@@ -698,8 +708,8 @@
       "current_ratio": 158.29,
       "de_ratio": 0.21,
       "equity_ratio": 54.71,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -718,10 +728,12 @@
       "current_ratio": 424.49,
       "de_ratio": 0.02,
       "equity_ratio": 79.72,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "taigaku",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-15.5%）"
     },
     {
       "code": "6658",
@@ -738,10 +750,12 @@
       "current_ratio": 140.42,
       "de_ratio": 0.27,
       "equity_ratio": 54.76,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "taigaku",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-16.5%）"
     },
     {
       "code": "2408",
@@ -758,7 +772,7 @@
       "current_ratio": 879.8,
       "de_ratio": 0,
       "equity_ratio": 87.06,
-      "category": "tennyu",
+      "category": "wariyasu",
       "stayDays": 1,
       "entryDate": "2026-09-28",
       "lastIncrementDate": "2026-09-28"
@@ -778,8 +792,8 @@
       "current_ratio": 423.52,
       "de_ratio": 0.17,
       "equity_ratio": 70.98,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -798,8 +812,8 @@
       "current_ratio": 171.65,
       "de_ratio": 0.08,
       "equity_ratio": 50.92,
-      "category": "tennyu",
-      "stayDays": 3,
+      "category": "wariyasu",
+      "stayDays": 2,
       "entryDate": "2026-09-24",
       "lastIncrementDate": "2026-09-28"
     },
@@ -818,8 +832,8 @@
       "current_ratio": 348.18,
       "de_ratio": 0.03,
       "equity_ratio": 78.15,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -838,10 +852,12 @@
       "current_ratio": 481.07,
       "de_ratio": 0.07,
       "equity_ratio": 79.33,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "taigaku",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-17.3%）"
     },
     {
       "code": "8150",
@@ -858,8 +874,28 @@
       "current_ratio": 202.18,
       "de_ratio": 0.36,
       "equity_ratio": 55.06,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
+      "entryDate": "2026-09-23",
+      "lastIncrementDate": "2026-09-28"
+    },
+    {
+      "code": "3375",
+      "name": "ＺＯＡ",
+      "close": 1780,
+      "change": -0.28,
+      "market_cap": 26,
+      "per": 7.15,
+      "pbr": 0.71,
+      "roe": 10.32,
+      "dividend_yield": 4.2,
+      "payout_ratio": 28.8,
+      "ebitda_growth": 12.25,
+      "current_ratio": 256.78,
+      "de_ratio": 0.25,
+      "equity_ratio": 63.8,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -878,29 +914,9 @@
       "current_ratio": 182.95,
       "de_ratio": 0.38,
       "equity_ratio": 57.11,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
-      "lastIncrementDate": "2026-09-28"
-    },
-    {
-      "code": "3375",
-      "name": "ＺＯＡ",
-      "close": 1780,
-      "change": -0.28,
-      "market_cap": 26,
-      "per": 7.15,
-      "pbr": 0.71,
-      "roe": 10.32,
-      "dividend_yield": 4.2,
-      "payout_ratio": 28.8,
-      "ebitda_growth": 12.25,
-      "current_ratio": 256.78,
-      "de_ratio": 0.25,
-      "equity_ratio": 63.8,
-      "category": "tennyu",
-      "stayDays": 4,
-      "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
     {
@@ -918,8 +934,8 @@
       "current_ratio": 171.68,
       "de_ratio": 0.11,
       "equity_ratio": 51.56,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -938,8 +954,8 @@
       "current_ratio": 461.69,
       "de_ratio": 0.07,
       "equity_ratio": 80.06,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -958,8 +974,8 @@
       "current_ratio": 489.05,
       "de_ratio": 0.04,
       "equity_ratio": 81.72,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -978,8 +994,8 @@
       "current_ratio": 233.6,
       "de_ratio": 0.26,
       "equity_ratio": 66.38,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -998,8 +1014,8 @@
       "current_ratio": 177.39,
       "de_ratio": 0.46,
       "equity_ratio": 51.23,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -1018,8 +1034,8 @@
       "current_ratio": 203.46,
       "de_ratio": 0.05,
       "equity_ratio": 59.87,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -1038,8 +1054,8 @@
       "current_ratio": 354.83,
       "de_ratio": 0.45,
       "equity_ratio": 62.92,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -1058,8 +1074,8 @@
       "current_ratio": 345.43,
       "de_ratio": 0.08,
       "equity_ratio": 76.07,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -1078,8 +1094,8 @@
       "current_ratio": 229.51,
       "de_ratio": 0.48,
       "equity_ratio": 52.93,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "wariyasu",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
       "lastIncrementDate": "2026-09-28"
     },
@@ -1098,10 +1114,12 @@
       "current_ratio": 236.9,
       "de_ratio": 0.56,
       "equity_ratio": 61.04,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "taigaku",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-16.6%）"
     },
     {
       "code": "8014",
@@ -1118,8 +1136,8 @@
       "current_ratio": 289.47,
       "de_ratio": 0.01,
       "equity_ratio": 68.99,
-      "category": "tennyu",
-      "stayDays": 2,
+      "category": "wariyasu",
+      "stayDays": 1,
       "entryDate": "2026-09-25",
       "lastIncrementDate": "2026-09-28"
     },
@@ -1138,10 +1156,12 @@
       "current_ratio": 567.94,
       "de_ratio": 0,
       "equity_ratio": 86.49,
-      "category": "tennyu",
-      "stayDays": 4,
+      "category": "taigaku",
+      "stayDays": 3,
       "entryDate": "2026-09-23",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-17.7%）"
     },
     {
       "code": "7463",
@@ -1158,10 +1178,12 @@
       "current_ratio": 299.65,
       "de_ratio": 0.36,
       "equity_ratio": 69.88,
-      "category": "tennyu",
-      "stayDays": 3,
+      "category": "taigaku",
+      "stayDays": 2,
       "entryDate": "2026-09-24",
-      "lastIncrementDate": "2026-09-28"
+      "lastIncrementDate": "2026-09-28",
+      "dropoutDate": "2026-09-25",
+      "dropoutReason": "EBITDA成長率-10%割れ（-18.1%）"
     },
     {
       "code": "9625",
@@ -1178,13 +1200,9 @@
       "current_ratio": 377.39,
       "de_ratio": 0.06,
       "equity_ratio": 80.57,
-      "category": "sotsugyo",
-      "stayDays": -2,
-      "entryDate": "2026-09-25",
-      "graduationDate": "2026-09-25",
-      "graduationReason": "ROE8%割れ（実績ROE 7.95%）",
-      "graduationPrice": 929,
-      "graduationReturn": 0.43
+      "category": "wariyasu",
+      "stayDays": 2,
+      "entryDate": "2026-09-25"
     },
     {
       "code": "5284",
@@ -1201,13 +1219,9 @@
       "current_ratio": 206.29,
       "de_ratio": 0.23,
       "equity_ratio": 64.9,
-      "category": "sotsugyo",
-      "stayDays": -3,
-      "entryDate": "2026-09-24",
-      "graduationDate": "2026-09-24",
-      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.09倍）",
-      "graduationPrice": 2223,
-      "graduationReturn": 0.09
+      "category": "shokaku",
+      "stayDays": 3,
+      "entryDate": "2026-09-24"
     },
     {
       "code": "8700",
@@ -1224,13 +1238,9 @@
       "current_ratio": 192.45,
       "de_ratio": 0.06,
       "equity_ratio": 58.3,
-      "category": "sotsugyo",
-      "stayDays": -3,
-      "entryDate": "2026-09-23",
-      "graduationDate": "2026-09-24",
-      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.01倍）",
-      "graduationPrice": 2130,
-      "graduationReturn": 1.46
+      "category": "shokaku",
+      "stayDays": 3,
+      "entryDate": "2026-09-23"
     },
     {
       "code": "8011",
@@ -1247,13 +1257,17 @@
       "current_ratio": 327.67,
       "de_ratio": 0.19,
       "equity_ratio": 68.34,
-      "category": "sotsugyo",
-      "stayDays": -3,
+      "category": "taigaku",
+      "stayDays": 3,
       "entryDate": "2026-09-24",
       "graduationDate": "2026-09-24",
       "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.05倍）",
       "graduationPrice": 1368,
-      "graduationReturn": -0.95
+      "graduationReturn": -0.95,
+      "dropoutDate": "2026-09-24",
+      "dropoutReason": "EBITDA成長率-10%割れ（-34.8%）",
+      "dropoutPrice": 1368,
+      "dropoutReturn": -0.95
     },
     {
       "code": "5901",
@@ -1270,13 +1284,9 @@
       "current_ratio": 200.86,
       "de_ratio": 0.29,
       "equity_ratio": 57.9,
-      "category": "sotsugyo",
-      "stayDays": -2,
-      "entryDate": "2026-09-25",
-      "graduationDate": "2026-09-25",
-      "graduationReason": "ROE8%割れ（実績ROE 7.91%）",
-      "graduationPrice": 4534,
-      "graduationReturn": 0.11
+      "category": "wariyasu",
+      "stayDays": 2,
+      "entryDate": "2026-09-25"
     },
     {
       "code": "8935",
@@ -1293,13 +1303,9 @@
       "current_ratio": 616.33,
       "de_ratio": 0.19,
       "equity_ratio": 72.3,
-      "category": "sotsugyo",
-      "stayDays": -2,
-      "entryDate": "2026-09-23",
-      "graduationDate": "2026-09-26",
-      "graduationReason": "利回り4%割れ（今期予想利回り 3.95%）",
-      "graduationPrice": 2025,
-      "graduationReturn": -0.35
+      "category": "wariyasu",
+      "stayDays": 2,
+      "entryDate": "2026-09-23"
     },
     {
       "code": "6989",
@@ -1316,13 +1322,9 @@
       "current_ratio": 248.21,
       "de_ratio": 0.37,
       "equity_ratio": 54.93,
-      "category": "sotsugyo",
-      "stayDays": -2,
-      "entryDate": "2026-09-25",
-      "graduationDate": "2026-09-25",
-      "graduationReason": "ROE8%割れ（実績ROE 7.98%）",
-      "graduationPrice": 2434,
-      "graduationReturn": -0.04
+      "category": "wariyasu",
+      "stayDays": 2,
+      "entryDate": "2026-09-25"
     },
     {
       "code": "2121",
@@ -1340,10 +1342,10 @@
       "de_ratio": 0.05,
       "equity_ratio": 64.7,
       "category": "sotsugyo",
-      "stayDays": -101,
+      "stayDays": 101,
       "entryDate": "2026-03-30",
       "graduationDate": "2026-03-31",
-      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.44倍）",
+      "graduationReason": "PBR1.2倍突破（株価上昇によりPBR 1.44倍）",
       "graduationPrice": 3050,
       "graduationReturn": 24.75
     },
@@ -1363,10 +1365,10 @@
       "de_ratio": 0.09,
       "equity_ratio": 67.9,
       "category": "sotsugyo",
-      "stayDays": -101,
+      "stayDays": 101,
       "entryDate": "2026-03-30",
       "graduationDate": "2026-03-31",
-      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.42倍）",
+      "graduationReason": "PBR1.2倍突破（株価上昇によりPBR 1.42倍）",
       "graduationPrice": 1303,
       "graduationReturn": -5.3
     },
@@ -1386,10 +1388,10 @@
       "de_ratio": 0.44,
       "equity_ratio": 45.5,
       "category": "sotsugyo",
-      "stayDays": -101,
+      "stayDays": 101,
       "entryDate": "2026-03-30",
       "graduationDate": "2026-03-31",
-      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.55倍）",
+      "graduationReason": "PBR1.2倍突破（株価上昇によりPBR 1.55倍）",
       "graduationPrice": 3337,
       "graduationReturn": 68.71
     },
@@ -1409,10 +1411,10 @@
       "de_ratio": 0.27,
       "equity_ratio": 39.8,
       "category": "sotsugyo",
-      "stayDays": -101,
+      "stayDays": 101,
       "entryDate": "2026-03-30",
       "graduationDate": "2026-03-31",
-      "graduationReason": "PBR1倍突破（株価急伸によりPBR 2.75倍）",
+      "graduationReason": "PBR1.2倍突破（株価上昇によりPBR 2.75倍）",
       "graduationPrice": 2159,
       "graduationReturn": 95.65
     },
@@ -1432,10 +1434,10 @@
       "de_ratio": 0.18,
       "equity_ratio": 54.8,
       "category": "sotsugyo",
-      "stayDays": -101,
+      "stayDays": 101,
       "entryDate": "2026-03-30",
       "graduationDate": "2026-03-31",
-      "graduationReason": "PBR1倍突破（株価上昇によりPBR 1.85倍）",
+      "graduationReason": "PBR1.2倍突破（株価上昇によりPBR 1.85倍）",
       "graduationPrice": 1773,
       "graduationReturn": 99.38
     }

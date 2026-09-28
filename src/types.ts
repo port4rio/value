@@ -1,4 +1,4 @@
-export type AlumniCategory = 'all' | 'inokori' | 'tennyu' | 'sotsugyo';
+export type AlumniCategory = 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku';
 
 export interface StockItem {
   code: string;
@@ -18,31 +18,36 @@ export interface StockItem {
   sector?: string;
   updatedAt?: string;
 
-  // バリュー株同窓会 分類
-  category: 'inokori' | 'tennyu' | 'sotsugyo' | 'zaiseki';
-  stayDays?: number; // 在籍日数 (居残り組: 60日以上, 転入生: 20日以内)
-  entryDate?: string; // スクリーニング該当開始日
+  // バリュー株同窓会 分類: 割安組(PBR<=1.0), 昇格組(1.0<PBR<=1.2), 卒業生(PBR>1.2), 退学者(指標悪化等)
+  category: 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku' | 'inokori' | 'tennyu' | 'zaiseki';
+  stayDays?: number; // 各組の滞在日数 (どの組も正の整数、+1ずつ加算)
+  entryDate?: string; // 初回スクリーニング該当開始日
+  groupEntryDate?: string; // 現在の組に配属された日付
   lastIncrementDate?: string; // 最後に在籍日数が+1された営業日 (YYYY-MM-DD)
-  graduationDate?: string; // 卒業生用: 卒業日 (例: 2024/02/15)
-  graduationReason?: string; // 卒業生用: 名誉挽回・卒業理由
+  graduationDate?: string; // 卒業生用: 卒業日 (例: 2026-09-28)
+  graduationReason?: string; // 卒業生用: 名誉の卒業・PBR1.2倍突破
   graduationPrice?: number; // 卒業生用: 卒業時の株価
   graduationReturn?: number; // 卒業生用: 卒業後リターン(%)
+  dropoutDate?: string; // 退学者用: 退学日 (例: 2026-09-28)
+  dropoutReason?: string; // 退学者用: 退学理由（利回り低下、減配、ROE低下、財務悪化など）
+  dropoutPrice?: number; // 退学者用: 退学時の株価
+  dropoutReturn?: number; // 退学者用: 退学後リターン(%)
 }
 
 export interface ScreeningCriteria {
-  maxPbr: number; // デフォルト: 1.0 (資産割安)
-  minRoe: number; // デフォルト: 8 (%) (資本効率)
-  minDividendYield: number; // デフォルト: 4 (%) (株主還元)
-  minEbitdaGrowth: number; // デフォルト: -999 (指定なし・全表示)
-  minEquityRatio: number; // デフォルト: 50 (%) (財務健全性)
+  maxPbr: number; // デフォルト: 1.2 (上限)
+  minRoe: number; // デフォルト: 7.5 (%) (資本効率)
+  minDividendYield: number; // デフォルト: 3.8 (%) (株主還元)
+  minEbitdaGrowth: number; // デフォルト: -10 (%) (事業成長性)
+  minEquityRatio: number; // デフォルト: 48 (%) (財務健全性)
 }
 
 export const DEFAULT_CRITERIA: ScreeningCriteria = {
-  maxPbr: 1.0,
-  minRoe: 8,
-  minDividendYield: 4.0,
-  minEbitdaGrowth: -999, // 初期値は指定なし（stocks.json の合格銘柄を全件表示）
-  minEquityRatio: 50,
+  maxPbr: 1.2,
+  minRoe: 7.5,
+  minDividendYield: 3.8,
+  minEbitdaGrowth: -10,
+  minEquityRatio: 48,
 };
 
 export type SortField = keyof StockItem;
