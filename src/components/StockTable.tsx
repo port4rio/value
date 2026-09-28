@@ -229,7 +229,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                           className="text-[#f472b6] font-mono font-semibold"
                           title={
                             stock.graduationReason
-                              ? `卒業日: ${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
+                              ? `卒業日:${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
                               : '卒業生'
                           }
                         >
@@ -242,7 +242,9 @@ export const StockTable: React.FC<StockTableProps> = ({
                           className={
                             stock.category === 'inokori'
                               ? 'text-[#fde047]'
-                              : 'text-[#7dd3fc]'
+                              : stock.category === 'tennyu'
+                              ? 'text-[#7dd3fc]'
+                              : 'text-[#86efac]'
                           }
                         >
                           {stock.stayDays}日

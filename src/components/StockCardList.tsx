@@ -63,6 +63,11 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                             転入{stock.stayDays}日
                           </span>
                         )}
+                        {stock.category === 'zaiseki' && (
+                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#14261d] text-[#86efac] border border-[#274533]">
+                            在籍{stock.stayDays}日
+                          </span>
+                        )}
                         {stock.category === 'sotsugyo' && (
                           <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
                             卒業 {stock.stayDays != null ? `${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日` : ''}

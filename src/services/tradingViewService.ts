@@ -176,7 +176,8 @@ export async function fetchScreeningStocks(
               const existing = initialMap.get(code);
 
               const stayDays = existing?.stayDays ?? 1;
-              const category: 'inokori' | 'tennyu' = stayDays >= 90 ? 'inokori' : 'tennyu';
+              const category: StockItem['category'] =
+                stayDays >= 60 ? 'inokori' : stayDays <= 20 ? 'tennyu' : 'zaiseki';
 
               return {
                 code,

@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
                     ? 'bg-[#302c17] text-[#fde047] border border-[#635523] shadow-sm ring-1 ring-[#fde047]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
-                title="ずっと割安（スクリーニング在籍90日以上）"
+                title="ずっと割安（スクリーニング在籍60日以上）"
               >
                 <span>居残り組</span>
                 <span className="font-mono font-bold text-[#fde047]">{inokoriCount}</span>
@@ -118,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
                     ? 'bg-[#152934] text-[#7dd3fc] border border-[#244f65] shadow-sm ring-1 ring-[#38bdf8]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
-                title="珍しく割安（スクリーニング在籍30日以内）"
+                title="珍しく割安（スクリーニング在籍20日以内）"
               >
                 <span>転入生</span>
                 <span className="font-mono font-bold text-[#7dd3fc]">{tennyuCount}</span>

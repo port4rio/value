@@ -19,8 +19,8 @@ export interface StockItem {
   updatedAt?: string;
 
   // バリュー株同窓会 分類
-  category: 'inokori' | 'tennyu' | 'sotsugyo';
-  stayDays?: number; // 在籍日数 (居残り組: 90日以上, 転入生: 30日以内)
+  category: 'inokori' | 'tennyu' | 'sotsugyo' | 'zaiseki';
+  stayDays?: number; // 在籍日数 (居残り組: 60日以上, 転入生: 20日以内)
   entryDate?: string; // スクリーニング該当開始日
   lastIncrementDate?: string; // 最後に在籍日数が+1された営業日 (YYYY-MM-DD)
   graduationDate?: string; // 卒業生用: 卒業日 (例: 2024/02/15)

@@ -24,7 +24,7 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
   {
     key: 'stayDays',
     label: '滞在日数',
-    tooltip: 'スクリーニング在籍日数（居残り90日以上 / 転入30日以内）',
+    tooltip: 'スクリーニング在籍日数（居残り60日以上 / 転入20日以内）',
     align: 'right',
     minWidth: 'w-[72px] min-w-[72px]',
     priority: 'high',

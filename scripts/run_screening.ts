@@ -712,7 +712,8 @@ async function main() {
           shouldIncrementStayDays ? (prev.stayDays || 0) + 1 : (prev.stayDays || 1)
         );
         const lastIncrementDate = shouldIncrementStayDays ? todayStr : (prev.lastIncrementDate || prevLastIncrementDate);
-        const category: StockItem['category'] = stayDays >= 90 ? 'inokori' : 'tennyu';
+        const category: StockItem['category'] =
+          stayDays >= 60 ? 'inokori' : stayDays <= 20 ? 'tennyu' : 'zaiseki';
         activeStocks.push({
           ...s,
           stayDays,

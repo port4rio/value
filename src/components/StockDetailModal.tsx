@@ -125,6 +125,11 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                     転入{stock.stayDays}日
                   </span>
                 )}
+                {stock.category === 'zaiseki' && (
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#14261d] text-[#86efac] border border-[#274533]">
+                    在籍{stock.stayDays}日
+                  </span>
+                )}
                 {stock.category === 'sotsugyo' && (
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
                     卒業{stock.stayDays != null ? ` ${stock.stayDays > 0 ? -stock.stayDays : stock.stayDays}日` : ''}（追跡）
@@ -235,19 +240,19 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
 
           {/* 卒業生バナー（卒業日・卒業理由・卒業時株価・リターン） */}
           {stock.category === 'sotsugyo' && (
-            <div className="bg-[#2a1624] border border-[#6b2554] rounded-lg p-2.5 mt-2 text-xs">
-              <div className="flex items-center justify-between mb-1">
-                <div className="flex items-center gap-1.5 font-bold text-[#f472b6]">
-                  <span>🎓 卒業生データ</span>
+            <div className="bg-[#2a1624] border border-[#6b2554] rounded-lg p-2 sm:p-2.5 mt-2 text-xs">
+              <div className="flex items-center justify-between gap-1 mb-1">
+                <div className="flex items-center gap-1 font-bold text-[#f472b6] truncate min-w-0">
+                  <span className="shrink-0">卒業生データ</span>
                   {stock.graduationDate && (
-                    <span className="font-mono font-normal text-[#fbcfe8] text-[11px]">
-                      （卒業日: {stock.graduationDate}）
+                    <span className="font-mono font-normal text-[#fbcfe8] text-[11px] shrink-0">
+                      （卒業日:{stock.graduationDate}）
                     </span>
                   )}
                 </div>
                 {stock.graduationReturn != null && (
                   <span
-                    className={`font-mono font-bold ${
+                    className={`font-mono font-bold shrink-0 text-right ${
                       stock.graduationReturn >= 0 ? 'text-[#4ade80]' : 'text-[#f87171]'
                     }`}
                   >
