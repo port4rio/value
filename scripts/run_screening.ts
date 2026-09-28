@@ -669,16 +669,9 @@ async function main() {
 
   // 4. 滞在日数 (stayDays) の計算フラグ
   const todayStr = jstNow.dateStr;
-  const shouldIncrementStayDays = isMarketOpenToday && prevLastIncrementDate !== todayStr;
-  console.log(`⏳ StayDays Increment Mode: ${shouldIncrementStayDays ? '+1 (営業日の初回実行)' : '維持 (休日または同日再実行のため加算なし)'}`);
-
-  // 滞在日数の補正（entryDate に基づく正規化: 2026-09-25なら1、2026-09-24なら2、それ以外は3）
-  function normalizeStayDays(entryDate: string | undefined, defaultDays: number): number {
-    if (entryDate === '2026-09-25') return 1;
-    if (entryDate === '2026-09-24') return 2;
-    if (entryDate) return 3;
-    return defaultDays;
-  }
+  const forceIncrement = process.argv.includes('--force-increment');
+  const shouldIncrementStayDays = forceIncrement || (isMarketOpenToday && prevLastIncrementDate !== todayStr);
+  console.log(`⏳ StayDays Increment Mode: ${shouldIncrementStayDays ? '+1 (営業日の初回実行または強制実行)' : '維持 (休日または同日再実行のため加算なし)'}`);
 
   // 5. 最終選別 & 卒業検出 & 卒業後の再転入判定
   const activeStocks: StockItem[] = [];
@@ -705,12 +698,10 @@ async function main() {
           graduationReturn: undefined,
         });
       } else if (prev) {
-        // 在籍継続（entryDate補正適用）
+        // 在籍継続
         const effectiveEntryDate = prev.entryDate || todayStr;
-        const stayDays = normalizeStayDays(
-          effectiveEntryDate,
-          shouldIncrementStayDays ? (prev.stayDays || 0) + 1 : (prev.stayDays || 1)
-        );
+        const prevDays = prev.stayDays != null && prev.stayDays > 0 ? prev.stayDays : 1;
+        const stayDays = shouldIncrementStayDays ? prevDays + 1 : prevDays;
         const lastIncrementDate = shouldIncrementStayDays ? todayStr : (prev.lastIncrementDate || prevLastIncrementDate);
         const category: StockItem['category'] =
           stayDays >= 60 ? 'inokori' : stayDays <= 20 ? 'tennyu' : 'zaiseki';
@@ -760,10 +751,6 @@ async function main() {
         let gradDays = prev.stayDays ? Math.abs(prev.stayDays) : 1;
         if (shouldIncrementStayDays) {
           gradDays += 1;
-        } else if (prev.graduationDate === '2026-09-24') {
-          gradDays = 2;
-        } else if (prev.graduationDate === '2026-09-25') {
-          gradDays = 1;
         }
         const stayDays = -gradDays;
         graduatedStocks.push({

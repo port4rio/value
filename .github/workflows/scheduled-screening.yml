@@ -15,6 +15,10 @@ on:
         description: '【全銘柄強制再生成】既存の診断も含めて全銘柄を最新プロンプトで再生成する'
         type: boolean
         default: false
+      force_increment:
+        description: '【滞在日数強制加算】同日再実行時でも滞在日数を強制的に+1/-1する'
+        type: boolean
+        default: false
 
   # 定期自動実行（タイムゾーン: timezone: 'Asia/Tokyo'）
   schedule:
@@ -58,17 +62,22 @@ jobs:
           SATURDAY_DIAGNOSIS: ${{ github.event_name == 'schedule' && github.event.schedule == '13 22 * * 5' }}
           WITH_AI: ${{ inputs.with_ai }}
           FORCE_AI: ${{ inputs.force_ai }}
+          FORCE_INCREMENT: ${{ inputs.force_increment }}
         run: |
+          ARGS=""
           if [ "$FORCE_AI" = "true" ]; then
             echo "🚀 Running screening with FORCED AI Diagnosis for ALL stocks..."
-            npx tsx scripts/run_screening.ts --with-ai --force-ai
+            ARGS="$ARGS --with-ai --force-ai"
           elif [ "$SATURDAY_DIAGNOSIS" = "true" ] || [ "$WITH_AI" = "true" ]; then
             echo "🚀 Running screening with AI Diagnosis..."
-            npx tsx scripts/run_screening.ts --with-ai
-          else
-            echo "🚀 Running daily screening..."
-            npx tsx scripts/run_screening.ts
+            ARGS="$ARGS --with-ai"
           fi
+          if [ "$FORCE_INCREMENT" = "true" ]; then
+            echo "⏳ Forcing stayDays increment (+1/-1)..."
+            ARGS="$ARGS --force-increment"
+          fi
+          echo "🚀 Executing: npx tsx scripts/run_screening.ts $ARGS"
+          npx tsx scripts/run_screening.ts $ARGS
 
       - name: Commit and push updated data
         run: |
