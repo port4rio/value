@@ -87,7 +87,7 @@ export default function App() {
   // Helper to normalize category
   const getCategory = (stock: StockItem): AlumniCategory => {
     if (stock.category === 'sotsugyo') return 'sotsugyo';
-    if (stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') return 'taigaku';
+    if (stock.category === 'datsuraku') return 'datsuraku';
     if (stock.category === 'shokaku') return 'shokaku';
     if (stock.category === 'wariyasu') return 'wariyasu';
     // Legacy fallback
@@ -101,17 +101,17 @@ export default function App() {
     let wariyasuCount = 0;
     let shokakuCount = 0;
     let sotsugyoCount = 0;
-    let taigakuCount = 0;
+    let datsurakuCount = 0;
 
     for (const s of screenedStocks) {
       const cat = getCategory(s);
       if (cat === 'wariyasu') wariyasuCount++;
       else if (cat === 'shokaku') shokakuCount++;
       else if (cat === 'sotsugyo') sotsugyoCount++;
-      else if (cat === 'taigaku') taigakuCount++;
+      else if (cat === 'datsuraku') datsurakuCount++;
     }
 
-    return { wariyasuCount, shokakuCount, sotsugyoCount, taigakuCount };
+    return { wariyasuCount, shokakuCount, sotsugyoCount, datsurakuCount };
   }, [screenedStocks]);
 
   // Filter by Category and Sort
@@ -161,7 +161,7 @@ export default function App() {
         wariyasuCount={categoryCounts.wariyasuCount}
         shokakuCount={categoryCounts.shokakuCount}
         sotsugyoCount={categoryCounts.sotsugyoCount}
-        taigakuCount={categoryCounts.taigakuCount}
+        datsurakuCount={categoryCounts.datsurakuCount}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
         isLoading={isLoading}

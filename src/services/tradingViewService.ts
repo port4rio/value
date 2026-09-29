@@ -48,13 +48,14 @@ export function applyScreeningCriteria(
 ): StockItem[] {
   return stocks.filter((s) => {
     // 卒業生・脱落者はスクリーニング条件外として保持（各タブで追跡）
-    if (s.category === 'sotsugyo' || s.category === 'taigaku' || (s.category as string) === 'datsuraku') return true;
+    if (s.category === 'sotsugyo' || s.category === 'datsuraku') return true;
 
     // yfinance / みんかぶ から取得した最新配当利回りによる絞込
     if (s.dividend_yield != null && s.dividend_yield < criteria.minDividendYield) return false;
 
-    // PBR (資産割安)
-    if (s.pbr != null && s.pbr > criteria.maxPbr) return false;
+    // PBR ≦ criteria.maxPbr (デフォルト1.20以下。1.20ちょうどは合格)
+    const pbrVal = s.pbr != null ? Number(s.pbr.toFixed(2)) : null;
+    if (pbrVal != null && pbrVal > criteria.maxPbr) return false;
     // ROE (資本効率)
     if (s.roe != null && s.roe < criteria.minRoe) return false;
     // EBITDA成長率（指定がある場合のみ適用、-20以下や-999は不問）
@@ -177,9 +178,9 @@ export async function fetchScreeningStocks(
               const stayDays = existing?.stayDays ?? 1;
               const pbr = d[6] != null ? Number(Number(d[6]).toFixed(2)) : null;
               const category: StockItem['category'] =
-                pbr != null && pbr > 1.2
+                pbr != null && Number(pbr.toFixed(2)) > 1.20
                   ? 'sotsugyo'
-                  : pbr != null && pbr > 1.0
+                  : pbr != null && Number(pbr.toFixed(2)) > 1.00
                   ? 'shokaku'
                   : 'wariyasu';
 

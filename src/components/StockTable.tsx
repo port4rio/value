@@ -235,7 +235,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                         >
                           {stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : '1日'}
                         </span>
-                      ) : stock.category === 'taigaku' || (stock.category as string) === 'datsuraku' ? (
+                      ) : stock.category === 'datsuraku' ? (
                         <span
                           className="text-[#c084fc] font-mono font-semibold"
                           title={

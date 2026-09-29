@@ -90,17 +90,15 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       const dy = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
       const ebitdaGrowth = d[10] != null ? Number(Number(d[10]).toFixed(2)) : null;
 
-      // ① 取得時条件に厳密に合致（自己資本比率 47%以上、余計な2重の過剰絞り込みは排除）
+      // 自己資本比率のみ判定: TradingViewクエリで直接指定できないため総資産・負債から算出（47%以上）
+      // ※ PBR(<=1.3), ROE(>=7.4), 配当利回り(>=3.7), EBITDA成長率(>=-10) はTradingView取得クエリで絞込済みのため、ここでの2重判定は行わない
       if (equityRatio == null || equityRatio < 47.0) continue;
-      if (pbr != null && pbr > 1.30) continue;
-      if (roe != null && roe < 7.4) continue;
-      if (dy != null && dy < 3.7) continue;
-      if (ebitdaGrowth != null && ebitdaGrowth < -10.0) continue;
 
+      const pbrVal = pbr != null ? Number(pbr.toFixed(2)) : null;
       const category: StockItem['category'] =
-        pbr != null && pbr > 1.2
+        pbrVal != null && pbrVal > 1.20
           ? 'sotsugyo'
-          : pbr != null && pbr > 1.0
+          : pbrVal != null && pbrVal > 1.00
           ? 'shokaku'
           : 'wariyasu';
 
@@ -594,10 +592,11 @@ function isTokyoMarketHoliday(year: number, month: number, day: number): boolean
  * 卒業理由の判定（株価上昇によりPBR1.2倍突破した名誉の卒業）
  */
 function determineGraduationReason(s: StockItem): string {
-  if (s.pbr != null && s.pbr > 1.20) {
-    return `PBR1.2倍突破（株価上昇によりPBR ${s.pbr.toFixed(2)}倍）`;
+  const pbrVal = s.pbr != null ? Number(s.pbr.toFixed(2)) : null;
+  if (pbrVal != null && pbrVal > 1.20) {
+    return `PBR1.2倍超達成（株価上昇によりPBR ${pbrVal.toFixed(2)}倍）`;
   }
-  return 'PBR1.2倍突破（名誉の卒業）';
+  return 'PBR1.2倍超達成（名誉の卒業）';
 }
 
 /**
@@ -646,11 +645,13 @@ function isWithinOneYear(dateStr?: string, todayStr?: string): boolean {
 
 /**
  * ② みんかぶ値取得後の合格判定
- * PBR 1.2以下, ROE 7.5以上, 配当利回り 3.8以上, 自己資本比率 48以上, EBITDA成長率 -10以上
+ * PBR ≦ 1.20（1.20以下。1.20ちょうどは合格）, ROE ≧ 7.5, 配当利回り ≧ 3.8, 自己資本比率 ≧ 48.0, EBITDA成長率 ≧ -10
  */
 function isQualifyingActive(s: StockItem): boolean {
   if (s.equity_ratio == null || s.equity_ratio < 48.0) return false;
-  if (s.pbr != null && s.pbr > 1.20) return false;
+  // PBR ≦ 1.20（1.20以下。画面の「PBR≦1.2倍」に合致。1.20ちょうどの銘柄も昇格組に残る）
+  const pbrVal = s.pbr != null ? Number(s.pbr.toFixed(2)) : null;
+  if (pbrVal != null && pbrVal > 1.20) return false;
   if (s.roe != null && s.roe < 7.5) return false;
   if (s.dividend_yield != null && s.dividend_yield < 3.8) return false;
   if (s.ebitda_growth != null && s.ebitda_growth < -10.0) return false;
@@ -714,11 +715,12 @@ async function main() {
     const passes = isQualifyingActive(s);
 
     if (passes) {
-      // 基準クリア銘柄: PBRにより「割安組（PBR<=1.0）」または「昇格組（1.0<PBR<=1.2）」に配属
+      // 基準クリア銘柄: PBRにより「割安組（PBR ≦ 1.0）」または「昇格組（1.0 < PBR ≦ 1.2）」に配属
+      const pbrVal = s.pbr != null ? Number(s.pbr.toFixed(2)) : null;
       const targetCategory: 'wariyasu' | 'shokaku' =
-        s.pbr != null && s.pbr <= 1.0 ? 'wariyasu' : 'shokaku';
+        pbrVal != null && pbrVal <= 1.00 ? 'wariyasu' : 'shokaku';
 
-      if (prev && (prev.category === 'sotsugyo' || prev.category === 'taigaku' || (prev.category as string) === 'datsuraku')) {
+      if (prev && (prev.category === 'sotsugyo' || prev.category === 'datsuraku')) {
         // ★ 卒業・脱落からの再転入！
         console.log(`🎉 再転入検出: [${s.code}] ${s.name} が再びスクリーニング条件をクリアして${targetCategory === 'wariyasu' ? '割安組' : '昇格組'}に転入しました！`);
         activeStocks.push({
@@ -744,7 +746,7 @@ async function main() {
             ? 'shokaku'
             : prev.category === 'wariyasu'
             ? 'wariyasu'
-            : prev.pbr != null && prev.pbr > 1.0
+            : prev.pbr != null && Number(prev.pbr.toFixed(2)) > 1.00
             ? 'shokaku'
             : 'wariyasu';
 
@@ -793,11 +795,12 @@ async function main() {
         });
       }
     } else {
-      // スクリーニング基準未達 (PBR > 1.2 または 指標未達)
-      const wasActive = prev && prev.category !== 'sotsugyo' && prev.category !== 'taigaku' && (prev.category as string) !== 'datsuraku';
+      // スクリーニング基準未達 (PBR > 1.20 または 指標未達)
+      const wasActive = prev && prev.category !== 'sotsugyo' && prev.category !== 'datsuraku';
 
       if (wasActive) {
-        if (s.pbr != null && s.pbr > 1.20) {
+        const pbrVal = s.pbr != null ? Number(s.pbr.toFixed(2)) : null;
+        if (pbrVal != null && pbrVal > 1.20) {
           // ★ 株価上昇による名誉の卒業！ (1年追跡)
           const reason = determineGraduationReason(s);
           console.log(`🎓 卒業検出: [${s.code}] ${s.name} (理由: ${reason})`);
@@ -820,7 +823,7 @@ async function main() {
           const effectiveEntryDate = prev.entryDate || todayStr;
           dropoutStocks.push({
             ...s,
-            category: 'taigaku',
+            category: 'datsuraku',
             stayDays: 1, // 正の数！1からスタート
             entryDate: effectiveEntryDate,
             groupEntryDate: todayStr,
@@ -855,7 +858,7 @@ async function main() {
         } else {
           console.log(`⌛ 卒業生 1年追跡期間終了: [${prev.code}] ${prev.name}`);
         }
-      } else if (prev && (prev.category === 'taigaku' || (prev.category as string) === 'datsuraku')) {
+      } else if (prev && prev.category === 'datsuraku') {
         // 過去の脱落者の継続追跡（1年追跡）
         const dropDate = prev.dropoutDate || prev.graduationDate || todayStr;
         if (isWithinOneYear(dropDate, todayStr)) {
@@ -868,7 +871,7 @@ async function main() {
           const stayDays = shouldIncrementStayDays ? prevDays + 1 : prevDays; // 正の数！+1ずつ加算
           dropoutStocks.push({
             ...s,
-            category: 'taigaku',
+            category: 'datsuraku',
             stayDays,
             entryDate: prev.entryDate,
             groupEntryDate: prev.groupEntryDate || prev.dropoutDate,

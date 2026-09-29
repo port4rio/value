@@ -130,7 +130,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                     卒業{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
                   </span>
                 )}
-                {(stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') && (
+                {stock.category === 'datsuraku' && (
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#22182c] text-[#c084fc] border border-[#482d5e]">
                     脱落{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
                   </span>
@@ -277,7 +277,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
           )}
 
           {/* 脱落者バナー（脱落日・脱落理由・脱落時株価・リターン、1年追跡） */}
-          {(stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') && (
+          {stock.category === 'datsuraku' && (
             <div className="bg-[#241a2e] border border-[#542d6b] rounded-lg p-2 sm:p-2.5 mt-2 text-xs">
               <div className="flex items-center justify-between gap-1 mb-1">
                 <div className="flex items-center gap-1 font-bold text-[#c084fc] truncate min-w-0">

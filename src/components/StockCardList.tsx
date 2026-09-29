@@ -68,7 +68,7 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                             卒業{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}
                           </span>
                         )}
-                        {(stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') && (
+                        {stock.category === 'datsuraku' && (
                           <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#22182c] text-[#c084fc] border border-[#482d5e]">
                             脱落{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}
                           </span>
@@ -88,7 +88,7 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                           {stock.graduationReason}
                         </p>
                       )}
-                      {(stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') && (stock.dropoutReason || stock.graduationReason) && (
+                      {stock.category === 'datsuraku' && (stock.dropoutReason || stock.graduationReason) && (
                         <p className="text-[11px] text-[#c084fc] truncate max-w-[200px] mt-0.5">
                           {stock.dropoutReason || stock.graduationReason}
                         </p>

@@ -1,4 +1,4 @@
-export type AlumniCategory = 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku' | 'datsuraku';
+export type AlumniCategory = 'wariyasu' | 'shokaku' | 'sotsugyo' | 'datsuraku';
 
 export interface StockItem {
   code: string;
@@ -19,7 +19,7 @@ export interface StockItem {
   updatedAt?: string;
 
   // バリュー株同窓会 分類: 割安組(PBR<=1.0), 昇格組(1.0<PBR<=1.2), 卒業生(PBR>1.2), 脱落者(指標悪化等)
-  category: 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku' | 'datsuraku' | 'inokori' | 'tennyu' | 'zaiseki';
+  category: 'wariyasu' | 'shokaku' | 'sotsugyo' | 'datsuraku' | 'inokori' | 'tennyu' | 'zaiseki';
   stayDays?: number; // 各組の滞在日数 (どの組も正の整数、+1ずつ加算)
   entryDate?: string; // 初回スクリーニング該当開始日
   groupEntryDate?: string; // 現在の組に配属された日付

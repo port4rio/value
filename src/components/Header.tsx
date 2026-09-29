@@ -8,7 +8,7 @@ interface HeaderProps {
   wariyasuCount: number;
   shokakuCount: number;
   sotsugyoCount: number;
-  taigakuCount: number;
+  datsurakuCount: number;
   activeCategory: AlumniCategory;
   setActiveCategory: (category: AlumniCategory) => void;
   isLoading: boolean;
@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({
   wariyasuCount,
   shokakuCount,
   sotsugyoCount,
-  taigakuCount,
+  datsurakuCount,
   activeCategory,
   setActiveCategory,
   isLoading,
@@ -129,17 +129,17 @@ export const Header: React.FC<HeaderProps> = ({
                 type="button"
                 onClick={(e) => {
                   (e.currentTarget as HTMLElement).blur();
-                  setActiveCategory('taigaku');
+                  setActiveCategory('datsuraku');
                 }}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
-                  activeCategory === 'taigaku' || (activeCategory as string) === 'datsuraku'
+                  activeCategory === 'datsuraku'
                     ? 'bg-[#281b36] text-[#c084fc] border border-[#58337a] shadow-sm ring-1 ring-[#c084fc]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
                 title="基準未達（利回り低下・減配・ROE低下・財務悪化等により脱落・1年間追跡中）"
               >
                 <span>脱落者</span>
-                <span className="font-mono font-bold text-[#c084fc]">{taigakuCount}</span>
+                <span className="font-mono font-bold text-[#c084fc]">{datsurakuCount}</span>
               </button>
             </div>
           </div>
