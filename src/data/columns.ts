@@ -60,7 +60,7 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
     key: 'market_cap',
     label: '時価総額',
     unit: '億',
-    tooltip: '時価総額（億円単位）',
+    tooltip: '時価総額（億円単位・上位12位まで黄緑グラデーション）',
     align: 'right',
     minWidth: 'min-w-[80px]',
     priority: 'medium',

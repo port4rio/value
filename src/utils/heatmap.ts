@@ -1,6 +1,7 @@
 import { StockItem } from '../types';
 
 export type MetricKey =
+  | 'market_cap'
   | 'dividend_yield'
   | 'per'
   | 'pbr'
@@ -12,6 +13,7 @@ export type MetricKey =
 
 // 各指標の優劣の向き (higher: 高い方が良い / lower: 低い方が良い)
 const METRIC_DIRECTION: Record<MetricKey, 'higher' | 'lower'> = {
+  market_cap: 'higher',
   dividend_yield: 'higher',
   per: 'lower',
   pbr: 'lower',
@@ -29,6 +31,7 @@ export function calculateMetricRanks(stocks: StockItem[]): Record<MetricKey, Map
   const result = {} as Record<MetricKey, Map<string, number>>;
 
   const metricKeys: MetricKey[] = [
+    'market_cap',
     'dividend_yield',
     'per',
     'pbr',
@@ -97,17 +100,21 @@ export function ratioToStyle(ratio: number): { color: string; fontWeight: number
 }
 
 /**
- * 1位(最良)から20位(ぱっとしない値)までのグラデーション色スタイルを返す
+ * 1位(最良)からmaxRank位（デフォルト12位）までのグラデーション色スタイルを返す
+ * 1位: 鮮やかな黄緑 (#CCFF00) 〜 12位: 落ち着いた色へのグラデーション
+ * 13位以降は基準文字色 (#c5d8cd, 400) を返す
  */
-export function getHeatmapStyle(rank: number | undefined, maxRank: number = 20): {
+export function getHeatmapStyle(rank: number | undefined, maxRank: number = 12): {
   color: string;
   fontWeight: number;
 } {
-  if (rank == null || rank <= 0) {
+  if (rank == null || rank <= 0 || rank > maxRank) {
     return { color: '#c5d8cd', fontWeight: 400 };
   }
 
-  const ratio = Math.min(Math.max((rank - 1) / Math.max(maxRank - 1, 1), 0), 1);
+  // 1位(0) 〜 maxRank位(1に近い値)の比率計算
+  // 12位までが確実にグラデーション対象となり、13位以降は基準色になる
+  const ratio = Math.min(Math.max((rank - 1) / Math.max(maxRank, 1), 0), 1);
   return ratioToStyle(ratio);
 }
 
@@ -118,6 +125,8 @@ export function getMetricAbsoluteRatio(key: MetricKey, val: number | null | unde
   if (val == null || isNaN(val)) return 1;
 
   switch (key) {
+    case 'market_cap': // 1000億円以上が最良(0), 100億円以下がパッとしない(1)
+      return Math.min(Math.max((1000 - val) / (1000 - 100), 0), 1);
     case 'dividend_yield': // 5.5%以上が最良(0), 3.8%以下がパッとしない(1)
       return Math.min(Math.max((5.5 - val) / (5.5 - 3.8), 0), 1);
     case 'pbr': // 0.45倍以下が最良(0), 1.0倍以上がパッとしない(1)
@@ -149,7 +158,7 @@ export function getStockMetricStyle(
 ): { color: string; fontWeight: number } {
   const rank = metricRanks?.[key]?.get(stock.code);
   if (rank != null && rank > 0) {
-    return getHeatmapStyle(rank);
+    return getHeatmapStyle(rank, 12);
   }
   const ratio = getMetricAbsoluteRatio(key, Number(stock[key]));
   return ratioToStyle(ratio);

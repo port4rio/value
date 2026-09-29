@@ -26,7 +26,7 @@ export const StockTable: React.FC<StockTableProps> = ({
 }) => {
   const [hoveredCode, setHoveredCode] = useState<string | null>(null);
 
-  // 表示中銘柄における各指標の1位〜30位/最下位ランクを計算
+  // 表示中銘柄における各指標の上位1位〜12位ランクを計算
   const metricRanks = useMemo(() => {
     return calculateMetricRanks(stocks);
   }, [stocks]);
@@ -160,15 +160,16 @@ export const StockTable: React.FC<StockTableProps> = ({
                   ? 'bg-[#141e18]'
                   : 'bg-[#17231c]';
 
-                // 各指標のヒートマップスタイル (1位: #CCFF00 -> 20位: 白っぽい文字色 #c5d8cd)
-                const dyStyle = getHeatmapStyle(metricRanks.dividend_yield?.get(stock.code));
-                const perStyle = getHeatmapStyle(metricRanks.per?.get(stock.code));
-                const pbrStyle = getHeatmapStyle(metricRanks.pbr?.get(stock.code));
-                const roeStyle = getHeatmapStyle(metricRanks.roe?.get(stock.code));
-                const ebitdaStyle = getHeatmapStyle(metricRanks.ebitda_growth?.get(stock.code));
-                const eqStyle = getHeatmapStyle(metricRanks.equity_ratio?.get(stock.code));
-                const deStyle = getHeatmapStyle(metricRanks.de_ratio?.get(stock.code));
-                const crStyle = getHeatmapStyle(metricRanks.current_ratio?.get(stock.code));
+                // 各指標のヒートマップスタイル (全指標: 上位1位〜12位まで黄緑グラデーション、13位以降は基準文字色 #c5d8cd)
+                const marketCapStyle = getHeatmapStyle(metricRanks.market_cap?.get(stock.code), 12);
+                const dyStyle = getHeatmapStyle(metricRanks.dividend_yield?.get(stock.code), 12);
+                const perStyle = getHeatmapStyle(metricRanks.per?.get(stock.code), 12);
+                const pbrStyle = getHeatmapStyle(metricRanks.pbr?.get(stock.code), 12);
+                const roeStyle = getHeatmapStyle(metricRanks.roe?.get(stock.code), 12);
+                const ebitdaStyle = getHeatmapStyle(metricRanks.ebitda_growth?.get(stock.code), 12);
+                const eqStyle = getHeatmapStyle(metricRanks.equity_ratio?.get(stock.code), 12);
+                const deStyle = getHeatmapStyle(metricRanks.de_ratio?.get(stock.code), 12);
+                const crStyle = getHeatmapStyle(metricRanks.current_ratio?.get(stock.code), 12);
 
                 // ソート選択列の統一背景クラス（全列で一貫）
                 const sortedColBg = (field: SortField) =>
@@ -296,16 +297,17 @@ export const StockTable: React.FC<StockTableProps> = ({
                       </span>
                     </td>
 
-                    {/* Column 6: 時価総額 */}
+                    {/* Column 6: 時価総額 (大きい方から上位12位まで黄緑グラデーション) */}
                     <td
-                      className={`px-2 py-2 text-right whitespace-nowrap text-[#d3e3da] ${sortedColBg(
+                      className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'market_cap'
                       )}`}
+                      style={{ color: marketCapStyle.color, fontWeight: marketCapStyle.fontWeight }}
                     >
                       {stock.market_cap != null ? `${stock.market_cap.toLocaleString()}億` : '-'}
                     </td>
 
-                    {/* Column 7: 配当利回り (枠除去、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 7: 配当利回り (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'dividend_yield'
@@ -326,7 +328,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       {stock.payout_ratio != null ? `${stock.payout_ratio.toFixed(1)}%` : '-'}
                     </td>
 
-                    {/* Column 9: PER (低い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 9: PER (低い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg('per')}`}
                       style={{ color: perStyle.color, fontWeight: perStyle.fontWeight }}
@@ -334,7 +336,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       {stock.per != null ? `${stock.per.toFixed(2)}倍` : '-'}
                     </td>
 
-                    {/* Column 10: PBR (低い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 10: PBR (低い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg('pbr')}`}
                       style={{ color: pbrStyle.color, fontWeight: pbrStyle.fontWeight }}
@@ -342,7 +344,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       {stock.pbr != null ? `${stock.pbr.toFixed(2)}倍` : '-'}
                     </td>
 
-                    {/* Column 11: ROE (高い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 11: ROE (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg('roe')}`}
                       style={{ color: roeStyle.color, fontWeight: roeStyle.fontWeight }}
@@ -350,7 +352,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       {stock.roe != null ? `${stock.roe.toFixed(2)}%` : '-'}
                     </td>
 
-                    {/* Column 12: EBITDA成長率 (高い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 12: EBITDA成長率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'ebitda_growth'
@@ -362,7 +364,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                         : '-'}
                     </td>
 
-                    {/* Column 13: 自己資本比率 (枠除去、高い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 13: 自己資本比率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'equity_ratio'
@@ -374,7 +376,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                         : '-'}
                     </td>
 
-                    {/* Column 14: D/Eレシオ (低い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 14: D/Eレシオ (低い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'de_ratio'
@@ -384,7 +386,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                       {stock.de_ratio != null ? `${stock.de_ratio.toFixed(2)}倍` : '-'}
                     </td>
 
-                    {/* Column 15: 流動比率 (高い方が良い、1位〜30位ヒートマップグラデーション) */}
+                    {/* Column 15: 流動比率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'current_ratio'

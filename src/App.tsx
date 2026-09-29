@@ -13,7 +13,7 @@ export default function App() {
   const [allCandidates, setAllCandidates] = useState<StockItem[]>(INITIAL_STOCKS);
   const [criteria, setCriteria] = useState<ScreeningCriteria>(DEFAULT_CRITERIA);
   const [sortConfig, setSortConfig] = useState<SortConfig>({
-    key: 'dividend_yield', // Requirement: 初期値は配当利回りでソート
+    key: 'market_cap', // Requirement: 初期値は時価総額の降順でソート
     direction: 'desc',
   });
   const [activeCategory, setActiveCategory] = useState<AlumniCategory>('wariyasu');
