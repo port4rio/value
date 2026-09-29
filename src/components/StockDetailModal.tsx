@@ -130,9 +130,9 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                     卒業{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
                   </span>
                 )}
-                {stock.category === 'taigaku' && (
+                {(stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') && (
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#22182c] text-[#c084fc] border border-[#482d5e]">
-                    退学{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
+                    脱落{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
                   </span>
                 )}
                 {/* Legacy fallback */}
@@ -276,15 +276,15 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
             </div>
           )}
 
-          {/* 退学者バナー（退学日・退学理由・退学時株価・リターン、1年追跡） */}
-          {stock.category === 'taigaku' && (
+          {/* 脱落者バナー（脱落日・脱落理由・脱落時株価・リターン、1年追跡） */}
+          {(stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') && (
             <div className="bg-[#241a2e] border border-[#542d6b] rounded-lg p-2 sm:p-2.5 mt-2 text-xs">
               <div className="flex items-center justify-between gap-1 mb-1">
                 <div className="flex items-center gap-1 font-bold text-[#c084fc] truncate min-w-0">
-                  <span className="shrink-0">退学者データ（1年追跡中）</span>
+                  <span className="shrink-0">脱落者データ（1年追跡中）</span>
                   {(stock.dropoutDate || stock.graduationDate) && (
                     <span className="font-mono font-normal text-[#e9d5ff] text-[11px] shrink-0">
-                      （退学日:{stock.dropoutDate || stock.graduationDate}）
+                      （脱落日:{stock.dropoutDate || stock.graduationDate}）
                     </span>
                   )}
                 </div>
@@ -294,14 +294,14 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                       (stock.dropoutReturn ?? stock.graduationReturn ?? 0) >= 0 ? 'text-[#4ade80]' : 'text-[#f87171]'
                     }`}
                   >
-                    退学後: {(stock.dropoutReturn ?? stock.graduationReturn ?? 0) > 0 ? '+' : ''}
+                    脱落後: {(stock.dropoutReturn ?? stock.graduationReturn ?? 0) > 0 ? '+' : ''}
                     {(stock.dropoutReturn ?? stock.graduationReturn ?? 0).toFixed(2)}%
                   </span>
                 )}
               </div>
               {(stock.dropoutReason || stock.graduationReason) && (
                 <div className="text-[#e9d5ff] text-[11px] leading-relaxed">
-                  <span className="text-[#d8b4fe] font-semibold">退学理由: </span>
+                  <span className="text-[#d8b4fe] font-semibold">脱落理由: </span>
                   {stock.dropoutReason || stock.graduationReason}
                 </div>
               )}

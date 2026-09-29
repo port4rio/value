@@ -1,4 +1,4 @@
-export type AlumniCategory = 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku';
+export type AlumniCategory = 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku' | 'datsuraku';
 
 export interface StockItem {
   code: string;
@@ -18,8 +18,8 @@ export interface StockItem {
   sector?: string;
   updatedAt?: string;
 
-  // バリュー株同窓会 分類: 割安組(PBR<=1.0), 昇格組(1.0<PBR<=1.2), 卒業生(PBR>1.2), 退学者(指標悪化等)
-  category: 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku' | 'inokori' | 'tennyu' | 'zaiseki';
+  // バリュー株同窓会 分類: 割安組(PBR<=1.0), 昇格組(1.0<PBR<=1.2), 卒業生(PBR>1.2), 脱落者(指標悪化等)
+  category: 'wariyasu' | 'shokaku' | 'sotsugyo' | 'taigaku' | 'datsuraku' | 'inokori' | 'tennyu' | 'zaiseki';
   stayDays?: number; // 各組の滞在日数 (どの組も正の整数、+1ずつ加算)
   entryDate?: string; // 初回スクリーニング該当開始日
   groupEntryDate?: string; // 現在の組に配属された日付
@@ -28,10 +28,10 @@ export interface StockItem {
   graduationReason?: string; // 卒業生用: 名誉の卒業・PBR1.2倍突破
   graduationPrice?: number; // 卒業生用: 卒業時の株価
   graduationReturn?: number; // 卒業生用: 卒業後リターン(%)
-  dropoutDate?: string; // 退学者用: 退学日 (例: 2026-09-28)
-  dropoutReason?: string; // 退学者用: 退学理由（利回り低下、減配、ROE低下、財務悪化など）
-  dropoutPrice?: number; // 退学者用: 退学時の株価
-  dropoutReturn?: number; // 退学者用: 退学後リターン(%)
+  dropoutDate?: string; // 脱落者用: 脱落日 (例: 2026-09-28)
+  dropoutReason?: string; // 脱落者用: 脱落理由（利回り低下、減配、ROE低下、財務悪化など）
+  dropoutPrice?: number; // 脱落者用: 脱落時の株価
+  dropoutReturn?: number; // 脱落者用: 脱落後リターン(%)
 }
 
 export interface ScreeningCriteria {

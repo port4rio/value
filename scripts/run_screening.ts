@@ -601,7 +601,7 @@ function determineGraduationReason(s: StockItem): string {
 }
 
 /**
- * 退学理由の判定（利回り低下・減配・ROE低下・財務悪化などによる脱落）
+ * 脱落理由の判定（利回り低下・減配・ROE低下・財務悪化などによる脱落）
  */
 function determineDropoutReason(s: StockItem): string {
   const reasons: string[] = [];
@@ -704,7 +704,7 @@ async function main() {
   const shouldIncrementStayDays = forceIncrement || (isMarketOpenToday && prevLastIncrementDate !== todayStr);
   console.log(`⏳ StayDays Increment Mode: ${shouldIncrementStayDays ? '+1 (営業日の初回実行または強制実行)' : '維持 (休日または同日再実行のため加算なし)'}`);
 
-  // 5. 最終選別 & 組み分け（割安組 / 昇格組 / 卒業生 / 退学者）
+  // 5. 最終選別 & 組み分け（割安組 / 昇格組 / 卒業生 / 脱落者）
   const activeStocks: StockItem[] = [];
   const graduatedStocks: StockItem[] = [];
   const dropoutStocks: StockItem[] = [];
@@ -718,8 +718,8 @@ async function main() {
       const targetCategory: 'wariyasu' | 'shokaku' =
         s.pbr != null && s.pbr <= 1.0 ? 'wariyasu' : 'shokaku';
 
-      if (prev && (prev.category === 'sotsugyo' || prev.category === 'taigaku')) {
-        // ★ 卒業・退学からの再転入！
+      if (prev && (prev.category === 'sotsugyo' || prev.category === 'taigaku' || (prev.category as string) === 'datsuraku')) {
+        // ★ 卒業・脱落からの再転入！
         console.log(`🎉 再転入検出: [${s.code}] ${s.name} が再びスクリーニング条件をクリアして${targetCategory === 'wariyasu' ? '割安組' : '昇格組'}に転入しました！`);
         activeStocks.push({
           ...s,
@@ -794,7 +794,7 @@ async function main() {
       }
     } else {
       // スクリーニング基準未達 (PBR > 1.2 または 指標未達)
-      const wasActive = prev && prev.category !== 'sotsugyo' && prev.category !== 'taigaku';
+      const wasActive = prev && prev.category !== 'sotsugyo' && prev.category !== 'taigaku' && (prev.category as string) !== 'datsuraku';
 
       if (wasActive) {
         if (s.pbr != null && s.pbr > 1.20) {
@@ -814,9 +814,9 @@ async function main() {
             graduationReturn: 0,
           });
         } else {
-          // ★ 指標悪化・基準未達による退学！ (1年追跡)
+          // ★ 指標悪化・基準未達による脱落！ (1年追跡)
           const reason = determineDropoutReason(s);
-          console.log(`⚠️ 退学検出: [${s.code}] ${s.name} (理由: ${reason})`);
+          console.log(`⚠️ 脱落検出: [${s.code}] ${s.name} (理由: ${reason})`);
           const effectiveEntryDate = prev.entryDate || todayStr;
           dropoutStocks.push({
             ...s,
@@ -855,8 +855,8 @@ async function main() {
         } else {
           console.log(`⌛ 卒業生 1年追跡期間終了: [${prev.code}] ${prev.name}`);
         }
-      } else if (prev && prev.category === 'taigaku') {
-        // 過去の退学者の継続追跡（1年追跡）
+      } else if (prev && (prev.category === 'taigaku' || (prev.category as string) === 'datsuraku')) {
+        // 過去の脱落者の継続追跡（1年追跡）
         const dropDate = prev.dropoutDate || prev.graduationDate || todayStr;
         if (isWithinOneYear(dropDate, todayStr)) {
           const dropPrice = prev.dropoutPrice || prev.graduationPrice || prev.close || s.close;
@@ -878,15 +878,15 @@ async function main() {
             dropoutReturn: dropReturn,
           });
         } else {
-          console.log(`⌛ 退学者 1年追跡期間終了: [${prev.code}] ${prev.name}`);
+          console.log(`⌛ 脱落者 1年追跡期間終了: [${prev.code}] ${prev.name}`);
         }
       }
     }
   }
 
-  // 6. 銘柄リストの統合（在籍銘柄 + 卒業生 + 退学者）
+  // 6. 銘柄リストの統合（在籍銘柄 + 卒業生 + 脱落者）
   const finalStocks = [...activeStocks, ...graduatedStocks, ...dropoutStocks];
-  console.log(`🎯 Active stocks: ${activeStocks.length} (割安: ${activeStocks.filter((s) => s.category === 'wariyasu').length}, 昇格: ${activeStocks.filter((s) => s.category === 'shokaku').length}), Graduated: ${graduatedStocks.length}, Dropout: ${dropoutStocks.length}, Total: ${finalStocks.length}`);
+  console.log(`🎯 Active stocks: ${activeStocks.length} (割安: ${activeStocks.filter((s) => s.category === 'wariyasu').length}, 昇格: ${activeStocks.filter((s) => s.category === 'shokaku').length}), Graduated: ${graduatedStocks.length}, Dropped: ${dropoutStocks.length}, Total: ${finalStocks.length}`);
 
   // 7. JSON に保存
   const now = new Date().toLocaleString('ja-JP', {

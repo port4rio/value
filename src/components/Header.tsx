@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* Classification Tabs: [割安組] [昇格組] [卒業生] [退学者] */}
+            {/* Classification Tabs: [割安組] [昇格組] [卒業生] [脱落者] */}
             <div className="flex items-center gap-1.5 flex-wrap">
               {/* 割安組 (PBR <= 1.0) */}
               <button
@@ -124,7 +124,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="font-mono font-bold text-[#f472b6]">{sotsugyoCount}</span>
               </button>
 
-              {/* 退学者 (利回り低下、減配、ROE低下、財務悪化等, 1年追跡) */}
+              {/* 脱落者 (利回り低下、減配、ROE低下、財務悪化等, 1年追跡) */}
               <button
                 type="button"
                 onClick={(e) => {
@@ -132,13 +132,13 @@ export const Header: React.FC<HeaderProps> = ({
                   setActiveCategory('taigaku');
                 }}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all outline-none focus:outline-none ${
-                  activeCategory === 'taigaku'
+                  activeCategory === 'taigaku' || (activeCategory as string) === 'datsuraku'
                     ? 'bg-[#281b36] text-[#c084fc] border border-[#58337a] shadow-sm ring-1 ring-[#c084fc]/20 font-bold'
                     : 'bg-[#121c17] text-[#8ea89b] md:hover:text-[#f0f5f2] border border-[#23352b] md:hover:bg-[#18261f]'
                 }`}
                 title="基準未達（利回り低下・減配・ROE低下・財務悪化等により脱落・1年間追跡中）"
               >
-                <span>退学者</span>
+                <span>脱落者</span>
                 <span className="font-mono font-bold text-[#c084fc]">{taigakuCount}</span>
               </button>
             </div>

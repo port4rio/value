@@ -87,7 +87,7 @@ export default function App() {
   // Helper to normalize category
   const getCategory = (stock: StockItem): AlumniCategory => {
     if (stock.category === 'sotsugyo') return 'sotsugyo';
-    if (stock.category === 'taigaku') return 'taigaku';
+    if (stock.category === 'taigaku' || (stock.category as string) === 'datsuraku') return 'taigaku';
     if (stock.category === 'shokaku') return 'shokaku';
     if (stock.category === 'wariyasu') return 'wariyasu';
     // Legacy fallback
@@ -155,7 +155,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#121a15] flex flex-col font-sans text-[#e3ece6]">
-      {/* 1. Header with Category Badges [割安組][昇格組][卒業生][退学者] */}
+      {/* 1. Header with Category Badges [割安組][昇格組][卒業生][脱落者] */}
       <Header
         filteredStocks={processedStocks}
         wariyasuCount={categoryCounts.wariyasuCount}
@@ -196,7 +196,7 @@ export default function App() {
       <footer className="bg-[#141e18] border-t border-[#24372c] mt-auto py-2 text-center text-xs text-[#739180]">
         <div className="w-full px-4">
           <p className="text-[#5c7767] text-[11px]">
-            スクリーニング条件: PBR≦1.2倍・ROE≧7.5%・配当利回り≧3.8%・自己資本比率≧48%・EBITDA成長率≧-10% | 割安組(PBR≦1.0)・昇格組(1.0&lt;PBR≦1.2)・卒業生(PBR&gt;1.2・1年追跡)・退学者(基準未達・1年追跡)
+            スクリーニング条件: PBR≦1.2倍・ROE≧7.5%・配当利回り≧3.8%・自己資本比率≧48%・EBITDA成長率≧-10% | 割安組(PBR≦1.0)・昇格組(1.0&lt;PBR≦1.2)・卒業生(PBR&gt;1.2・1年追跡)・脱落者(基準未達・1年追跡)
           </p>
         </div>
       </footer>

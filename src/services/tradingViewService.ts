@@ -47,8 +47,8 @@ export function applyScreeningCriteria(
   criteria: ScreeningCriteria
 ): StockItem[] {
   return stocks.filter((s) => {
-    // 卒業生・退学者はスクリーニング条件外として保持（各タブで追跡）
-    if (s.category === 'sotsugyo' || s.category === 'taigaku') return true;
+    // 卒業生・脱落者はスクリーニング条件外として保持（各タブで追跡）
+    if (s.category === 'sotsugyo' || s.category === 'taigaku' || (s.category as string) === 'datsuraku') return true;
 
     // yfinance / みんかぶ から取得した最新配当利回りによる絞込
     if (s.dividend_yield != null && s.dividend_yield < criteria.minDividendYield) return false;

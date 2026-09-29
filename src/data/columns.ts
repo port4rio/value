@@ -24,7 +24,7 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
   {
     key: 'stayDays',
     label: '滞在日数',
-    tooltip: '各組での滞在日数（割安組 / 昇格組 / 卒業生 / 退学者。数字が小さければ最近転入）',
+    tooltip: '各組での滞在日数（割安組 / 昇格組 / 卒業生 / 脱落者。数字が小さければ最近転入）',
     align: 'right',
     minWidth: 'w-[72px] min-w-[72px]',
     priority: 'high',

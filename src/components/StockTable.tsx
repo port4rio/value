@@ -235,15 +235,15 @@ export const StockTable: React.FC<StockTableProps> = ({
                         >
                           {stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : '1日'}
                         </span>
-                      ) : stock.category === 'taigaku' ? (
+                      ) : stock.category === 'taigaku' || (stock.category as string) === 'datsuraku' ? (
                         <span
                           className="text-[#c084fc] font-mono font-semibold"
                           title={
                             stock.dropoutReason || stock.graduationReason
-                              ? `退学日:${stock.dropoutDate || stock.graduationDate || '直近'}\n理由: ${
+                              ? `脱落日:${stock.dropoutDate || stock.graduationDate || '直近'}\n理由: ${
                                   stock.dropoutReason || stock.graduationReason
                                 }`
-                              : '退学者（基準未達）'
+                              : '脱落者（基準未達）'
                           }
                         >
                           {stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : '1日'}
