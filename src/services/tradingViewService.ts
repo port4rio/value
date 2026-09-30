@@ -1,6 +1,7 @@
 import { StockItem, ScreeningCriteria, DEFAULT_CRITERIA } from '../types';
 import { INITIAL_STOCKS } from '../data/initialStocks';
 import { fetchYFinanceQuotes, YFinanceQuote } from './yfinanceService';
+import { normalizeCompanyName } from '../data/companyNames';
 
 const CACHE_KEY = 'value_stocks_screener_cache_v2';
 const CACHE_TIME_KEY = 'value_stocks_screener_time_v2';
@@ -98,10 +99,14 @@ export async function fetchScreeningStocks(
       if (staticRes.ok) {
         const staticData = await staticRes.json();
         if (staticData && Array.isArray(staticData.stocks) && staticData.stocks.length > 0) {
-          const screened = applyScreeningCriteria(staticData.stocks, criteria);
+          const normalizedStocks = staticData.stocks.map((s: StockItem) => ({
+            ...s,
+            name: normalizeCompanyName(s.code, s.name),
+          }));
+          const screened = applyScreeningCriteria(normalizedStocks, criteria);
           return {
             stocks: screened,
-            allCandidates: staticData.stocks,
+            allCandidates: normalizedStocks,
             isLive: true,
             timestamp: staticData.updatedAt || 'バッチ更新データ',
           };
@@ -186,7 +191,7 @@ export async function fetchScreeningStocks(
 
               return {
                 code,
-                name: String(d[1] || d[0] || '不明'),
+                name: normalizeCompanyName(code, String(d[1] || d[0] || '不明')),
                 close: d[2] != null ? Number(d[2]) : null,
                 change: d[3] != null ? Number(Number(d[3]).toFixed(2)) : null,
                 market_cap: d[4] != null ? Math.round(Number(d[4]) / 100000000) : null,

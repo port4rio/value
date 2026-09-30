@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import yahooFinance from 'yahoo-finance2';
 import { GoogleGenAI } from '@google/genai';
 import { StockItem, DEFAULT_CRITERIA, StockChartData, ChartPoint } from '../src/types';
+import { normalizeCompanyName } from '../src/data/companyNames';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -74,7 +75,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
 
       const d = r.d || [];
       const rawName = String(d[1] || d[0] || code);
-      const cleanName = rawName.replace(/^[A-Z0-9\s]+(?=[一-龥ぁ-んァ-ヶ])/, '').trim();
+      const cleanName = normalizeCompanyName(code, rawName);
       const marketCapOku = d[4] ? Math.round(Number(d[4]) / 100000000) : null;
 
       // 自己資本比率の算出: ((総資産 - 負債合計) / 総資産) * 100
@@ -132,6 +133,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
 }
 
 interface MinkabuData {
+  name?: string | null;
   per: number | null;
   pbr: number | null;
   dividendYield: number | null;
@@ -140,8 +142,8 @@ interface MinkabuData {
 }
 
 /**
- * みんかぶ (minkabu.jp) から主要ファンダメンタルズ指標を取得
- * - 銘柄トップ (https://minkabu.jp/stock/{code}): PER(調整後), PBR, 配当利回り
+ * みんかぶ (minkabu.jp) から最新社名・主要ファンダメンタルズ指標を取得
+ * - 銘柄トップ (https://minkabu.jp/stock/{code}): 最新社名(オカムラ、東海理化等), PER(調整後), PBR, 配当利回り
  * - 決算ページ (https://minkabu.jp/stock/{code}/settlement): 自己資本率, ROE
  */
 async function fetchMinkabuData(code: string): Promise<MinkabuData> {
@@ -150,17 +152,27 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   };
 
+  let name: string | null = null;
   let per: number | null = null;
   let pbr: number | null = null;
   let dividendYield: number | null = null;
   let equityRatio: number | null = null;
   let roe: number | null = null;
 
-  // 1. 銘柄トップページ (PER(調整後), PBR, 配当利回り)
+  // 1. 銘柄トップページ (最新社名, PER(調整後), PBR, 配当利回り)
   try {
     const resTop = await fetch(`https://minkabu.jp/stock/${code}`, { headers });
     if (resTop.ok) {
       const htmlTop = await resTop.text();
+
+      // 最新銘柄名（TradingViewの旧社名「岡村製作所」→「オカムラ」等を解決）
+      const titleMatch = htmlTop.match(/<title>([^<]+)<\/title>/i);
+      if (titleMatch) {
+        const m = titleMatch[1].match(/^(.+?)\s*[(（]\s*[0-9A-Za-z]+\s*[)）]/);
+        if (m && m[1].trim()) {
+          name = m[1].trim();
+        }
+      }
 
       // PER (調整後)
       const perMatch = htmlTop.match(
@@ -255,7 +267,7 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
     // ignore
   }
 
-  return { per, pbr, dividendYield, equityRatio, roe };
+  return { name, per, pbr, dividendYield, equityRatio, roe };
 }
 
 /**
@@ -291,8 +303,12 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
     }
 
     try {
-      // 2. みんかぶ (minkabu) から PER(調整後)、PBR、配当利回り、自己資本率、ROE を正確に取得
+      // 2. みんかぶ (minkabu) から 最新社名、PER(調整後)、PBR、配当利回り、自己資本率、ROE を正確に取得
       const minkabu = await fetchMinkabuData(s.code);
+      if (minkabu.name) {
+        s.name = minkabu.name;
+      }
+      s.name = normalizeCompanyName(s.code, s.name);
       if (minkabu.per != null && minkabu.per > 0) s.per = minkabu.per;
       if (minkabu.pbr != null && minkabu.pbr > 0) s.pbr = minkabu.pbr;
       if (minkabu.dividendYield != null && minkabu.dividendYield >= 0) s.dividend_yield = minkabu.dividendYield;
@@ -300,6 +316,7 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       if (minkabu.roe != null) s.roe = minkabu.roe;
     } catch {
       // 取得失敗時はTradingViewの値をそのまま保持
+      s.name = normalizeCompanyName(s.code, s.name);
     }
 
     enriched.push(s);
