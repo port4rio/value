@@ -147,15 +147,24 @@ async function loadStaticDiagnosis(code: string, bustCache = false): Promise<Sto
           const rawDiag = item.diagnosis || {};
           const normalizedDiagnosis: StockAiDiagnosisData = {
             business_summary:
-              rawDiag.business_summary || rawDiag.businessSummary || '特色分析中',
+              rawDiag.business_summary || rawDiag.businessSummary || '事業特色分析中',
+            undervalued_reason:
+              rawDiag.undervalued_reason || rawDiag.valuation_appeal || rawDiag.investmentAttractiveness || '放置要因分析中',
+            contrarian_appeal:
+              rawDiag.contrarian_appeal || rawDiag.dividend_sustainability || rawDiag.dividendSustainability || '逆張り魅力分析中',
+            revaluation_scenario:
+              rawDiag.revaluation_scenario || rawDiag.catalyst || '再評価シナリオ分析中',
+            max_risk:
+              rawDiag.max_risk || rawDiag.risks || rawDiag.risk || '最大リスク分析中',
+            // 従来キー互換保持
             valuation_appeal:
-              rawDiag.valuation_appeal || rawDiag.investmentAttractiveness || '割安度分析中',
+              rawDiag.undervalued_reason || rawDiag.valuation_appeal || '',
             dividend_sustainability:
-              rawDiag.dividend_sustainability || rawDiag.dividendSustainability || '配当持続性分析中',
+              rawDiag.contrarian_appeal || rawDiag.dividend_sustainability || '',
             catalyst:
-              rawDiag.catalyst || 'カタリスト分析中',
+              rawDiag.revaluation_scenario || rawDiag.catalyst || '',
             risks:
-              rawDiag.risks || rawDiag.risk || 'リスク要因分析中',
+              rawDiag.max_risk || rawDiag.risks || '',
           };
 
           return {
@@ -241,14 +250,15 @@ export async function fetchAiDiagnosis(
  * ChatGPTでこの銘柄について相談するためのプロンプト付きURLを生成
  */
 export function createChatGptConsultUrl(stock: StockItem): string {
-  const prompt = `日本株の投資分析をお願いします。
+  const prompt = `あなたは辛口で深い洞察力を持つプロの株式アナリストです。
+バリュー株スクリーニングした銘柄の定性情報が欲しい。数値を単純に説明しないこと。
 
-【銘柄情報】
+【対象銘柄】
 ・銘柄コード: ${stock.code}
 ・企業名: ${stock.name}
 ・実績PER: ${stock.per != null ? `${stock.per}倍` : '不明'}
 ・実績PBR: ${stock.pbr != null ? `${stock.pbr}倍` : '不明'}
-・配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
+・予想配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
 ・配当性向: ${stock.payout_ratio != null ? `${stock.payout_ratio}%` : '不明'}
 ・ROE: ${stock.roe != null ? `${stock.roe}%` : '不明'}
 ・自己資本比率: ${stock.equity_ratio != null ? `${stock.equity_ratio}%` : '不明'}
@@ -256,11 +266,12 @@ export function createChatGptConsultUrl(stock: StockItem): string {
 ・D/Eレシオ: ${stock.de_ratio != null ? `${stock.de_ratio}倍` : '不明'}
 ・流動比率: ${stock.current_ratio != null ? `${stock.current_ratio}%` : '不明'}
 
-【質問事項】
-1. この企業の主力の収益源（ビジネスモデル）と競合優位性は何ですか？
-2. PBR1倍割れ・低PERで推移している背景や理由は何が考えられますか？
-3. 配当の維持・増配余力（財務健全性やキャッシュ創出力）はどう評価できますか？
-4. 今後、株価が見直されるカタリスト（株主還元方針、東証要請対応など）と投資上の留意点・リスクを教えてください。`;
+【出力要件】
+1. 何をやっている会社か（事業紹介や特色、何で稼いでるか端的な一行で）
+2. なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）
+3. それでも魅力的な理由（逆張りポイント）
+4. 再評価シナリオ（何が起きたら株価が見直されるか）
+5. 最大リスク（1つに絞る）`;
 
   return `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
 }

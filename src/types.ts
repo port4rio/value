@@ -72,10 +72,15 @@ export interface ColumnDefinition {
 
 export interface StockAiDiagnosisData {
   business_summary: string;
-  valuation_appeal: string;
-  dividend_sustainability: string;
-  catalyst: string;
-  risks: string;
+  undervalued_reason?: string;
+  contrarian_appeal?: string;
+  revaluation_scenario?: string;
+  max_risk?: string;
+  // 従来キーとの後方互換
+  valuation_appeal?: string;
+  dividend_sustainability?: string;
+  catalyst?: string;
+  risks?: string;
 }
 
 export interface StockAiDiagnosisResponse {

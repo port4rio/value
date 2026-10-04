@@ -447,7 +447,8 @@ async function generateAiDiagnosis(stocks: StockItem[]) {
 
     console.log(`Analyzing [${s.code}] ${s.name}...`);
     const prompt = `あなたは辛口で深い洞察力を持つプロの株式アナリストです。
-以下の銘柄を、今後も割安か将来上昇を見込めるか、必要に応じ最新動向も検索して審査してください。
+バリュー株スクリーニングした銘柄の定性情報が欲しい。数値を単純に説明しないこと。
+指標（PER・PBR・配当利回り等の数値）の機械的な読み上げは一切不要です。画面上の数値を見ればわかる情報ではなく、企業の事業実態、業界構造、市場の懸念や心理、構造変化に踏み込んだ定性的な深い洞察を鋭く提供してください。
 
 【対象銘柄】
 ・証券コード: ${s.code}
@@ -463,20 +464,20 @@ async function generateAiDiagnosis(stocks: StockItem[]) {
 ・流動比率: ${s.current_ratio != null ? `${s.current_ratio}%` : '不明'}
 
 【出力要件】
-以下の5つの項目を、具体的かつ説得力のある日本語で解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
-1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
-2. "valuation_appeal": 投資で得られる利益期待や面白さと、割安と見なされる理由を記載
-3. "dividend_sustainability": 配当の持続性と株主還元方針。減配リスクの低さ、DOE導入や自社株買いの積極性など
-4. "catalyst": 割安是正の可能性を審査。東証改革、資本効率向上、政策保有株売却、海外展開など
-5. "risks": 弱点や下振れリスクを率直に記載。『市場が正しく評価している可能性』も考慮
+以下の5つの項目について、定性的な洞察を具体的かつ辛口で鋭く解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
+1. "business_summary": 何をやっている会社か（事業紹介や特色、何で稼いでるか端的な一行で）
+2. "undervalued_reason": なぜ今安く放置されているのか（市場の懸念、PBRが低い理由。数値を単純に説明しないこと）
+3. "contrarian_appeal": それでも魅力的な理由（逆張りポイント）
+4. "revaluation_scenario": 再評価シナリオ（何が起きたら株価が見直されるか）
+5. "max_risk": 最大リスク（1つに絞る）
 
 JSON形式例:
 {
-  "business_summary": "...",
-  "valuation_appeal": "...",
-  "dividend_sustainability": "...",
-  "catalyst": "...",
-  "risks": "..."
+  "business_summary": "何をやっている会社かを端的な一行で",
+  "undervalued_reason": "なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）",
+  "contrarian_appeal": "それでも魅力的な理由（逆張りポイント）",
+  "revaluation_scenario": "再評価シナリオ（何が起きたら株価が見直されるか）",
+  "max_risk": "最大リスク（1つに絞る）"
 }`;
 
     try {
@@ -492,12 +493,23 @@ JSON形式例:
               config: { responseMimeType: 'application/json' },
             });
             const parsed = JSON.parse(res.text?.trim() || '{}');
-            if (parsed && (parsed.business_summary || parsed.valuation_appeal)) {
+            if (parsed && (parsed.business_summary || parsed.undervalued_reason || parsed.valuation_appeal)) {
               diagnosisMap[s.code] = {
                 code: s.code,
                 name: s.name,
                 diagnosisDate: new Date().toISOString().split('T')[0],
-                diagnosis: parsed,
+                diagnosis: {
+                  business_summary: parsed.business_summary || '',
+                  undervalued_reason: parsed.undervalued_reason || parsed.valuation_appeal || '',
+                  contrarian_appeal: parsed.contrarian_appeal || parsed.dividend_sustainability || '',
+                  revaluation_scenario: parsed.revaluation_scenario || parsed.catalyst || '',
+                  max_risk: parsed.max_risk || parsed.risks || '',
+                  // 従来キー互換保持
+                  valuation_appeal: parsed.undervalued_reason || parsed.valuation_appeal || '',
+                  dividend_sustainability: parsed.contrarian_appeal || parsed.dividend_sustainability || '',
+                  catalyst: parsed.revaluation_scenario || parsed.catalyst || '',
+                  risks: parsed.max_risk || parsed.risks || '',
+                },
               };
               console.log(`✅ Analyzed [${s.code}] ${s.name} using ${model}`);
               fs.writeFileSync(AI_FILE, JSON.stringify(diagnosisMap, null, 2), 'utf-8');

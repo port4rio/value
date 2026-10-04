@@ -431,7 +431,8 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 
     const prompt = `
 あなたは辛口で深い洞察力を持つプロの株式アナリストです。
-以下の銘柄を、今後も割安か将来上昇を見込めるか、必要に応じ最新動向も検索して審査してください。
+バリュー株スクリーニングした銘柄の定性情報が欲しい。数値を単純に説明しないこと。
+指標（PER・PBR・配当利回り等の数値）の機械的な読み上げは一切不要です。画面上の数値を見ればわかる情報ではなく、企業の事業実態、業界構造、市場の懸念や心理、構造変化に踏み込んだ定性的な深い洞察を鋭く提供してください。
 
 【対象銘柄】
 ・証券コード: ${cleanCode}
@@ -447,20 +448,20 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 ・流動比率: ${currentRatio != null ? `${currentRatio}%` : '不明'}
 
 【出力要件】
-以下の5つの項目を、具体的かつ説得力のある日本語で解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
-1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
-2. "valuation_appeal": 投資で得られる利益期待や面白さと、割安と見なされる理由を記載
-3. "dividend_sustainability": 配当の持続性と株主還元方針。減配リスクの低さ、DOE導入や自社株買いの積極性など
-4. "catalyst": 割安是正の可能性を審査。東証改革、資本効率向上、政策保有株売却、海外展開など
-5. "risks": 弱点や下振れリスクを率直に記載。『市場が正しく評価している可能性』も考慮
+以下の5つの項目について、定性的な洞察を具体的かつ辛口で鋭く解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
+1. "business_summary": 何をやっている会社か（事業紹介や特色、何で稼いでるか端的な一行で）
+2. "undervalued_reason": なぜ今安く放置されているのか（市場の懸念、PBRが低い理由。数値を単純に説明しないこと）
+3. "contrarian_appeal": それでも魅力的な理由（逆張りポイント）
+4. "revaluation_scenario": 再評価シナリオ（何が起きたら株価が見直されるか）
+5. "max_risk": 最大リスク（1つに絞る）
 
 JSON形式例:
 {
-  "business_summary": "...",
-  "valuation_appeal": "...",
-  "dividend_sustainability": "...",
-  "catalyst": "...",
-  "risks": "..."
+  "business_summary": "何をやっている会社かを端的な一行で",
+  "undervalued_reason": "なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）",
+  "contrarian_appeal": "それでも魅力的な理由（逆張りポイント）",
+  "revaluation_scenario": "再評価シナリオ（何が起きたら株価が見直されるか）",
+  "max_risk": "最大リスク（1つに絞る）"
 }
 `;
 
@@ -539,14 +540,14 @@ JSON形式例:
       }
     }
 
-    // 万一Gemini APIが高負荷(503)等で一時利用不可だった場合のセーフティネット分析データ
+    // 万一Gemini APIが高負荷(503)等で一時利用不可だった場合のセーフティネット分析データ（定性情報中心）
     if (!parsedDiagnosis) {
       parsedDiagnosis = {
-        business_summary: `${name || '対象銘柄'}（コード: ${cleanCode}）。割安バリュー基準に合致する堅実な事業基盤を有する企業です。`,
-        valuation_appeal: `予想PER ${per != null ? per + '倍' : '割安水準'}、PBR ${pbr != null ? pbr + '倍' : '1倍割れ'}と純資産・収益力から見て評価余地が大きく、下値抵抗力が期待されます。`,
-        dividend_sustainability: `配当利回り ${dividendYield != null ? dividendYield + '%' : '4%超'}。自己資本比率 ${equityRatio != null ? equityRatio + '%' : '高水準'}に裏付けられた財務健全性により、安定的な還元が期待されます。`,
-        catalyst: `東証の資本コスト・株価意識要請に伴う株主還元強化（増配・自社株買い）やDOE導入によるPBR是正が期待されます。`,
-        risks: `景気敏感性や原材料高、為替変動、急激な金利変動等による業績下振れや、バリュートラップ化のリスクには留意が必要です。`,
+        business_summary: `${name || '対象銘柄'}（コード: ${cleanCode}）。堅実な事業基盤を有する企業。`,
+        undervalued_reason: `市場の成長期待の低さや成熟業界特有のディスカウント、資本効率への疑念から低PBRで放置されている。`,
+        contrarian_appeal: `強固な財務基盤と安定した営業キャッシュフローによる高い下値抵抗力と、潜在的な株主還元余力。`,
+        revaluation_scenario: `東証要請に伴う資本効率改革、DOE導入や積極的な自己株取得、政策保有株の縮減によるROE向上。`,
+        max_risk: `本業の需要成熟やコスト高騰により、万年割安株として市場から継続放置される流動性リスク。`,
       };
     }
 
@@ -555,10 +556,15 @@ JSON形式例:
       name: name || '',
       diagnosis: {
         business_summary: parsedDiagnosis.business_summary || '情報取得中',
-        valuation_appeal: parsedDiagnosis.valuation_appeal || '情報取得中',
-        dividend_sustainability: parsedDiagnosis.dividend_sustainability || '情報取得中',
-        catalyst: parsedDiagnosis.catalyst || '情報取得中',
-        risks: parsedDiagnosis.risks || '情報取得中',
+        undervalued_reason: parsedDiagnosis.undervalued_reason || parsedDiagnosis.valuation_appeal || '情報取得中',
+        contrarian_appeal: parsedDiagnosis.contrarian_appeal || parsedDiagnosis.dividend_sustainability || '情報取得中',
+        revaluation_scenario: parsedDiagnosis.revaluation_scenario || parsedDiagnosis.catalyst || '情報取得中',
+        max_risk: parsedDiagnosis.max_risk || parsedDiagnosis.risks || '情報取得中',
+        // 従来キー互換
+        valuation_appeal: parsedDiagnosis.undervalued_reason || parsedDiagnosis.valuation_appeal || '',
+        dividend_sustainability: parsedDiagnosis.contrarian_appeal || parsedDiagnosis.dividend_sustainability || '',
+        catalyst: parsedDiagnosis.revaluation_scenario || parsedDiagnosis.catalyst || '',
+        risks: parsedDiagnosis.max_risk || parsedDiagnosis.risks || '',
       },
       diagnosedDateLabel: satMeta.diagnosedDateLabel,
       nextDiagnosisLabel: satMeta.nextDiagnosisLabel,
