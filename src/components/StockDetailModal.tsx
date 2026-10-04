@@ -383,70 +383,55 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
 
             {!isAiLoading && aiData && (
               <div className="space-y-2.5">
-                {/* 1. 何をやっている会社か */}
+                {/* 何をやっている会社か */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#18261e] border border-[#273d30]">
-                  <div className="text-xs font-bold text-[#86efac] flex items-center justify-between gap-1.5 mb-1">
-                    <div className="flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-[#34d399] shrink-0" />
-                      <span>1. 何をやっている会社か</span>
-                    </div>
-                    <span className="text-[10px] text-[#719080] font-normal">事業特色・稼ぎ頭</span>
+                  <div className="text-xs font-bold text-[#86efac] flex items-center gap-1.5 mb-1">
+                    <Building2 className="w-3.5 h-3.5 text-[#34d399] shrink-0" />
+                    <span>何をやっている会社か</span>
                   </div>
                   <p className="text-[#f0f7f2] font-medium text-[13px] sm:text-sm leading-relaxed">
                     {aiData.diagnosis.business_summary}
                   </p>
                 </div>
 
-                {/* 2. なぜ今安く放置されているのか */}
+                {/* なぜ今安く放置されているのか */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#18261e] border border-[#273d30]">
-                  <div className="text-xs font-bold text-[#fde047] flex items-center justify-between gap-1.5 mb-1">
-                    <div className="flex items-center gap-1.5">
-                      <PieChart className="w-3.5 h-3.5 text-[#facc15] shrink-0" />
-                      <span>2. なぜ今安く放置されているのか</span>
-                    </div>
-                    <span className="text-[10px] text-[#a1a170] font-normal">市場の懸念・低PBRの理由</span>
+                  <div className="text-xs font-bold text-[#fde047] flex items-center gap-1.5 mb-1">
+                    <PieChart className="w-3.5 h-3.5 text-[#facc15] shrink-0" />
+                    <span>なぜ今安く放置されているのか</span>
                   </div>
                   <p className="text-[#e2eee7] text-[13px] sm:text-sm leading-relaxed">
                     {aiData.diagnosis.undervalued_reason || aiData.diagnosis.valuation_appeal}
                   </p>
                 </div>
 
-                {/* 3. それでも魅力的な理由 */}
+                {/* それでも魅力的な理由 */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#18261e] border border-[#273d30]">
-                  <div className="text-xs font-bold text-[#67e8f9] flex items-center justify-between gap-1.5 mb-1">
-                    <div className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#22d3ee] shrink-0" />
-                      <span>3. それでも魅力的な理由</span>
-                    </div>
-                    <span className="text-[10px] text-[#699ea3] font-normal">逆張りポイント</span>
+                  <div className="text-xs font-bold text-[#67e8f9] flex items-center gap-1.5 mb-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#22d3ee] shrink-0" />
+                    <span>それでも魅力的な理由</span>
                   </div>
                   <p className="text-[#e2eee7] text-[13px] sm:text-sm leading-relaxed">
                     {aiData.diagnosis.contrarian_appeal || aiData.diagnosis.dividend_sustainability}
                   </p>
                 </div>
 
-                {/* 4. 再評価シナリオ */}
+                {/* 再評価シナリオ */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#18261e] border border-[#273d30]">
-                  <div className="text-xs font-bold text-[#c084fc] flex items-center justify-between gap-1.5 mb-1">
-                    <div className="flex items-center gap-1.5">
-                      <Zap className="w-3.5 h-3.5 text-[#a855f7] shrink-0" />
-                      <span>4. 再評価シナリオ</span>
-                    </div>
-                    <span className="text-[10px] text-[#9a80ab] font-normal">株価見直しのきっかけ</span>
+                  <div className="text-xs font-bold text-[#c084fc] flex items-center gap-1.5 mb-1">
+                    <Zap className="w-3.5 h-3.5 text-[#a855f7] shrink-0" />
+                    <span>再評価シナリオ</span>
                   </div>
                   <p className="text-[#e2eee7] text-[13px] sm:text-sm leading-relaxed">
                     {aiData.diagnosis.revaluation_scenario || aiData.diagnosis.catalyst}
                   </p>
                 </div>
 
-                {/* 5. 最大リスク */}
+                {/* 最大リスク */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#241a1a] border border-[#482828]">
-                  <div className="text-xs font-bold text-[#f87171] flex items-center justify-between gap-1.5 mb-1">
-                    <div className="flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5 text-[#ef4444] shrink-0" />
-                      <span>5. 最大リスク</span>
-                    </div>
-                    <span className="text-[10px] text-[#aa7272] font-normal">1つに絞る</span>
+                  <div className="text-xs font-bold text-[#f87171] flex items-center gap-1.5 mb-1">
+                    <AlertTriangle className="w-3.5 h-3.5 text-[#ef4444] shrink-0" />
+                    <span>最大リスク</span>
                   </div>
                   <p className="text-[#fce7e7] text-[13px] sm:text-sm leading-relaxed">
                     {aiData.diagnosis.max_risk || aiData.diagnosis.risks}
