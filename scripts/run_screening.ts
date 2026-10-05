@@ -417,14 +417,30 @@ async function fetchAndSaveCharts(stocks: StockItem[]) {
   console.log(`✅ Successfully saved ${Object.keys(chartsMap).length} charts to ${CHARTS_FILE}`);
 }
 
-async function generateAiDiagnosis(stocks: StockItem[]) {
+/**
+ * 2つの 'YYYY-MM-DD' 日付間のカレンダー日数（差分日数）を計算
+ * 例: 2026-10-10 (土) と 2026-10-05 (月) -> 5
+ */
+function getCalendarDayDiff(todayStr: string, dateStr: string): number {
+  const [y1, m1, d1] = todayStr.split('-').map(Number);
+  const [y2, m2, d2] = dateStr.split('-').map(Number);
+  const utc1 = Date.UTC(y1, m1 - 1, d1);
+  const utc2 = Date.UTC(y2, m2 - 1, d2);
+  const MS_PER_DAY = 1000 * 60 * 60 * 24;
+  return Math.round((utc1 - utc2) / MS_PER_DAY);
+}
+
+async function generateAiDiagnosis(
+  stocks: StockItem[],
+  newlyAddedCodes: Set<string> = new Set(),
+  todayStr: string = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' })
+) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     console.log('ℹ️ GEMINI_API_KEY is not set. Skipping AI diagnosis.');
     return;
   }
 
-  console.log(`🤖 Running AI Diagnosis for ${stocks.length} stocks via Gemini...`);
   const ai: any = new GoogleGenAI();
   const diagnosisMap: Record<string, any> = {};
 
@@ -437,14 +453,70 @@ async function generateAiDiagnosis(stocks: StockItem[]) {
     }
   }
 
+  const forceAi = process.argv.includes('--force-ai');
+  const jstDayOfWeek = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' })).getDay();
+  const isSaturday = jstDayOfWeek === 6 || process.env.SATURDAY_DIAGNOSIS === 'true' || process.argv.includes('--saturday');
+
+  // 診断が必要な銘柄を特定
+  const targetsToDiagnose: { stock: StockItem; reason: string }[] = [];
+
   for (const s of stocks) {
-    // 既存の診断があり、強制更新でなければスキップ
-    const forceAi = process.argv.includes('--force-ai');
-    if (!forceAi && diagnosisMap[s.code] && diagnosisMap[s.code].diagnosis?.business_summary) {
-      console.log(`⏩ [${s.code}] ${s.name} already diagnosed, using cached.`);
+    const existing = diagnosisMap[s.code];
+    const hasValidDiagnosis = !!(existing && existing.diagnosis?.business_summary);
+
+    if (forceAi) {
+      targetsToDiagnose.push({ stock: s, reason: '全銘柄強制再生成 (--force-ai)' });
       continue;
     }
 
+    // ① 新たに追加された銘柄は、その日にAI診断を生成
+    if (newlyAddedCodes.has(s.code)) {
+      targetsToDiagnose.push({ stock: s, reason: '新規追加銘柄（当日即時生成）' });
+      continue;
+    }
+
+    // ② まだ一度も診断されていない銘柄
+    if (!hasValidDiagnosis) {
+      targetsToDiagnose.push({ stock: s, reason: '未診断銘柄' });
+      continue;
+    }
+
+    // ③ 土曜のAI診断は、既に生成済みでも6日以上経過（月曜生成を含む）していたら再生成
+    // ※ 現在アクティブ（割安組・昇格組）な銘柄を対象
+    if (isSaturday && (s.category === 'wariyasu' || s.category === 'shokaku')) {
+      const prevDate = existing.diagnosisDate;
+      if (!prevDate) {
+        targetsToDiagnose.push({ stock: s, reason: '土曜定期: 過去診断日不明のため再生成' });
+        continue;
+      }
+      const diffDays = getCalendarDayDiff(todayStr, prevDate);
+      const elapsedDays = diffDays + 1; // 初日算入の経過日数 (月曜から土曜なら 6日目)
+      if (diffDays >= 5) { // 5日差以上 = 6日目以降（月曜・日曜・前週土曜など）
+        targetsToDiagnose.push({
+          stock: s,
+          reason: `土曜定期: 前回診断(${prevDate})から${elapsedDays}日目(差分${diffDays}日)>=6日のため再生成`,
+        });
+        continue;
+      } else {
+        console.log(`⏩ [${s.code}] ${s.name}: 前回診断(${prevDate})から${elapsedDays}日目 (<6日) のため土曜再生成スキップ（キャッシュ維持）`);
+        continue;
+      }
+    }
+
+    // 平日で新規でもなく、既に診断済みの場合はキャッシュ維持
+  }
+
+  if (targetsToDiagnose.length === 0) {
+    console.log(`✨ 本日AI診断が必要な銘柄はありません（全銘柄最新・キャッシュ有効）。Gemini API呼び出しをスキップします。`);
+    return;
+  }
+
+  console.log(`🤖 AI診断を実行します: 対象 ${targetsToDiagnose.length} 銘柄 / 全 ${stocks.length} 銘柄 (土曜判定: ${isSaturday})`);
+  for (const { stock: s, reason } of targetsToDiagnose) {
+    console.log(`▶ [${s.code}] ${s.name}: ${reason}`);
+  }
+
+  for (const { stock: s } of targetsToDiagnose) {
     console.log(`Analyzing [${s.code}] ${s.name}...`);
     const prompt = `あなたは辛口で深い洞察力を持つプロの株式アナリストです。
 バリュー株スクリーニングした銘柄の定性情報が欲しい。数値を単純に説明しないこと。
@@ -497,7 +569,7 @@ JSON形式例:
               diagnosisMap[s.code] = {
                 code: s.code,
                 name: s.name,
-                diagnosisDate: new Date().toISOString().split('T')[0],
+                diagnosisDate: todayStr,
                 diagnosis: {
                   business_summary: parsed.business_summary || '',
                   undervalued_reason: parsed.undervalued_reason || parsed.valuation_appeal || '',
@@ -738,6 +810,7 @@ async function main() {
   const activeStocks: StockItem[] = [];
   const graduatedStocks: StockItem[] = [];
   const dropoutStocks: StockItem[] = [];
+  const newlyAddedCodes = new Set<string>();
 
   for (const s of enriched) {
     const prev = existingMap.get(s.code);
@@ -752,6 +825,7 @@ async function main() {
       if (prev && (prev.category === 'sotsugyo' || prev.category === 'datsuraku')) {
         // ★ 卒業・脱落からの再転入！
         console.log(`🎉 再転入検出: [${s.code}] ${s.name} が再びスクリーニング条件をクリアして${targetCategory === 'wariyasu' ? '割安組' : '昇格組'}に転入しました！`);
+        newlyAddedCodes.add(s.code);
         activeStocks.push({
           ...s,
           category: targetCategory,
@@ -814,6 +888,7 @@ async function main() {
         });
       } else {
         // 新規転入銘柄
+        newlyAddedCodes.add(s.code);
         activeStocks.push({
           ...s,
           category: targetCategory,
@@ -943,14 +1018,29 @@ async function main() {
   // 7. チャートデータを収集・保存
   await fetchAndSaveCharts(finalStocks);
 
-  // 8. AI診断（土曜定期更新、明示的な--with-ai指定、--force-ai指定、または未診断データがある場合に自動生成）
+  // 8. AI診断
+  // ・新規追加銘柄は当日に自動生成
+  // ・土曜は6日以上経過銘柄を再生成
+  // ・未診断銘柄、または明示的なフラグ指定時（--with-ai, --force-ai）
   const withAi = process.argv.includes('--with-ai') || process.argv.includes('--force-ai') || process.env.SATURDAY_DIAGNOSIS === 'true';
   const hasEmptyAiFile = !fs.existsSync(AI_FILE) || fs.readFileSync(AI_FILE, 'utf-8').trim() === '{}' || fs.readFileSync(AI_FILE, 'utf-8').trim() === '';
-  if ((withAi || hasEmptyAiFile) && process.env.GEMINI_API_KEY) {
-    console.log(`🤖 Triggering AI Diagnosis (withAi=${withAi}, hasEmptyAiFile=${hasEmptyAiFile})...`);
-    await generateAiDiagnosis(finalStocks);
+  const jstDayOfWeek = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' })).getDay();
+  const isSaturday = jstDayOfWeek === 6 || process.env.SATURDAY_DIAGNOSIS === 'true' || process.argv.includes('--saturday');
+
+  const shouldRunAi = !!process.env.GEMINI_API_KEY && (
+    withAi ||
+    hasEmptyAiFile ||
+    isSaturday ||
+    newlyAddedCodes.size > 0
+  );
+
+  if (shouldRunAi) {
+    console.log(`🤖 Triggering AI Diagnosis (withAi=${withAi}, isSaturday=${isSaturday}, newStocks=${newlyAddedCodes.size}, hasEmptyFile=${hasEmptyAiFile})...`);
+    await generateAiDiagnosis(finalStocks, newlyAddedCodes, todayStr);
   } else if (!process.env.GEMINI_API_KEY) {
     console.log('ℹ️ GEMINI_API_KEY is not set. Skipping AI diagnosis.');
+  } else {
+    console.log('ℹ️ AI diagnosis not triggered (no new stocks and not Saturday).');
   }
 }
 

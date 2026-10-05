@@ -124,6 +124,41 @@ export async function fetchStockChart(
 }
 
 /**
+ * 診断日と次回更新土曜日ラベルを計算
+ * （6日以上経過で土曜再生成ルールに対応: 月曜以前の生成なら直近土曜、火〜金曜生成なら次週土曜）
+ */
+export function getDiagnosisDateMeta(dateStr?: string) {
+  if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return {
+      diagnosedDateLabel: '直近定期更新',
+      nextDiagnosisLabel: '次回: 次週土曜日',
+    };
+  }
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const dateObj = new Date(Date.UTC(y, m - 1, d));
+  const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
+  const dayName = daysOfWeek[dateObj.getUTCDay()];
+  const diagnosedDateLabel = `${y}年${m}月${d}日(${dayName})`;
+
+  // 直近土曜日までの日数（土曜自身なら7日後）
+  const curDay = dateObj.getUTCDay();
+  const daysUntilNextSat = curDay === 6 ? 7 : (6 - curDay);
+
+  // 直近土曜日で6日以上経過（diffDays >= 5、月曜以前）ならその土曜日、
+  // 4日以下（火〜金曜）なら次週土曜日に再生成
+  let targetSatOffset = daysUntilNextSat;
+  if (daysUntilNextSat < 5) {
+    targetSatOffset += 7;
+  }
+  const nextSatObj = new Date(dateObj.getTime() + targetSatOffset * 86400000);
+  const nextSatMonth = nextSatObj.getUTCMonth() + 1;
+  const nextSatDate = nextSatObj.getUTCDate();
+  const nextDiagnosisLabel = `次回診断: ${nextSatMonth}月${nextSatDate}日(土)`;
+
+  return { diagnosedDateLabel, nextDiagnosisLabel };
+}
+
+/**
  * 静的JSON (public/data/ai_diagnosis.json) から診断データを取得
  */
 async function loadStaticDiagnosis(code: string, bustCache = false): Promise<StockAiDiagnosisResponse | null> {
@@ -167,13 +202,14 @@ async function loadStaticDiagnosis(code: string, bustCache = false): Promise<Sto
               rawDiag.max_risk || rawDiag.risks || '',
           };
 
+          const dateMeta = getDiagnosisDateMeta(item.diagnosisDate);
           return {
             success: true,
             code,
             name: item.name || code,
             diagnosis: normalizedDiagnosis,
-            diagnosedDateLabel: item.diagnosisDate || '直近土曜日',
-            nextDiagnosisLabel: '次回: 来週土曜日',
+            diagnosedDateLabel: dateMeta.diagnosedDateLabel,
+            nextDiagnosisLabel: dateMeta.nextDiagnosisLabel,
             diagnosedAt: item.diagnosisDate || new Date().toISOString(),
             model: 'gemini 3.5 Flash-Lite',
             fromCache: true,

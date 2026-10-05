@@ -22,8 +22,8 @@ on:
 
   # 定期自動実行（GitHub ActionsのcronはUTC基準）
   schedule:
-    # 平日(月〜金) 11:13 JST (02:13 UTC)
-    - cron: '13 2 * * 1-5'
+    # 平日(月〜金) 11:07 JST (02:07 UTC)
+    - cron: '7 2 * * 1-5'
     # 毎週土曜日 07:13 JST (金曜 22:13 UTC)
     - cron: '13 22 * * 5'
 

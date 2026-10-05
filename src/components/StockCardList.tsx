@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { StockItem, SortConfig } from '../types';
-import { TrendingUp, TrendingDown, ExternalLink } from 'lucide-react';
 import { calculateMetricRanks, getStockMetricStyle } from '../utils/heatmap';
 
 interface StockCardListProps {
@@ -42,11 +41,10 @@ export const StockCardList: React.FC<StockCardListProps> = ({
             <div
               key={stock.code}
               onClick={() => onSelectStock(stock)}
-              className="bg-[#16221c] rounded-xl p-4 border border-[#273a2f] shadow-md hover:border-[#3d5948] hover:bg-[#1a2821] transition-all cursor-pointer relative group flex flex-col justify-between"
+              className="bg-[#16221c] rounded-xl p-3.5 sm:p-4 border border-[#273a2f] shadow-md hover:border-[#3d5948] hover:bg-[#1a2821] transition-all cursor-pointer relative group flex flex-col justify-center"
             >
               {/* Top row: Code, Name, Price */}
-              <div>
-                <div className="flex items-start justify-between gap-2 mb-2">
+              <div className="flex items-start justify-between gap-2 mb-2">
                   <div className="flex items-center gap-2">
                     <div className="flex flex-col">
                       <div className="flex items-center gap-1.5">
@@ -180,25 +178,8 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                   </span>
                 </div>
               </div>
-
-              {/* Bottom Actions */}
-              <div className="mt-3 pt-2.5 border-t border-[#223329] flex items-center justify-between text-xs">
-                <span className="text-[#597364] text-[11px]">#{index + 1}</span>
-                <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
-                  <a
-                    href={`https://finance.yahoo.co.jp/quote/${stock.code}.T`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-medium text-[#fde047] hover:text-[#fef08a] bg-[#223026] px-2 py-1 rounded border border-[#354f3e] transition-colors"
-                  >
-                    <span>チャート</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );
