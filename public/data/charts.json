@@ -5,24 +5,6 @@
     "currency": "JPY",
     "points": [
       {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2899,
-        "high": 2920,
-        "low": 2842,
-        "close": 2848,
-        "volume": 21100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2887,
-        "high": 2929,
-        "low": 2865,
-        "close": 2874,
-        "volume": 21900
-      },
-      {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
         "open": 2875,
@@ -1110,15 +1092,24 @@
         "low": 2080,
         "close": 2090,
         "volume": 18700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2076,
+        "high": 2076,
+        "low": 2050,
+        "close": 2062,
+        "volume": 6400
       }
     ],
     "highPrice": 2975,
     "lowPrice": 1957,
-    "latestPrice": 2090,
-    "periodChange": -758,
-    "periodChangePercent": -26.62,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2062,
+    "periodChange": -833,
+    "periodChangePercent": -28.77,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1718": {
@@ -1126,24 +1117,6 @@
     "name": "美樹工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2440,
-        "high": 2490,
-        "low": 2383,
-        "close": 2383,
-        "volume": 12900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2433,
-        "high": 2433,
-        "low": 2417,
-        "close": 2417,
-        "volume": 1800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -2232,15 +2205,24 @@
         "low": 2283,
         "close": 2283,
         "volume": 3000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2283,
+        "high": 2288,
+        "low": 2283,
+        "close": 2288,
+        "volume": 1400
       }
     ],
     "highPrice": 2507,
     "lowPrice": 2240,
-    "latestPrice": 2283,
-    "periodChange": -100,
-    "periodChangePercent": -4.2,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2288,
+    "periodChange": -105,
+    "periodChangePercent": -4.39,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1768": {
@@ -2248,24 +2230,6 @@
     "name": "ソネック",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1347,
-        "high": 1370,
-        "low": 1307,
-        "close": 1307,
-        "volume": 8700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1307,
-        "high": 1392,
-        "low": 1307,
-        "close": 1331,
-        "volume": 18200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -3354,15 +3318,24 @@
         "low": 1027,
         "close": 1027,
         "volume": 4200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1027,
+        "high": 1030,
+        "low": 1025,
+        "close": 1025,
+        "volume": 1700
       }
     ],
     "highPrice": 1404,
     "lowPrice": 987,
-    "latestPrice": 1027,
-    "periodChange": -280,
-    "periodChangePercent": -21.42,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1025,
+    "periodChange": -339,
+    "periodChangePercent": -24.85,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1810": {
@@ -3370,24 +3343,6 @@
     "name": "松井建設",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1650,
-        "high": 1671,
-        "low": 1610,
-        "close": 1620,
-        "volume": 43800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1635,
-        "high": 1645,
-        "low": 1595,
-        "close": 1609,
-        "volume": 38000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -4476,15 +4431,24 @@
         "low": 1388,
         "close": 1388,
         "volume": 42800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1390,
+        "high": 1395,
+        "low": 1378,
+        "close": 1391,
+        "volume": 41600
       }
     ],
     "highPrice": 1662,
     "lowPrice": 1305,
-    "latestPrice": 1388,
-    "periodChange": -232,
-    "periodChangePercent": -14.32,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1391,
+    "periodChange": -212,
+    "periodChangePercent": -13.23,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1813": {
@@ -4492,24 +4456,6 @@
     "name": "不動テトラ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3125,
-        "high": 3170,
-        "low": 3045,
-        "close": 3065,
-        "volume": 63900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3105,
-        "high": 3105,
-        "low": 3050,
-        "close": 3070,
-        "volume": 36000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -5598,15 +5544,24 @@
         "low": 2905,
         "close": 2920,
         "volume": 56500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2920,
+        "high": 2920,
+        "low": 2835,
+        "close": 2835,
+        "volume": 95700
       }
     ],
     "highPrice": 3150,
     "lowPrice": 2575,
-    "latestPrice": 2920,
-    "periodChange": -145,
-    "periodChangePercent": -4.73,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2835,
+    "periodChange": -210,
+    "periodChangePercent": -6.9,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1826": {
@@ -5614,24 +5569,6 @@
     "name": "佐田建設",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1100,
-        "high": 1104,
-        "low": 1062,
-        "close": 1069,
-        "volume": 57700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1075,
-        "high": 1089,
-        "low": 1069,
-        "close": 1070,
-        "volume": 39200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -6720,15 +6657,24 @@
         "low": 1060,
         "close": 1060,
         "volume": 7300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1060,
+        "high": 1069,
+        "low": 1056,
+        "close": 1060,
+        "volume": 8600
       }
     ],
     "highPrice": 1110,
     "lowPrice": 974,
     "latestPrice": 1060,
-    "periodChange": -9,
-    "periodChangePercent": -0.84,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": -11,
+    "periodChangePercent": -1.03,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1828": {
@@ -6736,24 +6682,6 @@
     "name": "田辺工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2460,
-        "high": 2465,
-        "low": 2430,
-        "close": 2442,
-        "volume": 10100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2436,
-        "high": 2458,
-        "low": 2436,
-        "close": 2458,
-        "volume": 6100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -7842,15 +7770,24 @@
         "low": 2301,
         "close": 2304,
         "volume": 12400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2307,
+        "high": 2328,
+        "low": 2307,
+        "close": 2323,
+        "volume": 31100
       }
     ],
     "highPrice": 2630,
     "lowPrice": 2206,
-    "latestPrice": 2304,
-    "periodChange": -138,
-    "periodChangePercent": -5.65,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2323,
+    "periodChange": -174,
+    "periodChangePercent": -6.97,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1835": {
@@ -7858,24 +7795,6 @@
     "name": "東鉄工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 5630,
-        "high": 5690,
-        "low": 5540,
-        "close": 5540,
-        "volume": 65900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 5560,
-        "high": 5650,
-        "low": 5540,
-        "close": 5580,
-        "volume": 52800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -8964,15 +8883,24 @@
         "low": 3780,
         "close": 3780,
         "volume": 67700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3810,
+        "high": 3810,
+        "low": 3765,
+        "close": 3770,
+        "volume": 61200
       }
     ],
     "highPrice": 5740,
-    "lowPrice": 3780,
-    "latestPrice": 3780,
-    "periodChange": -1760,
-    "periodChangePercent": -31.77,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 3770,
+    "latestPrice": 3770,
+    "periodChange": -1750,
+    "periodChangePercent": -31.7,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1847": {
@@ -8980,24 +8908,6 @@
     "name": "イチケン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2612,
-        "high": 2739,
-        "low": 2600,
-        "close": 2611,
-        "volume": 80000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2711,
-        "high": 2724,
-        "low": 2675,
-        "close": 2682,
-        "volume": 27100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -10086,15 +9996,24 @@
         "low": 3320,
         "close": 3340,
         "volume": 23000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3375,
+        "high": 3385,
+        "low": 3340,
+        "close": 3350,
+        "volume": 11000
       }
     ],
     "highPrice": 3480,
     "lowPrice": 2495,
-    "latestPrice": 3340,
-    "periodChange": 729,
-    "periodChangePercent": 27.92,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3350,
+    "periodChange": 646,
+    "periodChangePercent": 23.89,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1867": {
@@ -10102,24 +10021,6 @@
     "name": "植木組",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2900,
-        "high": 2902,
-        "low": 2800,
-        "close": 2830,
-        "volume": 21400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2878,
-        "high": 2883,
-        "low": 2832,
-        "close": 2842,
-        "volume": 4300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -11208,15 +11109,24 @@
         "low": 2686,
         "close": 2696,
         "volume": 5400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2720,
+        "high": 2750,
+        "low": 2699,
+        "close": 2707,
+        "volume": 3100
       }
     ],
     "highPrice": 2914,
     "lowPrice": 2269,
-    "latestPrice": 2696,
-    "periodChange": -134,
-    "periodChangePercent": -4.73,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2707,
+    "periodChange": -152,
+    "periodChangePercent": -5.32,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1870": {
@@ -11224,24 +11134,6 @@
     "name": "矢作建設工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2168,
-        "high": 2218,
-        "low": 2153,
-        "close": 2159,
-        "volume": 172400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2152,
-        "high": 2167,
-        "low": 2138,
-        "close": 2147,
-        "volume": 81500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -12330,15 +12222,24 @@
         "low": 2086,
         "close": 2086,
         "volume": 74900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2081,
+        "high": 2083,
+        "low": 2051,
+        "close": 2052,
+        "volume": 87900
       }
     ],
     "highPrice": 2248,
     "lowPrice": 1788,
-    "latestPrice": 2086,
-    "periodChange": -73,
-    "periodChangePercent": -3.38,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2052,
+    "periodChange": -70,
+    "periodChangePercent": -3.3,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1904": {
@@ -12346,24 +12247,6 @@
     "name": "大成温調",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1318,
-        "high": 1333,
-        "low": 1308,
-        "close": 1320,
-        "volume": 94800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1325,
-        "high": 1330,
-        "low": 1308,
-        "close": 1310,
-        "volume": 54400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -13452,15 +13335,24 @@
         "low": 1247,
         "close": 1249,
         "volume": 32100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1251,
+        "high": 1251,
+        "low": 1213,
+        "close": 1230,
+        "volume": 61400
       }
     ],
     "highPrice": 1393,
     "lowPrice": 1216,
-    "latestPrice": 1249,
-    "periodChange": -71,
-    "periodChangePercent": -5.38,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1230,
+    "periodChange": -118,
+    "periodChangePercent": -8.75,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1938": {
@@ -13468,24 +13360,6 @@
     "name": "日本リーテック",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2592,
-        "high": 2608,
-        "low": 2514,
-        "close": 2522,
-        "volume": 77700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2535,
-        "high": 2549,
-        "low": 2516,
-        "close": 2535,
-        "volume": 74200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -14574,15 +14448,24 @@
         "low": 2527,
         "close": 2544,
         "volume": 46000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2540,
+        "high": 2567,
+        "low": 2515,
+        "close": 2526,
+        "volume": 67800
       }
     ],
     "highPrice": 3055,
     "lowPrice": 2374,
-    "latestPrice": 2544,
-    "periodChange": 22,
-    "periodChangePercent": 0.87,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2526,
+    "periodChange": -25,
+    "periodChangePercent": -0.98,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1964": {
@@ -14590,24 +14473,6 @@
     "name": "中外炉工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4320,
-        "high": 4370,
-        "low": 4195,
-        "close": 4215,
-        "volume": 22700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 4225,
-        "high": 4280,
-        "low": 4200,
-        "close": 4215,
-        "volume": 14100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -15696,15 +15561,24 @@
         "low": 3805,
         "close": 3805,
         "volume": 18100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3815,
+        "high": 3835,
+        "low": 3800,
+        "close": 3800,
+        "volume": 16300
       }
     ],
     "highPrice": 4715,
     "lowPrice": 3800,
-    "latestPrice": 3805,
-    "periodChange": -410,
-    "periodChangePercent": -9.73,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3800,
+    "periodChange": -435,
+    "periodChangePercent": -10.27,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "1972": {
@@ -15712,24 +15586,6 @@
     "name": "三晃金属工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1350,
-        "high": 1363,
-        "low": 1328,
-        "close": 1330,
-        "volume": 56100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1330,
-        "high": 1342,
-        "low": 1326,
-        "close": 1328,
-        "volume": 48200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -16818,15 +16674,24 @@
         "low": 1280,
         "close": 1280,
         "volume": 36100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1289,
+        "high": 1289,
+        "low": 1265,
+        "close": 1265,
+        "volume": 29100
       }
     ],
     "highPrice": 1354,
     "lowPrice": 1182,
-    "latestPrice": 1280,
-    "periodChange": -50,
-    "periodChangePercent": -3.76,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1265,
+    "periodChange": -59,
+    "periodChangePercent": -4.46,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2053": {
@@ -16834,24 +16699,6 @@
     "name": "中部飼料",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1785,
-        "high": 1806,
-        "low": 1763,
-        "close": 1778,
-        "volume": 51000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1778,
-        "high": 1790,
-        "low": 1765,
-        "close": 1775,
-        "volume": 41700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -17940,15 +17787,24 @@
         "low": 1902,
         "close": 1902,
         "volume": 74100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1900,
+        "high": 1938,
+        "low": 1882,
+        "close": 1938,
+        "volume": 106600
       }
     ],
     "highPrice": 2078,
     "lowPrice": 1673,
-    "latestPrice": 1902,
-    "periodChange": 124,
-    "periodChangePercent": 6.97,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1938,
+    "periodChange": 165,
+    "periodChangePercent": 9.31,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2112": {
@@ -19106,24 +18962,6 @@
     "currency": "JPY",
     "points": [
       {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2900,
-        "high": 2933,
-        "low": 2870,
-        "close": 2872,
-        "volume": 36200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2871,
-        "high": 2906,
-        "low": 2871,
-        "close": 2877,
-        "volume": 18300
-      },
-      {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
         "open": 2878,
@@ -20211,15 +20049,24 @@
         "low": 2754,
         "close": 2754,
         "volume": 42900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2751,
+        "high": 2756,
+        "low": 2697,
+        "close": 2706,
+        "volume": 56800
       }
     ],
     "highPrice": 2928,
     "lowPrice": 2508,
-    "latestPrice": 2754,
-    "periodChange": -118,
-    "periodChangePercent": -4.11,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2706,
+    "periodChange": -182,
+    "periodChangePercent": -6.3,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2121": {
@@ -20227,24 +20074,6 @@
     "name": "ＭＩＸＩ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2575,
-        "high": 2585,
-        "low": 2520,
-        "close": 2533,
-        "volume": 265600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2554,
-        "high": 2557,
-        "low": 2538,
-        "close": 2540,
-        "volume": 153100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -21333,15 +21162,24 @@
         "low": 3670,
         "close": 3695,
         "volume": 277300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3660,
+        "high": 3725,
+        "low": 3650,
+        "close": 3690,
+        "volume": 138000
       }
     ],
     "highPrice": 3840,
     "lowPrice": 2519,
-    "latestPrice": 3695,
-    "periodChange": 1162,
-    "periodChangePercent": 45.87,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3690,
+    "periodChange": 1137,
+    "periodChangePercent": 44.54,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2153": {
@@ -21349,24 +21187,6 @@
     "name": "Ｅ・Ｊホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1778,
-        "high": 1797,
-        "low": 1758,
-        "close": 1759,
-        "volume": 35100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1784,
-        "high": 1784,
-        "low": 1768,
-        "close": 1776,
-        "volume": 21600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -22455,15 +22275,24 @@
         "low": 1850,
         "close": 1856,
         "volume": 84800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1856,
+        "high": 1859,
+        "low": 1840,
+        "close": 1850,
+        "volume": 76800
       }
     ],
     "highPrice": 1907,
     "lowPrice": 1552,
-    "latestPrice": 1856,
-    "periodChange": 97,
-    "periodChangePercent": 5.51,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1850,
+    "periodChange": 61,
+    "periodChangePercent": 3.41,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2408": {
@@ -22471,24 +22300,6 @@
     "name": "ＫＧ情報",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 722,
-        "high": 729,
-        "low": 722,
-        "close": 729,
-        "volume": 16500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 730,
-        "high": 736,
-        "low": 726,
-        "close": 729,
-        "volume": 13800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -23577,15 +23388,24 @@
         "low": 823,
         "close": 834,
         "volume": 7900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 835,
+        "high": 835,
+        "low": 825,
+        "close": 825,
+        "volume": 2100
       }
     ],
     "highPrice": 934,
-    "lowPrice": 729,
-    "latestPrice": 834,
-    "periodChange": 105,
-    "periodChangePercent": 14.4,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 743,
+    "latestPrice": 825,
+    "periodChange": 69,
+    "periodChangePercent": 9.13,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2449": {
@@ -23593,24 +23413,6 @@
     "name": "プラップジャパン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1097,
-        "high": 1097,
-        "low": 1076,
-        "close": 1080,
-        "volume": 3100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1075,
-        "high": 1090,
-        "low": 1075,
-        "close": 1086,
-        "volume": 900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -24699,15 +24501,24 @@
         "low": 1348,
         "close": 1348,
         "volume": 23200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1498,
+        "high": 1500,
+        "low": 1218,
+        "close": 1305,
+        "volume": 576400
       }
     ],
     "highPrice": 1348,
     "lowPrice": 1027,
-    "latestPrice": 1348,
-    "periodChange": 268,
-    "periodChangePercent": 24.81,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1305,
+    "periodChange": 208,
+    "periodChangePercent": 18.96,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "2475": {
@@ -24715,24 +24526,6 @@
     "name": "ＷＤＢホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1534,
-        "high": 1549,
-        "low": 1529,
-        "close": 1538,
-        "volume": 26000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1528,
-        "high": 1540,
-        "low": 1527,
-        "close": 1532,
-        "volume": 8900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -25821,15 +25614,24 @@
         "low": 1712,
         "close": 1714,
         "volume": 16400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1714,
+        "high": 1728,
+        "low": 1712,
+        "close": 1719,
+        "volume": 15700
       }
     ],
     "highPrice": 1855,
     "lowPrice": 1485,
-    "latestPrice": 1714,
-    "periodChange": 176,
-    "periodChangePercent": 11.44,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1719,
+    "periodChange": 179,
+    "periodChangePercent": 11.62,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3023": {
@@ -25837,24 +25639,6 @@
     "name": "ラサ商事",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1975,
-        "high": 1990,
-        "low": 1926,
-        "close": 1932,
-        "volume": 38600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1956,
-        "high": 1956,
-        "low": 1928,
-        "close": 1944,
-        "volume": 24700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -26943,15 +26727,24 @@
         "low": 2072,
         "close": 2087,
         "volume": 32500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2085,
+        "high": 2095,
+        "low": 2065,
+        "close": 2081,
+        "volume": 36700
       }
     ],
     "highPrice": 2137,
     "lowPrice": 1689,
-    "latestPrice": 2087,
-    "periodChange": 155,
-    "periodChangePercent": 8.02,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2081,
+    "periodChange": 139,
+    "periodChangePercent": 7.16,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3132": {
@@ -26959,24 +26752,6 @@
     "name": "マクニカホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2429,
-        "high": 2434,
-        "low": 2304,
-        "close": 2304,
-        "volume": 687000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2315,
-        "high": 2330,
-        "low": 2263,
-        "close": 2290,
-        "volume": 980600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -28065,15 +27840,24 @@
         "low": 4146,
         "close": 4178,
         "volume": 927500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4245,
+        "high": 4310,
+        "low": 4235,
+        "close": 4300,
+        "volume": 1281000
       }
     ],
-    "highPrice": 4287,
+    "highPrice": 4300,
     "lowPrice": 2288,
-    "latestPrice": 4178,
-    "periodChange": 1874,
-    "periodChangePercent": 81.34,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4300,
+    "periodChange": 2010,
+    "periodChangePercent": 87.77,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3375": {
@@ -28081,24 +27865,6 @@
     "name": "ＺＯＡ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1807,
-        "high": 1810,
-        "low": 1807,
-        "close": 1810,
-        "volume": 200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1789,
-        "high": 1790,
-        "low": 1789,
-        "close": 1790,
-        "volume": 200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -29187,15 +28953,24 @@
         "low": 1751,
         "close": 1751,
         "volume": 900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1751,
+        "high": 1751,
+        "low": 1751,
+        "close": 1751,
+        "volume": 700
       }
     ],
     "highPrice": 1900,
     "lowPrice": 1604,
     "latestPrice": 1751,
-    "periodChange": -59,
-    "periodChangePercent": -3.26,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": -60,
+    "periodChangePercent": -3.31,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3611": {
@@ -29203,24 +28978,6 @@
     "name": "マツオカコーポレーション",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2160,
-        "high": 2185,
-        "low": 2139,
-        "close": 2156,
-        "volume": 37000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2156,
-        "high": 2183,
-        "low": 2154,
-        "close": 2155,
-        "volume": 17600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -30309,15 +30066,24 @@
         "low": 2343,
         "close": 2356,
         "volume": 29200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2368,
+        "high": 2377,
+        "low": 2360,
+        "close": 2368,
+        "volume": 10100
       }
     ],
     "highPrice": 2658,
     "lowPrice": 2068,
-    "latestPrice": 2356,
-    "periodChange": 200,
-    "periodChangePercent": 9.28,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2368,
+    "periodChange": 215,
+    "periodChangePercent": 9.99,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3640": {
@@ -31475,24 +31241,6 @@
     "currency": "JPY",
     "points": [
       {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1206,
-        "high": 1206,
-        "low": 1161,
-        "close": 1184,
-        "volume": 4500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1177,
-        "high": 1177,
-        "low": 1176,
-        "close": 1176,
-        "volume": 200
-      },
-      {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
         "open": 1184,
@@ -32580,15 +32328,24 @@
         "low": 1520,
         "close": 1538,
         "volume": 1000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1552,
+        "high": 1571,
+        "low": 1486,
+        "close": 1509,
+        "volume": 6900
       }
     ],
     "highPrice": 1562,
-    "lowPrice": 1176,
-    "latestPrice": 1538,
-    "periodChange": 354,
-    "periodChangePercent": 29.9,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 1195,
+    "latestPrice": 1509,
+    "periodChange": 309,
+    "periodChangePercent": 25.75,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3834": {
@@ -32596,24 +32353,6 @@
     "name": "朝日ネット",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 658,
-        "high": 660,
-        "low": 644,
-        "close": 647,
-        "volume": 89200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 650,
-        "high": 651,
-        "low": 647,
-        "close": 649,
-        "volume": 42400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -33702,15 +33441,24 @@
         "low": 584,
         "close": 585,
         "volume": 156200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 586,
+        "high": 586,
+        "low": 581,
+        "close": 581,
+        "volume": 83900
       }
     ],
     "highPrice": 656,
-    "lowPrice": 585,
-    "latestPrice": 585,
-    "periodChange": -62,
-    "periodChangePercent": -9.58,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 581,
+    "latestPrice": 581,
+    "periodChange": -69,
+    "periodChangePercent": -10.62,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "3953": {
@@ -33718,24 +33466,6 @@
     "name": "大村紙業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 774,
-        "high": 774,
-        "low": 762,
-        "close": 772,
-        "volume": 6000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 776,
-        "high": 776,
-        "low": 765,
-        "close": 776,
-        "volume": 2300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -34824,15 +34554,24 @@
         "low": 789,
         "close": 789,
         "volume": 600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 789,
+        "high": 789,
+        "low": 779,
+        "close": 789,
+        "volume": 1000
       }
     ],
     "highPrice": 814,
     "lowPrice": 736,
     "latestPrice": 789,
-    "periodChange": 17,
-    "periodChangePercent": 2.2,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": 13,
+    "periodChangePercent": 1.68,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4008": {
@@ -34840,24 +34579,6 @@
     "name": "住友精化",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1235,
-        "high": 1243,
-        "low": 1205,
-        "close": 1205,
-        "volume": 200500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1213,
-        "high": 1227,
-        "low": 1210,
-        "close": 1223,
-        "volume": 114900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -35946,15 +35667,24 @@
         "low": 1477,
         "close": 1485,
         "volume": 115000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1505,
+        "high": 1514,
+        "low": 1498,
+        "close": 1510,
+        "volume": 156900
       }
     ],
     "highPrice": 1567,
     "lowPrice": 1186,
-    "latestPrice": 1485,
+    "latestPrice": 1510,
     "periodChange": 280,
-    "periodChangePercent": 23.24,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChangePercent": 22.76,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4028": {
@@ -35962,24 +35692,6 @@
     "name": "石原産業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2880,
-        "high": 2903,
-        "low": 2783,
-        "close": 2799,
-        "volume": 329300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2793,
-        "high": 2823,
-        "low": 2788,
-        "close": 2819,
-        "volume": 157400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -37068,15 +36780,24 @@
         "low": 2784,
         "close": 2791,
         "volume": 186700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2824,
+        "high": 2845,
+        "low": 2808,
+        "close": 2809,
+        "volume": 171700
       }
     ],
     "highPrice": 3335,
     "lowPrice": 2548,
-    "latestPrice": 2791,
-    "periodChange": -8,
-    "periodChangePercent": -0.29,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2809,
+    "periodChange": 2,
+    "periodChangePercent": 0.07,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4041": {
@@ -37084,24 +36805,6 @@
     "name": "日本曹達",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3665,
-        "high": 3685,
-        "low": 3590,
-        "close": 3590,
-        "volume": 112100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3620,
-        "high": 3630,
-        "low": 3580,
-        "close": 3615,
-        "volume": 101900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -38190,15 +37893,24 @@
         "low": 3625,
         "close": 3665,
         "volume": 162900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3700,
+        "high": 3705,
+        "low": 3670,
+        "close": 3690,
+        "volume": 107800
       }
     ],
     "highPrice": 4080,
     "lowPrice": 3455,
-    "latestPrice": 3665,
-    "periodChange": 75,
-    "periodChangePercent": 2.09,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3690,
+    "periodChange": 125,
+    "periodChangePercent": 3.51,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4044": {
@@ -38206,24 +37918,6 @@
     "name": "セントラル硝子",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4085,
-        "high": 4160,
-        "low": 4050,
-        "close": 4065,
-        "volume": 48000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 4125,
-        "high": 4130,
-        "low": 4040,
-        "close": 4090,
-        "volume": 53100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -39312,15 +39006,24 @@
         "low": 4485,
         "close": 4490,
         "volume": 60900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4535,
+        "high": 4555,
+        "low": 4500,
+        "close": 4505,
+        "volume": 62200
       }
     ],
     "highPrice": 4675,
     "lowPrice": 3835,
-    "latestPrice": 4490,
-    "periodChange": 425,
-    "periodChangePercent": 10.46,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4505,
+    "periodChange": 405,
+    "periodChangePercent": 9.88,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4172": {
@@ -39328,24 +39031,6 @@
     "name": "Ｈｉクラテス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2366,
-        "high": 2366,
-        "low": 2366,
-        "close": 2366,
-        "volume": 0
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2329,
-        "high": 2345,
-        "low": 2315,
-        "close": 2315,
-        "volume": 700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -40434,15 +40119,24 @@
         "low": 2274,
         "close": 2274,
         "volume": 1100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2271,
+        "high": 2281,
+        "low": 2271,
+        "close": 2275,
+        "volume": 700
       }
     ],
     "highPrice": 2400,
     "lowPrice": 2100,
-    "latestPrice": 2274,
-    "periodChange": -92,
-    "periodChangePercent": -3.89,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2275,
+    "periodChange": -61,
+    "periodChangePercent": -2.61,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4221": {
@@ -40450,24 +40144,6 @@
     "name": "大倉工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4790,
-        "high": 4880,
-        "low": 4735,
-        "close": 4745,
-        "volume": 46200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 4745,
-        "high": 4800,
-        "low": 4735,
-        "close": 4755,
-        "volume": 26000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -41556,15 +41232,24 @@
         "low": 5260,
         "close": 5260,
         "volume": 170600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 5250,
+        "high": 5400,
+        "low": 5230,
+        "close": 5400,
+        "volume": 158800
       }
     ],
     "highPrice": 5770,
     "lowPrice": 4545,
-    "latestPrice": 5260,
-    "periodChange": 515,
-    "periodChangePercent": 10.85,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 5400,
+    "periodChange": 650,
+    "periodChangePercent": 13.68,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4246": {
@@ -41572,24 +41257,6 @@
     "name": "ダイキョーニシカワ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 860,
-        "high": 873,
-        "low": 850,
-        "close": 863,
-        "volume": 426900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 863,
-        "high": 885,
-        "low": 863,
-        "close": 884,
-        "volume": 487000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -42678,15 +42345,24 @@
         "low": 1047,
         "close": 1055,
         "volume": 172500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1055,
+        "high": 1062,
+        "low": 1049,
+        "close": 1060,
+        "volume": 237300
       }
     ],
     "highPrice": 1162,
     "lowPrice": 830,
-    "latestPrice": 1055,
-    "periodChange": 192,
-    "periodChangePercent": 22.25,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1060,
+    "periodChange": 185,
+    "periodChangePercent": 21.14,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4251": {
@@ -42694,24 +42370,6 @@
     "name": "恵和",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1221,
-        "high": 1237,
-        "low": 1181,
-        "close": 1181,
-        "volume": 95100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1209,
-        "high": 1214,
-        "low": 1192,
-        "close": 1198,
-        "volume": 42400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -43800,15 +43458,24 @@
         "low": 1169,
         "close": 1173,
         "volume": 78300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1173,
+        "high": 1187,
+        "low": 1173,
+        "close": 1184,
+        "volume": 55700
       }
     ],
     "highPrice": 1312,
     "lowPrice": 1145,
-    "latestPrice": 1173,
-    "periodChange": -8,
-    "periodChangePercent": -0.68,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1184,
+    "periodChange": -23,
+    "periodChangePercent": -1.91,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4362": {
@@ -43816,24 +43483,6 @@
     "name": "日本精化",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2532,
-        "high": 2546,
-        "low": 2477,
-        "close": 2479,
-        "volume": 26500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2459,
-        "high": 2482,
-        "low": 2456,
-        "close": 2463,
-        "volume": 16500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -44922,15 +44571,24 @@
         "low": 2606,
         "close": 2606,
         "volume": 21800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2630,
+        "high": 2645,
+        "low": 2608,
+        "close": 2645,
+        "volume": 21100
       }
     ],
     "highPrice": 2782,
     "lowPrice": 2343,
-    "latestPrice": 2606,
-    "periodChange": 127,
-    "periodChangePercent": 5.12,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2645,
+    "periodChange": 182,
+    "periodChangePercent": 7.39,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4430": {
@@ -44938,24 +44596,6 @@
     "name": "東海ソフト",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1800,
-        "high": 1808,
-        "low": 1768,
-        "close": 1799,
-        "volume": 18700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1812,
-        "high": 1820,
-        "low": 1802,
-        "close": 1814,
-        "volume": 11600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -46044,15 +45684,24 @@
         "low": 1711,
         "close": 1711,
         "volume": 9500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1720,
+        "high": 1732,
+        "low": 1720,
+        "close": 1731,
+        "volume": 6700
       }
     ],
     "highPrice": 1887,
     "lowPrice": 1576,
-    "latestPrice": 1711,
-    "periodChange": -88,
-    "periodChangePercent": -4.89,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1731,
+    "periodChange": -76,
+    "periodChangePercent": -4.21,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4540": {
@@ -46060,24 +45709,6 @@
     "name": "ツムラ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3854,
-        "high": 3870,
-        "low": 3808,
-        "close": 3831,
-        "volume": 217100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3852,
-        "high": 3868,
-        "low": 3834,
-        "close": 3844,
-        "volume": 166800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -47166,15 +46797,24 @@
         "low": 3693,
         "close": 3703,
         "volume": 353100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3726,
+        "high": 3733,
+        "low": 3697,
+        "close": 3707,
+        "volume": 306700
       }
     ],
     "highPrice": 4045,
     "lowPrice": 3527,
-    "latestPrice": 3703,
-    "periodChange": -128,
-    "periodChangePercent": -3.34,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3707,
+    "periodChange": -125,
+    "periodChangePercent": -3.26,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4619": {
@@ -47182,24 +46822,6 @@
     "name": "日本特殊塗料",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2250,
-        "high": 2256,
-        "low": 2196,
-        "close": 2202,
-        "volume": 46700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2221,
-        "high": 2228,
-        "low": 2201,
-        "close": 2207,
-        "volume": 31400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -48288,15 +47910,24 @@
         "low": 2588,
         "close": 2591,
         "volume": 24200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2591,
+        "high": 2605,
+        "low": 2590,
+        "close": 2598,
+        "volume": 15700
       }
     ],
     "highPrice": 2748,
     "lowPrice": 2031,
-    "latestPrice": 2591,
-    "periodChange": 389,
-    "periodChangePercent": 17.67,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2598,
+    "periodChange": 412,
+    "periodChangePercent": 18.85,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4633": {
@@ -48304,24 +47935,6 @@
     "name": "サカタインクス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2350,
-        "high": 2380,
-        "low": 2312,
-        "close": 2325,
-        "volume": 241000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2330,
-        "high": 2357,
-        "low": 2330,
-        "close": 2344,
-        "volume": 131300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -49410,15 +49023,24 @@
         "low": 2572,
         "close": 2595,
         "volume": 159100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2606,
+        "high": 2619,
+        "low": 2592,
+        "close": 2615,
+        "volume": 112700
       }
     ],
     "highPrice": 2699,
     "lowPrice": 2237,
-    "latestPrice": 2595,
-    "periodChange": 270,
-    "periodChangePercent": 11.61,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2615,
+    "periodChange": 248,
+    "periodChangePercent": 10.48,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4635": {
@@ -49426,24 +49048,6 @@
     "name": "東京インキ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1425,
-        "high": 1430,
-        "low": 1371,
-        "close": 1375,
-        "volume": 35000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1385,
-        "high": 1397,
-        "low": 1368,
-        "close": 1370,
-        "volume": 27200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -50532,15 +50136,24 @@
         "low": 1907,
         "close": 1965,
         "volume": 80300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1965,
+        "high": 1989,
+        "low": 1951,
+        "close": 1979,
+        "volume": 30600
       }
     ],
     "highPrice": 2210,
     "lowPrice": 1205,
-    "latestPrice": 1965,
-    "periodChange": 590,
-    "periodChangePercent": 42.91,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1979,
+    "periodChange": 597,
+    "periodChangePercent": 43.2,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4644": {
@@ -50548,24 +50161,6 @@
     "name": "イマジニア",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1033,
-        "high": 1034,
-        "low": 1021,
-        "close": 1026,
-        "volume": 11800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1027,
-        "high": 1037,
-        "low": 1019,
-        "close": 1037,
-        "volume": 29500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -51654,15 +51249,24 @@
         "low": 1027,
         "close": 1027,
         "volume": 5400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1030,
+        "high": 1030,
+        "low": 1027,
+        "close": 1028,
+        "volume": 3900
       }
     ],
     "highPrice": 1073,
     "lowPrice": 1000,
-    "latestPrice": 1027,
-    "periodChange": 1,
-    "periodChangePercent": 0.1,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1028,
+    "periodChange": -6,
+    "periodChangePercent": -0.58,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4671": {
@@ -51670,24 +51274,6 @@
     "name": "ファルコホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2635,
-        "high": 2664,
-        "low": 2589,
-        "close": 2620,
-        "volume": 13800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2620,
-        "high": 2649,
-        "low": 2620,
-        "close": 2631,
-        "volume": 4800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -52776,15 +52362,24 @@
         "low": 2646,
         "close": 2665,
         "volume": 21800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2665,
+        "high": 2682,
+        "low": 2662,
+        "close": 2666,
+        "volume": 13700
       }
     ],
     "highPrice": 2954,
     "lowPrice": 2500,
-    "latestPrice": 2665,
-    "periodChange": 45,
-    "periodChangePercent": 1.72,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2666,
+    "periodChange": 38,
+    "periodChangePercent": 1.45,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4719": {
@@ -52792,24 +52387,6 @@
     "name": "アルファシステムズ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3465,
-        "high": 3495,
-        "low": 3400,
-        "close": 3425,
-        "volume": 9200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3445,
-        "high": 3490,
-        "low": 3445,
-        "close": 3490,
-        "volume": 4700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -53898,15 +53475,24 @@
         "low": 3260,
         "close": 3260,
         "volume": 8300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3260,
+        "high": 3285,
+        "low": 3245,
+        "close": 3280,
+        "volume": 10600
       }
     ],
     "highPrice": 3535,
     "lowPrice": 3125,
-    "latestPrice": 3260,
-    "periodChange": -165,
-    "periodChangePercent": -4.82,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3280,
+    "periodChange": -195,
+    "periodChangePercent": -5.61,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4725": {
@@ -53914,24 +53500,6 @@
     "name": "ＣＡＣ Ｈｏｌｄｉｎｇｓ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1845,
-        "high": 1856,
-        "low": 1823,
-        "close": 1827,
-        "volume": 66100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1841,
-        "high": 1851,
-        "low": 1831,
-        "close": 1843,
-        "volume": 40900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -55020,15 +54588,24 @@
         "low": 1907,
         "close": 1915,
         "volume": 46600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1905,
+        "high": 1908,
+        "low": 1898,
+        "close": 1906,
+        "volume": 52600
       }
     ],
     "highPrice": 1983,
     "lowPrice": 1742,
-    "latestPrice": 1915,
-    "periodChange": 88,
-    "periodChangePercent": 4.82,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1906,
+    "periodChange": 48,
+    "periodChangePercent": 2.58,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4746": {
@@ -55036,24 +54613,6 @@
     "name": "東計電算",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1074,
-        "high": 1080,
-        "low": 1044,
-        "close": 1049,
-        "volume": 132400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1046,
-        "high": 1058,
-        "low": 1045,
-        "close": 1056,
-        "volume": 69600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -56142,15 +55701,24 @@
         "low": 1941,
         "close": 1968,
         "volume": 214300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1975,
+        "high": 1990,
+        "low": 1958,
+        "close": 1973,
+        "volume": 181000
       }
     ],
     "highPrice": 1986,
     "lowPrice": 1006,
-    "latestPrice": 1968,
-    "periodChange": 919,
-    "periodChangePercent": 87.61,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1973,
+    "periodChange": 914,
+    "periodChangePercent": 86.31,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4752": {
@@ -56158,24 +55726,6 @@
     "name": "昭和システムエンジニアリング",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1613,
-        "high": 1613,
-        "low": 1587,
-        "close": 1587,
-        "volume": 200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1580,
-        "high": 1581,
-        "low": 1563,
-        "close": 1581,
-        "volume": 1000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -57264,15 +56814,24 @@
         "low": 1568,
         "close": 1608,
         "volume": 300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1608,
+        "high": 1608,
+        "low": 1591,
+        "close": 1600,
+        "volume": 400
       }
     ],
     "highPrice": 1614,
     "lowPrice": 1455,
-    "latestPrice": 1608,
-    "periodChange": 21,
-    "periodChangePercent": 1.32,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1600,
+    "periodChange": 12,
+    "periodChangePercent": 0.76,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "4918": {
@@ -57280,24 +56839,6 @@
     "name": "アイビー化粧品",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 342,
-        "high": 342,
-        "low": 334,
-        "close": 338,
-        "volume": 18000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 340,
-        "high": 342,
-        "low": 333,
-        "close": 337,
-        "volume": 7300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -58386,15 +57927,24 @@
         "low": 298,
         "close": 299,
         "volume": 3700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 299,
+        "high": 300,
+        "low": 295,
+        "close": 300,
+        "volume": 21600
       }
     ],
     "highPrice": 353,
     "lowPrice": 255,
-    "latestPrice": 299,
-    "periodChange": -39,
-    "periodChangePercent": -11.54,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 300,
+    "periodChange": -30,
+    "periodChangePercent": -9.09,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5110": {
@@ -58402,24 +57952,6 @@
     "name": "住友ゴム工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2137,
-        "high": 2138,
-        "low": 2054,
-        "close": 2054,
-        "volume": 1767000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2043,
-        "high": 2066,
-        "low": 2040,
-        "close": 2058,
-        "volume": 1718800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -59508,15 +59040,24 @@
         "low": 1977,
         "close": 1980,
         "volume": 2096100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1992,
+        "high": 2004,
+        "low": 1986,
+        "close": 1999,
+        "volume": 1376500
       }
     ],
     "highPrice": 2488,
     "lowPrice": 1907,
-    "latestPrice": 1980,
-    "periodChange": -74,
-    "periodChangePercent": -3.6,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1999,
+    "periodChange": -49,
+    "periodChangePercent": -2.39,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5184": {
@@ -59524,24 +59065,6 @@
     "name": "ニチリン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4170,
-        "high": 4185,
-        "low": 4100,
-        "close": 4120,
-        "volume": 29700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 4160,
-        "high": 4160,
-        "low": 4100,
-        "close": 4115,
-        "volume": 7400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -60630,15 +60153,24 @@
         "low": 4100,
         "close": 4100,
         "volume": 20800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4100,
+        "high": 4120,
+        "low": 4090,
+        "close": 4115,
+        "volume": 13900
       }
     ],
     "highPrice": 4265,
     "lowPrice": 3935,
-    "latestPrice": 4100,
-    "periodChange": -20,
-    "periodChangePercent": -0.49,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4115,
+    "periodChange": -15,
+    "periodChangePercent": -0.36,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5192": {
@@ -60646,24 +60178,6 @@
     "name": "三ツ星ベルト",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4050,
-        "high": 4080,
-        "low": 4005,
-        "close": 4015,
-        "volume": 42700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 4055,
-        "high": 4055,
-        "low": 4025,
-        "close": 4040,
-        "volume": 24300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -61752,15 +61266,24 @@
         "low": 4090,
         "close": 4100,
         "volume": 81400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4095,
+        "high": 4130,
+        "low": 4090,
+        "close": 4125,
+        "volume": 74900
       }
     ],
     "highPrice": 4590,
     "lowPrice": 3850,
-    "latestPrice": 4100,
-    "periodChange": 85,
-    "periodChangePercent": 2.12,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4125,
+    "periodChange": 95,
+    "periodChangePercent": 2.36,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5195": {
@@ -61768,24 +61291,6 @@
     "name": "バンドー化学",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2105,
-        "high": 2133,
-        "low": 2076,
-        "close": 2090,
-        "volume": 43000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2078,
-        "high": 2102,
-        "low": 2078,
-        "close": 2087,
-        "volume": 21300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -62874,15 +62379,24 @@
         "low": 2442,
         "close": 2450,
         "volume": 70700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2450,
+        "high": 2499,
+        "low": 2450,
+        "close": 2484,
+        "volume": 47500
       }
     ],
     "highPrice": 2527,
     "lowPrice": 2023,
-    "latestPrice": 2450,
-    "periodChange": 360,
-    "periodChangePercent": 17.22,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2484,
+    "periodChange": 380,
+    "periodChangePercent": 18.06,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5280": {
@@ -62890,24 +62404,6 @@
     "name": "ヨシコン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2494,
-        "high": 2545,
-        "low": 2481,
-        "close": 2499,
-        "volume": 208300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2548,
-        "high": 2548,
-        "low": 2490,
-        "close": 2495,
-        "volume": 16100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -63996,15 +63492,24 @@
         "low": 2141,
         "close": 2161,
         "volume": 21000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2151,
+        "high": 2176,
+        "low": 2150,
+        "close": 2176,
+        "volume": 9000
       }
     ],
     "highPrice": 2609,
     "lowPrice": 2107,
-    "latestPrice": 2161,
-    "periodChange": -338,
-    "periodChangePercent": -13.53,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2176,
+    "periodChange": -324,
+    "periodChangePercent": -12.96,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5284": {
@@ -64012,24 +63517,6 @@
     "name": "ヤマウホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2201,
-        "high": 2222,
-        "low": 2150,
-        "close": 2152,
-        "volume": 23500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2180,
-        "high": 2180,
-        "low": 2146,
-        "close": 2162,
-        "volume": 7700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -65118,15 +64605,24 @@
         "low": 2215,
         "close": 2217,
         "volume": 8600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2216,
+        "high": 2220,
+        "low": 2210,
+        "close": 2212,
+        "volume": 4700
       }
     ],
     "highPrice": 2367,
     "lowPrice": 2117,
-    "latestPrice": 2217,
-    "periodChange": 65,
-    "periodChangePercent": 3.02,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2212,
+    "periodChange": 19,
+    "periodChangePercent": 0.87,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5288": {
@@ -65134,24 +64630,6 @@
     "name": "アジアパイルホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1437,
-        "high": 1462,
-        "low": 1404,
-        "close": 1411,
-        "volume": 126200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1426,
-        "high": 1442,
-        "low": 1414,
-        "close": 1416,
-        "volume": 89500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -66240,15 +65718,24 @@
         "low": 1411,
         "close": 1411,
         "volume": 192200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1432,
+        "high": 1451,
+        "low": 1424,
+        "close": 1440,
+        "volume": 219500
       }
     ],
     "highPrice": 1697,
     "lowPrice": 1359,
-    "latestPrice": 1411,
-    "periodChange": 0,
-    "periodChangePercent": 0,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1440,
+    "periodChange": 10,
+    "periodChangePercent": 0.7,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5351": {
@@ -66256,24 +65743,6 @@
     "name": "品川リフラ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2133,
-        "high": 2153,
-        "low": 2084,
-        "close": 2084,
-        "volume": 60000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2107,
-        "high": 2115,
-        "low": 2092,
-        "close": 2095,
-        "volume": 27500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -67362,15 +66831,24 @@
         "low": 1945,
         "close": 1945,
         "volume": 142200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1946,
+        "high": 1969,
+        "low": 1945,
+        "close": 1953,
+        "volume": 93600
       }
     ],
     "highPrice": 2158,
     "lowPrice": 1851,
-    "latestPrice": 1945,
-    "periodChange": -139,
-    "periodChangePercent": -6.67,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1953,
+    "periodChange": -128,
+    "periodChangePercent": -6.15,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5356": {
@@ -67378,24 +66856,6 @@
     "name": "美濃窯業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1192,
-        "high": 1198,
-        "low": 1178,
-        "close": 1179,
-        "volume": 5900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1176,
-        "high": 1190,
-        "low": 1176,
-        "close": 1179,
-        "volume": 1400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -68484,15 +67944,24 @@
         "low": 1245,
         "close": 1256,
         "volume": 1500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1261,
+        "high": 1262,
+        "low": 1257,
+        "close": 1257,
+        "volume": 400
       }
     ],
     "highPrice": 1417,
     "lowPrice": 1161,
-    "latestPrice": 1256,
-    "periodChange": 77,
-    "periodChangePercent": 6.53,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1257,
+    "periodChange": 71,
+    "periodChangePercent": 5.99,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5357": {
@@ -68500,24 +67969,6 @@
     "name": "ヨータイ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1826,
-        "high": 1833,
-        "low": 1802,
-        "close": 1802,
-        "volume": 25100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1817,
-        "high": 1818,
-        "low": 1798,
-        "close": 1799,
-        "volume": 20900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -69606,15 +69057,24 @@
         "low": 1700,
         "close": 1700,
         "volume": 51800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1705,
+        "high": 1705,
+        "low": 1690,
+        "close": 1690,
+        "volume": 57900
       }
     ],
     "highPrice": 1815,
     "lowPrice": 1668,
-    "latestPrice": 1700,
-    "periodChange": -102,
-    "periodChangePercent": -5.66,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1690,
+    "periodChange": -108,
+    "periodChangePercent": -6.01,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5363": {
@@ -69622,24 +69082,6 @@
     "name": "ＴＹＫ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 571,
-        "high": 575,
-        "low": 559,
-        "close": 560,
-        "volume": 53500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 562,
-        "high": 568,
-        "low": 561,
-        "close": 562,
-        "volume": 45400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -70728,15 +70170,24 @@
         "low": 714,
         "close": 719,
         "volume": 44000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 716,
+        "high": 728,
+        "low": 714,
+        "close": 728,
+        "volume": 46900
       }
     ],
-    "highPrice": 725,
-    "lowPrice": 560,
-    "latestPrice": 719,
-    "periodChange": 159,
-    "periodChangePercent": 28.39,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "highPrice": 728,
+    "lowPrice": 561,
+    "latestPrice": 728,
+    "periodChange": 166,
+    "periodChangePercent": 29.54,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5368": {
@@ -70744,24 +70195,6 @@
     "name": "日本インシュレーション",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1143,
-        "high": 1174,
-        "low": 1123,
-        "close": 1123,
-        "volume": 24800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1140,
-        "high": 1157,
-        "low": 1128,
-        "close": 1139,
-        "volume": 16400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -71850,15 +71283,24 @@
         "low": 1023,
         "close": 1025,
         "volume": 9000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1028,
+        "high": 1044,
+        "low": 1005,
+        "close": 1007,
+        "volume": 21000
       }
     ],
     "highPrice": 1211,
     "lowPrice": 906,
-    "latestPrice": 1025,
-    "periodChange": -98,
-    "periodChangePercent": -8.73,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1007,
+    "periodChange": -140,
+    "periodChangePercent": -12.21,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5445": {
@@ -71866,24 +71308,6 @@
     "name": "東京鐵鋼",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2020,
-        "high": 2041,
-        "low": 1991,
-        "close": 2023,
-        "volume": 201800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2011,
-        "high": 2031,
-        "low": 1998,
-        "close": 2000,
-        "volume": 144600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -72972,15 +72396,24 @@
         "low": 1950,
         "close": 1950,
         "volume": 119500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1945,
+        "high": 1957,
+        "low": 1921,
+        "close": 1926,
+        "volume": 123700
       }
     ],
     "highPrice": 2102,
     "lowPrice": 1763,
-    "latestPrice": 1950,
-    "periodChange": -73,
-    "periodChangePercent": -3.61,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1926,
+    "periodChange": -51,
+    "periodChangePercent": -2.58,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5451": {
@@ -72988,24 +72421,6 @@
     "name": "ヨドコウ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1417,
-        "high": 1431,
-        "low": 1400,
-        "close": 1409,
-        "volume": 761800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1404,
-        "high": 1406,
-        "low": 1398,
-        "close": 1406,
-        "volume": 579500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -74094,15 +73509,24 @@
         "low": 1379,
         "close": 1380,
         "volume": 286000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1380,
+        "high": 1386,
+        "low": 1367,
+        "close": 1374,
+        "volume": 267900
       }
     ],
     "highPrice": 1462,
     "lowPrice": 1190,
-    "latestPrice": 1380,
+    "latestPrice": 1374,
     "periodChange": -29,
-    "periodChangePercent": -2.06,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChangePercent": -2.07,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5541": {
@@ -74110,24 +73534,6 @@
     "name": "大平洋金属",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2755,
-        "high": 2800,
-        "low": 2641,
-        "close": 2641,
-        "volume": 445500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2667,
-        "high": 2718,
-        "low": 2665,
-        "close": 2683,
-        "volume": 274000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -75216,15 +74622,24 @@
         "low": 2510,
         "close": 2530,
         "volume": 375000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2530,
+        "high": 2549,
+        "low": 2490,
+        "close": 2495,
+        "volume": 252400
       }
     ],
     "highPrice": 2826,
     "lowPrice": 2109,
-    "latestPrice": 2530,
-    "periodChange": -111,
-    "periodChangePercent": -4.2,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2495,
+    "periodChange": -202,
+    "periodChangePercent": -7.49,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5703": {
@@ -75232,24 +74647,6 @@
     "name": "日本軽金属ホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2880,
-        "high": 2917,
-        "low": 2756,
-        "close": 2774,
-        "volume": 284000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2801,
-        "high": 2879,
-        "low": 2801,
-        "close": 2873,
-        "volume": 247300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -76338,15 +75735,24 @@
         "low": 2840,
         "close": 2840,
         "volume": 157500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2868,
+        "high": 2868,
+        "low": 2812,
+        "close": 2833,
+        "volume": 228800
       }
     ],
     "highPrice": 3290,
     "lowPrice": 2584,
-    "latestPrice": 2840,
-    "periodChange": 66,
-    "periodChangePercent": 2.38,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2833,
+    "periodChange": -34,
+    "periodChangePercent": -1.19,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5714": {
@@ -76354,24 +75760,6 @@
     "name": "ＤＯＷＡホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 9390,
-        "high": 9478,
-        "low": 8895,
-        "close": 8913,
-        "volume": 608400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 9139,
-        "high": 9196,
-        "low": 9037,
-        "close": 9094,
-        "volume": 349000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -77460,15 +76848,24 @@
         "low": 8693,
         "close": 8703,
         "volume": 484500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 8791,
+        "high": 8835,
+        "low": 8701,
+        "close": 8729,
+        "volume": 332200
       }
     ],
     "highPrice": 11640,
     "lowPrice": 7907,
-    "latestPrice": 8703,
-    "periodChange": -210,
-    "periodChangePercent": -2.36,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 8729,
+    "periodChange": -388,
+    "periodChangePercent": -4.26,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5901": {
@@ -77476,24 +76873,6 @@
     "name": "東洋製罐グループホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3658,
-        "high": 3677,
-        "low": 3521,
-        "close": 3521,
-        "volume": 255700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3523,
-        "high": 3529,
-        "low": 3411,
-        "close": 3468,
-        "volume": 400700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -78582,15 +77961,24 @@
         "low": 4391,
         "close": 4406,
         "volume": 509600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4420,
+        "high": 4448,
+        "low": 4409,
+        "close": 4446,
+        "volume": 317000
       }
     ],
     "highPrice": 4657,
     "lowPrice": 3152,
-    "latestPrice": 4406,
-    "periodChange": 885,
-    "periodChangePercent": 25.13,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4446,
+    "periodChange": 1008,
+    "periodChangePercent": 29.32,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5930": {
@@ -78598,24 +77986,6 @@
     "name": "文化シヤッター",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1950,
-        "high": 1974,
-        "low": 1911,
-        "close": 1913,
-        "volume": 88300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1917,
-        "high": 1935,
-        "low": 1907,
-        "close": 1916,
-        "volume": 66500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -79704,15 +79074,24 @@
         "low": 1798,
         "close": 1808,
         "volume": 115200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1807,
+        "high": 1811,
+        "low": 1791,
+        "close": 1791,
+        "volume": 93800
       }
     ],
     "highPrice": 1972,
     "lowPrice": 1770,
-    "latestPrice": 1808,
-    "periodChange": -105,
-    "periodChangePercent": -5.49,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1791,
+    "periodChange": -119,
+    "periodChangePercent": -6.23,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "5941": {
@@ -80870,24 +80249,6 @@
     "currency": "JPY",
     "points": [
       {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1313,
-        "high": 1313,
-        "low": 1273,
-        "close": 1283,
-        "volume": 12100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1284,
-        "high": 1298,
-        "low": 1284,
-        "close": 1293,
-        "volume": 7400
-      },
-      {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
         "open": 1294,
@@ -81975,15 +81336,24 @@
         "low": 1193,
         "close": 1199,
         "volume": 1300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1199,
+        "high": 1200,
+        "low": 1193,
+        "close": 1193,
+        "volume": 4300
       }
     ],
     "highPrice": 1324,
     "lowPrice": 1122,
-    "latestPrice": 1199,
-    "periodChange": -84,
-    "periodChangePercent": -6.55,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1193,
+    "periodChange": -99,
+    "periodChangePercent": -7.66,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6209": {
@@ -81991,24 +81361,6 @@
     "name": "リケンＮＰＲ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3810,
-        "high": 3860,
-        "low": 3745,
-        "close": 3755,
-        "volume": 60500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3755,
-        "high": 3790,
-        "low": 3735,
-        "close": 3735,
-        "volume": 36800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -83097,15 +82449,24 @@
         "low": 3830,
         "close": 3835,
         "volume": 63200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3855,
+        "high": 3860,
+        "low": 3825,
+        "close": 3835,
+        "volume": 53400
       }
     ],
     "highPrice": 4130,
-    "lowPrice": 3735,
+    "lowPrice": 3745,
     "latestPrice": 3835,
-    "periodChange": 80,
-    "periodChangePercent": 2.13,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": 65,
+    "periodChangePercent": 1.72,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6272": {
@@ -83113,24 +82474,6 @@
     "name": "レオン自動機",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1490,
-        "high": 1505,
-        "low": 1474,
-        "close": 1483,
-        "volume": 50800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1497,
-        "high": 1511,
-        "low": 1486,
-        "close": 1498,
-        "volume": 78900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -84219,15 +83562,24 @@
         "low": 1463,
         "close": 1463,
         "volume": 70400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1472,
+        "high": 1476,
+        "low": 1461,
+        "close": 1465,
+        "volume": 60400
       }
     ],
     "highPrice": 1624,
     "lowPrice": 1412,
-    "latestPrice": 1463,
-    "periodChange": -20,
-    "periodChangePercent": -1.35,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1465,
+    "periodChange": -47,
+    "periodChangePercent": -3.11,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6306": {
@@ -84235,24 +83587,6 @@
     "name": "日工",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 791,
-        "high": 801,
-        "low": 784,
-        "close": 788,
-        "volume": 66100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 788,
-        "high": 795,
-        "low": 785,
-        "close": 788,
-        "volume": 46900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -85341,15 +84675,24 @@
         "low": 1000,
         "close": 1004,
         "volume": 91800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1003,
+        "high": 1011,
+        "low": 999,
+        "close": 1009,
+        "volume": 87600
       }
     ],
     "highPrice": 1041,
-    "lowPrice": 788,
-    "latestPrice": 1004,
-    "periodChange": 216,
-    "periodChangePercent": 27.41,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 791,
+    "latestPrice": 1009,
+    "periodChange": 217,
+    "periodChangePercent": 27.4,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6379": {
@@ -85357,24 +84700,6 @@
     "name": "レイズネクスト",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 787,
-        "high": 792,
-        "low": 769,
-        "close": 775,
-        "volume": 275700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 775,
-        "high": 781,
-        "low": 769,
-        "close": 771,
-        "volume": 184200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -86463,15 +85788,24 @@
         "low": 965,
         "close": 968,
         "volume": 440700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 966,
+        "high": 992,
+        "low": 958,
+        "close": 992,
+        "volume": 427800
       }
     ],
     "highPrice": 1060,
     "lowPrice": 710,
-    "latestPrice": 968,
-    "periodChange": 193,
-    "periodChangePercent": 24.9,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 992,
+    "periodChange": 207,
+    "periodChangePercent": 26.37,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6430": {
@@ -86479,24 +85813,6 @@
     "name": "ダイコク電機",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2500,
-        "high": 2510,
-        "low": 2460,
-        "close": 2460,
-        "volume": 64400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2470,
-        "high": 2500,
-        "low": 2462,
-        "close": 2465,
-        "volume": 46700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -87585,15 +86901,24 @@
         "low": 2325,
         "close": 2334,
         "volume": 50300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2321,
+        "high": 2328,
+        "low": 2285,
+        "close": 2306,
+        "volume": 58000
       }
     ],
     "highPrice": 2570,
     "lowPrice": 2057,
-    "latestPrice": 2334,
-    "periodChange": -126,
-    "periodChangePercent": -5.12,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2306,
+    "periodChange": -164,
+    "periodChangePercent": -6.64,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6458": {
@@ -87601,24 +86926,6 @@
     "name": "新晃工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1240,
-        "high": 1247,
-        "low": 1220,
-        "close": 1228,
-        "volume": 92100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1228,
-        "high": 1234,
-        "low": 1220,
-        "close": 1220,
-        "volume": 89700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -88707,15 +88014,24 @@
         "low": 1199,
         "close": 1200,
         "volume": 213800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1202,
+        "high": 1207,
+        "low": 1195,
+        "close": 1206,
+        "volume": 244000
       }
     ],
     "highPrice": 1302,
     "lowPrice": 1187,
-    "latestPrice": 1200,
-    "periodChange": -28,
-    "periodChangePercent": -2.28,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1206,
+    "periodChange": -17,
+    "periodChangePercent": -1.39,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6493": {
@@ -88723,24 +88039,6 @@
     "name": "ＮＩＴＴＡＮ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 623,
-        "high": 625,
-        "low": 593,
-        "close": 595,
-        "volume": 68400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 597,
-        "high": 608,
-        "low": 596,
-        "close": 598,
-        "volume": 43700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -89829,15 +89127,24 @@
         "low": 464,
         "close": 472,
         "volume": 70000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 476,
+        "high": 483,
+        "low": 476,
+        "close": 481,
+        "volume": 38700
       }
     ],
     "highPrice": 639,
     "lowPrice": 442,
-    "latestPrice": 472,
-    "periodChange": -123,
-    "periodChangePercent": -20.67,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 481,
+    "periodChange": -128,
+    "periodChangePercent": -21.02,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6505": {
@@ -89845,24 +89152,6 @@
     "name": "東洋電機製造",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2403,
-        "high": 2446,
-        "low": 2330,
-        "close": 2331,
-        "volume": 32800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2376,
-        "high": 2376,
-        "low": 2319,
-        "close": 2319,
-        "volume": 16700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -90951,15 +90240,24 @@
         "low": 2372,
         "close": 2374,
         "volume": 34900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2376,
+        "high": 2388,
+        "low": 2351,
+        "close": 2357,
+        "volume": 31300
       }
     ],
     "highPrice": 2647,
     "lowPrice": 1849,
-    "latestPrice": 2374,
-    "periodChange": 43,
-    "periodChangePercent": 1.84,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2357,
+    "periodChange": 31,
+    "periodChangePercent": 1.33,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6517": {
@@ -90967,24 +90265,6 @@
     "name": "デンヨー",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3545,
-        "high": 3590,
-        "low": 3460,
-        "close": 3495,
-        "volume": 17700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3480,
-        "high": 3515,
-        "low": 3435,
-        "close": 3475,
-        "volume": 20700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -92073,15 +91353,24 @@
         "low": 3880,
         "close": 3915,
         "volume": 103200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3960,
+        "high": 3980,
+        "low": 3915,
+        "close": 3975,
+        "volume": 41300
       }
     ],
     "highPrice": 4450,
     "lowPrice": 3405,
-    "latestPrice": 3915,
-    "periodChange": 420,
-    "periodChangePercent": 12.02,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3975,
+    "periodChange": 540,
+    "periodChangePercent": 15.72,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6540": {
@@ -92089,24 +91378,6 @@
     "name": "船場",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1813,
-        "high": 1826,
-        "low": 1793,
-        "close": 1800,
-        "volume": 11000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1811,
-        "high": 1818,
-        "low": 1791,
-        "close": 1799,
-        "volume": 6800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -93195,15 +92466,24 @@
         "low": 1495,
         "close": 1500,
         "volume": 20400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1500,
+        "high": 1505,
+        "low": 1491,
+        "close": 1500,
+        "volume": 21300
       }
     ],
-    "highPrice": 1800,
+    "highPrice": 1791,
     "lowPrice": 1458,
     "latestPrice": 1500,
-    "periodChange": -300,
-    "periodChangePercent": -16.67,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": -291,
+    "periodChangePercent": -16.25,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6592": {
@@ -93211,24 +92491,6 @@
     "name": "マブチモーター",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1650,
-        "high": 1660,
-        "low": 1604,
-        "close": 1604,
-        "volume": 691300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1617,
-        "high": 1628,
-        "low": 1613,
-        "close": 1624,
-        "volume": 409900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -94317,15 +93579,24 @@
         "low": 1712,
         "close": 1717,
         "volume": 804500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1730,
+        "high": 1749,
+        "low": 1722,
+        "close": 1737,
+        "volume": 757800
       }
     ],
     "highPrice": 1786,
     "lowPrice": 1475,
-    "latestPrice": 1717,
-    "periodChange": 113,
-    "periodChangePercent": 7.04,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1737,
+    "periodChange": 124,
+    "periodChangePercent": 7.69,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6658": {
@@ -94333,24 +93604,6 @@
     "name": "シライ電子工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 717,
-        "high": 726,
-        "low": 703,
-        "close": 706,
-        "volume": 55500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 710,
-        "high": 716,
-        "low": 708,
-        "close": 710,
-        "volume": 29800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -95439,15 +94692,24 @@
         "low": 445,
         "close": 447,
         "volume": 37900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 447,
+        "high": 455,
+        "low": 447,
+        "close": 452,
+        "volume": 50200
       }
     ],
     "highPrice": 724,
     "lowPrice": 418,
-    "latestPrice": 447,
-    "periodChange": -259,
-    "periodChangePercent": -36.69,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 452,
+    "periodChange": -253,
+    "periodChangePercent": -35.89,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6675": {
@@ -95455,24 +94717,6 @@
     "name": "サクサ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2122,
-        "high": 2135,
-        "low": 2018,
-        "close": 2063,
-        "volume": 79100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2081,
-        "high": 2140,
-        "low": 2081,
-        "close": 2121,
-        "volume": 31600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -96561,15 +95805,24 @@
         "low": 2097,
         "close": 2099,
         "volume": 16200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2099,
+        "high": 2100,
+        "low": 2056,
+        "close": 2056,
+        "volume": 24400
       }
     ],
     "highPrice": 2268,
     "lowPrice": 1837,
-    "latestPrice": 2099,
-    "periodChange": 36,
-    "periodChangePercent": 1.75,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2056,
+    "periodChange": -47,
+    "periodChangePercent": -2.23,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6677": {
@@ -96577,24 +95830,6 @@
     "name": "エスケーエレクトロニクス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3195,
-        "high": 3220,
-        "low": 3110,
-        "close": 3115,
-        "volume": 47000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3150,
-        "high": 3185,
-        "low": 3130,
-        "close": 3135,
-        "volume": 19400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -97683,15 +96918,24 @@
         "low": 3105,
         "close": 3105,
         "volume": 57200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3125,
+        "high": 3200,
+        "low": 3120,
+        "close": 3160,
+        "volume": 126700
       }
     ],
     "highPrice": 3830,
     "lowPrice": 3105,
-    "latestPrice": 3105,
-    "periodChange": -10,
-    "periodChangePercent": -0.32,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3160,
+    "periodChange": 10,
+    "periodChangePercent": 0.32,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6678": {
@@ -97699,24 +96943,6 @@
     "name": "テクノメディカ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2380,
-        "high": 2380,
-        "low": 2293,
-        "close": 2293,
-        "volume": 3400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2299,
-        "high": 2345,
-        "low": 2277,
-        "close": 2286,
-        "volume": 6100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -98805,15 +98031,24 @@
         "low": 2000,
         "close": 2000,
         "volume": 15000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1992,
+        "high": 1993,
+        "low": 1975,
+        "close": 1975,
+        "volume": 18900
       }
     ],
     "highPrice": 2397,
     "lowPrice": 1941,
-    "latestPrice": 2000,
-    "periodChange": -293,
-    "periodChangePercent": -12.78,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1975,
+    "periodChange": -332,
+    "periodChangePercent": -14.39,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6730": {
@@ -98821,24 +98056,6 @@
     "name": "アクセル",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1111,
-        "high": 1126,
-        "low": 1097,
-        "close": 1114,
-        "volume": 38900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1106,
-        "high": 1129,
-        "low": 1103,
-        "close": 1112,
-        "volume": 19300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -99927,15 +99144,24 @@
         "low": 1622,
         "close": 1634,
         "volume": 427300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1650,
+        "high": 1717,
+        "low": 1650,
+        "close": 1690,
+        "volume": 382200
       }
     ],
-    "highPrice": 1634,
+    "highPrice": 1690,
     "lowPrice": 1015,
-    "latestPrice": 1634,
-    "periodChange": 520,
-    "periodChangePercent": 46.68,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1690,
+    "periodChange": 565,
+    "periodChangePercent": 50.22,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6902": {
@@ -99943,24 +99169,6 @@
     "name": "デンソー",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1977,
-        "high": 1987,
-        "low": 1930,
-        "close": 1930,
-        "volume": 7040500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1912,
-        "high": 1942,
-        "low": 1911,
-        "close": 1923,
-        "volume": 4277700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -101049,15 +100257,24 @@
         "low": 1802,
         "close": 1808,
         "volume": 10145500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1809,
+        "high": 1842,
+        "low": 1809,
+        "close": 1842,
+        "volume": 7814500
       }
     ],
     "highPrice": 2208,
     "lowPrice": 1808,
-    "latestPrice": 1808,
-    "periodChange": -122,
-    "periodChangePercent": -6.32,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1842,
+    "periodChange": -66,
+    "periodChangePercent": -3.46,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6915": {
@@ -101065,24 +100282,6 @@
     "name": "千代田インテグレ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3400,
-        "high": 3425,
-        "low": 3325,
-        "close": 3335,
-        "volume": 8100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3335,
-        "high": 3375,
-        "low": 3335,
-        "close": 3360,
-        "volume": 4700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -102171,15 +101370,24 @@
         "low": 3525,
         "close": 3525,
         "volume": 16900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3535,
+        "high": 3565,
+        "low": 3515,
+        "close": 3525,
+        "volume": 12400
       }
     ],
     "highPrice": 3645,
     "lowPrice": 3000,
     "latestPrice": 3525,
-    "periodChange": 190,
-    "periodChangePercent": 5.7,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": 165,
+    "periodChangePercent": 4.91,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6927": {
@@ -102187,24 +101395,6 @@
     "name": "ヘリオス テクノ ホールディング",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1147,
-        "high": 1174,
-        "low": 1121,
-        "close": 1129,
-        "volume": 113000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1143,
-        "high": 1143,
-        "low": 1127,
-        "close": 1131,
-        "volume": 50800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -103293,15 +102483,24 @@
         "low": 983,
         "close": 983,
         "volume": 28900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 986,
+        "high": 996,
+        "low": 982,
+        "close": 993,
+        "volume": 35200
       }
     ],
     "highPrice": 1200,
     "lowPrice": 885,
-    "latestPrice": 983,
-    "periodChange": -146,
-    "periodChangePercent": -12.93,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 993,
+    "periodChange": -143,
+    "periodChangePercent": -12.59,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6989": {
@@ -103309,24 +102508,6 @@
     "name": "北陸電気工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2752,
-        "high": 2767,
-        "low": 2721,
-        "close": 2767,
-        "volume": 5700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2767,
-        "high": 2800,
-        "low": 2746,
-        "close": 2783,
-        "volume": 7700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -104415,15 +103596,24 @@
         "low": 2328,
         "close": 2328,
         "volume": 1300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2321,
+        "high": 2357,
+        "low": 2294,
+        "close": 2296,
+        "volume": 13500
       }
     ],
     "highPrice": 2858,
     "lowPrice": 2263,
-    "latestPrice": 2328,
-    "periodChange": -439,
-    "periodChangePercent": -15.87,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2296,
+    "periodChange": -543,
+    "periodChangePercent": -19.13,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "6995": {
@@ -104431,24 +103621,6 @@
     "name": "東海理化",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3025,
-        "high": 3060,
-        "low": 3000,
-        "close": 3000,
-        "volume": 96200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3030,
-        "high": 3035,
-        "low": 2997,
-        "close": 3010,
-        "volume": 88300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -105537,15 +104709,24 @@
         "low": 3000,
         "close": 3015,
         "volume": 151700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3030,
+        "high": 3050,
+        "low": 3020,
+        "close": 3045,
+        "volume": 118100
       }
     ],
     "highPrice": 3345,
     "lowPrice": 2735,
-    "latestPrice": 3015,
-    "periodChange": 15,
-    "periodChangePercent": 0.5,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3045,
+    "periodChange": 50,
+    "periodChangePercent": 1.67,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7175": {
@@ -105553,24 +104734,6 @@
     "name": "今村証券",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1310,
-        "high": 1320,
-        "low": 1302,
-        "close": 1305,
-        "volume": 3200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1308,
-        "high": 1320,
-        "low": 1293,
-        "close": 1301,
-        "volume": 800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -106659,15 +105822,24 @@
         "low": 1931,
         "close": 1977,
         "volume": 15700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1977,
+        "high": 1977,
+        "low": 1920,
+        "close": 1943,
+        "volume": 5900
       }
     ],
     "highPrice": 2182,
-    "lowPrice": 1301,
-    "latestPrice": 1977,
-    "periodChange": 672,
-    "periodChangePercent": 51.49,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 1306,
+    "latestPrice": 1943,
+    "periodChange": 634,
+    "periodChangePercent": 48.43,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7217": {
@@ -106675,24 +105847,6 @@
     "name": "テイン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 395,
-        "high": 397,
-        "low": 387,
-        "close": 387,
-        "volume": 4000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 390,
-        "high": 392,
-        "low": 390,
-        "close": 390,
-        "volume": 800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -107781,15 +106935,24 @@
         "low": 445,
         "close": 455,
         "volume": 4800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 455,
+        "high": 455,
+        "low": 453,
+        "close": 453,
+        "volume": 400
       }
     ],
     "highPrice": 467,
     "lowPrice": 382,
-    "latestPrice": 455,
-    "periodChange": 68,
-    "periodChangePercent": 17.57,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 453,
+    "periodChange": 61,
+    "periodChangePercent": 15.56,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7226": {
@@ -107797,24 +106960,6 @@
     "name": "極東開発工業",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3010,
-        "high": 3040,
-        "low": 2951,
-        "close": 2959,
-        "volume": 166100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2959,
-        "high": 2983,
-        "low": 2957,
-        "close": 2977,
-        "volume": 70900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -108903,15 +108048,24 @@
         "low": 2134,
         "close": 2135,
         "volume": 298400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2136,
+        "high": 2144,
+        "low": 2128,
+        "close": 2137,
+        "volume": 193200
       }
     ],
     "highPrice": 2998,
     "lowPrice": 2060,
-    "latestPrice": 2135,
-    "periodChange": -824,
-    "periodChangePercent": -27.85,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2137,
+    "periodChange": -809,
+    "periodChangePercent": -27.46,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7235": {
@@ -108919,24 +108073,6 @@
     "name": "東京ラヂエーター製造",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1349,
-        "high": 1379,
-        "low": 1330,
-        "close": 1336,
-        "volume": 35200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1350,
-        "high": 1360,
-        "low": 1341,
-        "close": 1341,
-        "volume": 16700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -110025,15 +109161,24 @@
         "low": 1525,
         "close": 1530,
         "volume": 18000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1527,
+        "high": 1531,
+        "low": 1522,
+        "close": 1523,
+        "volume": 11600
       }
     ],
     "highPrice": 1610,
-    "lowPrice": 1336,
-    "latestPrice": 1530,
-    "periodChange": 194,
-    "periodChangePercent": 14.52,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 1348,
+    "latestPrice": 1523,
+    "periodChange": 175,
+    "periodChangePercent": 12.98,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7239": {
@@ -110041,24 +109186,6 @@
     "name": "タチエス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2089,
-        "high": 2109,
-        "low": 2063,
-        "close": 2067,
-        "volume": 91200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2066,
-        "high": 2084,
-        "low": 2064,
-        "close": 2078,
-        "volume": 74100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -111147,15 +110274,24 @@
         "low": 2278,
         "close": 2281,
         "volume": 122500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2281,
+        "high": 2289,
+        "low": 2263,
+        "close": 2281,
+        "volume": 117700
       }
     ],
     "highPrice": 2398,
     "lowPrice": 2051,
     "latestPrice": 2281,
-    "periodChange": 214,
-    "periodChangePercent": 10.35,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": 197,
+    "periodChangePercent": 9.45,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7240": {
@@ -112313,24 +111449,6 @@
     "currency": "JPY",
     "points": [
       {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 848,
-        "high": 855,
-        "low": 825,
-        "close": 825,
-        "volume": 292000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 829,
-        "high": 832,
-        "low": 821,
-        "close": 827,
-        "volume": 231300
-      },
-      {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
         "open": 829,
@@ -113418,15 +112536,24 @@
         "low": 961,
         "close": 964,
         "volume": 303300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 971,
+        "high": 978,
+        "low": 967,
+        "close": 977,
+        "volume": 328700
       }
     ],
     "highPrice": 1040,
     "lowPrice": 775,
-    "latestPrice": 964,
-    "periodChange": 139,
-    "periodChangePercent": 16.85,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 977,
+    "periodChange": 151,
+    "periodChangePercent": 18.28,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7278": {
@@ -113434,24 +112561,6 @@
     "name": "エクセディ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 5730,
-        "high": 5790,
-        "low": 5630,
-        "close": 5650,
-        "volume": 105200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 5650,
-        "high": 5680,
-        "low": 5620,
-        "close": 5670,
-        "volume": 107400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -114540,15 +113649,24 @@
         "low": 5600,
         "close": 5620,
         "volume": 351000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 5630,
+        "high": 5710,
+        "low": 5630,
+        "close": 5670,
+        "volume": 184300
       }
     ],
     "highPrice": 6280,
     "lowPrice": 5490,
-    "latestPrice": 5620,
-    "periodChange": -30,
-    "periodChangePercent": -0.53,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 5670,
+    "periodChange": 30,
+    "periodChangePercent": 0.53,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7296": {
@@ -114556,24 +113674,6 @@
     "name": "エフ・シー・シー",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3330,
-        "high": 3350,
-        "low": 3265,
-        "close": 3270,
-        "volume": 61200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3265,
-        "high": 3310,
-        "low": 3260,
-        "close": 3290,
-        "volume": 86700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -115662,15 +114762,24 @@
         "low": 4010,
         "close": 4020,
         "volume": 100100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4050,
+        "high": 4070,
+        "low": 4030,
+        "close": 4045,
+        "volume": 76500
       }
     ],
     "highPrice": 4250,
-    "lowPrice": 3270,
-    "latestPrice": 4020,
-    "periodChange": 750,
-    "periodChangePercent": 22.94,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 3295,
+    "latestPrice": 4045,
+    "periodChange": 700,
+    "periodChangePercent": 20.93,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7368": {
@@ -115678,24 +114787,6 @@
     "name": "表示灯",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1708,
-        "high": 1709,
-        "low": 1687,
-        "close": 1689,
-        "volume": 1300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1687,
-        "high": 1708,
-        "low": 1675,
-        "close": 1698,
-        "volume": 1300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -116784,15 +115875,24 @@
         "low": 1706,
         "close": 1720,
         "volume": 900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1720,
+        "high": 1720,
+        "low": 1708,
+        "close": 1718,
+        "volume": 900
       }
     ],
     "highPrice": 1733,
     "lowPrice": 1648,
-    "latestPrice": 1720,
-    "periodChange": 31,
-    "periodChangePercent": 1.84,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1718,
+    "periodChange": 3,
+    "periodChangePercent": 0.17,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7463": {
@@ -116800,24 +115900,6 @@
     "name": "アドヴァングループ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 944,
-        "high": 950,
-        "low": 936,
-        "close": 938,
-        "volume": 25700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 938,
-        "high": 949,
-        "low": 938,
-        "close": 944,
-        "volume": 28400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -117906,15 +116988,24 @@
         "low": 925,
         "close": 925,
         "volume": 41300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 935,
+        "high": 935,
+        "low": 926,
+        "close": 929,
+        "volume": 18300
       }
     ],
     "highPrice": 1003,
     "lowPrice": 874,
-    "latestPrice": 925,
-    "periodChange": -13,
-    "periodChangePercent": -1.39,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 929,
+    "periodChange": -14,
+    "periodChangePercent": -1.48,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7482": {
@@ -117922,24 +117013,6 @@
     "name": "シモジマ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1411,
-        "high": 1415,
-        "low": 1384,
-        "close": 1395,
-        "volume": 39500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1395,
-        "high": 1407,
-        "low": 1391,
-        "close": 1394,
-        "volume": 28000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -119028,15 +118101,24 @@
         "low": 1436,
         "close": 1437,
         "volume": 33100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1425,
+        "high": 1433,
+        "low": 1417,
+        "close": 1429,
+        "volume": 35400
       }
     ],
     "highPrice": 1573,
     "lowPrice": 1259,
-    "latestPrice": 1437,
-    "periodChange": 42,
-    "periodChangePercent": 3.01,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1429,
+    "periodChange": 28,
+    "periodChangePercent": 2,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7525": {
@@ -119044,24 +118126,6 @@
     "name": "リックス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3535,
-        "high": 3555,
-        "low": 3445,
-        "close": 3455,
-        "volume": 13200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3460,
-        "high": 3535,
-        "low": 3460,
-        "close": 3500,
-        "volume": 19400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -120150,15 +119214,24 @@
         "low": 3525,
         "close": 3525,
         "volume": 9800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3535,
+        "high": 3550,
+        "low": 3515,
+        "close": 3525,
+        "volume": 8700
       }
     ],
     "highPrice": 3725,
     "lowPrice": 3330,
     "latestPrice": 3525,
-    "periodChange": 70,
-    "periodChangePercent": 2.03,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": 40,
+    "periodChangePercent": 1.15,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7607": {
@@ -120166,24 +119239,6 @@
     "name": "進和",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3140,
-        "high": 3195,
-        "low": 3115,
-        "close": 3115,
-        "volume": 12600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3115,
-        "high": 3160,
-        "low": 3115,
-        "close": 3135,
-        "volume": 7100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -121272,15 +120327,24 @@
         "low": 3005,
         "close": 3010,
         "volume": 26100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3020,
+        "high": 3020,
+        "low": 3000,
+        "close": 3010,
+        "volume": 18000
       }
     ],
     "highPrice": 3295,
     "lowPrice": 2909,
     "latestPrice": 3010,
-    "periodChange": -105,
-    "periodChangePercent": -3.37,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": -130,
+    "periodChangePercent": -4.14,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7670": {
@@ -121288,24 +120352,6 @@
     "name": "オーウエル",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1076,
-        "high": 1076,
-        "low": 1024,
-        "close": 1046,
-        "volume": 1800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1047,
-        "high": 1064,
-        "low": 1047,
-        "close": 1056,
-        "volume": 900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -122394,15 +121440,24 @@
         "low": 1220,
         "close": 1225,
         "volume": 1000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1225,
+        "high": 1228,
+        "low": 1213,
+        "close": 1227,
+        "volume": 1400
       }
     ],
     "highPrice": 1286,
     "lowPrice": 987,
-    "latestPrice": 1225,
-    "periodChange": 179,
-    "periodChangePercent": 17.11,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1227,
+    "periodChange": 187,
+    "periodChangePercent": 17.98,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7673": {
@@ -122410,24 +121465,6 @@
     "name": "ダイコー通産",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1687,
-        "high": 1699,
-        "low": 1687,
-        "close": 1699,
-        "volume": 3400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1700,
-        "high": 1719,
-        "low": 1692,
-        "close": 1696,
-        "volume": 2100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -123516,15 +122553,24 @@
         "low": 1717,
         "close": 1720,
         "volume": 2400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1722,
+        "high": 1722,
+        "low": 1710,
+        "close": 1722,
+        "volume": 600
       }
     ],
     "highPrice": 1914,
     "lowPrice": 1570,
-    "latestPrice": 1720,
-    "periodChange": 21,
-    "periodChangePercent": 1.24,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1722,
+    "periodChange": 17,
+    "periodChangePercent": 1,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7722": {
@@ -123532,24 +122578,6 @@
     "name": "国際計測器",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 850,
-        "high": 861,
-        "low": 820,
-        "close": 824,
-        "volume": 86200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 831,
-        "high": 841,
-        "low": 827,
-        "close": 831,
-        "volume": 33200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -124638,15 +123666,24 @@
         "low": 733,
         "close": 735,
         "volume": 71000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 750,
+        "high": 750,
+        "low": 742,
+        "close": 747,
+        "volume": 23600
       }
     ],
     "highPrice": 850,
     "lowPrice": 722,
-    "latestPrice": 735,
-    "periodChange": -89,
-    "periodChangePercent": -10.8,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 747,
+    "periodChange": -72,
+    "periodChangePercent": -8.79,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7744": {
@@ -124654,24 +123691,6 @@
     "name": "ノーリツ鋼機",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2118,
-        "high": 2150,
-        "low": 2077,
-        "close": 2082,
-        "volume": 286800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2093,
-        "high": 2109,
-        "low": 2082,
-        "close": 2093,
-        "volume": 191000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -125760,15 +124779,24 @@
         "low": 1960,
         "close": 1972,
         "volume": 202300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1979,
+        "high": 1992,
+        "low": 1951,
+        "close": 1961,
+        "volume": 219000
       }
     ],
     "highPrice": 2197,
     "lowPrice": 1943,
-    "latestPrice": 1972,
-    "periodChange": -110,
-    "periodChangePercent": -5.28,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1961,
+    "periodChange": -139,
+    "periodChangePercent": -6.62,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7812": {
@@ -125776,24 +124804,6 @@
     "name": "クレステック",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1922,
-        "high": 1922,
-        "low": 1870,
-        "close": 1875,
-        "volume": 9900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1876,
-        "high": 1884,
-        "low": 1855,
-        "close": 1880,
-        "volume": 6500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -126882,15 +125892,24 @@
         "low": 2074,
         "close": 2082,
         "volume": 200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2082,
+        "high": 2095,
+        "low": 2080,
+        "close": 2095,
+        "volume": 300
       }
     ],
     "highPrice": 2193,
     "lowPrice": 1872,
-    "latestPrice": 2082,
-    "periodChange": 207,
-    "periodChangePercent": 11.04,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2095,
+    "periodChange": 213,
+    "periodChangePercent": 11.32,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7833": {
@@ -126898,24 +125917,6 @@
     "name": "アイフィスジャパン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 667,
-        "high": 674,
-        "low": 658,
-        "close": 658,
-        "volume": 8400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 660,
-        "high": 667,
-        "low": 659,
-        "close": 659,
-        "volume": 2700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -128004,15 +127005,24 @@
         "low": 678,
         "close": 688,
         "volume": 2900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 688,
+        "high": 695,
+        "low": 682,
+        "close": 682,
+        "volume": 3200
       }
     ],
     "highPrice": 688,
     "lowPrice": 614,
-    "latestPrice": 688,
-    "periodChange": 30,
-    "periodChangePercent": 4.56,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 682,
+    "periodChange": 22,
+    "periodChangePercent": 3.33,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7893": {
@@ -128020,24 +127030,6 @@
     "name": "プロネクサス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1130,
-        "high": 1136,
-        "low": 1117,
-        "close": 1122,
-        "volume": 30400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1117,
-        "high": 1130,
-        "low": 1117,
-        "close": 1122,
-        "volume": 13200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -129126,15 +128118,24 @@
         "low": 1058,
         "close": 1058,
         "volume": 47300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1053,
+        "high": 1054,
+        "low": 1045,
+        "close": 1045,
+        "volume": 67800
       }
     ],
     "highPrice": 1210,
     "lowPrice": 1027,
-    "latestPrice": 1058,
-    "periodChange": -64,
-    "periodChangePercent": -5.7,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1045,
+    "periodChange": -85,
+    "periodChangePercent": -7.52,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7927": {
@@ -129142,24 +128143,6 @@
     "name": "ムトー精工",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2031,
-        "high": 2063,
-        "low": 1998,
-        "close": 2001,
-        "volume": 36100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2006,
-        "high": 2029,
-        "low": 2006,
-        "close": 2021,
-        "volume": 16200
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -130248,15 +129231,24 @@
         "low": 2331,
         "close": 2333,
         "volume": 9600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2334,
+        "high": 2350,
+        "low": 2320,
+        "close": 2339,
+        "volume": 12100
       }
     ],
     "highPrice": 2392,
     "lowPrice": 1917,
-    "latestPrice": 2333,
-    "periodChange": 332,
-    "periodChangePercent": 16.59,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2339,
+    "periodChange": 314,
+    "periodChangePercent": 15.51,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7971": {
@@ -130264,24 +129256,6 @@
     "name": "東リ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 675,
-        "high": 677,
-        "low": 656,
-        "close": 659,
-        "volume": 158600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 665,
-        "high": 668,
-        "low": 658,
-        "close": 662,
-        "volume": 99600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -131370,15 +130344,24 @@
         "low": 659,
         "close": 662,
         "volume": 110500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 662,
+        "high": 662,
+        "low": 650,
+        "close": 654,
+        "volume": 54300
       }
     ],
     "highPrice": 720,
     "lowPrice": 586,
-    "latestPrice": 662,
-    "periodChange": 3,
-    "periodChangePercent": 0.46,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 654,
+    "periodChange": -10,
+    "periodChangePercent": -1.51,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7981": {
@@ -131386,24 +130369,6 @@
     "name": "タカラスタンダード",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2815,
-        "high": 2850,
-        "low": 2776,
-        "close": 2778,
-        "volume": 88000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2778,
-        "high": 2803,
-        "low": 2775,
-        "close": 2797,
-        "volume": 83600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -132492,15 +131457,24 @@
         "low": 3005,
         "close": 3020,
         "volume": 92100
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3010,
+        "high": 3040,
+        "low": 2995,
+        "close": 3040,
+        "volume": 88100
       }
     ],
     "highPrice": 3280,
     "lowPrice": 2648,
-    "latestPrice": 3020,
-    "periodChange": 242,
-    "periodChangePercent": 8.71,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3040,
+    "periodChange": 229,
+    "periodChangePercent": 8.15,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7990": {
@@ -132508,24 +131482,6 @@
     "name": "グローブライド",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2137,
-        "high": 2171,
-        "low": 2121,
-        "close": 2135,
-        "volume": 73700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2159,
-        "high": 2172,
-        "low": 2142,
-        "close": 2146,
-        "volume": 74800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -133614,15 +132570,24 @@
         "low": 2321,
         "close": 2322,
         "volume": 54900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2332,
+        "high": 2335,
+        "low": 2312,
+        "close": 2327,
+        "volume": 56200
       }
     ],
     "highPrice": 2735,
     "lowPrice": 2041,
-    "latestPrice": 2322,
+    "latestPrice": 2327,
     "periodChange": 187,
-    "periodChangePercent": 8.76,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChangePercent": 8.74,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "7994": {
@@ -133630,24 +132595,6 @@
     "name": "オカムラ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2547,
-        "high": 2576,
-        "low": 2532,
-        "close": 2542,
-        "volume": 150500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2540,
-        "high": 2555,
-        "low": 2535,
-        "close": 2550,
-        "volume": 59600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -134736,15 +133683,24 @@
         "low": 2204,
         "close": 2204,
         "volume": 214700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2206,
+        "high": 2210,
+        "low": 2196,
+        "close": 2196,
+        "volume": 178500
       }
     ],
     "highPrice": 2606,
-    "lowPrice": 2204,
-    "latestPrice": 2204,
-    "periodChange": -338,
-    "periodChangePercent": -13.3,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 2196,
+    "latestPrice": 2196,
+    "periodChange": -354,
+    "periodChangePercent": -13.88,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8011": {
@@ -134752,24 +133708,6 @@
     "name": "三陽商会",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1360,
-        "high": 1368,
-        "low": 1335,
-        "close": 1335,
-        "volume": 121500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1337,
-        "high": 1353,
-        "low": 1332,
-        "close": 1335,
-        "volume": 75600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -135858,15 +134796,24 @@
         "low": 1277,
         "close": 1284,
         "volume": 198700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1294,
+        "high": 1297,
+        "low": 1276,
+        "close": 1297,
+        "volume": 158500
       }
     ],
     "highPrice": 1840,
     "lowPrice": 1198,
-    "latestPrice": 1284,
-    "periodChange": -51,
-    "periodChangePercent": -3.82,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1297,
+    "periodChange": -61,
+    "periodChangePercent": -4.49,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8014": {
@@ -135874,24 +134821,6 @@
     "name": "蝶理",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4425,
-        "high": 4470,
-        "low": 4355,
-        "close": 4395,
-        "volume": 30300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 4425,
-        "high": 4450,
-        "low": 4400,
-        "close": 4420,
-        "volume": 26400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -136980,15 +135909,24 @@
         "low": 4025,
         "close": 4035,
         "volume": 26500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4045,
+        "high": 4120,
+        "low": 4045,
+        "close": 4100,
+        "volume": 31100
       }
     ],
     "highPrice": 4565,
     "lowPrice": 3800,
-    "latestPrice": 4035,
-    "periodChange": -360,
-    "periodChangePercent": -8.19,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4100,
+    "periodChange": -325,
+    "periodChangePercent": -7.34,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8016": {
@@ -136996,24 +135934,6 @@
     "name": "オンワードホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 727,
-        "high": 738,
-        "low": 724,
-        "close": 728,
-        "volume": 539100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 727,
-        "high": 740,
-        "low": 727,
-        "close": 737,
-        "volume": 312300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -138102,15 +137022,24 @@
         "low": 700,
         "close": 702,
         "volume": 724500
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 702,
+        "high": 706,
+        "low": 698,
+        "close": 698,
+        "volume": 703600
       }
     ],
     "highPrice": 807,
     "lowPrice": 698,
-    "latestPrice": 702,
-    "periodChange": -26,
-    "periodChangePercent": -3.57,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 698,
+    "periodChange": -37,
+    "periodChangePercent": -5.03,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8081": {
@@ -138118,24 +137047,6 @@
     "name": "カナデン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2121,
-        "high": 2152,
-        "low": 2092,
-        "close": 2100,
-        "volume": 18700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2103,
-        "high": 2136,
-        "low": 2103,
-        "close": 2106,
-        "volume": 12400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -139224,15 +138135,24 @@
         "low": 2602,
         "close": 2640,
         "volume": 29200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2633,
+        "high": 2641,
+        "low": 2610,
+        "close": 2641,
+        "volume": 22400
       }
     ],
     "highPrice": 2659,
     "lowPrice": 2096,
-    "latestPrice": 2640,
-    "periodChange": 540,
-    "periodChangePercent": 25.71,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2641,
+    "periodChange": 545,
+    "periodChangePercent": 26,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8150": {
@@ -139240,24 +138160,6 @@
     "name": "三信電気",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2797,
-        "high": 2823,
-        "low": 2727,
-        "close": 2727,
-        "volume": 57900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2739,
-        "high": 2764,
-        "low": 2731,
-        "close": 2744,
-        "volume": 74600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -140346,15 +139248,24 @@
         "low": 3345,
         "close": 3345,
         "volume": 31600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3375,
+        "high": 3385,
+        "low": 3345,
+        "close": 3360,
+        "volume": 26700
       }
     ],
     "highPrice": 3410,
     "lowPrice": 2597,
-    "latestPrice": 3345,
-    "periodChange": 618,
-    "periodChangePercent": 22.66,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3360,
+    "periodChange": 605,
+    "periodChangePercent": 21.96,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8154": {
@@ -140362,24 +139273,6 @@
     "name": "加賀電子",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3870,
-        "high": 3875,
-        "low": 3735,
-        "close": 3740,
-        "volume": 113400
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3750,
-        "high": 3790,
-        "low": 3750,
-        "close": 3760,
-        "volume": 65800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -141468,15 +140361,24 @@
         "low": 5340,
         "close": 5340,
         "volume": 108700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 5440,
+        "high": 5520,
+        "low": 5390,
+        "close": 5510,
+        "volume": 163800
       }
     ],
     "highPrice": 5630,
-    "lowPrice": 3740,
-    "latestPrice": 5340,
-    "periodChange": 1600,
-    "periodChangePercent": 42.78,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 3765,
+    "latestPrice": 5510,
+    "periodChange": 1745,
+    "periodChangePercent": 46.35,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8572": {
@@ -141484,24 +140386,6 @@
     "name": "アコム",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 475,
-        "high": 480,
-        "low": 470,
-        "close": 471,
-        "volume": 1006600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 474,
-        "high": 475,
-        "low": 471,
-        "close": 472,
-        "volume": 543700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -142590,15 +141474,24 @@
         "low": 451,
         "close": 453,
         "volume": 3669000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 456,
+        "high": 456,
+        "low": 451,
+        "close": 454,
+        "volume": 2194000
       }
     ],
     "highPrice": 517,
     "lowPrice": 442,
-    "latestPrice": 453,
+    "latestPrice": 454,
     "periodChange": -18,
-    "periodChangePercent": -3.82,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChangePercent": -3.81,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8622": {
@@ -142606,24 +141499,6 @@
     "name": "水戸証券",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 708,
-        "high": 719,
-        "low": 691,
-        "close": 694,
-        "volume": 243000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 704,
-        "high": 714,
-        "low": 704,
-        "close": 707,
-        "volume": 205300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -143712,15 +142587,24 @@
         "low": 864,
         "close": 865,
         "volume": 353600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 861,
+        "high": 863,
+        "low": 830,
+        "close": 855,
+        "volume": 530100
       }
     ],
     "highPrice": 998,
     "lowPrice": 630,
-    "latestPrice": 865,
-    "periodChange": 171,
-    "periodChangePercent": 24.64,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 855,
+    "periodChange": 144,
+    "periodChangePercent": 20.25,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8700": {
@@ -143728,24 +142612,6 @@
     "name": "丸八証券",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1731,
-        "high": 1760,
-        "low": 1730,
-        "close": 1751,
-        "volume": 5500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1757,
-        "high": 1769,
-        "low": 1743,
-        "close": 1756,
-        "volume": 3300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -144834,15 +143700,24 @@
         "low": 2079,
         "close": 2084,
         "volume": 2900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2071,
+        "high": 2071,
+        "low": 2055,
+        "close": 2055,
+        "volume": 1400
       }
     ],
     "highPrice": 2221,
     "lowPrice": 1711,
-    "latestPrice": 2084,
-    "periodChange": 333,
-    "periodChangePercent": 19.02,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2055,
+    "periodChange": 293,
+    "periodChangePercent": 16.63,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8706": {
@@ -144850,24 +143725,6 @@
     "name": "極東証券",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1727,
-        "high": 1740,
-        "low": 1690,
-        "close": 1696,
-        "volume": 163700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1701,
-        "high": 1732,
-        "low": 1701,
-        "close": 1722,
-        "volume": 98300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -145956,15 +144813,24 @@
         "low": 1739,
         "close": 1741,
         "volume": 156700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1742,
+        "high": 1743,
+        "low": 1716,
+        "close": 1723,
+        "volume": 181700
       }
     ],
     "highPrice": 1970,
     "lowPrice": 1521,
-    "latestPrice": 1741,
-    "periodChange": 45,
-    "periodChangePercent": 2.65,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1723,
+    "periodChange": -29,
+    "periodChangePercent": -1.66,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8908": {
@@ -145972,24 +144838,6 @@
     "name": "毎日コムネット",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 878,
-        "high": 881,
-        "low": 870,
-        "close": 874,
-        "volume": 10100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 875,
-        "high": 880,
-        "low": 875,
-        "close": 877,
-        "volume": 6700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -147078,15 +145926,24 @@
         "low": 873,
         "close": 873,
         "volume": 5600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 874,
+        "high": 875,
+        "low": 873,
+        "close": 873,
+        "volume": 2400
       }
     ],
     "highPrice": 929,
     "lowPrice": 819,
     "latestPrice": 873,
-    "periodChange": -1,
-    "periodChangePercent": -0.11,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": -16,
+    "periodChangePercent": -1.8,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "8935": {
@@ -147094,24 +145951,6 @@
     "name": "ＦＪネクストホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1632,
-        "high": 1657,
-        "low": 1594,
-        "close": 1601,
-        "volume": 50000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1605,
-        "high": 1622,
-        "low": 1589,
-        "close": 1591,
-        "volume": 29600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -148200,15 +147039,24 @@
         "low": 1902,
         "close": 1902,
         "volume": 55000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1926,
+        "high": 1939,
+        "low": 1901,
+        "close": 1917,
+        "volume": 56500
       }
     ],
     "highPrice": 2073,
     "lowPrice": 1484,
-    "latestPrice": 1902,
-    "periodChange": 301,
-    "periodChangePercent": 18.8,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1917,
+    "periodChange": 313,
+    "periodChangePercent": 19.51,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9025": {
@@ -148216,24 +147064,6 @@
     "name": "鴻池運輸",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2990,
-        "high": 3010,
-        "low": 2951,
-        "close": 2968,
-        "volume": 86500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2968,
-        "high": 2988,
-        "low": 2962,
-        "close": 2974,
-        "volume": 74600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -149322,15 +148152,24 @@
         "low": 2754,
         "close": 2764,
         "volume": 86300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2764,
+        "high": 2782,
+        "low": 2749,
+        "close": 2771,
+        "volume": 84200
       }
     ],
     "highPrice": 3075,
     "lowPrice": 2628,
-    "latestPrice": 2764,
-    "periodChange": -204,
-    "periodChangePercent": -6.87,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2771,
+    "periodChange": -244,
+    "periodChangePercent": -8.09,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9028": {
@@ -149338,24 +148177,6 @@
     "name": "ゼロ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3535,
-        "high": 3570,
-        "low": 3485,
-        "close": 3530,
-        "volume": 13700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3530,
-        "high": 3570,
-        "low": 3485,
-        "close": 3505,
-        "volume": 8600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -150444,15 +149265,24 @@
         "low": 3185,
         "close": 3210,
         "volume": 30900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3245,
+        "high": 3245,
+        "low": 3150,
+        "close": 3150,
+        "volume": 30500
       }
     ],
     "highPrice": 3745,
-    "lowPrice": 3210,
-    "latestPrice": 3210,
-    "periodChange": -320,
-    "periodChangePercent": -9.07,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 3150,
+    "latestPrice": 3150,
+    "periodChange": -360,
+    "periodChangePercent": -10.26,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9039": {
@@ -150460,24 +149290,6 @@
     "name": "サカイ引越センター",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2770,
-        "high": 2803,
-        "low": 2770,
-        "close": 2803,
-        "volume": 70200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2818,
-        "high": 2830,
-        "low": 2803,
-        "close": 2817,
-        "volume": 53300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -151566,15 +150378,24 @@
         "low": 2902,
         "close": 2926,
         "volume": 95400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2938,
+        "high": 2938,
+        "low": 2912,
+        "close": 2922,
+        "volume": 80300
       }
     ],
     "highPrice": 3080,
     "lowPrice": 2771,
-    "latestPrice": 2926,
-    "periodChange": 123,
-    "periodChangePercent": 4.39,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2922,
+    "periodChange": 85,
+    "periodChangePercent": 3,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9193": {
@@ -152732,24 +151553,6 @@
     "currency": "JPY",
     "points": [
       {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1225,
-        "high": 1233,
-        "low": 1215,
-        "close": 1215,
-        "volume": 14700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1222,
-        "high": 1231,
-        "low": 1215,
-        "close": 1222,
-        "volume": 15600
-      },
-      {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
         "open": 1225,
@@ -153837,15 +152640,24 @@
         "low": 1129,
         "close": 1143,
         "volume": 7900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1154,
+        "high": 1154,
+        "low": 1118,
+        "close": 1119,
+        "volume": 20100
       }
     ],
     "highPrice": 1239,
     "lowPrice": 1066,
-    "latestPrice": 1143,
-    "periodChange": -72,
-    "periodChangePercent": -5.93,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1119,
+    "periodChange": -100,
+    "periodChangePercent": -8.2,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9248": {
@@ -153853,24 +152665,6 @@
     "name": "人・夢・技術Ｇ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1535,
-        "high": 1547,
-        "low": 1508,
-        "close": 1510,
-        "volume": 16800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1508,
-        "high": 1523,
-        "low": 1505,
-        "close": 1511,
-        "volume": 9600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -154959,15 +153753,24 @@
         "low": 1571,
         "close": 1572,
         "volume": 25400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1563,
+        "high": 1573,
+        "low": 1554,
+        "close": 1566,
+        "volume": 16300
       }
     ],
     "highPrice": 1753,
     "lowPrice": 1481,
-    "latestPrice": 1572,
-    "periodChange": 62,
-    "periodChangePercent": 4.11,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1566,
+    "periodChange": 44,
+    "periodChangePercent": 2.89,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9312": {
@@ -154975,24 +153778,6 @@
     "name": "ケイヒン",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2900,
-        "high": 2981,
-        "low": 2900,
-        "close": 2923,
-        "volume": 15300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2899,
-        "high": 3000,
-        "low": 2899,
-        "close": 2943,
-        "volume": 10400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -156081,15 +154866,24 @@
         "low": 2979,
         "close": 3000,
         "volume": 5000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3025,
+        "high": 3050,
+        "low": 2993,
+        "close": 3025,
+        "volume": 9500
       }
     ],
     "highPrice": 3145,
     "lowPrice": 2760,
-    "latestPrice": 3000,
-    "periodChange": 77,
-    "periodChangePercent": 2.63,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 3025,
+    "periodChange": 64,
+    "periodChangePercent": 2.16,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9364": {
@@ -156097,24 +154891,6 @@
     "name": "上組",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 5573,
-        "high": 5578,
-        "low": 5466,
-        "close": 5487,
-        "volume": 239700
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 5516,
-        "high": 5535,
-        "low": 5468,
-        "close": 5505,
-        "volume": 161900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -157203,15 +155979,24 @@
         "low": 4692,
         "close": 4703,
         "volume": 315400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4720,
+        "high": 4723,
+        "low": 4678,
+        "close": 4690,
+        "volume": 270300
       }
     ],
     "highPrice": 5603,
     "lowPrice": 4635,
-    "latestPrice": 4703,
-    "periodChange": -784,
-    "periodChangePercent": -14.29,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4690,
+    "periodChange": -802,
+    "periodChangePercent": -14.6,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9368": {
@@ -157219,24 +156004,6 @@
     "name": "キムラユニティー",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 915,
-        "high": 915,
-        "low": 902,
-        "close": 904,
-        "volume": 14300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 904,
-        "high": 908,
-        "low": 900,
-        "close": 901,
-        "volume": 9600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -158325,15 +157092,24 @@
         "low": 916,
         "close": 916,
         "volume": 20000
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 920,
+        "high": 927,
+        "low": 918,
+        "close": 922,
+        "volume": 10200
       }
     ],
     "highPrice": 964,
     "lowPrice": 849,
-    "latestPrice": 916,
-    "periodChange": 12,
-    "periodChangePercent": 1.33,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 922,
+    "periodChange": 14,
+    "periodChangePercent": 1.54,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9622": {
@@ -158341,24 +157117,6 @@
     "name": "スペース",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1551,
-        "high": 1567,
-        "low": 1533,
-        "close": 1549,
-        "volume": 38000
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1545,
-        "high": 1567,
-        "low": 1545,
-        "close": 1567,
-        "volume": 30900
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -159447,15 +158205,24 @@
         "low": 1398,
         "close": 1398,
         "volume": 38700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1398,
+        "high": 1400,
+        "low": 1390,
+        "close": 1390,
+        "volume": 75600
       }
     ],
     "highPrice": 1586,
     "lowPrice": 1388,
-    "latestPrice": 1398,
-    "periodChange": -151,
-    "periodChangePercent": -9.75,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1390,
+    "periodChange": -175,
+    "periodChangePercent": -11.18,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9625": {
@@ -159463,24 +158230,6 @@
     "name": "セレスポ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1102,
-        "high": 1102,
-        "low": 1098,
-        "close": 1099,
-        "volume": 3500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1099,
-        "high": 1099,
-        "low": 1080,
-        "close": 1080,
-        "volume": 700
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -160569,15 +159318,24 @@
         "low": 909,
         "close": 917,
         "volume": 22300
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 917,
+        "high": 917,
+        "low": 906,
+        "close": 908,
+        "volume": 1300
       }
     ],
-    "highPrice": 1099,
+    "highPrice": 1097,
     "lowPrice": 845,
-    "latestPrice": 917,
-    "periodChange": -182,
-    "periodChangePercent": -16.56,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 908,
+    "periodChange": -174,
+    "periodChangePercent": -16.08,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9639": {
@@ -160585,24 +159343,6 @@
     "name": "三協フロンテア",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2175,
-        "high": 2175,
-        "low": 2134,
-        "close": 2137,
-        "volume": 4100
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2137,
-        "high": 2180,
-        "low": 2137,
-        "close": 2148,
-        "volume": 1800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -161691,15 +160431,24 @@
         "low": 2287,
         "close": 2287,
         "volume": 5400
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2291,
+        "high": 2301,
+        "low": 2262,
+        "close": 2262,
+        "volume": 11400
       }
     ],
     "highPrice": 2404,
     "lowPrice": 2128,
-    "latestPrice": 2287,
-    "periodChange": 150,
-    "periodChangePercent": 7.02,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 2262,
+    "periodChange": 97,
+    "periodChangePercent": 4.48,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9658": {
@@ -161707,24 +160456,6 @@
     "name": "ビジネスブレイン太田昭和",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 953,
-        "high": 962,
-        "low": 939,
-        "close": 946,
-        "volume": 72200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 943,
-        "high": 959,
-        "low": 939,
-        "close": 947,
-        "volume": 64600
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -162813,15 +161544,24 @@
         "low": 1106,
         "close": 1122,
         "volume": 70600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1117,
+        "high": 1136,
+        "low": 1117,
+        "close": 1132,
+        "volume": 55000
       }
     ],
     "highPrice": 1159,
     "lowPrice": 916,
-    "latestPrice": 1122,
-    "periodChange": 176,
-    "periodChangePercent": 18.6,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1132,
+    "periodChange": 174,
+    "periodChangePercent": 18.16,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9687": {
@@ -162829,24 +161569,6 @@
     "name": "ＫＳＫ",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1455,
-        "high": 1468,
-        "low": 1415,
-        "close": 1462,
-        "volume": 21900
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1468,
-        "high": 1468,
-        "low": 1460,
-        "close": 1460,
-        "volume": 1800
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -163935,15 +162657,24 @@
         "low": 1472,
         "close": 1487,
         "volume": 4900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1507,
+        "high": 1515,
+        "low": 1484,
+        "close": 1513,
+        "volume": 5300
       }
     ],
     "highPrice": 1588,
     "lowPrice": 1432,
-    "latestPrice": 1487,
-    "periodChange": 25,
-    "periodChangePercent": 1.71,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1513,
+    "periodChange": 61,
+    "periodChangePercent": 4.2,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9715": {
@@ -163951,24 +162682,6 @@
     "name": "トランス・コスモス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 3950,
-        "high": 3965,
-        "low": 3915,
-        "close": 3925,
-        "volume": 45600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3960,
-        "high": 3985,
-        "low": 3950,
-        "close": 3960,
-        "volume": 24300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -165057,15 +163770,24 @@
         "low": 3425,
         "close": 3475,
         "volume": 105200
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3470,
+        "high": 3470,
+        "low": 3420,
+        "close": 3420,
+        "volume": 90300
       }
     ],
     "highPrice": 4030,
-    "lowPrice": 3470,
-    "latestPrice": 3475,
-    "periodChange": -450,
-    "periodChangePercent": -11.46,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 3420,
+    "latestPrice": 3420,
+    "periodChange": -565,
+    "periodChangePercent": -14.18,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9845": {
@@ -165073,24 +163795,6 @@
     "name": "パーカーコーポレーション",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1447,
-        "high": 1450,
-        "low": 1407,
-        "close": 1410,
-        "volume": 15500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1408,
-        "high": 1440,
-        "low": 1408,
-        "close": 1430,
-        "volume": 12000
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -166179,15 +164883,24 @@
         "low": 1325,
         "close": 1325,
         "volume": 32800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1330,
+        "high": 1340,
+        "low": 1317,
+        "close": 1340,
+        "volume": 10900
       }
     ],
     "highPrice": 1624,
     "lowPrice": 1250,
-    "latestPrice": 1325,
-    "periodChange": -85,
-    "periodChangePercent": -6.03,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1340,
+    "periodChange": -90,
+    "periodChangePercent": -6.29,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9856": {
@@ -166195,24 +164908,6 @@
     "name": "ケーユーホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1212,
-        "high": 1221,
-        "low": 1197,
-        "close": 1206,
-        "volume": 25600
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1200,
-        "high": 1229,
-        "low": 1200,
-        "close": 1225,
-        "volume": 499500
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -167301,15 +165996,24 @@
         "low": 1180,
         "close": 1180,
         "volume": 34600
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1178,
+        "high": 1183,
+        "low": 1174,
+        "close": 1180,
+        "volume": 30700
       }
     ],
     "highPrice": 1269,
     "lowPrice": 1129,
     "latestPrice": 1180,
-    "periodChange": -26,
-    "periodChangePercent": -2.16,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "periodChange": -47,
+    "periodChangePercent": -3.83,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9880": {
@@ -167317,24 +166021,6 @@
     "name": "イノテック",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 2510,
-        "high": 2533,
-        "low": 2434,
-        "close": 2443,
-        "volume": 85300
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 2483,
-        "high": 2497,
-        "low": 2455,
-        "close": 2479,
-        "volume": 71400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -168423,15 +167109,24 @@
         "low": 3800,
         "close": 3825,
         "volume": 122800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 3895,
+        "high": 3970,
+        "low": 3870,
+        "close": 3970,
+        "volume": 132500
       }
     ],
     "highPrice": 4585,
-    "lowPrice": 2443,
-    "latestPrice": 3825,
-    "periodChange": 1382,
-    "periodChangePercent": 56.57,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "lowPrice": 2478,
+    "latestPrice": 3970,
+    "periodChange": 1462,
+    "periodChangePercent": 58.29,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9882": {
@@ -168439,24 +167134,6 @@
     "name": "イエローハット",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1562,
-        "high": 1582,
-        "low": 1555,
-        "close": 1557,
-        "volume": 77200
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1550,
-        "high": 1561,
-        "low": 1546,
-        "close": 1546,
-        "volume": 66300
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -169545,15 +168222,24 @@
         "low": 1640,
         "close": 1646,
         "volume": 188900
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1633,
+        "high": 1644,
+        "low": 1617,
+        "close": 1624,
+        "volume": 225700
       }
     ],
     "highPrice": 1881,
     "lowPrice": 1497,
-    "latestPrice": 1646,
-    "periodChange": 89,
-    "periodChangePercent": 5.72,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1624,
+    "periodChange": 56,
+    "periodChangePercent": 3.57,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9906": {
@@ -169561,24 +168247,6 @@
     "name": "藤井産業ホールディングス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 4065,
-        "high": 4065,
-        "low": 3965,
-        "close": 4020,
-        "volume": 3800
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 3950,
-        "high": 4100,
-        "low": 3950,
-        "close": 4085,
-        "volume": 5100
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -170667,15 +169335,24 @@
         "low": 4060,
         "close": 4135,
         "volume": 3700
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 4100,
+        "high": 4100,
+        "low": 4070,
+        "close": 4070,
+        "volume": 200
       }
     ],
     "highPrice": 4875,
     "lowPrice": 3580,
-    "latestPrice": 4135,
-    "periodChange": 115,
-    "periodChangePercent": 2.86,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 4070,
+    "periodChange": -15,
+    "periodChangePercent": -0.37,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   },
   "9991": {
@@ -170683,24 +169360,6 @@
     "name": "ジェコス",
     "currency": "JPY",
     "points": [
-      {
-        "date": "2026-04-02",
-        "timestamp": 1775088000000,
-        "open": 1776,
-        "high": 1797,
-        "low": 1739,
-        "close": 1745,
-        "volume": 41500
-      },
-      {
-        "date": "2026-04-03",
-        "timestamp": 1775174400000,
-        "open": 1770,
-        "high": 1770,
-        "low": 1727,
-        "close": 1735,
-        "volume": 29400
-      },
       {
         "date": "2026-04-06",
         "timestamp": 1775433600000,
@@ -171789,15 +170448,24 @@
         "low": 1740,
         "close": 1740,
         "volume": 36800
+      },
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 1753,
+        "high": 1762,
+        "low": 1723,
+        "close": 1735,
+        "volume": 49300
       }
     ],
     "highPrice": 1830,
     "lowPrice": 1449,
-    "latestPrice": 1740,
-    "periodChange": -5,
-    "periodChangePercent": -0.29,
-    "startDate": "2026-04-02",
-    "endDate": "2026-10-02",
+    "latestPrice": 1735,
+    "periodChange": 8,
+    "periodChangePercent": 0.46,
+    "startDate": "2026-04-06",
+    "endDate": "2026-10-05",
     "fromCache": true
   }
 }
