@@ -1101,15 +1101,24 @@
         "low": 2050,
         "close": 2062,
         "volume": 6400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2055,
+        "high": 2085,
+        "low": 2055,
+        "close": 2072,
+        "volume": 7300
       }
     ],
     "highPrice": 2975,
     "lowPrice": 1957,
-    "latestPrice": 2062,
-    "periodChange": -833,
-    "periodChangePercent": -28.77,
+    "latestPrice": 2072,
+    "periodChange": -823,
+    "periodChangePercent": -28.43,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1718": {
@@ -2214,15 +2223,24 @@
         "low": 2283,
         "close": 2288,
         "volume": 1400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2290,
+        "high": 2297,
+        "low": 2290,
+        "close": 2297,
+        "volume": 800
       }
     ],
     "highPrice": 2507,
     "lowPrice": 2240,
-    "latestPrice": 2288,
-    "periodChange": -105,
-    "periodChangePercent": -4.39,
+    "latestPrice": 2297,
+    "periodChange": -96,
+    "periodChangePercent": -4.01,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1768": {
@@ -3327,15 +3345,24 @@
         "low": 1025,
         "close": 1025,
         "volume": 1700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1023,
+        "high": 1033,
+        "low": 1023,
+        "close": 1030,
+        "volume": 2700
       }
     ],
     "highPrice": 1404,
     "lowPrice": 987,
-    "latestPrice": 1025,
-    "periodChange": -339,
-    "periodChangePercent": -24.85,
+    "latestPrice": 1030,
+    "periodChange": -334,
+    "periodChangePercent": -24.49,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1810": {
@@ -4440,15 +4467,24 @@
         "low": 1378,
         "close": 1391,
         "volume": 41600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1389,
+        "high": 1409,
+        "low": 1389,
+        "close": 1402,
+        "volume": 26800
       }
     ],
     "highPrice": 1662,
     "lowPrice": 1305,
-    "latestPrice": 1391,
-    "periodChange": -212,
-    "periodChangePercent": -13.23,
+    "latestPrice": 1402,
+    "periodChange": -201,
+    "periodChangePercent": -12.54,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1813": {
@@ -5553,15 +5589,24 @@
         "low": 2835,
         "close": 2835,
         "volume": 95700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2854,
+        "high": 2855,
+        "low": 2812,
+        "close": 2823,
+        "volume": 50800
       }
     ],
     "highPrice": 3150,
     "lowPrice": 2575,
-    "latestPrice": 2835,
-    "periodChange": -210,
-    "periodChangePercent": -6.9,
+    "latestPrice": 2823,
+    "periodChange": -222,
+    "periodChangePercent": -7.29,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1826": {
@@ -6666,15 +6711,24 @@
         "low": 1056,
         "close": 1060,
         "volume": 8600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1071,
+        "high": 1076,
+        "low": 1061,
+        "close": 1076,
+        "volume": 4400
       }
     ],
     "highPrice": 1110,
     "lowPrice": 974,
-    "latestPrice": 1060,
-    "periodChange": -11,
-    "periodChangePercent": -1.03,
+    "latestPrice": 1076,
+    "periodChange": 5,
+    "periodChangePercent": 0.47,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1828": {
@@ -7779,15 +7833,24 @@
         "low": 2307,
         "close": 2323,
         "volume": 31100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2340,
+        "high": 2386,
+        "low": 2332,
+        "close": 2373,
+        "volume": 7500
       }
     ],
     "highPrice": 2630,
     "lowPrice": 2206,
-    "latestPrice": 2323,
-    "periodChange": -174,
-    "periodChangePercent": -6.97,
+    "latestPrice": 2373,
+    "periodChange": -124,
+    "periodChangePercent": -4.97,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1835": {
@@ -8892,15 +8955,24 @@
         "low": 3765,
         "close": 3770,
         "volume": 61200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3800,
+        "high": 3800,
+        "low": 3765,
+        "close": 3785,
+        "volume": 70000
       }
     ],
     "highPrice": 5740,
     "lowPrice": 3770,
-    "latestPrice": 3770,
-    "periodChange": -1750,
-    "periodChangePercent": -31.7,
+    "latestPrice": 3785,
+    "periodChange": -1735,
+    "periodChangePercent": -31.43,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1847": {
@@ -10005,15 +10077,24 @@
         "low": 3340,
         "close": 3350,
         "volume": 11000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3350,
+        "high": 3385,
+        "low": 3345,
+        "close": 3365,
+        "volume": 6500
       }
     ],
     "highPrice": 3480,
     "lowPrice": 2495,
-    "latestPrice": 3350,
-    "periodChange": 646,
-    "periodChangePercent": 23.89,
+    "latestPrice": 3365,
+    "periodChange": 661,
+    "periodChangePercent": 24.45,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1867": {
@@ -11118,15 +11199,24 @@
         "low": 2699,
         "close": 2707,
         "volume": 3100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2730,
+        "high": 2749,
+        "low": 2730,
+        "close": 2733,
+        "volume": 2000
       }
     ],
     "highPrice": 2914,
     "lowPrice": 2269,
-    "latestPrice": 2707,
-    "periodChange": -152,
-    "periodChangePercent": -5.32,
+    "latestPrice": 2733,
+    "periodChange": -126,
+    "periodChangePercent": -4.41,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1870": {
@@ -12231,15 +12321,24 @@
         "low": 2051,
         "close": 2052,
         "volume": 87900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2061,
+        "high": 2064,
+        "low": 2042,
+        "close": 2046,
+        "volume": 110300
       }
     ],
     "highPrice": 2248,
     "lowPrice": 1788,
-    "latestPrice": 2052,
-    "periodChange": -70,
-    "periodChangePercent": -3.3,
+    "latestPrice": 2046,
+    "periodChange": -76,
+    "periodChangePercent": -3.58,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1904": {
@@ -13344,15 +13443,24 @@
         "low": 1213,
         "close": 1230,
         "volume": 61400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1235,
+        "high": 1240,
+        "low": 1223,
+        "close": 1229,
+        "volume": 37100
       }
     ],
     "highPrice": 1393,
     "lowPrice": 1216,
-    "latestPrice": 1230,
-    "periodChange": -118,
-    "periodChangePercent": -8.75,
+    "latestPrice": 1229,
+    "periodChange": -119,
+    "periodChangePercent": -8.83,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1938": {
@@ -14457,15 +14565,24 @@
         "low": 2515,
         "close": 2526,
         "volume": 67800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2530,
+        "high": 2543,
+        "low": 2517,
+        "close": 2529,
+        "volume": 36900
       }
     ],
     "highPrice": 3055,
     "lowPrice": 2374,
-    "latestPrice": 2526,
-    "periodChange": -25,
-    "periodChangePercent": -0.98,
+    "latestPrice": 2529,
+    "periodChange": -22,
+    "periodChangePercent": -0.86,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1964": {
@@ -15570,15 +15687,24 @@
         "low": 3800,
         "close": 3800,
         "volume": 16300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3800,
+        "high": 3850,
+        "low": 3800,
+        "close": 3835,
+        "volume": 14400
       }
     ],
     "highPrice": 4715,
     "lowPrice": 3800,
-    "latestPrice": 3800,
-    "periodChange": -435,
-    "periodChangePercent": -10.27,
+    "latestPrice": 3835,
+    "periodChange": -400,
+    "periodChangePercent": -9.45,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "1972": {
@@ -16683,15 +16809,24 @@
         "low": 1265,
         "close": 1265,
         "volume": 29100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1268,
+        "high": 1273,
+        "low": 1265,
+        "close": 1271,
+        "volume": 27600
       }
     ],
     "highPrice": 1354,
     "lowPrice": 1182,
-    "latestPrice": 1265,
-    "periodChange": -59,
-    "periodChangePercent": -4.46,
+    "latestPrice": 1271,
+    "periodChange": -53,
+    "periodChangePercent": -4,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2053": {
@@ -17796,15 +17931,24 @@
         "low": 1882,
         "close": 1938,
         "volume": 106600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1940,
+        "high": 1970,
+        "low": 1935,
+        "close": 1944,
+        "volume": 64100
       }
     ],
     "highPrice": 2078,
     "lowPrice": 1673,
-    "latestPrice": 1938,
-    "periodChange": 165,
-    "periodChangePercent": 9.31,
+    "latestPrice": 1944,
+    "periodChange": 171,
+    "periodChangePercent": 9.64,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2112": {
@@ -20058,15 +20202,24 @@
         "low": 2697,
         "close": 2706,
         "volume": 56800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2706,
+        "high": 2718,
+        "low": 2683,
+        "close": 2695,
+        "volume": 40800
       }
     ],
     "highPrice": 2928,
     "lowPrice": 2508,
-    "latestPrice": 2706,
-    "periodChange": -182,
-    "periodChangePercent": -6.3,
+    "latestPrice": 2695,
+    "periodChange": -193,
+    "periodChangePercent": -6.68,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2121": {
@@ -21171,15 +21324,24 @@
         "low": 3650,
         "close": 3690,
         "volume": 138000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3720,
+        "high": 3750,
+        "low": 3700,
+        "close": 3730,
+        "volume": 244800
       }
     ],
     "highPrice": 3840,
     "lowPrice": 2519,
-    "latestPrice": 3690,
-    "periodChange": 1137,
-    "periodChangePercent": 44.54,
+    "latestPrice": 3730,
+    "periodChange": 1177,
+    "periodChangePercent": 46.1,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2153": {
@@ -22284,15 +22446,24 @@
         "low": 1840,
         "close": 1850,
         "volume": 76800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1850,
+        "high": 1871,
+        "low": 1850,
+        "close": 1857,
+        "volume": 38600
       }
     ],
     "highPrice": 1907,
     "lowPrice": 1552,
-    "latestPrice": 1850,
-    "periodChange": 61,
-    "periodChangePercent": 3.41,
+    "latestPrice": 1857,
+    "periodChange": 68,
+    "periodChangePercent": 3.8,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2408": {
@@ -23397,15 +23568,24 @@
         "low": 825,
         "close": 825,
         "volume": 2100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 830,
+        "high": 830,
+        "low": 825,
+        "close": 828,
+        "volume": 7000
       }
     ],
     "highPrice": 934,
     "lowPrice": 743,
-    "latestPrice": 825,
-    "periodChange": 69,
-    "periodChangePercent": 9.13,
+    "latestPrice": 828,
+    "periodChange": 72,
+    "periodChangePercent": 9.52,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2449": {
@@ -24510,15 +24690,24 @@
         "low": 1218,
         "close": 1305,
         "volume": 576400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1300,
+        "high": 1300,
+        "low": 1189,
+        "close": 1189,
+        "volume": 102200
       }
     ],
     "highPrice": 1348,
     "lowPrice": 1027,
-    "latestPrice": 1305,
-    "periodChange": 208,
-    "periodChangePercent": 18.96,
+    "latestPrice": 1189,
+    "periodChange": 92,
+    "periodChangePercent": 8.39,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "2475": {
@@ -25623,15 +25812,24 @@
         "low": 1712,
         "close": 1719,
         "volume": 15700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1718,
+        "high": 1745,
+        "low": 1718,
+        "close": 1745,
+        "volume": 9700
       }
     ],
     "highPrice": 1855,
     "lowPrice": 1485,
-    "latestPrice": 1719,
-    "periodChange": 179,
-    "periodChangePercent": 11.62,
+    "latestPrice": 1745,
+    "periodChange": 205,
+    "periodChangePercent": 13.31,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3023": {
@@ -26736,15 +26934,24 @@
         "low": 2065,
         "close": 2081,
         "volume": 36700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2081,
+        "high": 2119,
+        "low": 2081,
+        "close": 2102,
+        "volume": 29800
       }
     ],
     "highPrice": 2137,
     "lowPrice": 1689,
-    "latestPrice": 2081,
-    "periodChange": 139,
-    "periodChangePercent": 7.16,
+    "latestPrice": 2102,
+    "periodChange": 160,
+    "periodChangePercent": 8.24,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3132": {
@@ -27849,15 +28056,24 @@
         "low": 4235,
         "close": 4300,
         "volume": 1281000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4320,
+        "high": 4372,
+        "low": 4268,
+        "close": 4351,
+        "volume": 1167900
       }
     ],
-    "highPrice": 4300,
+    "highPrice": 4351,
     "lowPrice": 2288,
-    "latestPrice": 4300,
-    "periodChange": 2010,
-    "periodChangePercent": 87.77,
+    "latestPrice": 4351,
+    "periodChange": 2061,
+    "periodChangePercent": 90,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3375": {
@@ -28962,15 +29178,24 @@
         "low": 1751,
         "close": 1751,
         "volume": 700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1761,
+        "high": 1761,
+        "low": 1731,
+        "close": 1732,
+        "volume": 300
       }
     ],
     "highPrice": 1900,
     "lowPrice": 1604,
-    "latestPrice": 1751,
-    "periodChange": -60,
-    "periodChangePercent": -3.31,
+    "latestPrice": 1732,
+    "periodChange": -79,
+    "periodChangePercent": -4.36,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3611": {
@@ -30075,15 +30300,24 @@
         "low": 2360,
         "close": 2368,
         "volume": 10100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2363,
+        "high": 2393,
+        "low": 2363,
+        "close": 2386,
+        "volume": 11100
       }
     ],
     "highPrice": 2658,
     "lowPrice": 2068,
-    "latestPrice": 2368,
-    "periodChange": 215,
-    "periodChangePercent": 9.99,
+    "latestPrice": 2386,
+    "periodChange": 233,
+    "periodChangePercent": 10.82,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3640": {
@@ -32337,15 +32571,24 @@
         "low": 1486,
         "close": 1509,
         "volume": 6900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1491,
+        "high": 1537,
+        "low": 1491,
+        "close": 1524,
+        "volume": 3100
       }
     ],
     "highPrice": 1562,
     "lowPrice": 1195,
-    "latestPrice": 1509,
-    "periodChange": 309,
-    "periodChangePercent": 25.75,
+    "latestPrice": 1524,
+    "periodChange": 324,
+    "periodChangePercent": 27,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3834": {
@@ -33450,15 +33693,24 @@
         "low": 581,
         "close": 581,
         "volume": 83900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 581,
+        "high": 588,
+        "low": 581,
+        "close": 585,
+        "volume": 41500
       }
     ],
     "highPrice": 656,
     "lowPrice": 581,
-    "latestPrice": 581,
-    "periodChange": -69,
-    "periodChangePercent": -10.62,
+    "latestPrice": 585,
+    "periodChange": -65,
+    "periodChangePercent": -10,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "3953": {
@@ -34563,15 +34815,24 @@
         "low": 779,
         "close": 789,
         "volume": 1000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 789,
+        "high": 794,
+        "low": 789,
+        "close": 794,
+        "volume": 800
       }
     ],
     "highPrice": 814,
     "lowPrice": 736,
-    "latestPrice": 789,
-    "periodChange": 13,
-    "periodChangePercent": 1.68,
+    "latestPrice": 794,
+    "periodChange": 18,
+    "periodChangePercent": 2.32,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4008": {
@@ -35676,15 +35937,24 @@
         "low": 1498,
         "close": 1510,
         "volume": 156900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1510,
+        "high": 1517,
+        "low": 1501,
+        "close": 1512,
+        "volume": 98800
       }
     ],
     "highPrice": 1567,
     "lowPrice": 1186,
-    "latestPrice": 1510,
-    "periodChange": 280,
-    "periodChangePercent": 22.76,
+    "latestPrice": 1512,
+    "periodChange": 282,
+    "periodChangePercent": 22.93,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4028": {
@@ -36789,15 +37059,24 @@
         "low": 2808,
         "close": 2809,
         "volume": 171700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2848,
+        "high": 2848,
+        "low": 2801,
+        "close": 2838,
+        "volume": 158400
       }
     ],
     "highPrice": 3335,
     "lowPrice": 2548,
-    "latestPrice": 2809,
-    "periodChange": 2,
-    "periodChangePercent": 0.07,
+    "latestPrice": 2838,
+    "periodChange": 31,
+    "periodChangePercent": 1.1,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4041": {
@@ -37902,15 +38181,24 @@
         "low": 3670,
         "close": 3690,
         "volume": 107800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3715,
+        "high": 3735,
+        "low": 3685,
+        "close": 3720,
+        "volume": 111800
       }
     ],
     "highPrice": 4080,
     "lowPrice": 3455,
-    "latestPrice": 3690,
-    "periodChange": 125,
-    "periodChangePercent": 3.51,
+    "latestPrice": 3720,
+    "periodChange": 155,
+    "periodChangePercent": 4.35,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4044": {
@@ -39015,15 +39303,24 @@
         "low": 4500,
         "close": 4505,
         "volume": 62200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4570,
+        "high": 4670,
+        "low": 4510,
+        "close": 4650,
+        "volume": 80000
       }
     ],
     "highPrice": 4675,
     "lowPrice": 3835,
-    "latestPrice": 4505,
-    "periodChange": 405,
-    "periodChangePercent": 9.88,
+    "latestPrice": 4650,
+    "periodChange": 550,
+    "periodChangePercent": 13.41,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4172": {
@@ -40128,15 +40425,24 @@
         "low": 2271,
         "close": 2275,
         "volume": 700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2270,
+        "high": 2271,
+        "low": 2261,
+        "close": 2270,
+        "volume": 800
       }
     ],
     "highPrice": 2400,
     "lowPrice": 2100,
-    "latestPrice": 2275,
-    "periodChange": -61,
-    "periodChangePercent": -2.61,
+    "latestPrice": 2270,
+    "periodChange": -66,
+    "periodChangePercent": -2.83,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4221": {
@@ -41241,15 +41547,24 @@
         "low": 5230,
         "close": 5400,
         "volume": 158800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 5390,
+        "high": 5480,
+        "low": 5350,
+        "close": 5450,
+        "volume": 126700
       }
     ],
     "highPrice": 5770,
     "lowPrice": 4545,
-    "latestPrice": 5400,
-    "periodChange": 650,
-    "periodChangePercent": 13.68,
+    "latestPrice": 5450,
+    "periodChange": 700,
+    "periodChangePercent": 14.74,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4246": {
@@ -42354,15 +42669,24 @@
         "low": 1049,
         "close": 1060,
         "volume": 237300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1062,
+        "high": 1076,
+        "low": 1060,
+        "close": 1071,
+        "volume": 160100
       }
     ],
     "highPrice": 1162,
     "lowPrice": 830,
-    "latestPrice": 1060,
-    "periodChange": 185,
-    "periodChangePercent": 21.14,
+    "latestPrice": 1071,
+    "periodChange": 196,
+    "periodChangePercent": 22.4,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4251": {
@@ -43467,15 +43791,24 @@
         "low": 1173,
         "close": 1184,
         "volume": 55700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1182,
+        "high": 1194,
+        "low": 1182,
+        "close": 1190,
+        "volume": 35300
       }
     ],
     "highPrice": 1312,
     "lowPrice": 1145,
-    "latestPrice": 1184,
-    "periodChange": -23,
-    "periodChangePercent": -1.91,
+    "latestPrice": 1190,
+    "periodChange": -17,
+    "periodChangePercent": -1.41,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4362": {
@@ -44580,15 +44913,24 @@
         "low": 2608,
         "close": 2645,
         "volume": 21100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2630,
+        "high": 2654,
+        "low": 2623,
+        "close": 2650,
+        "volume": 14200
       }
     ],
     "highPrice": 2782,
     "lowPrice": 2343,
-    "latestPrice": 2645,
-    "periodChange": 182,
-    "periodChangePercent": 7.39,
+    "latestPrice": 2650,
+    "periodChange": 187,
+    "periodChangePercent": 7.59,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4430": {
@@ -45693,15 +46035,24 @@
         "low": 1720,
         "close": 1731,
         "volume": 6700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1730,
+        "high": 1740,
+        "low": 1730,
+        "close": 1732,
+        "volume": 3500
       }
     ],
     "highPrice": 1887,
     "lowPrice": 1576,
-    "latestPrice": 1731,
-    "periodChange": -76,
-    "periodChangePercent": -4.21,
+    "latestPrice": 1732,
+    "periodChange": -75,
+    "periodChangePercent": -4.15,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4540": {
@@ -46806,15 +47157,24 @@
         "low": 3697,
         "close": 3707,
         "volume": 306700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3728,
+        "high": 3742,
+        "low": 3713,
+        "close": 3725,
+        "volume": 375500
       }
     ],
     "highPrice": 4045,
     "lowPrice": 3527,
-    "latestPrice": 3707,
-    "periodChange": -125,
-    "periodChangePercent": -3.26,
+    "latestPrice": 3725,
+    "periodChange": -107,
+    "periodChangePercent": -2.79,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4619": {
@@ -47919,15 +48279,24 @@
         "low": 2590,
         "close": 2598,
         "volume": 15700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2610,
+        "high": 2627,
+        "low": 2594,
+        "close": 2620,
+        "volume": 16100
       }
     ],
     "highPrice": 2748,
     "lowPrice": 2031,
-    "latestPrice": 2598,
-    "periodChange": 412,
-    "periodChangePercent": 18.85,
+    "latestPrice": 2620,
+    "periodChange": 434,
+    "periodChangePercent": 19.85,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4633": {
@@ -49032,15 +49401,24 @@
         "low": 2592,
         "close": 2615,
         "volume": 112700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2628,
+        "high": 2648,
+        "low": 2611,
+        "close": 2648,
+        "volume": 94200
       }
     ],
     "highPrice": 2699,
     "lowPrice": 2237,
-    "latestPrice": 2615,
-    "periodChange": 248,
-    "periodChangePercent": 10.48,
+    "latestPrice": 2648,
+    "periodChange": 281,
+    "periodChangePercent": 11.87,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4635": {
@@ -50145,15 +50523,24 @@
         "low": 1951,
         "close": 1979,
         "volume": 30600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1991,
+        "high": 2007,
+        "low": 1986,
+        "close": 1998,
+        "volume": 22600
       }
     ],
     "highPrice": 2210,
     "lowPrice": 1205,
-    "latestPrice": 1979,
-    "periodChange": 597,
-    "periodChangePercent": 43.2,
+    "latestPrice": 1998,
+    "periodChange": 616,
+    "periodChangePercent": 44.57,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4644": {
@@ -51258,15 +51645,24 @@
         "low": 1027,
         "close": 1028,
         "volume": 3900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1028,
+        "high": 1029,
+        "low": 1026,
+        "close": 1026,
+        "volume": 6100
       }
     ],
     "highPrice": 1073,
     "lowPrice": 1000,
-    "latestPrice": 1028,
-    "periodChange": -6,
-    "periodChangePercent": -0.58,
+    "latestPrice": 1026,
+    "periodChange": -8,
+    "periodChangePercent": -0.77,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4671": {
@@ -52371,15 +52767,24 @@
         "low": 2662,
         "close": 2666,
         "volume": 13700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2659,
+        "high": 2706,
+        "low": 2659,
+        "close": 2701,
+        "volume": 15700
       }
     ],
     "highPrice": 2954,
     "lowPrice": 2500,
-    "latestPrice": 2666,
-    "periodChange": 38,
-    "periodChangePercent": 1.45,
+    "latestPrice": 2701,
+    "periodChange": 73,
+    "periodChangePercent": 2.78,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4719": {
@@ -53484,15 +53889,24 @@
         "low": 3245,
         "close": 3280,
         "volume": 10600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3250,
+        "high": 3290,
+        "low": 3250,
+        "close": 3275,
+        "volume": 7000
       }
     ],
     "highPrice": 3535,
     "lowPrice": 3125,
-    "latestPrice": 3280,
-    "periodChange": -195,
-    "periodChangePercent": -5.61,
+    "latestPrice": 3275,
+    "periodChange": -200,
+    "periodChangePercent": -5.76,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4725": {
@@ -54597,15 +55011,24 @@
         "low": 1898,
         "close": 1906,
         "volume": 52600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1901,
+        "high": 1929,
+        "low": 1901,
+        "close": 1924,
+        "volume": 25200
       }
     ],
     "highPrice": 1983,
     "lowPrice": 1742,
-    "latestPrice": 1906,
-    "periodChange": 48,
-    "periodChangePercent": 2.58,
+    "latestPrice": 1924,
+    "periodChange": 66,
+    "periodChangePercent": 3.55,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4746": {
@@ -55710,15 +56133,24 @@
         "low": 1958,
         "close": 1973,
         "volume": 181000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1986,
+        "high": 2023,
+        "low": 1980,
+        "close": 2012,
+        "volume": 218400
       }
     ],
-    "highPrice": 1986,
+    "highPrice": 2012,
     "lowPrice": 1006,
-    "latestPrice": 1973,
-    "periodChange": 914,
-    "periodChangePercent": 86.31,
+    "latestPrice": 2012,
+    "periodChange": 953,
+    "periodChangePercent": 89.99,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4752": {
@@ -56823,15 +57255,24 @@
         "low": 1591,
         "close": 1600,
         "volume": 400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1612,
+        "high": 1612,
+        "low": 1610,
+        "close": 1612,
+        "volume": 500
       }
     ],
     "highPrice": 1614,
     "lowPrice": 1455,
-    "latestPrice": 1600,
-    "periodChange": 12,
-    "periodChangePercent": 0.76,
+    "latestPrice": 1612,
+    "periodChange": 24,
+    "periodChangePercent": 1.51,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "4918": {
@@ -57936,15 +58377,24 @@
         "low": 295,
         "close": 300,
         "volume": 21600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 301,
+        "high": 301,
+        "low": 296,
+        "close": 297,
+        "volume": 9900
       }
     ],
     "highPrice": 353,
     "lowPrice": 255,
-    "latestPrice": 300,
-    "periodChange": -30,
-    "periodChangePercent": -9.09,
+    "latestPrice": 297,
+    "periodChange": -33,
+    "periodChangePercent": -10,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5110": {
@@ -59049,15 +59499,24 @@
         "low": 1986,
         "close": 1999,
         "volume": 1376500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2000,
+        "high": 2015,
+        "low": 1995,
+        "close": 2013,
+        "volume": 1140700
       }
     ],
     "highPrice": 2488,
     "lowPrice": 1907,
-    "latestPrice": 1999,
-    "periodChange": -49,
-    "periodChangePercent": -2.39,
+    "latestPrice": 2013,
+    "periodChange": -35,
+    "periodChangePercent": -1.71,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5184": {
@@ -60162,15 +60621,24 @@
         "low": 4090,
         "close": 4115,
         "volume": 13900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4140,
+        "high": 4165,
+        "low": 4130,
+        "close": 4155,
+        "volume": 14000
       }
     ],
     "highPrice": 4265,
     "lowPrice": 3935,
-    "latestPrice": 4115,
-    "periodChange": -15,
-    "periodChangePercent": -0.36,
+    "latestPrice": 4155,
+    "periodChange": 25,
+    "periodChangePercent": 0.61,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5192": {
@@ -61275,15 +61743,24 @@
         "low": 4090,
         "close": 4125,
         "volume": 74900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4125,
+        "high": 4145,
+        "low": 4095,
+        "close": 4135,
+        "volume": 59100
       }
     ],
     "highPrice": 4590,
     "lowPrice": 3850,
-    "latestPrice": 4125,
-    "periodChange": 95,
-    "periodChangePercent": 2.36,
+    "latestPrice": 4135,
+    "periodChange": 105,
+    "periodChangePercent": 2.61,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5195": {
@@ -62388,15 +62865,24 @@
         "low": 2450,
         "close": 2484,
         "volume": 47500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2500,
+        "high": 2509,
+        "low": 2477,
+        "close": 2496,
+        "volume": 50100
       }
     ],
     "highPrice": 2527,
     "lowPrice": 2023,
-    "latestPrice": 2484,
-    "periodChange": 380,
-    "periodChangePercent": 18.06,
+    "latestPrice": 2496,
+    "periodChange": 392,
+    "periodChangePercent": 18.63,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5280": {
@@ -63501,15 +63987,24 @@
         "low": 2150,
         "close": 2176,
         "volume": 9000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2186,
+        "high": 2186,
+        "low": 2160,
+        "close": 2166,
+        "volume": 5700
       }
     ],
     "highPrice": 2609,
     "lowPrice": 2107,
-    "latestPrice": 2176,
-    "periodChange": -324,
-    "periodChangePercent": -12.96,
+    "latestPrice": 2166,
+    "periodChange": -334,
+    "periodChangePercent": -13.36,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5284": {
@@ -64614,15 +65109,24 @@
         "low": 2210,
         "close": 2212,
         "volume": 4700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2208,
+        "high": 2219,
+        "low": 2208,
+        "close": 2219,
+        "volume": 4000
       }
     ],
     "highPrice": 2367,
     "lowPrice": 2117,
-    "latestPrice": 2212,
-    "periodChange": 19,
-    "periodChangePercent": 0.87,
+    "latestPrice": 2219,
+    "periodChange": 26,
+    "periodChangePercent": 1.19,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5288": {
@@ -65727,15 +66231,24 @@
         "low": 1424,
         "close": 1440,
         "volume": 219500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1441,
+        "high": 1450,
+        "low": 1435,
+        "close": 1438,
+        "volume": 96000
       }
     ],
     "highPrice": 1697,
     "lowPrice": 1359,
-    "latestPrice": 1440,
-    "periodChange": 10,
-    "periodChangePercent": 0.7,
+    "latestPrice": 1438,
+    "periodChange": 8,
+    "periodChangePercent": 0.56,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5351": {
@@ -66840,15 +67353,24 @@
         "low": 1945,
         "close": 1953,
         "volume": 93600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1973,
+        "high": 1977,
+        "low": 1956,
+        "close": 1970,
+        "volume": 63900
       }
     ],
     "highPrice": 2158,
     "lowPrice": 1851,
-    "latestPrice": 1953,
-    "periodChange": -128,
-    "periodChangePercent": -6.15,
+    "latestPrice": 1970,
+    "periodChange": -111,
+    "periodChangePercent": -5.33,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5356": {
@@ -67953,15 +68475,24 @@
         "low": 1257,
         "close": 1257,
         "volume": 400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1256,
+        "high": 1256,
+        "low": 1250,
+        "close": 1250,
+        "volume": 1900
       }
     ],
     "highPrice": 1417,
     "lowPrice": 1161,
-    "latestPrice": 1257,
-    "periodChange": 71,
-    "periodChangePercent": 5.99,
+    "latestPrice": 1250,
+    "periodChange": 64,
+    "periodChangePercent": 5.4,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5357": {
@@ -69066,15 +69597,24 @@
         "low": 1690,
         "close": 1690,
         "volume": 57900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1690,
+        "high": 1703,
+        "low": 1688,
+        "close": 1701,
+        "volume": 46700
       }
     ],
     "highPrice": 1815,
     "lowPrice": 1668,
-    "latestPrice": 1690,
-    "periodChange": -108,
-    "periodChangePercent": -6.01,
+    "latestPrice": 1701,
+    "periodChange": -97,
+    "periodChangePercent": -5.39,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5363": {
@@ -70179,15 +70719,24 @@
         "low": 714,
         "close": 728,
         "volume": 46900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 730,
+        "high": 730,
+        "low": 720,
+        "close": 720,
+        "volume": 20700
       }
     ],
     "highPrice": 728,
     "lowPrice": 561,
-    "latestPrice": 728,
-    "periodChange": 166,
-    "periodChangePercent": 29.54,
+    "latestPrice": 720,
+    "periodChange": 158,
+    "periodChangePercent": 28.11,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5368": {
@@ -71292,15 +71841,24 @@
         "low": 1005,
         "close": 1007,
         "volume": 21000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1014,
+        "high": 1014,
+        "low": 1000,
+        "close": 1000,
+        "volume": 17300
       }
     ],
     "highPrice": 1211,
     "lowPrice": 906,
-    "latestPrice": 1007,
-    "periodChange": -140,
-    "periodChangePercent": -12.21,
+    "latestPrice": 1000,
+    "periodChange": -147,
+    "periodChangePercent": -12.82,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5445": {
@@ -72405,15 +72963,24 @@
         "low": 1921,
         "close": 1926,
         "volume": 123700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1940,
+        "high": 1966,
+        "low": 1928,
+        "close": 1966,
+        "volume": 68400
       }
     ],
     "highPrice": 2102,
     "lowPrice": 1763,
-    "latestPrice": 1926,
-    "periodChange": -51,
-    "periodChangePercent": -2.58,
+    "latestPrice": 1966,
+    "periodChange": -11,
+    "periodChangePercent": -0.56,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5451": {
@@ -73518,15 +74085,24 @@
         "low": 1367,
         "close": 1374,
         "volume": 267900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1383,
+        "high": 1389,
+        "low": 1370,
+        "close": 1382,
+        "volume": 183200
       }
     ],
     "highPrice": 1462,
     "lowPrice": 1190,
-    "latestPrice": 1374,
-    "periodChange": -29,
-    "periodChangePercent": -2.07,
+    "latestPrice": 1382,
+    "periodChange": -21,
+    "periodChangePercent": -1.5,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5541": {
@@ -74631,15 +75207,24 @@
         "low": 2490,
         "close": 2495,
         "volume": 252400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2491,
+        "high": 2512,
+        "low": 2470,
+        "close": 2499,
+        "volume": 196700
       }
     ],
     "highPrice": 2826,
     "lowPrice": 2109,
-    "latestPrice": 2495,
-    "periodChange": -202,
-    "periodChangePercent": -7.49,
+    "latestPrice": 2499,
+    "periodChange": -198,
+    "periodChangePercent": -7.34,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5703": {
@@ -75744,15 +76329,24 @@
         "low": 2812,
         "close": 2833,
         "volume": 228800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2840,
+        "high": 2865,
+        "low": 2814,
+        "close": 2864,
+        "volume": 126300
       }
     ],
     "highPrice": 3290,
     "lowPrice": 2584,
-    "latestPrice": 2833,
-    "periodChange": -34,
-    "periodChangePercent": -1.19,
+    "latestPrice": 2864,
+    "periodChange": -3,
+    "periodChangePercent": -0.1,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5714": {
@@ -76857,15 +77451,24 @@
         "low": 8701,
         "close": 8729,
         "volume": 332200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 8790,
+        "high": 8818,
+        "low": 8694,
+        "close": 8766,
+        "volume": 279900
       }
     ],
     "highPrice": 11640,
     "lowPrice": 7907,
-    "latestPrice": 8729,
-    "periodChange": -388,
-    "periodChangePercent": -4.26,
+    "latestPrice": 8766,
+    "periodChange": -351,
+    "periodChangePercent": -3.85,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5901": {
@@ -77970,15 +78573,24 @@
         "low": 4409,
         "close": 4446,
         "volume": 317000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4430,
+        "high": 4480,
+        "low": 4418,
+        "close": 4456,
+        "volume": 331900
       }
     ],
     "highPrice": 4657,
     "lowPrice": 3152,
-    "latestPrice": 4446,
-    "periodChange": 1008,
-    "periodChangePercent": 29.32,
+    "latestPrice": 4456,
+    "periodChange": 1018,
+    "periodChangePercent": 29.61,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5930": {
@@ -79083,15 +79695,24 @@
         "low": 1791,
         "close": 1791,
         "volume": 93800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1807,
+        "high": 1819,
+        "low": 1799,
+        "close": 1813,
+        "volume": 116000
       }
     ],
     "highPrice": 1972,
     "lowPrice": 1770,
-    "latestPrice": 1791,
-    "periodChange": -119,
-    "periodChangePercent": -6.23,
+    "latestPrice": 1813,
+    "periodChange": -97,
+    "periodChangePercent": -5.08,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "5941": {
@@ -81345,15 +81966,24 @@
         "low": 1193,
         "close": 1193,
         "volume": 4300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1193,
+        "high": 1196,
+        "low": 1191,
+        "close": 1192,
+        "volume": 3400
       }
     ],
     "highPrice": 1324,
     "lowPrice": 1122,
-    "latestPrice": 1193,
-    "periodChange": -99,
-    "periodChangePercent": -7.66,
+    "latestPrice": 1192,
+    "periodChange": -100,
+    "periodChangePercent": -7.74,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6209": {
@@ -82458,15 +83088,24 @@
         "low": 3825,
         "close": 3835,
         "volume": 53400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3850,
+        "high": 3880,
+        "low": 3835,
+        "close": 3870,
+        "volume": 37000
       }
     ],
     "highPrice": 4130,
     "lowPrice": 3745,
-    "latestPrice": 3835,
-    "periodChange": 65,
-    "periodChangePercent": 1.72,
+    "latestPrice": 3870,
+    "periodChange": 100,
+    "periodChangePercent": 2.65,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6272": {
@@ -83571,15 +84210,24 @@
         "low": 1461,
         "close": 1465,
         "volume": 60400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1470,
+        "high": 1482,
+        "low": 1464,
+        "close": 1475,
+        "volume": 55700
       }
     ],
     "highPrice": 1624,
     "lowPrice": 1412,
-    "latestPrice": 1465,
-    "periodChange": -47,
-    "periodChangePercent": -3.11,
+    "latestPrice": 1475,
+    "periodChange": -37,
+    "periodChangePercent": -2.45,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6306": {
@@ -84684,15 +85332,24 @@
         "low": 999,
         "close": 1009,
         "volume": 87600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1006,
+        "high": 1013,
+        "low": 1003,
+        "close": 1010,
+        "volume": 82600
       }
     ],
     "highPrice": 1041,
     "lowPrice": 791,
-    "latestPrice": 1009,
-    "periodChange": 217,
-    "periodChangePercent": 27.4,
+    "latestPrice": 1010,
+    "periodChange": 218,
+    "periodChangePercent": 27.53,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6379": {
@@ -85797,15 +86454,24 @@
         "low": 958,
         "close": 992,
         "volume": 427800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 987,
+        "high": 990,
+        "low": 958,
+        "close": 962,
+        "volume": 368900
       }
     ],
     "highPrice": 1060,
     "lowPrice": 710,
-    "latestPrice": 992,
-    "periodChange": 207,
-    "periodChangePercent": 26.37,
+    "latestPrice": 962,
+    "periodChange": 177,
+    "periodChangePercent": 22.55,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6430": {
@@ -86910,15 +87576,24 @@
         "low": 2285,
         "close": 2306,
         "volume": 58000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2285,
+        "high": 2311,
+        "low": 2285,
+        "close": 2301,
+        "volume": 33000
       }
     ],
     "highPrice": 2570,
     "lowPrice": 2057,
-    "latestPrice": 2306,
-    "periodChange": -164,
-    "periodChangePercent": -6.64,
+    "latestPrice": 2301,
+    "periodChange": -169,
+    "periodChangePercent": -6.84,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6458": {
@@ -88023,15 +88698,24 @@
         "low": 1195,
         "close": 1206,
         "volume": 244000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1207,
+        "high": 1209,
+        "low": 1196,
+        "close": 1200,
+        "volume": 159400
       }
     ],
     "highPrice": 1302,
     "lowPrice": 1187,
-    "latestPrice": 1206,
-    "periodChange": -17,
-    "periodChangePercent": -1.39,
+    "latestPrice": 1200,
+    "periodChange": -23,
+    "periodChangePercent": -1.88,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6493": {
@@ -89136,15 +89820,24 @@
         "low": 476,
         "close": 481,
         "volume": 38700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 481,
+        "high": 489,
+        "low": 481,
+        "close": 488,
+        "volume": 61700
       }
     ],
     "highPrice": 639,
     "lowPrice": 442,
-    "latestPrice": 481,
-    "periodChange": -128,
-    "periodChangePercent": -21.02,
+    "latestPrice": 488,
+    "periodChange": -121,
+    "periodChangePercent": -19.87,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6505": {
@@ -90249,15 +90942,24 @@
         "low": 2351,
         "close": 2357,
         "volume": 31300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2378,
+        "high": 2390,
+        "low": 2357,
+        "close": 2370,
+        "volume": 25200
       }
     ],
     "highPrice": 2647,
     "lowPrice": 1849,
-    "latestPrice": 2357,
-    "periodChange": 31,
-    "periodChangePercent": 1.33,
+    "latestPrice": 2370,
+    "periodChange": 44,
+    "periodChangePercent": 1.89,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6517": {
@@ -91362,15 +92064,24 @@
         "low": 3915,
         "close": 3975,
         "volume": 41300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3995,
+        "high": 3995,
+        "low": 3940,
+        "close": 3985,
+        "volume": 159900
       }
     ],
     "highPrice": 4450,
     "lowPrice": 3405,
-    "latestPrice": 3975,
-    "periodChange": 540,
-    "periodChangePercent": 15.72,
+    "latestPrice": 3985,
+    "periodChange": 550,
+    "periodChangePercent": 16.01,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6540": {
@@ -92475,15 +93186,24 @@
         "low": 1491,
         "close": 1500,
         "volume": 21300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1500,
+        "high": 1500,
+        "low": 1487,
+        "close": 1497,
+        "volume": 12600
       }
     ],
     "highPrice": 1791,
     "lowPrice": 1458,
-    "latestPrice": 1500,
-    "periodChange": -291,
-    "periodChangePercent": -16.25,
+    "latestPrice": 1497,
+    "periodChange": -294,
+    "periodChangePercent": -16.42,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6592": {
@@ -93588,15 +94308,24 @@
         "low": 1722,
         "close": 1737,
         "volume": 757800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1742,
+        "high": 1791,
+        "low": 1738,
+        "close": 1781,
+        "volume": 1200600
       }
     ],
     "highPrice": 1786,
     "lowPrice": 1475,
-    "latestPrice": 1737,
-    "periodChange": 124,
-    "periodChangePercent": 7.69,
+    "latestPrice": 1781,
+    "periodChange": 168,
+    "periodChangePercent": 10.42,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6658": {
@@ -94701,15 +95430,24 @@
         "low": 447,
         "close": 452,
         "volume": 50200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 453,
+        "high": 462,
+        "low": 452,
+        "close": 461,
+        "volume": 91400
       }
     ],
     "highPrice": 724,
     "lowPrice": 418,
-    "latestPrice": 452,
-    "periodChange": -253,
-    "periodChangePercent": -35.89,
+    "latestPrice": 461,
+    "periodChange": -244,
+    "periodChangePercent": -34.61,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6675": {
@@ -95814,15 +96552,24 @@
         "low": 2056,
         "close": 2056,
         "volume": 24400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2065,
+        "high": 2077,
+        "low": 2051,
+        "close": 2065,
+        "volume": 24100
       }
     ],
     "highPrice": 2268,
     "lowPrice": 1837,
-    "latestPrice": 2056,
-    "periodChange": -47,
-    "periodChangePercent": -2.23,
+    "latestPrice": 2065,
+    "periodChange": -38,
+    "periodChangePercent": -1.81,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6677": {
@@ -96927,15 +97674,24 @@
         "low": 3120,
         "close": 3160,
         "volume": 126700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3150,
+        "high": 3160,
+        "low": 3130,
+        "close": 3130,
+        "volume": 36200
       }
     ],
     "highPrice": 3830,
     "lowPrice": 3105,
-    "latestPrice": 3160,
-    "periodChange": 10,
-    "periodChangePercent": 0.32,
+    "latestPrice": 3130,
+    "periodChange": -20,
+    "periodChangePercent": -0.63,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6678": {
@@ -98040,15 +98796,24 @@
         "low": 1975,
         "close": 1975,
         "volume": 18900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1975,
+        "high": 1998,
+        "low": 1972,
+        "close": 1980,
+        "volume": 20300
       }
     ],
     "highPrice": 2397,
     "lowPrice": 1941,
-    "latestPrice": 1975,
-    "periodChange": -332,
-    "periodChangePercent": -14.39,
+    "latestPrice": 1980,
+    "periodChange": -327,
+    "periodChangePercent": -14.17,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6730": {
@@ -99153,15 +99918,24 @@
         "low": 1650,
         "close": 1690,
         "volume": 382200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1674,
+        "high": 1731,
+        "low": 1647,
+        "close": 1730,
+        "volume": 266200
       }
     ],
-    "highPrice": 1690,
+    "highPrice": 1730,
     "lowPrice": 1015,
-    "latestPrice": 1690,
-    "periodChange": 565,
-    "periodChangePercent": 50.22,
+    "latestPrice": 1730,
+    "periodChange": 605,
+    "periodChangePercent": 53.78,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6902": {
@@ -100266,15 +101040,24 @@
         "low": 1809,
         "close": 1842,
         "volume": 7814500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1856,
+        "high": 1858,
+        "low": 1841,
+        "close": 1853,
+        "volume": 5815400
       }
     ],
     "highPrice": 2208,
     "lowPrice": 1808,
-    "latestPrice": 1842,
-    "periodChange": -66,
-    "periodChangePercent": -3.46,
+    "latestPrice": 1853,
+    "periodChange": -55,
+    "periodChangePercent": -2.88,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6915": {
@@ -101379,15 +102162,24 @@
         "low": 3515,
         "close": 3525,
         "volume": 12400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3545,
+        "high": 3595,
+        "low": 3545,
+        "close": 3580,
+        "volume": 14900
       }
     ],
     "highPrice": 3645,
     "lowPrice": 3000,
-    "latestPrice": 3525,
-    "periodChange": 165,
-    "periodChangePercent": 4.91,
+    "latestPrice": 3580,
+    "periodChange": 220,
+    "periodChangePercent": 6.55,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6927": {
@@ -102492,15 +103284,24 @@
         "low": 982,
         "close": 993,
         "volume": 35200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 997,
+        "high": 1004,
+        "low": 993,
+        "close": 1000,
+        "volume": 45200
       }
     ],
     "highPrice": 1200,
     "lowPrice": 885,
-    "latestPrice": 993,
-    "periodChange": -143,
-    "periodChangePercent": -12.59,
+    "latestPrice": 1000,
+    "periodChange": -136,
+    "periodChangePercent": -11.97,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6989": {
@@ -103605,15 +104406,24 @@
         "low": 2294,
         "close": 2296,
         "volume": 13500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2294,
+        "high": 2337,
+        "low": 2294,
+        "close": 2331,
+        "volume": 2100
       }
     ],
     "highPrice": 2858,
     "lowPrice": 2263,
-    "latestPrice": 2296,
-    "periodChange": -543,
-    "periodChangePercent": -19.13,
+    "latestPrice": 2331,
+    "periodChange": -508,
+    "periodChangePercent": -17.89,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "6995": {
@@ -104718,15 +105528,24 @@
         "low": 3020,
         "close": 3045,
         "volume": 118100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3070,
+        "high": 3070,
+        "low": 3030,
+        "close": 3065,
+        "volume": 124000
       }
     ],
     "highPrice": 3345,
     "lowPrice": 2735,
-    "latestPrice": 3045,
-    "periodChange": 50,
-    "periodChangePercent": 1.67,
+    "latestPrice": 3065,
+    "periodChange": 70,
+    "periodChangePercent": 2.34,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7175": {
@@ -105831,15 +106650,24 @@
         "low": 1920,
         "close": 1943,
         "volume": 5900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1934,
+        "high": 1993,
+        "low": 1916,
+        "close": 1916,
+        "volume": 6100
       }
     ],
     "highPrice": 2182,
     "lowPrice": 1306,
-    "latestPrice": 1943,
-    "periodChange": 634,
-    "periodChangePercent": 48.43,
+    "latestPrice": 1916,
+    "periodChange": 607,
+    "periodChangePercent": 46.37,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7217": {
@@ -106944,15 +107772,24 @@
         "low": 453,
         "close": 453,
         "volume": 400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 454,
+        "high": 455,
+        "low": 450,
+        "close": 455,
+        "volume": 2300
       }
     ],
     "highPrice": 467,
     "lowPrice": 382,
-    "latestPrice": 453,
-    "periodChange": 61,
-    "periodChangePercent": 15.56,
+    "latestPrice": 455,
+    "periodChange": 63,
+    "periodChangePercent": 16.07,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7226": {
@@ -108057,15 +108894,24 @@
         "low": 2128,
         "close": 2137,
         "volume": 193200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2140,
+        "high": 2157,
+        "low": 2137,
+        "close": 2149,
+        "volume": 178600
       }
     ],
     "highPrice": 2998,
     "lowPrice": 2060,
-    "latestPrice": 2137,
-    "periodChange": -809,
-    "periodChangePercent": -27.46,
+    "latestPrice": 2149,
+    "periodChange": -797,
+    "periodChangePercent": -27.05,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7235": {
@@ -109170,15 +110016,24 @@
         "low": 1522,
         "close": 1523,
         "volume": 11600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1523,
+        "high": 1544,
+        "low": 1514,
+        "close": 1543,
+        "volume": 15000
       }
     ],
     "highPrice": 1610,
     "lowPrice": 1348,
-    "latestPrice": 1523,
-    "periodChange": 175,
-    "periodChangePercent": 12.98,
+    "latestPrice": 1543,
+    "periodChange": 195,
+    "periodChangePercent": 14.47,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7239": {
@@ -110283,15 +111138,24 @@
         "low": 2263,
         "close": 2281,
         "volume": 117700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2293,
+        "high": 2318,
+        "low": 2282,
+        "close": 2310,
+        "volume": 87500
       }
     ],
     "highPrice": 2398,
     "lowPrice": 2051,
-    "latestPrice": 2281,
-    "periodChange": 197,
-    "periodChangePercent": 9.45,
+    "latestPrice": 2310,
+    "periodChange": 226,
+    "periodChangePercent": 10.84,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7240": {
@@ -112545,15 +113409,24 @@
         "low": 967,
         "close": 977,
         "volume": 328700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 981,
+        "high": 988,
+        "low": 973,
+        "close": 986,
+        "volume": 187000
       }
     ],
     "highPrice": 1040,
     "lowPrice": 775,
-    "latestPrice": 977,
-    "periodChange": 151,
-    "periodChangePercent": 18.28,
+    "latestPrice": 986,
+    "periodChange": 160,
+    "periodChangePercent": 19.37,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7278": {
@@ -113658,15 +114531,24 @@
         "low": 5630,
         "close": 5670,
         "volume": 184300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 5680,
+        "high": 5750,
+        "low": 5660,
+        "close": 5750,
+        "volume": 178700
       }
     ],
     "highPrice": 6280,
     "lowPrice": 5490,
-    "latestPrice": 5670,
-    "periodChange": 30,
-    "periodChangePercent": 0.53,
+    "latestPrice": 5750,
+    "periodChange": 110,
+    "periodChangePercent": 1.95,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7296": {
@@ -114771,15 +115653,24 @@
         "low": 4030,
         "close": 4045,
         "volume": 76500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4060,
+        "high": 4095,
+        "low": 4040,
+        "close": 4085,
+        "volume": 61100
       }
     ],
     "highPrice": 4250,
     "lowPrice": 3295,
-    "latestPrice": 4045,
-    "periodChange": 700,
-    "periodChangePercent": 20.93,
+    "latestPrice": 4085,
+    "periodChange": 740,
+    "periodChangePercent": 22.12,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7368": {
@@ -115884,15 +116775,24 @@
         "low": 1708,
         "close": 1718,
         "volume": 900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1717,
+        "high": 1717,
+        "low": 1706,
+        "close": 1708,
+        "volume": 800
       }
     ],
     "highPrice": 1733,
     "lowPrice": 1648,
-    "latestPrice": 1718,
-    "periodChange": 3,
-    "periodChangePercent": 0.17,
+    "latestPrice": 1708,
+    "periodChange": -7,
+    "periodChangePercent": -0.41,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7463": {
@@ -116997,15 +117897,24 @@
         "low": 926,
         "close": 929,
         "volume": 18300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 929,
+        "high": 938,
+        "low": 928,
+        "close": 932,
+        "volume": 14100
       }
     ],
     "highPrice": 1003,
     "lowPrice": 874,
-    "latestPrice": 929,
-    "periodChange": -14,
-    "periodChangePercent": -1.48,
+    "latestPrice": 932,
+    "periodChange": -11,
+    "periodChangePercent": -1.17,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7482": {
@@ -118110,15 +119019,24 @@
         "low": 1417,
         "close": 1429,
         "volume": 35400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1421,
+        "high": 1438,
+        "low": 1421,
+        "close": 1430,
+        "volume": 28500
       }
     ],
     "highPrice": 1573,
     "lowPrice": 1259,
-    "latestPrice": 1429,
-    "periodChange": 28,
-    "periodChangePercent": 2,
+    "latestPrice": 1430,
+    "periodChange": 29,
+    "periodChangePercent": 2.07,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7525": {
@@ -119223,15 +120141,24 @@
         "low": 3515,
         "close": 3525,
         "volume": 8700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3525,
+        "high": 3545,
+        "low": 3480,
+        "close": 3500,
+        "volume": 17000
       }
     ],
     "highPrice": 3725,
     "lowPrice": 3330,
-    "latestPrice": 3525,
-    "periodChange": 40,
-    "periodChangePercent": 1.15,
+    "latestPrice": 3500,
+    "periodChange": 15,
+    "periodChangePercent": 0.43,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7607": {
@@ -120336,15 +121263,24 @@
         "low": 3000,
         "close": 3010,
         "volume": 18000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3005,
+        "high": 3025,
+        "low": 3000,
+        "close": 3015,
+        "volume": 19300
       }
     ],
     "highPrice": 3295,
     "lowPrice": 2909,
-    "latestPrice": 3010,
-    "periodChange": -130,
-    "periodChangePercent": -4.14,
+    "latestPrice": 3015,
+    "periodChange": -125,
+    "periodChangePercent": -3.98,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7670": {
@@ -121449,15 +122385,24 @@
         "low": 1213,
         "close": 1227,
         "volume": 1400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1229,
+        "high": 1229,
+        "low": 1226,
+        "close": 1226,
+        "volume": 1700
       }
     ],
     "highPrice": 1286,
     "lowPrice": 987,
-    "latestPrice": 1227,
-    "periodChange": 187,
-    "periodChangePercent": 17.98,
+    "latestPrice": 1226,
+    "periodChange": 186,
+    "periodChangePercent": 17.88,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7673": {
@@ -123675,15 +124620,24 @@
         "low": 742,
         "close": 747,
         "volume": 23600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 746,
+        "high": 758,
+        "low": 746,
+        "close": 758,
+        "volume": 19900
       }
     ],
     "highPrice": 850,
     "lowPrice": 722,
-    "latestPrice": 747,
-    "periodChange": -72,
-    "periodChangePercent": -8.79,
+    "latestPrice": 758,
+    "periodChange": -61,
+    "periodChangePercent": -7.45,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7744": {
@@ -124788,15 +125742,24 @@
         "low": 1951,
         "close": 1961,
         "volume": 219000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1972,
+        "high": 1997,
+        "low": 1968,
+        "close": 1991,
+        "volume": 197500
       }
     ],
     "highPrice": 2197,
     "lowPrice": 1943,
-    "latestPrice": 1961,
-    "periodChange": -139,
-    "periodChangePercent": -6.62,
+    "latestPrice": 1991,
+    "periodChange": -109,
+    "periodChangePercent": -5.19,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7812": {
@@ -125901,15 +126864,24 @@
         "low": 2080,
         "close": 2095,
         "volume": 300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2100,
+        "high": 2100,
+        "low": 2100,
+        "close": 2100,
+        "volume": 300
       }
     ],
     "highPrice": 2193,
     "lowPrice": 1872,
-    "latestPrice": 2095,
-    "periodChange": 213,
-    "periodChangePercent": 11.32,
+    "latestPrice": 2100,
+    "periodChange": 218,
+    "periodChangePercent": 11.58,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7833": {
@@ -127014,15 +127986,24 @@
         "low": 682,
         "close": 682,
         "volume": 3200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 682,
+        "high": 688,
+        "low": 676,
+        "close": 679,
+        "volume": 4600
       }
     ],
     "highPrice": 688,
     "lowPrice": 614,
-    "latestPrice": 682,
-    "periodChange": 22,
-    "periodChangePercent": 3.33,
+    "latestPrice": 679,
+    "periodChange": 19,
+    "periodChangePercent": 2.88,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7893": {
@@ -128127,15 +129108,24 @@
         "low": 1045,
         "close": 1045,
         "volume": 67800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1050,
+        "high": 1053,
+        "low": 1047,
+        "close": 1048,
+        "volume": 35000
       }
     ],
     "highPrice": 1210,
     "lowPrice": 1027,
-    "latestPrice": 1045,
-    "periodChange": -85,
-    "periodChangePercent": -7.52,
+    "latestPrice": 1048,
+    "periodChange": -82,
+    "periodChangePercent": -7.26,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7927": {
@@ -129240,15 +130230,24 @@
         "low": 2320,
         "close": 2339,
         "volume": 12100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2339,
+        "high": 2350,
+        "low": 2320,
+        "close": 2343,
+        "volume": 10500
       }
     ],
     "highPrice": 2392,
     "lowPrice": 1917,
-    "latestPrice": 2339,
-    "periodChange": 314,
-    "periodChangePercent": 15.51,
+    "latestPrice": 2343,
+    "periodChange": 318,
+    "periodChangePercent": 15.7,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7971": {
@@ -130353,15 +131352,24 @@
         "low": 650,
         "close": 654,
         "volume": 54300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 654,
+        "high": 660,
+        "low": 651,
+        "close": 658,
+        "volume": 56300
       }
     ],
     "highPrice": 720,
     "lowPrice": 586,
-    "latestPrice": 654,
-    "periodChange": -10,
-    "periodChangePercent": -1.51,
+    "latestPrice": 658,
+    "periodChange": -6,
+    "periodChangePercent": -0.9,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7981": {
@@ -131466,15 +132474,24 @@
         "low": 2995,
         "close": 3040,
         "volume": 88100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3045,
+        "high": 3050,
+        "low": 3010,
+        "close": 3030,
+        "volume": 70900
       }
     ],
     "highPrice": 3280,
     "lowPrice": 2648,
-    "latestPrice": 3040,
-    "periodChange": 229,
-    "periodChangePercent": 8.15,
+    "latestPrice": 3030,
+    "periodChange": 219,
+    "periodChangePercent": 7.79,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7990": {
@@ -132579,15 +133596,24 @@
         "low": 2312,
         "close": 2327,
         "volume": 56200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2325,
+        "high": 2359,
+        "low": 2321,
+        "close": 2356,
+        "volume": 47600
       }
     ],
     "highPrice": 2735,
     "lowPrice": 2041,
-    "latestPrice": 2327,
-    "periodChange": 187,
-    "periodChangePercent": 8.74,
+    "latestPrice": 2356,
+    "periodChange": 216,
+    "periodChangePercent": 10.09,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "7994": {
@@ -133692,15 +134718,24 @@
         "low": 2196,
         "close": 2196,
         "volume": 178500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2197,
+        "high": 2216,
+        "low": 2196,
+        "close": 2204,
+        "volume": 213200
       }
     ],
     "highPrice": 2606,
     "lowPrice": 2196,
-    "latestPrice": 2196,
-    "periodChange": -354,
-    "periodChangePercent": -13.88,
+    "latestPrice": 2204,
+    "periodChange": -346,
+    "periodChangePercent": -13.57,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8011": {
@@ -134805,15 +135840,24 @@
         "low": 1276,
         "close": 1297,
         "volume": 158500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1290,
+        "high": 1382,
+        "low": 1271,
+        "close": 1315,
+        "volume": 758300
       }
     ],
     "highPrice": 1840,
     "lowPrice": 1198,
-    "latestPrice": 1297,
-    "periodChange": -61,
-    "periodChangePercent": -4.49,
+    "latestPrice": 1315,
+    "periodChange": -43,
+    "periodChangePercent": -3.17,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8014": {
@@ -135918,15 +136962,24 @@
         "low": 4045,
         "close": 4100,
         "volume": 31100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4100,
+        "high": 4185,
+        "low": 4095,
+        "close": 4185,
+        "volume": 34600
       }
     ],
     "highPrice": 4565,
     "lowPrice": 3800,
-    "latestPrice": 4100,
-    "periodChange": -325,
-    "periodChangePercent": -7.34,
+    "latestPrice": 4185,
+    "periodChange": -240,
+    "periodChangePercent": -5.42,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8016": {
@@ -137031,15 +138084,24 @@
         "low": 698,
         "close": 698,
         "volume": 703600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 699,
+        "high": 708,
+        "low": 697,
+        "close": 704,
+        "volume": 530300
       }
     ],
     "highPrice": 807,
     "lowPrice": 698,
-    "latestPrice": 698,
-    "periodChange": -37,
-    "periodChangePercent": -5.03,
+    "latestPrice": 704,
+    "periodChange": -31,
+    "periodChangePercent": -4.22,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8081": {
@@ -138144,15 +139206,24 @@
         "low": 2610,
         "close": 2641,
         "volume": 22400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2641,
+        "high": 2656,
+        "low": 2623,
+        "close": 2623,
+        "volume": 23300
       }
     ],
     "highPrice": 2659,
     "lowPrice": 2096,
-    "latestPrice": 2641,
-    "periodChange": 545,
-    "periodChangePercent": 26,
+    "latestPrice": 2623,
+    "periodChange": 527,
+    "periodChangePercent": 25.14,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8150": {
@@ -139257,15 +140328,24 @@
         "low": 3345,
         "close": 3360,
         "volume": 26700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3360,
+        "high": 3385,
+        "low": 3345,
+        "close": 3375,
+        "volume": 29800
       }
     ],
     "highPrice": 3410,
     "lowPrice": 2597,
-    "latestPrice": 3360,
-    "periodChange": 605,
-    "periodChangePercent": 21.96,
+    "latestPrice": 3375,
+    "periodChange": 620,
+    "periodChangePercent": 22.5,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8154": {
@@ -140370,15 +141450,24 @@
         "low": 5390,
         "close": 5510,
         "volume": 163800
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 5510,
+        "high": 5570,
+        "low": 5450,
+        "close": 5540,
+        "volume": 125800
       }
     ],
     "highPrice": 5630,
     "lowPrice": 3765,
-    "latestPrice": 5510,
-    "periodChange": 1745,
-    "periodChangePercent": 46.35,
+    "latestPrice": 5540,
+    "periodChange": 1775,
+    "periodChangePercent": 47.14,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8572": {
@@ -141483,15 +142572,24 @@
         "low": 451,
         "close": 454,
         "volume": 2194000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 457,
+        "high": 462,
+        "low": 455,
+        "close": 460,
+        "volume": 2143800
       }
     ],
     "highPrice": 517,
     "lowPrice": 442,
-    "latestPrice": 454,
-    "periodChange": -18,
-    "periodChangePercent": -3.81,
+    "latestPrice": 460,
+    "periodChange": -12,
+    "periodChangePercent": -2.54,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8622": {
@@ -142596,15 +143694,24 @@
         "low": 830,
         "close": 855,
         "volume": 530100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 859,
+        "high": 866,
+        "low": 850,
+        "close": 856,
+        "volume": 252900
       }
     ],
     "highPrice": 998,
     "lowPrice": 630,
-    "latestPrice": 855,
-    "periodChange": 144,
-    "periodChangePercent": 20.25,
+    "latestPrice": 856,
+    "periodChange": 145,
+    "periodChangePercent": 20.39,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8700": {
@@ -143709,15 +144816,24 @@
         "low": 2055,
         "close": 2055,
         "volume": 1400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2061,
+        "high": 2061,
+        "low": 2061,
+        "close": 2061,
+        "volume": 300
       }
     ],
     "highPrice": 2221,
     "lowPrice": 1711,
-    "latestPrice": 2055,
-    "periodChange": 293,
-    "periodChangePercent": 16.63,
+    "latestPrice": 2061,
+    "periodChange": 299,
+    "periodChangePercent": 16.97,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8706": {
@@ -144822,15 +145938,24 @@
         "low": 1716,
         "close": 1723,
         "volume": 181700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1727,
+        "high": 1741,
+        "low": 1722,
+        "close": 1739,
+        "volume": 122400
       }
     ],
     "highPrice": 1970,
     "lowPrice": 1521,
-    "latestPrice": 1723,
-    "periodChange": -29,
-    "periodChangePercent": -1.66,
+    "latestPrice": 1739,
+    "periodChange": -13,
+    "periodChangePercent": -0.74,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8908": {
@@ -145935,15 +147060,24 @@
         "low": 873,
         "close": 873,
         "volume": 2400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 874,
+        "high": 878,
+        "low": 871,
+        "close": 872,
+        "volume": 2500
       }
     ],
     "highPrice": 929,
     "lowPrice": 819,
-    "latestPrice": 873,
-    "periodChange": -16,
-    "periodChangePercent": -1.8,
+    "latestPrice": 872,
+    "periodChange": -17,
+    "periodChangePercent": -1.91,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "8935": {
@@ -147048,15 +148182,24 @@
         "low": 1901,
         "close": 1917,
         "volume": 56500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1902,
+        "high": 1949,
+        "low": 1902,
+        "close": 1935,
+        "volume": 33000
       }
     ],
     "highPrice": 2073,
     "lowPrice": 1484,
-    "latestPrice": 1917,
-    "periodChange": 313,
-    "periodChangePercent": 19.51,
+    "latestPrice": 1935,
+    "periodChange": 331,
+    "periodChangePercent": 20.64,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9025": {
@@ -148161,15 +149304,24 @@
         "low": 2749,
         "close": 2771,
         "volume": 84200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2783,
+        "high": 2796,
+        "low": 2764,
+        "close": 2764,
+        "volume": 54200
       }
     ],
     "highPrice": 3075,
     "lowPrice": 2628,
-    "latestPrice": 2771,
-    "periodChange": -244,
-    "periodChangePercent": -8.09,
+    "latestPrice": 2764,
+    "periodChange": -251,
+    "periodChangePercent": -8.33,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9028": {
@@ -149274,15 +150426,24 @@
         "low": 3150,
         "close": 3150,
         "volume": 30500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3170,
+        "high": 3200,
+        "low": 3150,
+        "close": 3170,
+        "volume": 29300
       }
     ],
     "highPrice": 3745,
     "lowPrice": 3150,
-    "latestPrice": 3150,
-    "periodChange": -360,
-    "periodChangePercent": -10.26,
+    "latestPrice": 3170,
+    "periodChange": -340,
+    "periodChangePercent": -9.69,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9039": {
@@ -150387,15 +151548,24 @@
         "low": 2912,
         "close": 2922,
         "volume": 80300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2925,
+        "high": 2970,
+        "low": 2920,
+        "close": 2962,
+        "volume": 73200
       }
     ],
     "highPrice": 3080,
     "lowPrice": 2771,
-    "latestPrice": 2922,
-    "periodChange": 85,
-    "periodChangePercent": 3,
+    "latestPrice": 2962,
+    "periodChange": 125,
+    "periodChangePercent": 4.41,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9193": {
@@ -152649,15 +153819,24 @@
         "low": 1118,
         "close": 1119,
         "volume": 20100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1121,
+        "high": 1125,
+        "low": 1118,
+        "close": 1121,
+        "volume": 6400
       }
     ],
     "highPrice": 1239,
     "lowPrice": 1066,
-    "latestPrice": 1119,
-    "periodChange": -100,
-    "periodChangePercent": -8.2,
+    "latestPrice": 1121,
+    "periodChange": -98,
+    "periodChangePercent": -8.04,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9248": {
@@ -153762,15 +154941,24 @@
         "low": 1554,
         "close": 1566,
         "volume": 16300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1552,
+        "high": 1568,
+        "low": 1552,
+        "close": 1560,
+        "volume": 15800
       }
     ],
     "highPrice": 1753,
     "lowPrice": 1481,
-    "latestPrice": 1566,
-    "periodChange": 44,
-    "periodChangePercent": 2.89,
+    "latestPrice": 1560,
+    "periodChange": 38,
+    "periodChangePercent": 2.5,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9312": {
@@ -154875,15 +156063,24 @@
         "low": 2993,
         "close": 3025,
         "volume": 9500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3025,
+        "high": 3115,
+        "low": 3025,
+        "close": 3080,
+        "volume": 7000
       }
     ],
     "highPrice": 3145,
     "lowPrice": 2760,
-    "latestPrice": 3025,
-    "periodChange": 64,
-    "periodChangePercent": 2.16,
+    "latestPrice": 3080,
+    "periodChange": 119,
+    "periodChangePercent": 4.02,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9364": {
@@ -155988,15 +157185,24 @@
         "low": 4678,
         "close": 4690,
         "volume": 270300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4681,
+        "high": 4700,
+        "low": 4670,
+        "close": 4697,
+        "volume": 355700
       }
     ],
     "highPrice": 5603,
     "lowPrice": 4635,
-    "latestPrice": 4690,
-    "periodChange": -802,
-    "periodChangePercent": -14.6,
+    "latestPrice": 4697,
+    "periodChange": -795,
+    "periodChangePercent": -14.48,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9368": {
@@ -157101,15 +158307,24 @@
         "low": 918,
         "close": 922,
         "volume": 10200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 927,
+        "high": 927,
+        "low": 915,
+        "close": 921,
+        "volume": 25800
       }
     ],
     "highPrice": 964,
     "lowPrice": 849,
-    "latestPrice": 922,
-    "periodChange": 14,
-    "periodChangePercent": 1.54,
+    "latestPrice": 921,
+    "periodChange": 13,
+    "periodChangePercent": 1.43,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9622": {
@@ -158214,15 +159429,24 @@
         "low": 1390,
         "close": 1390,
         "volume": 75600
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1398,
+        "high": 1405,
+        "low": 1391,
+        "close": 1399,
+        "volume": 51200
       }
     ],
     "highPrice": 1586,
     "lowPrice": 1388,
-    "latestPrice": 1390,
-    "periodChange": -175,
-    "periodChangePercent": -11.18,
+    "latestPrice": 1399,
+    "periodChange": -166,
+    "periodChangePercent": -10.61,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9625": {
@@ -159327,15 +160551,24 @@
         "low": 906,
         "close": 908,
         "volume": 1300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 910,
+        "high": 913,
+        "low": 899,
+        "close": 905,
+        "volume": 13100
       }
     ],
     "highPrice": 1097,
     "lowPrice": 845,
-    "latestPrice": 908,
-    "periodChange": -174,
-    "periodChangePercent": -16.08,
+    "latestPrice": 905,
+    "periodChange": -177,
+    "periodChangePercent": -16.36,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9639": {
@@ -160440,15 +161673,24 @@
         "low": 2262,
         "close": 2262,
         "volume": 11400
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2259,
+        "high": 2284,
+        "low": 2259,
+        "close": 2270,
+        "volume": 6300
       }
     ],
     "highPrice": 2404,
     "lowPrice": 2128,
-    "latestPrice": 2262,
-    "periodChange": 97,
-    "periodChangePercent": 4.48,
+    "latestPrice": 2270,
+    "periodChange": 105,
+    "periodChangePercent": 4.85,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9658": {
@@ -161553,15 +162795,24 @@
         "low": 1117,
         "close": 1132,
         "volume": 55000
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1132,
+        "high": 1152,
+        "low": 1132,
+        "close": 1149,
+        "volume": 86500
       }
     ],
     "highPrice": 1159,
     "lowPrice": 916,
-    "latestPrice": 1132,
-    "periodChange": 174,
-    "periodChangePercent": 18.16,
+    "latestPrice": 1149,
+    "periodChange": 191,
+    "periodChangePercent": 19.94,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9687": {
@@ -162666,15 +163917,24 @@
         "low": 1484,
         "close": 1513,
         "volume": 5300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1513,
+        "high": 1529,
+        "low": 1491,
+        "close": 1529,
+        "volume": 4300
       }
     ],
     "highPrice": 1588,
     "lowPrice": 1432,
-    "latestPrice": 1513,
-    "periodChange": 61,
-    "periodChangePercent": 4.2,
+    "latestPrice": 1529,
+    "periodChange": 77,
+    "periodChangePercent": 5.3,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9715": {
@@ -163779,15 +165039,24 @@
         "low": 3420,
         "close": 3420,
         "volume": 90300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3440,
+        "high": 3450,
+        "low": 3390,
+        "close": 3400,
+        "volume": 75000
       }
     ],
     "highPrice": 4030,
-    "lowPrice": 3420,
-    "latestPrice": 3420,
-    "periodChange": -565,
-    "periodChangePercent": -14.18,
+    "lowPrice": 3400,
+    "latestPrice": 3400,
+    "periodChange": -585,
+    "periodChangePercent": -14.68,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9845": {
@@ -164892,15 +166161,24 @@
         "low": 1317,
         "close": 1340,
         "volume": 10900
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1342,
+        "high": 1350,
+        "low": 1333,
+        "close": 1350,
+        "volume": 5300
       }
     ],
     "highPrice": 1624,
     "lowPrice": 1250,
-    "latestPrice": 1340,
-    "periodChange": -90,
-    "periodChangePercent": -6.29,
+    "latestPrice": 1350,
+    "periodChange": -80,
+    "periodChangePercent": -5.59,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9856": {
@@ -166005,6 +167283,15 @@
         "low": 1174,
         "close": 1180,
         "volume": 30700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1180,
+        "high": 1184,
+        "low": 1176,
+        "close": 1180,
+        "volume": 31400
       }
     ],
     "highPrice": 1269,
@@ -166013,7 +167300,7 @@
     "periodChange": -47,
     "periodChangePercent": -3.83,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9880": {
@@ -167118,15 +168405,24 @@
         "low": 3870,
         "close": 3970,
         "volume": 132500
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 3920,
+        "high": 4020,
+        "low": 3895,
+        "close": 4005,
+        "volume": 84700
       }
     ],
     "highPrice": 4585,
     "lowPrice": 2478,
-    "latestPrice": 3970,
-    "periodChange": 1462,
-    "periodChangePercent": 58.29,
+    "latestPrice": 4005,
+    "periodChange": 1497,
+    "periodChangePercent": 59.69,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9882": {
@@ -168231,15 +169527,24 @@
         "low": 1617,
         "close": 1624,
         "volume": 225700
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1624,
+        "high": 1637,
+        "low": 1618,
+        "close": 1629,
+        "volume": 169400
       }
     ],
     "highPrice": 1881,
     "lowPrice": 1497,
-    "latestPrice": 1624,
-    "periodChange": 56,
-    "periodChangePercent": 3.57,
+    "latestPrice": 1629,
+    "periodChange": 61,
+    "periodChangePercent": 3.89,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9906": {
@@ -169344,15 +170649,24 @@
         "low": 4070,
         "close": 4070,
         "volume": 200
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 4060,
+        "high": 4100,
+        "low": 4030,
+        "close": 4085,
+        "volume": 1600
       }
     ],
     "highPrice": 4875,
     "lowPrice": 3580,
-    "latestPrice": 4070,
-    "periodChange": -15,
-    "periodChangePercent": -0.37,
+    "latestPrice": 4085,
+    "periodChange": 0,
+    "periodChangePercent": 0,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   },
   "9991": {
@@ -170457,15 +171771,24 @@
         "low": 1723,
         "close": 1735,
         "volume": 49300
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 1735,
+        "high": 1756,
+        "low": 1731,
+        "close": 1752,
+        "volume": 32700
       }
     ],
     "highPrice": 1830,
     "lowPrice": 1449,
-    "latestPrice": 1735,
-    "periodChange": 8,
-    "periodChangePercent": 0.46,
+    "latestPrice": 1752,
+    "periodChange": 25,
+    "periodChangePercent": 1.45,
     "startDate": "2026-04-06",
-    "endDate": "2026-10-05",
+    "endDate": "2026-10-06",
     "fromCache": true
   }
 }
