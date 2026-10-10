@@ -3353,7 +3353,7 @@
         "high": 1031,
         "low": 1024,
         "close": 1030,
-        "volume": 600
+        "volume": 700
       }
     ],
     "highPrice": 1399,
@@ -30300,6 +30300,15 @@
         "low": 1738,
         "close": 1738,
         "volume": 100
+      },
+      {
+        "date": "2026-10-09",
+        "timestamp": 1791504000000,
+        "open": 1738,
+        "high": 1738,
+        "low": 1738,
+        "close": 1738,
+        "volume": 0
       }
     ],
     "highPrice": 1900,
@@ -30308,7 +30317,7 @@
     "periodChange": -102,
     "periodChangePercent": -5.54,
     "startDate": "2026-04-09",
-    "endDate": "2026-10-08",
+    "endDate": "2026-10-09",
     "fromCache": true
   },
   "3447": {
@@ -32540,7 +32549,7 @@
         "date": "2026-10-09",
         "timestamp": 1791504000000,
         "open": 2388,
-        "high": 2417,
+        "high": 2416,
         "low": 2388,
         "close": 2416,
         "volume": 17400
@@ -41544,7 +41553,7 @@
         "timestamp": 1791504000000,
         "open": 3665,
         "high": 3700,
-        "low": 3650,
+        "low": 3655,
         "close": 3685,
         "volume": 92400
       }
@@ -57252,7 +57261,7 @@
         "timestamp": 1791504000000,
         "open": 3170,
         "high": 3215,
-        "low": 3150,
+        "low": 3155,
         "close": 3180,
         "volume": 24800
       }
@@ -69594,7 +69603,7 @@
         "timestamp": 1791504000000,
         "open": 1397,
         "high": 1430,
-        "low": 1396,
+        "low": 1397,
         "close": 1424,
         "volume": 243700
       }
@@ -103280,7 +103289,7 @@
         "date": "2026-10-09",
         "timestamp": 1791504000000,
         "open": 1965,
-        "high": 1994,
+        "high": 2001,
         "low": 1965,
         "close": 1997,
         "volume": 14800
@@ -117893,7 +117902,7 @@
         "date": "2026-10-09",
         "timestamp": 1791504000000,
         "open": 969,
-        "high": 972,
+        "high": 974,
         "low": 962,
         "close": 973,
         "volume": 231500
@@ -132474,6 +132483,15 @@
         "low": 2080,
         "close": 2080,
         "volume": 100
+      },
+      {
+        "date": "2026-10-09",
+        "timestamp": 1791504000000,
+        "open": 2080,
+        "high": 2080,
+        "low": 2080,
+        "close": 2080,
+        "volume": 0
       }
     ],
     "highPrice": 2193,
@@ -132482,7 +132500,7 @@
     "periodChange": 195,
     "periodChangePercent": 10.34,
     "startDate": "2026-04-09",
-    "endDate": "2026-10-08",
+    "endDate": "2026-10-09",
     "fromCache": true
   },
   "7833": {
@@ -135837,7 +135855,7 @@
         "timestamp": 1791504000000,
         "open": 2355,
         "high": 2394,
-        "low": 2346,
+        "low": 2348,
         "close": 2386,
         "volume": 17200
       }
