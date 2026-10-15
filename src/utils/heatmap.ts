@@ -3,6 +3,7 @@ import { StockItem } from '../types';
 export type MetricKey =
   | 'market_cap'
   | 'dividend_yield'
+  | 'payout_ratio'
   | 'per'
   | 'pbr'
   | 'roe'
@@ -12,11 +13,13 @@ export type MetricKey =
   | 'current_ratio';
 
 // 各指標の優劣の向き (higher: 高い方が良い / lower: 低い方が良い)
+// ユーザー方針: PER・PBRは高い方が好調・人気とみなして黄緑、配当性向は低い方が増配余力ありとみなして黄緑
 const METRIC_DIRECTION: Record<MetricKey, 'higher' | 'lower'> = {
   market_cap: 'higher',
   dividend_yield: 'higher',
-  per: 'lower',
-  pbr: 'lower',
+  payout_ratio: 'lower',
+  per: 'higher',
+  pbr: 'higher',
   roe: 'higher',
   ebitda_growth: 'higher',
   equity_ratio: 'higher',
@@ -33,6 +36,7 @@ export function calculateMetricRanks(stocks: StockItem[]): Record<MetricKey, Map
   const metricKeys: MetricKey[] = [
     'market_cap',
     'dividend_yield',
+    'payout_ratio',
     'per',
     'pbr',
     'roe',
@@ -53,8 +57,13 @@ export function calculateMetricRanks(stocks: StockItem[]): Record<MetricKey, Map
 
     // ソート
     validItems.sort((a, b) => {
-      // lower の場合で PER / PBR が 0 以下の場合は最下位にする
-      if (!isHigher && (key === 'per' || key === 'pbr')) {
+      // PER / PBR が 0 以下の場合は最下位にする
+      if (key === 'per' || key === 'pbr') {
+        if (a.val <= 0 && b.val > 0) return 1;
+        if (b.val <= 0 && a.val > 0) return -1;
+      }
+      // 配当性向が 0 以下の場合は最下位にする
+      if (key === 'payout_ratio') {
         if (a.val <= 0 && b.val > 0) return 1;
         if (b.val <= 0 && a.val > 0) return -1;
       }
@@ -129,10 +138,12 @@ export function getMetricAbsoluteRatio(key: MetricKey, val: number | null | unde
       return Math.min(Math.max((1000 - val) / (1000 - 100), 0), 1);
     case 'dividend_yield': // 5.5%以上が最良(0), 3.8%以下がパッとしない(1)
       return Math.min(Math.max((5.5 - val) / (5.5 - 3.8), 0), 1);
-    case 'pbr': // 0.45倍以下が最良(0), 1.0倍以上がパッとしない(1)
-      return Math.min(Math.max((val - 0.45) / (1.0 - 0.45), 0), 1);
-    case 'per': // 7.0倍以下が最良(0), 15.0倍以上がパッとしない(1)
-      return Math.min(Math.max((val - 7.0) / (15.0 - 7.0), 0), 1);
+    case 'payout_ratio': // 20%以下が増配余力高く最良(0), 80%以上がパッとしない(1)
+      return Math.min(Math.max((val - 20.0) / (80.0 - 20.0), 0), 1);
+    case 'pbr': // 高い方が株価好調で良: 1.5倍以上が最良(0), 0.5倍以下がパッとしない(1)
+      return Math.min(Math.max((1.5 - val) / (1.5 - 0.5), 0), 1);
+    case 'per': // 高い方が人気好調で良: 20倍以上が最良(0), 8倍以下がパッとしない(1)
+      return Math.min(Math.max((20.0 - val) / (20.0 - 8.0), 0), 1);
     case 'roe': // 14%以上が最良(0), 7.5%以下がパッとしない(1)
       return Math.min(Math.max((14.0 - val) / (14.0 - 7.5), 0), 1);
     case 'equity_ratio': // 80%以上が最良(0), 48%以下がパッとしない(1)

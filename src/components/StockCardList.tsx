@@ -1,6 +1,8 @@
-import React, { useMemo } from 'react';
-import { StockItem, SortConfig } from '../types';
+import React, { useMemo, useState, useEffect } from 'react';
+import { StockItem, SortConfig, StockChartData } from '../types';
 import { calculateMetricRanks, getStockMetricStyle } from '../utils/heatmap';
+import { fetchAllCharts } from '../services/aiService';
+import { StockCardSparkline } from './StockCardSparkline';
 
 interface StockCardListProps {
   stocks: StockItem[];
@@ -13,6 +15,23 @@ export const StockCardList: React.FC<StockCardListProps> = ({
   sortConfig,
   onSelectStock,
 }) => {
+  const [allCharts, setAllCharts] = useState<Record<string, StockChartData> | null>(null);
+  const [isChartsLoading, setIsChartsLoading] = useState<boolean>(true);
+
+  // 全銘柄チャートの一括ロード（キャッシュ利用で高速表示）
+  useEffect(() => {
+    let isMounted = true;
+    fetchAllCharts().then((data) => {
+      if (isMounted) {
+        setAllCharts(data);
+        setIsChartsLoading(false);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   // 表示中銘柄における各指標のランクを計算（テーブルと同一のヒートマップ評価）
   const metricRanks = useMemo(() => {
     return calculateMetricRanks(stocks);
@@ -29,24 +48,29 @@ export const StockCardList: React.FC<StockCardListProps> = ({
   return (
     <div className="p-3 sm:p-5 bg-[#121a15] min-h-[500px]">
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3.5">
-        {stocks.map((stock, index) => {
+        {stocks.map((stock) => {
           const dyStyle = getStockMetricStyle('dividend_yield', stock, metricRanks);
           const pbrStyle = getStockMetricStyle('pbr', stock, metricRanks);
           const perStyle = getStockMetricStyle('per', stock, metricRanks);
           const roeStyle = getStockMetricStyle('roe', stock, metricRanks);
           const eqStyle = getStockMetricStyle('equity_ratio', stock, metricRanks);
           const ebitdaStyle = getStockMetricStyle('ebitda_growth', stock, metricRanks);
+          const payoutStyle = getStockMetricStyle('payout_ratio', stock, metricRanks);
+
+          const cleanCode = stock.code.replace(/\.T$/i, '');
+          const chartData = allCharts ? allCharts[cleanCode] : null;
 
           return (
             <div
               key={stock.code}
               onClick={() => onSelectStock(stock)}
-              className="bg-[#16221c] rounded-xl p-3.5 sm:p-4 border border-[#273a2f] shadow-md hover:border-[#3d5948] hover:bg-[#1a2821] transition-all cursor-pointer relative group flex flex-col justify-center"
+              className="bg-[#16221c] rounded-xl p-3.5 sm:p-4 border border-[#273a2f] shadow-md hover:border-[#3d5948] hover:bg-[#1a2821] transition-all cursor-pointer relative group flex flex-col justify-between"
             >
-              {/* Top row: Code, Name, Price */}
-              <div className="flex items-start justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-2">
-                    <div className="flex flex-col">
+              {/* Top row: Code, Category badges, Name, Price */}
+              <div>
+                <div className="flex items-start justify-between gap-2 mb-1.5">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <div className="flex flex-col min-w-0">
                       <div className="flex items-center gap-1.5">
                         <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#101813] text-[#86efac] border border-[#273a2f]">
                           {stock.code}
@@ -78,19 +102,16 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                           </span>
                         )}
                       </div>
-                      <h3 className="font-bold text-[#f0f5f2] text-base tracking-tight truncate max-w-[170px] mt-1">
+                      <h3
+                        className="font-bold text-[#f0f5f2] text-base tracking-tight truncate max-w-[170px] mt-1"
+                        title={
+                          stock.category === 'sotsugyo' && stock.graduationReason
+                            ? `${stock.name} (卒業理由: ${stock.graduationReason})`
+                            : stock.name
+                        }
+                      >
                         {stock.name}
                       </h3>
-                      {stock.category === 'sotsugyo' && stock.graduationReason && (
-                        <p className="text-[11px] text-[#f472b6] truncate max-w-[200px] mt-0.5">
-                          {stock.graduationReason}
-                        </p>
-                      )}
-                      {stock.category === 'datsuraku' && (stock.dropoutReason || stock.graduationReason) && (
-                        <p className="text-[11px] text-[#c084fc] truncate max-w-[200px] mt-0.5">
-                          {stock.dropoutReason || stock.graduationReason}
-                        </p>
-                      )}
                     </div>
                   </div>
 
@@ -116,8 +137,11 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                   </div>
                 </div>
 
+                {/* 銘柄名と指標の間: 直近6ヶ月ミニチャート（形状比較用） */}
+                <StockCardSparkline chartData={chartData} isLoading={isChartsLoading} />
+
                 {/* 5指標を1行配置: 配当, PBR, PER, ROE, 資本（良い値からパッとしない値への文字色グラデーション適用） */}
-                <div className="grid grid-cols-5 gap-1 text-center bg-[#101813] rounded-lg p-2 my-2.5 border border-[#223329] text-xs font-mono whitespace-nowrap">
+                <div className="grid grid-cols-5 gap-1 text-center bg-[#101813] rounded-lg p-2 my-2 border border-[#223329] text-xs font-mono whitespace-nowrap">
                   <div>
                     <span className="text-[10px] text-[#8ea899] font-sans block">配当</span>
                     <span
@@ -164,22 +188,23 @@ export const StockCardList: React.FC<StockCardListProps> = ({
                     </span>
                   </div>
                 </div>
-
-                {/* Secondary metrics */}
-                <div className="flex items-center justify-between text-[11px] text-[#8aa596] px-1 font-mono">
-                  <span>
-                    時価総額: <strong className="text-[#d8e8de] font-sans">{stock.market_cap ? `${stock.market_cap}億` : '-'}</strong>
-                  </span>
-                  <span>
-                    配当性向: <strong className="text-[#c5d8cd]">{stock.payout_ratio ? `${stock.payout_ratio.toFixed(1)}%` : '-'}</strong>
-                  </span>
-                  <span>
-                    成長率: <strong style={ebitdaStyle}>{stock.ebitda_growth ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(1)}%` : '-'}</strong>
-                  </span>
-                </div>
               </div>
-            );
-          })}
+
+              {/* Secondary metrics (時価総額, 配当性向, 成長率) */}
+              <div className="flex items-center justify-between text-[11px] text-[#8aa596] px-1 font-mono pt-1">
+                <span>
+                  時価総額: <strong className="text-[#d8e8de] font-sans">{stock.market_cap ? `${stock.market_cap}億` : '-'}</strong>
+                </span>
+                <span>
+                  配当性向: <strong style={payoutStyle}>{stock.payout_ratio ? `${stock.payout_ratio.toFixed(1)}%` : '-'}</strong>
+                </span>
+                <span>
+                  成長率: <strong style={ebitdaStyle}>{stock.ebitda_growth ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(1)}%` : '-'}</strong>
+                </span>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

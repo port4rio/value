@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, RotateCcw, Check, Sparkles, Sliders } from 'lucide-react';
-import { ScreeningCriteria, DEFAULT_CRITERIA } from '../types';
+import { X, RotateCcw, Check, Sparkles, Sliders, Crown } from 'lucide-react';
+import { ScreeningCriteria, DEFAULT_CRITERIA, OUDOU_VALUE_CRITERIA } from '../types';
 
 interface FilterModalProps {
   isOpen: boolean;
@@ -29,7 +29,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
   if (!isOpen) return null;
 
   const handleReset = () => {
-    setDraft(DEFAULT_CRITERIA);
+    setDraft({ ...DEFAULT_CRITERIA });
     if (onReset) onReset();
   };
 
@@ -38,12 +38,27 @@ export const FilterModal: React.FC<FilterModalProps> = ({
     onClose();
   };
 
-  const applyPreset = (preset: Partial<ScreeningCriteria>) => {
-    setDraft({
-      ...draft,
-      ...preset,
-    });
+  const applyStandard = () => {
+    setDraft({ ...DEFAULT_CRITERIA });
   };
+
+  const applyOudouValue = () => {
+    setDraft({ ...OUDOU_VALUE_CRITERIA });
+  };
+
+  const isStandardActive =
+    draft.minDividendYield === DEFAULT_CRITERIA.minDividendYield &&
+    draft.maxPbr === DEFAULT_CRITERIA.maxPbr &&
+    draft.minRoe === DEFAULT_CRITERIA.minRoe &&
+    draft.minEbitdaGrowth === DEFAULT_CRITERIA.minEbitdaGrowth &&
+    draft.minEquityRatio === DEFAULT_CRITERIA.minEquityRatio;
+
+  const isOudouActive =
+    draft.minDividendYield === OUDOU_VALUE_CRITERIA.minDividendYield &&
+    draft.maxPbr === OUDOU_VALUE_CRITERIA.maxPbr &&
+    draft.minRoe === OUDOU_VALUE_CRITERIA.minRoe &&
+    draft.minEbitdaGrowth === OUDOU_VALUE_CRITERIA.minEbitdaGrowth &&
+    draft.minEquityRatio === OUDOU_VALUE_CRITERIA.minEquityRatio;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
@@ -73,39 +88,36 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           </button>
         </div>
 
-        {/* Quick Presets */}
-        <div className="px-5 pt-3 pb-2 bg-[#131d17] border-b border-[#24362b]">
-          <span className="text-[10px] font-semibold text-[#739281] block mb-1.5 uppercase tracking-wider">
-            クイックプリセット:
+        {/* Presets: 標準 と 王道バリュー を1行表示 */}
+        <div className="px-4 sm:px-5 py-2 bg-[#131d17] border-b border-[#24362b] flex items-center justify-between gap-2">
+          <span className="text-[11px] font-semibold text-[#739281] uppercase tracking-wider shrink-0">
+            プリセット:
           </span>
-          <div className="flex items-center gap-1.5 flex-wrap">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <button
               type="button"
-              onClick={handleReset}
-              className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#192720] border border-[#2e4537] text-[#c5d8cd] hover:bg-[#203328] transition-colors"
+              onClick={applyStandard}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border whitespace-nowrap cursor-pointer ${
+                isStandardActive
+                  ? 'bg-[#1e3427] border-[#4ade80] text-[#86efac] shadow-[0_0_12px_rgba(74,222,128,0.15)]'
+                  : 'bg-[#18261e] border-[#2c4235] text-[#c5d8cd] hover:bg-[#1f3126]'
+              }`}
             >
-              標準
+              <RotateCcw className="w-3.5 h-3.5 text-[#86efac]" />
+              <span>標準</span>
             </button>
+
             <button
               type="button"
-              onClick={() => applyPreset({ minDividendYield: 5.0 })}
-              className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#2b2914] border border-[#5c541e] text-[#fde047] hover:bg-[#383418] transition-colors"
+              onClick={applyOudouValue}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border whitespace-nowrap cursor-pointer ${
+                isOudouActive
+                  ? 'bg-[#2f2a13] border-[#fde047] text-[#fde047] shadow-[0_0_12px_rgba(253,224,71,0.2)]'
+                  : 'bg-[#222013] border-[#4d441c] text-[#fde047]/90 hover:bg-[#2c2815]'
+              }`}
             >
-              🔥 超高配当 (5%以上)
-            </button>
-            <button
-              type="button"
-              onClick={() => applyPreset({ maxPbr: 0.8, minEquityRatio: 70 })}
-              className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#16273b] border border-[#2b4b73] text-[#93c5fd] hover:bg-[#1d334d] transition-colors"
-            >
-              🛡️ ディープバリュー
-            </button>
-            <button
-              type="button"
-              onClick={() => applyPreset({ minRoe: 10.0 })}
-              className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#182f23] border border-[#2e5941] text-[#86efac] hover:bg-[#1e3b2c] transition-colors"
-            >
-              📈 高収益バリュー
+              <Crown className="w-3.5 h-3.5 text-[#fde047]" />
+              <span>王道バリュー</span>
             </button>
           </div>
         </div>

@@ -6,9 +6,51 @@ import {
   ChartPoint,
 } from '../types';
 
+// 全銘柄チャートデータのインメモリキャッシュ
+let cachedAllCharts: Record<string, StockChartData> | null = null;
+let allChartsPromise: Promise<Record<string, StockChartData> | null> | null = null;
+
+/**
+ * 全銘柄のチャートデータを一括取得（初回のみフェッチし、以降はメモリキャッシュを即返却）
+ */
+export async function fetchAllCharts(): Promise<Record<string, StockChartData> | null> {
+  if (cachedAllCharts) return cachedAllCharts;
+  if (allChartsPromise) return allChartsPromise;
+
+  allChartsPromise = (async () => {
+    const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const candidatePaths = [
+      `${cleanBase}data/charts.json`,
+      './data/charts.json',
+      'data/charts.json',
+      '/value/data/charts.json',
+      '/data/charts.json',
+    ];
+
+    for (const path of candidatePaths) {
+      try {
+        const res = await fetch(path);
+        if (res.ok) {
+          const chartsMap = await res.json();
+          if (chartsMap && typeof chartsMap === 'object') {
+            cachedAllCharts = chartsMap as Record<string, StockChartData>;
+            return cachedAllCharts;
+          }
+        }
+      } catch {
+        // try next
+      }
+    }
+    return null;
+  })();
+
+  return allChartsPromise;
+}
+
 /**
  * 銘柄の6ヶ月チャートデータを取得
- * 1. public/data/charts.json (GitHub Actionsで収集した静的データ) を最優先
+ * 1. public/data/charts.json (GitHub Actionsで収集した静的データ) を最優先（一括キャッシュ活用）
  * 2. なければ CORS プロキシ経由で Yahoo Finance / Stooq から取得
  * 3. 開発環境なら /api/yfinance/chart/:code
  */
@@ -18,29 +60,14 @@ export async function fetchStockChart(
   if (!symbol) return null;
   const clean = symbol.replace(/\.T$/i, '');
 
-  // 1. 静的 charts.json からの取得（GitHub Pages用・最優先・CORS不要）
-  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
-  const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-  const candidatePaths = [
-    `${cleanBase}data/charts.json`,
-    './data/charts.json',
-    'data/charts.json',
-    '/value/data/charts.json',
-    '/data/charts.json',
-  ];
-
-  for (const path of candidatePaths) {
-    try {
-      const res = await fetch(path, { cache: 'no-cache' });
-      if (res.ok) {
-        const chartsMap = await res.json();
-        if (chartsMap && chartsMap[clean]) {
-          return chartsMap[clean] as StockChartData;
-        }
-      }
-    } catch {
-      // try next
+  // 1. 静的 charts.json からの取得（一括キャッシュ利用）
+  try {
+    const all = await fetchAllCharts();
+    if (all && all[clean]) {
+      return all[clean];
     }
+  } catch {
+    // try fallback
   }
 
   // 2. 開発環境（Node.jsプロキシが動いている場合）

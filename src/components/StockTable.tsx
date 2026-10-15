@@ -163,6 +163,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                 // 各指標のヒートマップスタイル (全指標: 上位1位〜12位まで黄緑グラデーション、13位以降は基準文字色 #c5d8cd)
                 const marketCapStyle = getHeatmapStyle(metricRanks.market_cap?.get(stock.code), 12);
                 const dyStyle = getHeatmapStyle(metricRanks.dividend_yield?.get(stock.code), 12);
+                const payoutStyle = getHeatmapStyle(metricRanks.payout_ratio?.get(stock.code), 12);
                 const perStyle = getHeatmapStyle(metricRanks.per?.get(stock.code), 12);
                 const pbrStyle = getHeatmapStyle(metricRanks.pbr?.get(stock.code), 12);
                 const roeStyle = getHeatmapStyle(metricRanks.roe?.get(stock.code), 12);
@@ -212,11 +213,6 @@ export const StockTable: React.FC<StockTableProps> = ({
                       >
                         {stock.name}
                       </span>
-                      {stock.category === 'sotsugyo' && stock.graduationReason && (
-                        <span className="text-[9.5px] text-[#f472b6] truncate block leading-none mt-0.5 font-normal">
-                          {stock.graduationReason.split('（')[0]}
-                        </span>
-                      )}
                     </td>
 
                     {/* Column 3: 滞在日数 (銘柄名の右に追加) */}
@@ -319,11 +315,12 @@ export const StockTable: React.FC<StockTableProps> = ({
                         : '-'}
                     </td>
 
-                    {/* Column 8: 配当性向 (基準となる白っぽい文字色) */}
+                    {/* Column 8: 配当性向 (低い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
-                      className={`px-2.5 py-2 text-right whitespace-nowrap text-[#c5d8cd] ${sortedColBg(
+                      className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'payout_ratio'
                       )}`}
+                      style={{ color: payoutStyle.color, fontWeight: payoutStyle.fontWeight }}
                     >
                       {stock.payout_ratio != null ? `${stock.payout_ratio.toFixed(1)}%` : '-'}
                     </td>

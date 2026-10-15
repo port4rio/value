@@ -50,6 +50,14 @@ export const DEFAULT_CRITERIA: ScreeningCriteria = {
   minEquityRatio: 48,
 };
 
+export const OUDOU_VALUE_CRITERIA: ScreeningCriteria = {
+  maxPbr: 1.2,
+  minRoe: 8.0,
+  minDividendYield: 4.0,
+  minEbitdaGrowth: 3.0,
+  minEquityRatio: 50.0,
+};
+
 export type SortField = keyof StockItem;
 export type SortDirection = 'asc' | 'desc';
 
