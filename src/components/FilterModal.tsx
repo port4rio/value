@@ -88,16 +88,16 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           </button>
         </div>
 
-        {/* Presets: 標準 と 王道バリュー を1行表示 */}
-        <div className="px-4 sm:px-5 py-2 bg-[#131d17] border-b border-[#24362b] flex items-center justify-between gap-2">
-          <span className="text-[11px] font-semibold text-[#739281] uppercase tracking-wider shrink-0">
-            プリセット:
+        {/* Presets: 標準 と 王道バリュー を1行で綺麗に収める（右端見切れ防止） */}
+        <div className="px-3 sm:px-5 py-2.5 bg-[#131d17] border-b border-[#24362b] flex items-center justify-between gap-1.5 sm:gap-2">
+          <span className="text-xs font-bold text-[#86a394] tracking-wide shrink-0">
+            プリセット
           </span>
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={applyStandard}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border whitespace-nowrap cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 sm:gap-1.5 transition-all border whitespace-nowrap shrink-0 cursor-pointer ${
                 isStandardActive
                   ? 'bg-[#1e3427] border-[#4ade80] text-[#86efac] shadow-[0_0_12px_rgba(74,222,128,0.15)]'
                   : 'bg-[#18261e] border-[#2c4235] text-[#c5d8cd] hover:bg-[#1f3126]'
@@ -110,7 +110,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             <button
               type="button"
               onClick={applyOudouValue}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border whitespace-nowrap cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 sm:gap-1.5 transition-all border whitespace-nowrap shrink-0 cursor-pointer ${
                 isOudouActive
                   ? 'bg-[#2f2a13] border-[#fde047] text-[#fde047] shadow-[0_0_12px_rgba(253,224,71,0.2)]'
                   : 'bg-[#222013] border-[#4d441c] text-[#fde047]/90 hover:bg-[#2c2815]'

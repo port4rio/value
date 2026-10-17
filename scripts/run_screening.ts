@@ -134,6 +134,7 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
 
 interface MinkabuData {
   name?: string | null;
+  marketCap: number | null;
   per: number | null;
   pbr: number | null;
   dividendYield: number | null;
@@ -142,24 +143,27 @@ interface MinkabuData {
 }
 
 /**
- * みんかぶ (minkabu.jp) から最新社名・主要ファンダメンタルズ指標を取得
- * - 銘柄トップ (https://minkabu.jp/stock/{code}): 最新社名(オカムラ、東海理化等), PER(調整後), PBR, 配当利回り
- * - 決算ページ (https://minkabu.jp/stock/{code}/settlement): 自己資本率, ROE
+ * みんかぶ (minkabu.jp) から最新社名・時価総額・主要ファンダメンタルズ指標を取得
+ * - 銘柄トップ (https://minkabu.jp/stock/{code}): 最新社名, 時価総額(百万円/億円), PER(調整後), PBR, 配当利回り
+ * - 決算ページ (https://minkabu.jp/stock/{code}/settlement): 自己資本比率, ROE
  */
 async function fetchMinkabuData(code: string): Promise<MinkabuData> {
   const headers = {
     'User-Agent':
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
   };
 
   let name: string | null = null;
+  let marketCap: number | null = null;
   let per: number | null = null;
   let pbr: number | null = null;
   let dividendYield: number | null = null;
   let equityRatio: number | null = null;
   let roe: number | null = null;
 
-  // 1. 銘柄トップページ (最新社名, PER(調整後), PBR, 配当利回り)
+  // 1. 銘柄トップページ (最新社名, 時価総額, PER(調整後), PBR, 配当利回り)
   try {
     const resTop = await fetch(`https://minkabu.jp/stock/${code}`, { headers });
     if (resTop.ok) {
@@ -171,6 +175,27 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
         const m = titleMatch[1].match(/^(.+?)\s*[(（]\s*[0-9A-Za-z]+\s*[)）]/);
         if (m && m[1].trim()) {
           name = m[1].trim();
+        }
+      }
+
+      // 時価総額 (例: 86,924百万円 -> 869億円, 1,234億円 -> 1234億円, 15,801,030百万円 -> 158010億円)
+      const mcMatch = htmlTop.match(
+        /<th[^>]*>[\s\S]*?時価総額[\s\S]*?<\/th>\s*<td[^>]*>([\s\S]*?)<\/td>/i
+      );
+      if (mcMatch) {
+        const mcRaw = mcMatch[1].replace(/<[^>]+>|\s+/g, '');
+        const numStr = mcRaw.replace(/[^0-9.]/g, '');
+        if (numStr && !isNaN(Number(numStr))) {
+          const rawNum = Number(numStr);
+          if (mcRaw.includes('百万円')) {
+            marketCap = Math.round(rawNum / 100);
+          } else if (mcRaw.includes('億円')) {
+            marketCap = Math.round(rawNum);
+          } else if (mcRaw.includes('兆円')) {
+            marketCap = Math.round(rawNum * 10000);
+          } else if (rawNum > 0) {
+            marketCap = Math.round(rawNum / 100);
+          }
         }
       }
 
@@ -218,6 +243,13 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
     if (resSet.ok) {
       const htmlSet = await resSet.text();
 
+      // 1. 直近決算の【自己資本比率】XX.XX% を meta tag から高速・高精度に抽出
+      const metaEqMatch = htmlSet.match(/【自己資本比率】\s*([0-9.]+)%/);
+      if (metaEqMatch && metaEqMatch[1]) {
+        const n = Number(metaEqMatch[1]);
+        if (!isNaN(n) && n > 0) equityRatio = n;
+      }
+
       const extractFromTable = (headerRegex: RegExp, targetRegex: RegExp): number | null => {
         const match = htmlSet.match(headerRegex);
         if (!match || match.index == null) return null;
@@ -255,9 +287,11 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
         return null;
       };
 
-      // 財務情報テーブル: 自己資本率
-      const eq = extractFromTable(/<th[^>]*>\s*自己資本(?:率|比率)?\s*<\/th>/i, /自己資本/);
-      if (eq != null && eq > 0) equityRatio = eq;
+      // 財務情報テーブル: 自己資本率（metaからの抽出ができなかった場合のフォールバック）
+      if (equityRatio == null) {
+        const eq = extractFromTable(/<th[^>]*>\s*自己資本(?:率|比率)?\s*<\/th>/i, /自己資本/);
+        if (eq != null && eq > 0) equityRatio = eq;
+      }
 
       // 収益性テーブル: ROE
       const r = extractFromTable(/<th[^>]*>\s*ROE\s*<\/th>/i, /ROE/);
@@ -267,7 +301,7 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
     // ignore
   }
 
-  return { name, per, pbr, dividendYield, equityRatio, roe };
+  return { name, marketCap, per, pbr, dividendYield, equityRatio, roe };
 }
 
 /**
@@ -303,12 +337,13 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
     }
 
     try {
-      // 2. みんかぶ (minkabu) から 最新社名、PER(調整後)、PBR、配当利回り、自己資本率、ROE を正確に取得
+      // 2. みんかぶ (minkabu) から 最新社名、時価総額、PER(調整後)、PBR、配当利回り、自己資本率、ROE を正確に取得
       const minkabu = await fetchMinkabuData(s.code);
       if (minkabu.name) {
         s.name = minkabu.name;
       }
       s.name = normalizeCompanyName(s.code, s.name);
+      if (minkabu.marketCap != null && minkabu.marketCap > 0) s.market_cap = minkabu.marketCap;
       if (minkabu.per != null && minkabu.per > 0) s.per = minkabu.per;
       if (minkabu.pbr != null && minkabu.pbr > 0) s.pbr = minkabu.pbr;
       if (minkabu.dividendYield != null && minkabu.dividendYield >= 0) s.dividend_yield = minkabu.dividendYield;
@@ -320,7 +355,7 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
     }
 
     enriched.push(s);
-    await new Promise((r) => setTimeout(r, 60));
+    await new Promise((r) => setTimeout(r, 120));
   }
 
   return enriched;
