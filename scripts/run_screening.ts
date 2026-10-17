@@ -304,11 +304,133 @@ async function fetchMinkabuData(code: string): Promise<MinkabuData> {
   return { name, marketCap, per, pbr, dividendYield, equityRatio, roe };
 }
 
+interface YahooJpData {
+  name?: string | null;
+  marketCap: number | null;
+  shares: number | null;
+  pbr: number | null;
+  dividendYield: number | null;
+}
+
 /**
- * 最新株価（Yahoo Finance）およびファンダメンタルズ指標（みんかぶ）を取得・更新
+ * Yahoo Finance Japan (finance.yahoo.co.jp) から東証公式の時価総額・発行済株式数を取得
+ * GitHub Actions runners環境でもブロックされず、発行株式数×株価に合致する東証公式時価総額を取得可能
+ */
+async function fetchYahooJpData(code: string): Promise<YahooJpData | null> {
+  try {
+    const res = await fetch(`https://finance.yahoo.co.jp/quote/${code}.T`, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+      },
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+
+    let name: string | null = null;
+    const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
+    if (titleMatch) {
+      const m = titleMatch[1].match(/^(.+?)\s*【[0-9A-Za-z]+】/);
+      if (m && m[1].trim()) name = m[1].trim();
+    }
+
+    let marketCap: number | null = null;
+    const mcMatch = html.match(/時価総額[\s\S]*?<dd[^>]*>([\s\S]*?)<\/dd>/i);
+    if (mcMatch) {
+      const clean = mcMatch[1].replace(/<[^>]+>|\s+/g, '').split('(')[0];
+      const n = Number(clean.replace(/[^0-9.]/g, ''));
+      if (!isNaN(n) && n > 0) {
+        if (clean.includes('百万円')) marketCap = Math.round(n / 100);
+        else if (clean.includes('億円')) marketCap = Math.round(n);
+        else if (clean.includes('兆円')) marketCap = Math.round(n * 10000);
+      }
+    }
+
+    let shares: number | null = null;
+    const sharesMatch = html.match(/発行済株式数[\s\S]*?<dd[^>]*>([\s\S]*?)<\/dd>/i);
+    if (sharesMatch) {
+      const clean = sharesMatch[1].replace(/<[^>]+>|\s+/g, '').split('(')[0];
+      const n = Number(clean.replace(/[^0-9]/g, ''));
+      if (!isNaN(n) && n > 0) shares = n;
+    }
+
+    let pbr: number | null = null;
+    const pbrMatch = html.match(/PBR(?:\(連\))?[\s\S]*?<dd[^>]*>([\s\S]*?)<\/dd>/i);
+    if (pbrMatch) {
+      const clean = pbrMatch[1].replace(/<[^>]+>|\s+/g, '').split('(')[0].replace(/倍.*/, '');
+      const n = Number(clean.replace(/[^0-9.]/g, ''));
+      if (!isNaN(n) && n > 0) pbr = n;
+    }
+
+    let dividendYield: number | null = null;
+    const dyMatch = html.match(/配当利回り(?:\(会社予想\))?[\s\S]*?<dd[^>]*>([\s\S]*?)<\/dd>/i);
+    if (dyMatch) {
+      const clean = dyMatch[1].replace(/<[^>]+>|\s+/g, '').split('(')[0].replace(/%.*/, '');
+      const n = Number(clean.replace(/[^0-9.]/g, ''));
+      if (!isNaN(n) && n >= 0) dividendYield = n;
+    }
+
+    return { name, marketCap, shares, pbr, dividendYield };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 株探 (kabutan.jp) から自己資本比率（通期財務推移）を取得（みんかぶブロック時のフォールバック）
+ */
+async function fetchKabutanEquity(code: string): Promise<number | null> {
+  try {
+    const res = await fetch(`https://kabutan.jp/stock/finance?code=${code}`, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+      },
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+    const tables = [...html.matchAll(/<table[^>]*>([\s\S]*?)<\/table>/gi)];
+    for (const t of tables) {
+      const tableHtml = t[1];
+      if (tableHtml.includes('自己資本') && tableHtml.includes('決算期')) {
+        const thead = tableHtml.match(/<thead[^>]*>([\s\S]*?)<\/thead>/i)?.[1] || '';
+        const ths = [...thead.matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi)].map((m) =>
+          m[1].replace(/<[^>]+>|\s+/g, '')
+        );
+        const colIdx = ths.findIndex((h) => /自己資本比率/.test(h));
+        if (colIdx !== -1) {
+          const tbody = tableHtml.match(/<tbody[^>]*>([\s\S]*?)<\/tbody>/i)?.[1] || '';
+          const rows = [...tbody.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)];
+          for (let i = rows.length - 1; i >= 0; i--) {
+            const cells = [...rows[i][1].matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)].map(
+              (m) => m[1].replace(/<[^>]+>|\s+/g, '')
+            );
+            if (colIdx < cells.length) {
+              const val = cells[colIdx].replace(/%|倍|,/g, '');
+              const n = Number(val);
+              if (!isNaN(n) && n > 0 && n <= 100) {
+                return n;
+              }
+            }
+          }
+        }
+      }
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 最新株価（Yahoo Finance）およびファンダメンタルズ指標（Yahoo Finance JP、みんかぶ、株探）を取得・更新
  */
 async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem[]> {
-  console.log(`📊 Updating ${stocks.length} stocks with live quotes, and minkabu metrics (PER(調整後), PBR, 利回り, 自己資本率, ROE)...`);
+  console.log(`📊 Updating ${stocks.length} stocks with live quotes, TSE market cap (shares*price), and fundamental metrics...`);
   const enriched: StockItem[] = [];
 
   for (const s of stocks) {
@@ -336,13 +458,32 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       // ignore
     }
 
+    // 2. Yahoo Finance Japan から東証公式時価総額（発行済株式数×株価）と基本指標を取得
+    // ※ GitHub Actions環境でもブロックされず、TradingViewの乖離（デンソー51,528億など）を確実に東証公式値（54,479億）に補正
     try {
-      // 2. みんかぶ (minkabu) から 最新社名、時価総額、PER(調整後)、PBR、配当利回り、自己資本率、ROE を正確に取得
+      const yahooJp = await fetchYahooJpData(s.code);
+      if (yahooJp) {
+        if (yahooJp.name) s.name = yahooJp.name;
+        if (yahooJp.marketCap != null && yahooJp.marketCap > 0) {
+          s.market_cap = yahooJp.marketCap;
+        } else if (yahooJp.shares != null && s.close != null && s.close > 0) {
+          s.market_cap = Math.round((s.close * yahooJp.shares) / 100000000);
+        }
+        if (yahooJp.pbr != null && yahooJp.pbr > 0) s.pbr = yahooJp.pbr;
+        if (yahooJp.dividendYield != null && yahooJp.dividendYield >= 0) {
+          s.dividend_yield = yahooJp.dividendYield;
+        }
+      }
+    } catch {
+      // ignore
+    }
+
+    // 3. みんかぶ (minkabu) から取得試行（ブロックされなければ最新社名、時価総額、PER、PBR、配当利回り、自己資本率、ROE）
+    try {
       const minkabu = await fetchMinkabuData(s.code);
       if (minkabu.name) {
         s.name = minkabu.name;
       }
-      s.name = normalizeCompanyName(s.code, s.name);
       if (minkabu.marketCap != null && minkabu.marketCap > 0) s.market_cap = minkabu.marketCap;
       if (minkabu.per != null && minkabu.per > 0) s.per = minkabu.per;
       if (minkabu.pbr != null && minkabu.pbr > 0) s.pbr = minkabu.pbr;
@@ -350,12 +491,24 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       if (minkabu.equityRatio != null && minkabu.equityRatio > 0) s.equity_ratio = minkabu.equityRatio;
       if (minkabu.roe != null) s.roe = minkabu.roe;
     } catch {
-      // 取得失敗時はTradingViewの値をそのまま保持
-      s.name = normalizeCompanyName(s.code, s.name);
+      // ignore
     }
 
+    // 4. みんかぶがブロックされた場合の自己資本比率フォールバック（株探 Kabutan）
+    if (s.equity_ratio == null || s.equity_ratio === 0) {
+      try {
+        const kabutanEq = await fetchKabutanEquity(s.code);
+        if (kabutanEq != null && kabutanEq > 0) {
+          s.equity_ratio = kabutanEq;
+        }
+      } catch {
+        // ignore
+      }
+    }
+
+    s.name = normalizeCompanyName(s.code, s.name);
     enriched.push(s);
-    await new Promise((r) => setTimeout(r, 120));
+    await new Promise((r) => setTimeout(r, 80));
   }
 
   return enriched;
