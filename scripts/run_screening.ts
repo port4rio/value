@@ -333,7 +333,9 @@ async function fetchYahooJpData(code: string): Promise<YahooJpData | null> {
     const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
     if (titleMatch) {
       const m = titleMatch[1].match(/^(.+?)\s*【[0-9A-Za-z]+】/);
-      if (m && m[1].trim()) name = m[1].trim();
+      if (m && m[1].trim()) {
+        name = m[1].trim().replace(/^[（(]株[)）]\s*|\s*[（(]株[)）]$|^株式会社\s*|\s*株式会社$/g, '').trim();
+      }
     }
 
     let marketCap: number | null = null;

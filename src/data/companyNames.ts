@@ -30,7 +30,13 @@ export function normalizeCompanyName(code: string, rawName: string): string {
 
   // 英数字プレフィックスの除去（例: "TSE:7994 岡村" -> "岡村"）
   let cleaned = rawName.replace(/^[A-Z0-9\s:]+(?=[一-龥ぁ-んァ-ヶ])/, '').trim();
-  
+
+  // (株), （株）, 株式会社 の除去（前置・後置・文中すべて）
+  cleaned = cleaned.replace(/^[（(]株[)）]\s*|\s*[（(]株[)）]$/g, '');
+  cleaned = cleaned.replace(/^株式会社\s*|\s*株式会社$/g, '');
+  cleaned = cleaned.replace(/[（(]株[)）]/g, '');
+  cleaned = cleaned.replace(/^株式会社\s*|\s*株式会社$/g, '');
+
   // 連続する全角・半角スペースの整形
   cleaned = cleaned.replace(/[\s　]+/g, ' ').trim();
 
