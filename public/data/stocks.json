@@ -2041,27 +2041,6 @@
       "lastIncrementDate": "2026-10-20"
     },
     {
-      "code": "6902",
-      "name": "デンソー",
-      "close": 1872,
-      "change": 0.13,
-      "market_cap": 51473,
-      "per": 11.38,
-      "pbr": 0.9,
-      "roe": 8.71,
-      "dividend_yield": 3.96,
-      "payout_ratio": 41.11,
-      "ebitda_growth": 9.69,
-      "current_ratio": 212.5,
-      "de_ratio": 0.26,
-      "equity_ratio": 60.41,
-      "category": "wariyasu",
-      "stayDays": 19,
-      "entryDate": "2026-09-29",
-      "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-10-20"
-    },
-    {
       "code": "5356",
       "name": "美濃窯業",
       "close": 1209,
