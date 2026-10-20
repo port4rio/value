@@ -85,6 +85,26 @@ export const StockMiniChart: React.FC<StockMiniChartProps> = ({
       }
     });
 
+    // 単一月（10月上場直後などで1ヶ月未満）の場合は日単位ラベル（初日・中間・最終日）を表示
+    if (monthLabels.length <= 1 && coords.length >= 2) {
+      monthLabels.length = 0;
+      const first = coords[0];
+      const last = coords[coords.length - 1];
+      const midIdx = Math.floor(coords.length / 2);
+      const mid = coords[midIdx];
+
+      const fmtDate = (d: string) => {
+        const parts = d.split('-');
+        return parts.length >= 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : d;
+      };
+
+      monthLabels.push({ x: first.x, label: fmtDate(first.point.date) });
+      if (midIdx > 0 && midIdx < coords.length - 1) {
+        monthLabels.push({ x: mid.x, label: fmtDate(mid.point.date) });
+      }
+      monthLabels.push({ x: last.x, label: fmtDate(last.point.date) });
+    }
+
     return {
       width,
       height,
@@ -139,9 +159,35 @@ export const StockMiniChart: React.FC<StockMiniChartProps> = ({
       ? chartMetrics.coords[hoverIndex]
       : chartMetrics?.coords[chartMetrics.coords.length - 1];
 
-  const isPositive = (chartData?.periodChangePercent || 0) >= 0;
+  const displayHighPrice =
+    chartData?.highPrice ??
+    chartMetrics?.maxPrice ??
+    (points.length > 0 ? Math.max(...points.map((p) => p.high ?? p.close)) : null);
+  const displayLowPrice =
+    chartData?.lowPrice ??
+    chartMetrics?.minPrice ??
+    (points.length > 0 ? Math.min(...points.map((p) => p.low ?? p.close)) : null);
+  const displayStartDate = chartData?.startDate || points[0]?.date || '';
+  const displayEndDate = chartData?.endDate || points[points.length - 1]?.date || '';
+  const displayPeriodChangePercent =
+    chartData?.periodChangePercent ??
+    (points.length >= 2 && points[0].close
+      ? Number(
+          (
+            ((points[points.length - 1].close - points[0].close) /
+              points[0].close) *
+            100
+          ).toFixed(2)
+        )
+      : 0);
+
+  const isPositive = (displayPeriodChangePercent || 0) >= 0;
   const strokeColor = isPositive ? '#4ade80' : '#f87171';
   const fillColor = isPositive ? '#4ade80' : '#f87171';
+
+  const isShortPeriod = points.length < 50;
+  const periodTitle = isShortPeriod ? '直近・上場来推移' : '6ヵ月推移';
+  const periodLabel = isShortPeriod ? '期間' : '6ヵ月';
 
   return (
     <div
@@ -153,11 +199,11 @@ export const StockMiniChart: React.FC<StockMiniChartProps> = ({
         <div className="flex items-center gap-1.5 min-w-0">
           <span className="text-xs font-bold text-[#f0f5f2] tracking-wide flex items-center gap-1 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80]" />
-            6ヵ月推移
+            {periodTitle}
           </span>
           <span className="text-[10px] text-[#6e8a7c] font-mono truncate">
-            {chartData
-              ? `${chartData.startDate.slice(5)}〜${chartData.endDate.slice(5)}`
+            {displayStartDate && displayEndDate && displayStartDate.length >= 5 && displayEndDate.length >= 5
+              ? `${displayStartDate.slice(5)}〜${displayEndDate.slice(5)}`
               : ''}
           </span>
         </div>
@@ -192,22 +238,22 @@ export const StockMiniChart: React.FC<StockMiniChartProps> = ({
         <div className="flex items-baseline justify-between mb-1 text-xs whitespace-nowrap font-mono">
           <div className="flex items-baseline gap-1.5">
             <span className="font-bold text-sm text-[#f0f5f2]">
-              {activePoint ? `${activePoint.close.toLocaleString()}円` : '-'}
+              {activePoint && activePoint.close != null ? `${activePoint.close.toLocaleString()}円` : '-'}
             </span>
             <span
               className={`text-xs font-semibold ${
                 isPositive ? 'text-[#4ade80]' : 'text-[#f87171]'
               }`}
             >
-              6ヵ月:{isPositive ? '+' : ''}
-              {chartData.periodChangePercent}%
+              {periodLabel}:{isPositive ? '+' : ''}
+              {displayPeriodChangePercent}%
             </span>
           </div>
 
           <div className="text-[11px] text-[#8ea899] flex items-center gap-1.5">
-            <span>高{chartData.highPrice.toLocaleString()}</span>
+            <span>高{displayHighPrice != null ? displayHighPrice.toLocaleString() : '-'}</span>
             <span>/</span>
-            <span>安{chartData.lowPrice.toLocaleString()}</span>
+            <span>安{displayLowPrice != null ? displayLowPrice.toLocaleString() : '-'}</span>
           </div>
         </div>
       )}
@@ -333,10 +379,10 @@ export const StockMiniChart: React.FC<StockMiniChartProps> = ({
           >
             <div className="text-[#8ba797] text-[9px]">{activePoint.date}</div>
             <div className="font-bold text-[#86efac]">
-              終値: {activePoint.close.toLocaleString()}円
+              終値: {activePoint.close != null ? `${activePoint.close.toLocaleString()}円` : '-'}
             </div>
             <div className="text-[9px] text-[#b8d1c3]">
-              高: {activePoint.high.toLocaleString()} / 安: {activePoint.low.toLocaleString()}
+              高: {activePoint.high != null ? activePoint.high.toLocaleString() : '-'} / 安: {activePoint.low != null ? activePoint.low.toLocaleString() : '-'}
             </div>
           </div>
         )}

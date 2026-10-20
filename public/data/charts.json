@@ -183778,5 +183778,120 @@
     "startDate": "2026-04-20",
     "endDate": "2026-10-20",
     "fromCache": true
+  },
+  "641A": {
+    "symbol": "641A.T",
+    "name": "ＮＯＫ",
+    "currency": "JPY",
+    "points": [
+      {
+        "date": "2026-10-05",
+        "timestamp": 1791158400000,
+        "open": 2881,
+        "high": 2947,
+        "low": 2813,
+        "close": 2829,
+        "volume": 914100
+      },
+      {
+        "date": "2026-10-06",
+        "timestamp": 1791244800000,
+        "open": 2857,
+        "high": 2874,
+        "low": 2815,
+        "close": 2856,
+        "volume": 832000
+      },
+      {
+        "date": "2026-10-07",
+        "timestamp": 1791331200000,
+        "open": 2850,
+        "high": 2881,
+        "low": 2804,
+        "close": 2821,
+        "volume": 789800
+      },
+      {
+        "date": "2026-10-08",
+        "timestamp": 1791417600000,
+        "open": 2831,
+        "high": 2845,
+        "low": 2776,
+        "close": 2776,
+        "volume": 798100
+      },
+      {
+        "date": "2026-10-09",
+        "timestamp": 1791504000000,
+        "open": 2779,
+        "high": 2804,
+        "low": 2766,
+        "close": 2784,
+        "volume": 565900
+      },
+      {
+        "date": "2026-10-13",
+        "timestamp": 1791849600000,
+        "open": 2785,
+        "high": 2830,
+        "low": 2757,
+        "close": 2816,
+        "volume": 476400
+      },
+      {
+        "date": "2026-10-14",
+        "timestamp": 1791936000000,
+        "open": 2849,
+        "high": 2855,
+        "low": 2812,
+        "close": 2819,
+        "volume": 535900
+      },
+      {
+        "date": "2026-10-15",
+        "timestamp": 1792022400000,
+        "open": 2810,
+        "high": 2812,
+        "low": 2761,
+        "close": 2782,
+        "volume": 753700
+      },
+      {
+        "date": "2026-10-16",
+        "timestamp": 1792108800000,
+        "open": 2820,
+        "high": 2825,
+        "low": 2756,
+        "close": 2821,
+        "volume": 542100
+      },
+      {
+        "date": "2026-10-19",
+        "timestamp": 1792368000000,
+        "open": 2816,
+        "high": 2818,
+        "low": 2791,
+        "close": 2803,
+        "volume": 306100
+      },
+      {
+        "date": "2026-10-20",
+        "timestamp": 1792454400000,
+        "open": 2810,
+        "high": 2813,
+        "low": 2743,
+        "close": 2743,
+        "volume": 518300
+      }
+    ],
+    "highPrice": 2947,
+    "lowPrice": 2743,
+    "latestPrice": 2743,
+    "periodChange": -86,
+    "periodChangePercent": -3.04,
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-20",
+    "updatedAt": "2026-10-20T11:24:34.555Z",
+    "fromCache": false
   }
 }

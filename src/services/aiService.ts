@@ -330,7 +330,7 @@ export function createChatGptConsultUrl(stock: StockItem): string {
 ・流動比率: ${stock.current_ratio != null ? `${stock.current_ratio}%` : '不明'}
 
 【出力要件】
-1. 何をやっている会社か（事業紹介や特色、何で稼いでるか端的な一行で）
+1. 事業特色（事業紹介や特色、何で稼いでいる会社かを端的な一行で）
 2. なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）
 3. それでも魅力的な理由（逆張りポイント）
 4. 再評価シナリオ（何が起きたら株価が見直されるか）

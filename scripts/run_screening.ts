@@ -23,20 +23,21 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       { left: 'market_cap_basic', operation: 'nempty' },
       { left: 'type', operation: 'equal', right: 'stock' },
       { left: 'subtype', operation: 'in_range', right: ['common'] },
-      // ① TradingViewから取得する条件:
+      // ① TradingViewから取得する基礎ファンダメンタルズ条件:
       // PBR 1.3以下
       { left: 'price_book_fq', operation: 'less', right: 1.3 },
       // ROE 7.4以上
       { left: 'return_on_equity_fq', operation: 'egreater', right: 7.4 },
-      // 配当利回り 3.7以上
-      { left: 'dividends_yield', operation: 'egreater', right: 3.7 },
       // EBITDA成長率 -10以上
       { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: -10 },
+      // ※ 配当利回りは「予想利回り (dividends_yield)」と「直近/実績利回り (dividends_yield_current)」の
+      //    いずれかが3.7%以上を満たす必要があるため、新設持株会社（641A等で予想がnullになるケース）
+      //    や増配銘柄の取りこぼしを防ぐべく、取得後に両項目を評価して3.7%以上で厳密に判定します。
     ],
     options: { lang: 'ja' },
     symbols: { query: { types: [] }, tickers: [] },
     columns: [
-      'name',                     // 0: コード（例: TSE:7226, TSE:256A）
+      'name',                     // 0: コード（例: 7226, 641A）
       'description',              // 1: 銘柄名
       'close',                    // 2: 終値
       'change',                   // 3: 前日比%
@@ -44,16 +45,17 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
       'price_earnings_ttm',       // 5: PER
       'price_book_fq',            // 6: PBR
       'return_on_equity_fq',       // 7: ROE
-      'dividends_yield',          // 8: 予想配当利回り%（会社発表予想ベース）
-      'dividend_payout_ratio_fy', // 9: 配当性向%
-      'ebitda_yoy_growth_fy',     // 10: EBITDA成長率%
-      'current_ratio_fq',         // 11: 流動比率
-      'debt_to_equity_fq',        // 12: D/Eレシオ
-      'total_assets_fq',          // 13: 総資産
-      'total_liabilities_fq',     // 14: 負債合計
+      'dividends_yield',          // 8: 会社予想配当利回り%（新設持株会社等でnullの場合あり）
+      'dividends_yield_current',  // 9: 直近/実績配当利回り%（株価・DPSベース）
+      'dividend_payout_ratio_fy', // 10: 配当性向%
+      'ebitda_yoy_growth_fy',     // 11: EBITDA成長率%
+      'current_ratio_fq',         // 12: 流動比率
+      'debt_to_equity_fq',        // 13: D/Eレシオ
+      'total_assets_fq',          // 14: 総資産
+      'total_liabilities_fq',     // 15: 負債合計
     ],
-    sort: { sortBy: 'dividends_yield', sortOrder: 'desc' },
-    range: [0, 500],
+    sort: { sortBy: 'dividends_yield_current', sortOrder: 'desc' },
+    range: [0, 1000],
   };
 
   try {
@@ -69,18 +71,25 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
     const candidates: StockItem[] = [];
     for (const r of rows) {
       const ticker = String(r.s || '');
-      const code = ticker.replace(/^TSE:/, '');
-      // 新証券コード対応: 4桁数字（7226）または数字3桁+英数字（256A, 391A 等）
-      if (!/^[0-9]{3}[0-9A-Za-z]$/.test(code)) continue;
+      // 取引所プレフィックスの除去（例: TSE:641A, NAG:6902, FSE:242A -> 641A, 6902, 242A）
+      const code = ticker.replace(/^[A-Z]+:/, '') || String(r.d?.[0] || '');
+      // 東証新証券コード規格対応: 4文字（英字が第2位・第4位に入る 641A, 256A, 1A00 および従来の4桁数字 7226 に完全対応）
+      if (!/^[0-9][0-9A-Za-z]{3}$/i.test(code)) continue;
 
       const d = r.d || [];
       const rawName = String(d[1] || d[0] || code);
       const cleanName = normalizeCompanyName(code, rawName);
       const marketCapOku = d[4] ? Math.round(Number(d[4]) / 100000000) : null;
 
+      // 配当利回りの判定（予想配当利回りを優先、新設コード等でnullの場合は直近利回りを採用）
+      const dyForward = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
+      const dyCurrent = d[9] != null ? Number(Number(d[9]).toFixed(2)) : null;
+      const dy = dyForward ?? dyCurrent;
+      if (dy == null || dy < 3.7) continue;
+
       // 自己資本比率の算出: ((総資産 - 負債合計) / 総資産) * 100
-      const totalAssets = d[13] != null ? Number(d[13]) : null;
-      const totalLiabilities = d[14] != null ? Number(d[14]) : 0;
+      const totalAssets = d[14] != null ? Number(d[14]) : null;
+      const totalLiabilities = d[15] != null ? Number(d[15]) : 0;
       let equityRatio: number | null = null;
       if (totalAssets && totalAssets > 0) {
         equityRatio = Number((((totalAssets - totalLiabilities) / totalAssets) * 100).toFixed(2));
@@ -88,11 +97,9 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
 
       const pbr = d[6] != null ? Number(Number(d[6]).toFixed(2)) : null;
       const roe = d[7] != null ? Number(Number(d[7]).toFixed(2)) : null;
-      const dy = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
-      const ebitdaGrowth = d[10] != null ? Number(Number(d[10]).toFixed(2)) : null;
+      const ebitdaGrowth = d[11] != null ? Number(Number(d[11]).toFixed(2)) : null;
 
-      // 自己資本比率のみ判定: TradingViewクエリで直接指定できないため総資産・負債から算出（47%以上）
-      // ※ PBR(<=1.3), ROE(>=7.4), 配当利回り(>=3.7), EBITDA成長率(>=-10) はTradingView取得クエリで絞込済みのため、ここでの2重判定は行わない
+      // 自己資本比率のみ判定: 47%以上
       if (equityRatio == null || equityRatio < 47.0) continue;
 
       const pbrVal = pbr != null ? Number(pbr.toFixed(2)) : null;
@@ -113,10 +120,10 @@ async function fetchTradingViewCandidates(): Promise<StockItem[]> {
         pbr,
         roe,
         dividend_yield: dy,
-        payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
+        payout_ratio: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
         ebitda_growth: ebitdaGrowth,
-        current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
-        de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
+        current_ratio: d[12] != null ? Number((Number(d[12]) * 100).toFixed(2)) : null,
+        de_ratio: d[13] != null ? Number(Number(d[13]).toFixed(2)) : null,
         equity_ratio: equityRatio,
         category,
         stayDays: 1,
@@ -380,6 +387,93 @@ async function fetchYahooJpData(code: string): Promise<YahooJpData | null> {
   }
 }
 
+interface KabutanData {
+  name: string | null;
+  marketCap: number | null;
+  shares: number | null;
+  per: number | null;
+  pbr: number | null;
+  dividendYield: number | null;
+}
+
+/**
+ * 株探 (kabutan.jp) から基本指標（社名、東証公式時価総額、発行済株式数、予想配当利回り、PER、PBR）を取得
+ * ※ GitHub Actionsランナー（海外クラウドIP）からでもブロックされず、安定して東証公式時価総額（発行済株式数×株価）や配当利回りを取得可能
+ */
+async function fetchKabutanData(code: string): Promise<KabutanData | null> {
+  try {
+    const res = await fetch(`https://kabutan.jp/stock/?code=${code}`, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+      },
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+
+    let name: string | null = null;
+    const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
+    if (titleMatch) {
+      const m = titleMatch[1].match(/^(.+?)\s*【[0-9A-Za-z]+】/);
+      if (m && m[1].trim()) {
+        name = m[1].trim().replace(/^[（(]株[)）]\s*|\s*[（(]株[)）]$|^株式会社\s*|\s*株式会社$/g, '').trim();
+      }
+    }
+
+    let per: number | null = null;
+    let pbr: number | null = null;
+    let dividendYield: number | null = null;
+    let marketCap: number | null = null;
+
+    const i3Match = html.match(/<div[^>]*id=["']stockinfo_i3["'][\s\S]*?<\/table>/i);
+    if (i3Match) {
+      const tbl = i3Match[0];
+      const tds = [...tbl.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) =>
+        m[1].replace(/<[^>]+>|\s+/g, '')
+      );
+      if (tds.length >= 3) {
+        const perNum = Number(tds[0].replace(/倍|,/g, ''));
+        if (!isNaN(perNum) && perNum > 0) per = perNum;
+
+        const pbrNum = Number(tds[1].replace(/倍|,/g, ''));
+        if (!isNaN(pbrNum) && pbrNum > 0) pbr = pbrNum;
+
+        const dyNum = Number(tds[2].replace(/％|%|,/g, ''));
+        if (!isNaN(dyNum) && dyNum >= 0) dividendYield = dyNum;
+      }
+
+      const zikaMatch = tbl.match(/class=["']v_zika2["'][^>]*>([\s\S]*?)<\/td>/i);
+      if (zikaMatch) {
+        const raw = zikaMatch[1].replace(/<[^>]+>|\s+/g, '');
+        if (raw.includes('兆')) {
+          const cho = raw.match(/([0-9.]+)兆/);
+          const oku = raw.match(/([0-9,]+)億/);
+          const choVal = cho ? Number(cho[1]) * 10000 : 0;
+          const okuVal = oku ? Number(oku[1].replace(/,/g, '')) : 0;
+          marketCap = Math.round(choVal + okuVal);
+        } else if (raw.includes('億')) {
+          const oku = raw.match(/([0-9,]+)億/);
+          if (oku) marketCap = Math.round(Number(oku[1].replace(/,/g, '')));
+        }
+      }
+    }
+
+    let shares: number | null = null;
+    const sharesMatch = html.match(/発行済株式数[\s\S]*?<td[^>]*>([\s\S]*?)<\/td>/i);
+    if (sharesMatch) {
+      const sRaw = sharesMatch[1].replace(/<[^>]+>|\s+|&nbsp;|株|,/g, '');
+      const n = Number(sRaw);
+      if (!isNaN(n) && n > 0) shares = n;
+    }
+
+    return { name, marketCap, shares, per, pbr, dividendYield };
+  } catch {
+    return null;
+  }
+}
+
 /**
  * 株探 (kabutan.jp) から自己資本比率（通期財務推移）を取得（みんかぶブロック時のフォールバック）
  */
@@ -407,18 +501,27 @@ async function fetchKabutanEquity(code: string): Promise<number | null> {
         if (colIdx !== -1) {
           const tbody = tableHtml.match(/<tbody[^>]*>([\s\S]*?)<\/tbody>/i)?.[1] || '';
           const rows = [...tbody.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)];
+          let fullYearRatio: number | null = null;
+          let latestRatio: number | null = null;
+
           for (let i = rows.length - 1; i >= 0; i--) {
             const cells = [...rows[i][1].matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)].map(
               (m) => m[1].replace(/<[^>]+>|\s+/g, '')
             );
             if (colIdx < cells.length) {
+              const period = cells[0] || '';
               const val = cells[colIdx].replace(/%|倍|,/g, '');
               const n = Number(val);
               if (!isNaN(n) && n > 0 && n <= 100) {
-                return n;
+                if (latestRatio == null) latestRatio = n;
+                // 通期決算（西暦4桁、例: 2026.03）を優先
+                if (/[0-9]{4}\.[0-9]{2}/.test(period) && fullYearRatio == null) {
+                  fullYearRatio = n;
+                }
               }
             }
           }
+          return fullYearRatio ?? latestRatio;
         }
       }
     }
@@ -429,7 +532,7 @@ async function fetchKabutanEquity(code: string): Promise<number | null> {
 }
 
 /**
- * 最新株価（Yahoo Finance）およびファンダメンタルズ指標（Yahoo Finance JP、みんかぶ、株探）を取得・更新
+ * 最新株価（Yahoo Finance）およびファンダメンタルズ指標（株探、Yahoo Finance JP、みんかぶ）を取得・更新
  */
 async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem[]> {
   console.log(`📊 Updating ${stocks.length} stocks with live quotes, TSE market cap (shares*price), and fundamental metrics...`);
@@ -460,8 +563,39 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       // ignore
     }
 
-    // 2. Yahoo Finance Japan から東証公式時価総額（発行済株式数×株価）と基本指標を取得
-    // ※ GitHub Actions環境でもブロックされず、TradingViewの乖離（デンソー51,528億など）を確実に東証公式値（54,479億）に補正
+    // 2. 株探 (Kabutan) から東証公式時価総額（発行株式総数×株価ベース）・予想配当利回り・基本指標を取得
+    // ※ GitHub Actions環境でもIPブロックされず、TradingViewの算出乖離（デンソー51,473億、配当利回り3.96%など）を
+    //    東証公式・会社予想基準（54,494億、3.95%）へと確実に補正
+    try {
+      const kabutan = await fetchKabutanData(s.code);
+      if (kabutan) {
+        if (kabutan.name) s.name = kabutan.name;
+        if (kabutan.marketCap != null && kabutan.marketCap > 0) {
+          s.market_cap = kabutan.marketCap;
+        } else if (kabutan.shares != null && s.close != null && s.close > 0) {
+          s.market_cap = Math.round((s.close * kabutan.shares) / 100000000);
+        }
+        if (kabutan.dividendYield != null && kabutan.dividendYield >= 0) {
+          s.dividend_yield = kabutan.dividendYield;
+        }
+        if (kabutan.pbr != null && kabutan.pbr > 0) s.pbr = kabutan.pbr;
+        if (kabutan.per != null && kabutan.per > 0) s.per = kabutan.per;
+      }
+    } catch {
+      // ignore
+    }
+
+    // 3. 株探 (Kabutan) から自己資本比率（通期財務推移）を取得・補正
+    try {
+      const kabutanEq = await fetchKabutanEquity(s.code);
+      if (kabutanEq != null && kabutanEq > 0) {
+        s.equity_ratio = kabutanEq;
+      }
+    } catch {
+      // ignore
+    }
+
+    // 4. Yahoo Finance Japan から東証公式指標を取得（国内IP環境時の補正）
     try {
       const yahooJp = await fetchYahooJpData(s.code);
       if (yahooJp) {
@@ -480,7 +614,7 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       // ignore
     }
 
-    // 3. みんかぶ (minkabu) から取得試行（ブロックされなければ最新社名、時価総額、PER、PBR、配当利回り、自己資本率、ROE）
+    // 5. みんかぶ (minkabu) から取得試行（ブロックされなければ最新社名、時価総額、PER、PBR、配当利回り、自己資本率、ROE）
     try {
       const minkabu = await fetchMinkabuData(s.code);
       if (minkabu.name) {
@@ -494,18 +628,6 @@ async function enrichWithMarketForecasts(stocks: StockItem[]): Promise<StockItem
       if (minkabu.roe != null) s.roe = minkabu.roe;
     } catch {
       // ignore
-    }
-
-    // 4. みんかぶがブロックされた場合の自己資本比率フォールバック（株探 Kabutan）
-    if (s.equity_ratio == null || s.equity_ratio === 0) {
-      try {
-        const kabutanEq = await fetchKabutanEquity(s.code);
-        if (kabutanEq != null && kabutanEq > 0) {
-          s.equity_ratio = kabutanEq;
-        }
-      } catch {
-        // ignore
-      }
     }
 
     s.name = normalizeCompanyName(s.code, s.name);
@@ -727,7 +849,7 @@ async function generateAiDiagnosis(
 
 【出力要件】
 以下の5つの項目について、定性的な洞察を具体的かつ辛口で鋭く解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
-1. "business_summary": 何をやっている会社か（事業紹介や特色、何で稼いでるか端的な一行で）
+1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
 2. "undervalued_reason": なぜ今安く放置されているのか（市場の懸念、PBRが低い理由。数値を単純に説明しないこと）
 3. "contrarian_appeal": それでも魅力的な理由（逆張りポイント）
 4. "revaluation_scenario": 再評価シナリオ（何が起きたら株価が見直されるか）
@@ -735,11 +857,11 @@ async function generateAiDiagnosis(
 
 JSON形式例:
 {
-  "business_summary": "何をやっている会社かを端的な一行で",
-  "undervalued_reason": "なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）",
-  "contrarian_appeal": "それでも魅力的な理由（逆張りポイント）",
-  "revaluation_scenario": "再評価シナリオ（何が起きたら株価が見直されるか）",
-  "max_risk": "最大リスク（1つに絞る）"
+  "business_summary": "...",
+  "undervalued_reason": "...",
+  "contrarian_appeal": "...",
+  "revaluation_scenario": "...",
+  "max_risk": "..."
 }`;
 
     try {

@@ -123,9 +123,11 @@ export async function fetchScreeningStocks(
     // yfinance から取得した最新値を使って後段で厳格に絞り込む
     const payload = {
       filter: [
+        { left: 'market_cap_basic', operation: 'nempty' },
+        { left: 'type', operation: 'equal', right: 'stock' },
+        { left: 'subtype', operation: 'in_range', right: ['common'] },
         { left: 'price_book_fq', operation: 'less', right: 1.3 },
         { left: 'return_on_equity_fq', operation: 'egreater', right: 7.4 },
-        { left: 'dividends_yield_current', operation: 'egreater', right: 3.7 },
         { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: -10 },
       ],
       options: { lang: 'ja' },
@@ -139,6 +141,7 @@ export async function fetchScreeningStocks(
         'price_earnings_ttm',
         'price_book_fq',
         'return_on_equity_fq',
+        'dividends_yield',
         'dividends_yield_current',
         'dividend_payout_ratio_fy',
         'ebitda_yoy_growth_fy',
@@ -148,7 +151,7 @@ export async function fetchScreeningStocks(
         'total_liabilities_fq',
       ],
       sort: { sortBy: 'dividends_yield_current', sortOrder: 'desc' },
-      range: [0, 500],
+      range: [0, 1000],
     };
 
     let rawTradingViewStocks: StockItem[] = [];
@@ -168,18 +171,22 @@ export async function fetchScreeningStocks(
           const initialMap = new Map<string, StockItem>(INITIAL_STOCKS.map((s) => [s.code, s]));
 
           rawTradingViewStocks = data.data
-            .map((item: { d: any[] }) => {
+            .map((item: { s?: string; d: any[] }) => {
               const d = item.d;
-              const totalAssets = d[13];
-              const totalLiabilities = d[14];
+              const ticker = String(item.s || d[0] || '');
+              const code = ticker.replace(/^[A-Z]+:/, '') || String(d[0] || '');
+
+              // 東証新証券コード規格対応: 4文字（7226, 641A, 256A, 1A00等）
+              if (!/^[0-9][0-9A-Za-z]{3}$/i.test(code)) return null;
+
+              const totalAssets = d[14];
+              const totalLiabilities = d[15];
               const equityRatio =
                 totalAssets && totalAssets > 0
                   ? ((totalAssets - totalLiabilities) / totalAssets) * 100
                   : null;
 
-              const code = String(d[0] || '');
               const existing = initialMap.get(code);
-
               const stayDays = existing?.stayDays ?? 1;
               const pbr = d[6] != null ? Number(Number(d[6]).toFixed(2)) : null;
               const category: StockItem['category'] =
@@ -188,6 +195,10 @@ export async function fetchScreeningStocks(
                   : pbr != null && Number(pbr.toFixed(2)) > 1.00
                   ? 'shokaku'
                   : 'wariyasu';
+
+              const dyForward = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
+              const dyCurrent = d[9] != null ? Number(Number(d[9]).toFixed(2)) : null;
+              const dy = dyForward ?? dyCurrent;
 
               return {
                 code,
@@ -198,11 +209,11 @@ export async function fetchScreeningStocks(
                 per: d[5] != null ? Number(Number(d[5]).toFixed(2)) : null,
                 pbr,
                 roe: d[7] != null ? Number(Number(d[7]).toFixed(2)) : null,
-                dividend_yield: d[8] != null ? Number(Number(d[8]).toFixed(2)) : null,
-                payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
-                ebitda_growth: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
-                current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
-                de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
+                dividend_yield: dy,
+                payout_ratio: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
+                ebitda_growth: d[11] != null ? Number(Number(d[11]).toFixed(2)) : null,
+                current_ratio: d[12] != null ? Number((Number(d[12]) * 100).toFixed(2)) : null,
+                de_ratio: d[13] != null ? Number(Number(d[13]).toFixed(2)) : null,
                 equity_ratio: equityRatio != null ? Number(equityRatio.toFixed(2)) : null,
                 category,
                 stayDays,
@@ -210,8 +221,12 @@ export async function fetchScreeningStocks(
               };
             })
             .filter(
-              (s: StockItem) =>
-                s.equity_ratio !== null && s.equity_ratio >= 47.0
+              (s): s is StockItem =>
+                s !== null &&
+                s.equity_ratio !== null &&
+                s.equity_ratio >= 47.0 &&
+                s.dividend_yield !== null &&
+                s.dividend_yield >= 3.7
             );
         }
       }

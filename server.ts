@@ -449,7 +449,7 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 
 【出力要件】
 以下の5つの項目について、定性的な洞察を具体的かつ辛口で鋭く解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
-1. "business_summary": 何をやっている会社か（事業紹介や特色、何で稼いでるか端的な一行で）
+1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
 2. "undervalued_reason": なぜ今安く放置されているのか（市場の懸念、PBRが低い理由。数値を単純に説明しないこと）
 3. "contrarian_appeal": それでも魅力的な理由（逆張りポイント）
 4. "revaluation_scenario": 再評価シナリオ（何が起きたら株価が見直されるか）
@@ -457,11 +457,11 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 
 JSON形式例:
 {
-  "business_summary": "何をやっている会社かを端的な一行で",
-  "undervalued_reason": "なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）",
-  "contrarian_appeal": "それでも魅力的な理由（逆張りポイント）",
-  "revaluation_scenario": "再評価シナリオ（何が起きたら株価が見直されるか）",
-  "max_risk": "最大リスク（1つに絞る）"
+  "business_summary": "...",
+  "undervalued_reason": "...",
+  "contrarian_appeal": "...",
+  "revaluation_scenario": "...",
+  "max_risk": "..."
 }
 `;
 

@@ -17,6 +17,7 @@ import {
 import { StockItem, ScreeningCriteria, StockChartData, StockAiDiagnosisResponse } from '../types';
 import { fetchStockChart, fetchAiDiagnosis, createChatGptConsultUrl } from '../services/aiService';
 import { StockMiniChart } from './StockMiniChart';
+import { ErrorBoundary } from './ErrorBoundary';
 import { calculateMetricRanks, getStockMetricStyle } from '../utils/heatmap';
 
 interface StockDetailModalProps {
@@ -313,12 +314,14 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
         <div className="p-2 sm:p-3.5 space-y-2.5 overflow-y-auto flex-1">
           {/* 1. Yahoo!ファイナンス風 6ヶ月チャート */}
           <div>
-            <StockMiniChart
-              chartData={chartData}
-              isLoading={isChartLoading}
-              onRefresh={() => loadChart(stock.code)}
-              code={stock.code}
-            />
+            <ErrorBoundary fallbackTitle="チャートデータの描画に失敗しました" onReset={() => loadChart(stock.code)}>
+              <StockMiniChart
+                chartData={chartData}
+                isLoading={isChartLoading}
+                onRefresh={() => loadChart(stock.code)}
+                code={stock.code}
+              />
+            </ErrorBoundary>
           </div>
 
           {/* 2. 毎週土曜 Ai診断 セクション */}
@@ -383,11 +386,11 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
 
             {!isAiLoading && aiData && (
               <div className="space-y-2.5">
-                {/* 何をやっている会社か */}
+                {/* 事業特色 */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#18261e] border border-[#273d30]">
                   <div className="text-xs font-bold text-[#86efac] flex items-center gap-1.5 mb-1">
                     <Building2 className="w-3.5 h-3.5 text-[#34d399] shrink-0" />
-                    <span>何をやっている会社か</span>
+                    <span>事業特色</span>
                   </div>
                   <p className="text-[#f0f7f2] font-medium text-[13px] sm:text-sm leading-relaxed">
                     {aiData.diagnosis.business_summary}

@@ -7,6 +7,7 @@ import { StockTable } from './components/StockTable';
 import { StockCardList } from './components/StockCardList';
 import { FilterModal } from './components/FilterModal';
 import { StockDetailModal } from './components/StockDetailModal';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 export default function App() {
   // 1. Core State: 全母集団候補 (allCandidates) と現在のスクリーニング条件
@@ -217,12 +218,14 @@ export default function App() {
       />
 
       {/* 5. Stock Details Modal */}
-      <StockDetailModal
-        stock={selectedStock}
-        criteria={criteria}
-        stocks={screenedStocks}
-        onClose={() => setSelectedStock(null)}
-      />
+      <ErrorBoundary fallbackTitle="銘柄詳細モーダルの表示に失敗しました" onReset={() => setSelectedStock(null)}>
+        <StockDetailModal
+          stock={selectedStock}
+          criteria={criteria}
+          stocks={screenedStocks}
+          onClose={() => setSelectedStock(null)}
+        />
+      </ErrorBoundary>
     </div>
   );
 }
