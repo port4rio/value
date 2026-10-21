@@ -17,7 +17,7 @@ export const COMPANY_NAME_OVERRIDES: Record<string, string> = {
   '5368': '日本インシュレーション',   // TradingView略称: 日本インシュレ
   '4172': 'Ｈｉクラテス',           // TradingView表記: ＨＩクラテス
   '4725': 'ＣＡＣ Ｈｏｌｄｉｎｇｓ', // TradingView表記: ＣＡＣ　ＨＯＬＤＩＮＧＳ
-  '641A': 'ＮＯＫ',                 // 旧7240 NOK。持株会社化（NOK Group）に伴う東証新コード
+  '641A': 'NOK Group',              // 旧7240 NOK。持株会社化に伴う正式社名（NOK Group）
 };
 
 /**
