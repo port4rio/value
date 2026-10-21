@@ -27,14 +27,11 @@ function enrichStocksWithYFinance(
 
     return {
       ...stock,
-      // 会社予想PER (forwardPE) を最優先、なければ実績PER、なければ元の値
+      // 会社予想PER (forwardPE) を優先、なければ元の値
       per: yf.per ?? stock.per,
-      // yfinance 最新配当利回り (%) を最優先
-      dividend_yield: yf.dividendYield ?? stock.dividend_yield,
-      // 直近株価と前日比も yfinance から最新値が取れれば反映
+      // 直近株価と前日比を反映
       close: yf.price ?? stock.close,
       change: yf.changePercent ?? stock.change,
-      market_cap: yf.marketCap ?? stock.market_cap,
     };
   });
 }
@@ -133,25 +130,24 @@ export async function fetchScreeningStocks(
       options: { lang: 'ja' },
       symbols: { query: { types: [] } },
       columns: [
-        'name',
-        'description',
-        'close',
-        'change',
-        'market_cap_basic',
-        'price_earnings_ttm',
-        'price_book_fq',
-        'return_on_equity_fq',
-        'dividends_yield',
-        'dividends_yield_current',
-        'dividend_payout_ratio_fy',
-        'ebitda_yoy_growth_fy',
-        'current_ratio_fq',
-        'debt_to_equity_fq',
-        'total_assets_fq',
-        'total_liabilities_fq',
+        'name',                     // 0: 銘柄コード
+        'description',              // 1: 銘柄名
+        'close',                    // 2: 現在値
+        'change',                   // 3: 前日比率(%)
+        'market_cap_basic',         // 4: 時価総額
+        'price_earnings_ttm',       // 5: PER
+        'price_book_fq',            // 6: PBR
+        'return_on_equity_fq',       // 7: ROE (%)
+        'dividends_yield_current',  // 8: 配当利回り (%)
+        'dividend_payout_ratio_fy', // 9: 配当性向 (FY)
+        'ebitda_yoy_growth_fy',     // 10: EBITDA成長率通期 (%)
+        'current_ratio_fq',         // 11: 流動比率 (%)
+        'debt_to_equity_fq',        // 12: D/Eレシオ (%)
+        'total_assets_fq',          // 13: 総資産 (自己資本比率計算用)
+        'total_liabilities_fq',     // 14: 総負債 (自己資本比率計算用)
       ],
-      sort: { sortBy: 'dividends_yield_current', sortOrder: 'desc' },
-      range: [0, 1000],
+      sort: { sortBy: 'market_cap_basic', sortOrder: 'desc' },
+      range: [0, 4000],
     };
 
     let rawTradingViewStocks: StockItem[] = [];
@@ -170,7 +166,17 @@ export async function fetchScreeningStocks(
         if (data && Array.isArray(data.data)) {
           const initialMap = new Map<string, StockItem>(INITIAL_STOCKS.map((s) => [s.code, s]));
 
-          rawTradingViewStocks = data.data
+          // 東証(TSE)優先でソート
+          const sortedRows = [...data.data].sort((a: any, b: any) => {
+            const aIsTse = String(a.s || '').startsWith('TSE:');
+            const bIsTse = String(b.s || '').startsWith('TSE:');
+            if (aIsTse && !bIsTse) return -1;
+            if (!aIsTse && bIsTse) return 1;
+            return 0;
+          });
+
+          const seen = new Set<string>();
+          rawTradingViewStocks = sortedRows
             .map((item: { s?: string; d: any[] }) => {
               const d = item.d;
               const ticker = String(item.s || d[0] || '');
@@ -178,12 +184,14 @@ export async function fetchScreeningStocks(
 
               // 東証新証券コード規格対応: 4文字（7226, 641A, 256A, 1A00等）
               if (!/^[0-9][0-9A-Za-z]{3}$/i.test(code)) return null;
+              if (seen.has(code)) return null;
+              seen.add(code);
 
-              const totalAssets = d[14];
-              const totalLiabilities = d[15];
+              const totalAssets = d[13];
+              const totalLiabilities = d[14];
               const equityRatio =
                 totalAssets && totalAssets > 0
-                  ? ((totalAssets - totalLiabilities) / totalAssets) * 100
+                  ? ((totalAssets - (totalLiabilities || 0)) / totalAssets) * 100
                   : null;
 
               const existing = initialMap.get(code);
@@ -196,9 +204,7 @@ export async function fetchScreeningStocks(
                   ? 'shokaku'
                   : 'wariyasu';
 
-              const dyForward = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
-              const dyCurrent = d[9] != null ? Number(Number(d[9]).toFixed(2)) : null;
-              const dy = dyForward ?? dyCurrent;
+              const dy = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
 
               return {
                 code,
@@ -210,24 +216,17 @@ export async function fetchScreeningStocks(
                 pbr,
                 roe: d[7] != null ? Number(Number(d[7]).toFixed(2)) : null,
                 dividend_yield: dy,
-                payout_ratio: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
-                ebitda_growth: d[11] != null ? Number(Number(d[11]).toFixed(2)) : null,
-                current_ratio: d[12] != null ? Number((Number(d[12]) * 100).toFixed(2)) : null,
-                de_ratio: d[13] != null ? Number(Number(d[13]).toFixed(2)) : null,
+                payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
+                ebitda_growth: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
+                current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
+                de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
                 equity_ratio: equityRatio != null ? Number(equityRatio.toFixed(2)) : null,
                 category,
                 stayDays,
                 entryDate: existing?.entryDate,
-              };
+              } as StockItem;
             })
-            .filter(
-              (s): s is StockItem =>
-                s !== null &&
-                s.equity_ratio !== null &&
-                s.equity_ratio >= 47.0 &&
-                s.dividend_yield !== null &&
-                s.dividend_yield >= 3.7
-            );
+            .filter((s): s is StockItem => s !== null);
         }
       }
     } catch (tvErr) {
