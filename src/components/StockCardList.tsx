@@ -193,13 +193,13 @@ export const StockCardList: React.FC<StockCardListProps> = ({
               {/* Secondary metrics (時価総額, 配当性向, 成長率) */}
               <div className="flex items-center justify-between text-[11px] text-[#8aa596] px-1 font-mono pt-1">
                 <span>
-                  時価総額: <strong className="text-[#d8e8de] font-sans">{stock.market_cap ? `${stock.market_cap}億` : '-'}</strong>
+                  時価総額:<strong className="text-[#d8e8de] font-sans">{stock.market_cap ? `${stock.market_cap}億` : '-'}</strong>
                 </span>
                 <span>
-                  配当性向: <strong style={payoutStyle}>{stock.payout_ratio ? `${stock.payout_ratio.toFixed(1)}%` : '-'}</strong>
+                  配当性向:<strong style={payoutStyle}>{stock.payout_ratio ? `${stock.payout_ratio.toFixed(1)}%` : '-'}</strong>
                 </span>
                 <span>
-                  成長率: <strong style={ebitdaStyle}>{stock.ebitda_growth ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(1)}%` : '-'}</strong>
+                  成長率:<strong style={ebitdaStyle}>{stock.ebitda_growth ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(1)}%` : '-'}</strong>
                 </span>
               </div>
             </div>
