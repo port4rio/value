@@ -56,6 +56,7 @@ export const StockCardList: React.FC<StockCardListProps> = ({
           const eqStyle = getStockMetricStyle('equity_ratio', stock, metricRanks);
           const ebitdaStyle = getStockMetricStyle('ebitda_growth', stock, metricRanks);
           const payoutStyle = getStockMetricStyle('payout_ratio', stock, metricRanks);
+          const marketCapStyle = getStockMetricStyle('market_cap', stock, metricRanks);
 
           const cleanCode = stock.code.replace(/\.T$/i, '');
           const chartData = allCharts ? allCharts[cleanCode] : null;
@@ -193,7 +194,7 @@ export const StockCardList: React.FC<StockCardListProps> = ({
               {/* Secondary metrics (時価総額, 配当性向, 成長率) */}
               <div className="flex items-center justify-between text-[11px] text-[#8aa596] px-1 font-mono pt-1">
                 <span>
-                  時価総額:<strong className="text-[#d8e8de] font-sans">{stock.market_cap ? `${stock.market_cap}億` : '-'}</strong>
+                  時価総額:<strong style={marketCapStyle}>{stock.market_cap ? `${stock.market_cap}億` : '-'}</strong>
                 </span>
                 <span>
                   配当性向:<strong style={payoutStyle}>{stock.payout_ratio ? `${stock.payout_ratio.toFixed(1)}%` : '-'}</strong>
