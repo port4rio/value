@@ -117,28 +117,58 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                   {stock.code}
                 </span>
                 {stock.category === 'wariyasu' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#14261d] text-[#86efac] border border-[#274533]">
+                  <span
+                    className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold ${
+                      stock.stayDays != null && Math.abs(stock.stayDays) === 1
+                        ? 'bg-[#182813] text-[#bef264] border border-[#365322]'
+                        : 'bg-[#14261d] text-[#86efac] border border-[#274533]'
+                    }`}
+                  >
                     割安{stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : ''}
                   </span>
                 )}
                 {stock.category === 'shokaku' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2a2614] text-[#fde047] border border-[#52451c]">
+                  <span
+                    className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold ${
+                      stock.stayDays != null && Math.abs(stock.stayDays) === 1
+                        ? 'bg-[#182813] text-[#bef264] border border-[#365322]'
+                        : 'bg-[#2a2614] text-[#fde047] border border-[#52451c]'
+                    }`}
+                  >
                     昇格{stock.stayDays != null ? `${Math.abs(stock.stayDays)}日` : ''}
                   </span>
                 )}
                 {stock.category === 'sotsugyo' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#2b1725] text-[#f472b6] border border-[#542347]">
+                  <span
+                    className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold ${
+                      stock.stayDays != null && Math.abs(stock.stayDays) === 1
+                        ? 'bg-[#182813] text-[#bef264] border border-[#365322]'
+                        : 'bg-[#2b1725] text-[#f472b6] border border-[#542347]'
+                    }`}
+                  >
                     卒業{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
                   </span>
                 )}
                 {stock.category === 'datsuraku' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#22182c] text-[#c084fc] border border-[#482d5e]">
+                  <span
+                    className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold ${
+                      stock.stayDays != null && Math.abs(stock.stayDays) === 1
+                        ? 'bg-[#182813] text-[#bef264] border border-[#365322]'
+                        : 'bg-[#22182c] text-[#c084fc] border border-[#482d5e]'
+                    }`}
+                  >
                     脱落{stock.stayDays != null ? ` ${Math.abs(stock.stayDays)}日` : ''}（1年追跡）
                   </span>
                 )}
                 {/* Legacy fallback */}
                 {stock.category === 'tennyu' && (
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold bg-[#13232b] text-[#7dd3fc] border border-[#213f4e]">
+                  <span
+                    className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold ${
+                      stock.stayDays != null && Math.abs(stock.stayDays) === 1
+                        ? 'bg-[#182813] text-[#bef264] border border-[#365322]'
+                        : 'bg-[#13232b] text-[#7dd3fc] border border-[#213f4e]'
+                    }`}
+                  >
                     割安{stock.stayDays}日
                   </span>
                 )}

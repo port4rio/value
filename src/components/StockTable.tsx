@@ -221,7 +221,28 @@ export const StockTable: React.FC<StockTableProps> = ({
                         'stayDays'
                       )}`}
                     >
-                      {stock.category === 'sotsugyo' ? (
+                      {stock.stayDays != null && Math.abs(stock.stayDays) === 1 ? (
+                        <span
+                          className="text-[#bef264] font-mono font-semibold"
+                          title={
+                            stock.category === 'sotsugyo'
+                              ? stock.graduationReason
+                                ? `卒業日:${stock.graduationDate || '直近'}\n理由: ${stock.graduationReason}`
+                                : '卒業生（PBR1.2倍超）'
+                              : stock.category === 'datsuraku'
+                              ? stock.dropoutReason || stock.graduationReason
+                                ? `脱落日:${stock.dropoutDate || stock.graduationDate || '直近'}\n理由: ${
+                                    stock.dropoutReason || stock.graduationReason
+                                  }`
+                                : '脱落者（基準未達）'
+                              : stock.category === 'shokaku'
+                              ? '昇格組 滞在1日'
+                              : '割安組 滞在1日'
+                          }
+                        >
+                          1日
+                        </span>
+                      ) : stock.category === 'sotsugyo' ? (
                         <span
                           className="text-[#f472b6] font-mono font-semibold"
                           title={
