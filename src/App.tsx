@@ -77,7 +77,13 @@ export default function App() {
           direction: prev.direction === 'asc' ? 'desc' : 'asc',
         };
       } else {
-        const defaultAscFields: SortField[] = ['code', 'per', 'pbr', 'de_ratio'];
+        const defaultAscFields: SortField[] = [
+          'code',
+          'name',
+          'stayDays',
+          'payout_ratio',
+          'de_ratio',
+        ];
         return {
           key: field,
           direction: defaultAscFields.includes(field) ? 'asc' : 'desc',
