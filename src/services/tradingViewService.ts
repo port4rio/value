@@ -37,7 +37,7 @@ function enrichStocksWithYFinance(
 }
 
 /**
- * スクリーニング条件を適用（5大基準: PBR, 配当利回り, ROE, EBITDA成長率, 自己資本比率）
+ * スクリーニング条件を適用（5大基準: PBR, 配当利回り, ROE, EBITDA成長率, 自己資本比率 ＋ 時価総額）
  * ※ PERは参考指標として保持し、スクリーニング条件からは撤廃
  */
 export function applyScreeningCriteria(
@@ -47,6 +47,11 @@ export function applyScreeningCriteria(
   return stocks.filter((s) => {
     // 卒業生・脱落者はスクリーニング条件外として保持（各タブで追跡）
     if (s.category === 'sotsugyo' || s.category === 'datsuraku') return true;
+
+    // 時価総額（下限・億円単位。0または未指定は制限なし）
+    if (criteria.minMarketCap != null && criteria.minMarketCap > 0) {
+      if (s.market_cap != null && s.market_cap < criteria.minMarketCap) return false;
+    }
 
     // yfinance / みんかぶ から取得した最新配当利回りによる絞込
     if (s.dividend_yield != null && s.dividend_yield < criteria.minDividendYield) return false;

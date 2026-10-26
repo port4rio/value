@@ -34,7 +34,8 @@ export default function App() {
       criteria.minRoe === DEFAULT_CRITERIA.minRoe &&
       criteria.minDividendYield === DEFAULT_CRITERIA.minDividendYield &&
       criteria.minEbitdaGrowth === DEFAULT_CRITERIA.minEbitdaGrowth &&
-      criteria.minEquityRatio === DEFAULT_CRITERIA.minEquityRatio
+      criteria.minEquityRatio === DEFAULT_CRITERIA.minEquityRatio &&
+      (criteria.minMarketCap ?? 0) === DEFAULT_CRITERIA.minMarketCap
     );
   }, [criteria]);
 

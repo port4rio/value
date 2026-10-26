@@ -40,6 +40,7 @@ export interface ScreeningCriteria {
   minDividendYield: number; // デフォルト: 3.8 (%) (株主還元)
   minEbitdaGrowth: number; // デフォルト: -10 (%) (事業成長性)
   minEquityRatio: number; // デフォルト: 48 (%) (財務健全性)
+  minMarketCap: number; // デフォルト: 0 (億円) (0 = 制限なし, 王道バリュー: 500億円以上)
 }
 
 export const DEFAULT_CRITERIA: ScreeningCriteria = {
@@ -48,6 +49,7 @@ export const DEFAULT_CRITERIA: ScreeningCriteria = {
   minDividendYield: 3.8,
   minEbitdaGrowth: -10,
   minEquityRatio: 48,
+  minMarketCap: 0, // 標準では制限なし
 };
 
 export const OUDOU_VALUE_CRITERIA: ScreeningCriteria = {
@@ -56,6 +58,7 @@ export const OUDOU_VALUE_CRITERIA: ScreeningCriteria = {
   minDividendYield: 4.0,
   minEbitdaGrowth: 3.0,
   minEquityRatio: 50.0,
+  minMarketCap: 500, // 王道バリューでは500億円以上
 };
 
 export type SortField = keyof StockItem;
