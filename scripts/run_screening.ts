@@ -287,6 +287,7 @@ async function generateAiDiagnosis(
     console.log(`🧠 Diagnosing [${s.code}] ${s.name}...`);
     const prompt = `あなたは辛口で深い洞察力を持つプロの株式アナリストです。
 バリュー株スクリーニングした銘柄の定性情報が欲しい。数値を単純に説明しないこと。
+指標（PER・PBR・配当利回り等の数値）の機械的な読み上げは一切不要です。画面上の数値を見ればわかる情報ではなく、企業の事業実態、業界構造、市場の懸念や心理、構造変化に踏み込んだ定性的な深い洞察を鋭く提供してください。
 
 【対象銘柄】
 ・銘柄コード: ${s.code}
@@ -306,7 +307,7 @@ async function generateAiDiagnosis(
 以下の5つの項目について、定性的な洞察を具体的かつ辛口で鋭く解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
 1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
 2. "undervalued_reason": なぜ今安く放置されているのか（市場の懸念、PBRが低い理由。数値を単純に説明しないこと）
-3. "contrarian_appeal": それでも魅力的な理由（逆張りポイント）
+3. "dividend_sustainability": 配当・利益の継続性チェック（一過性の利益や特別配当の有無、増配姿勢や利益の継続性を具体的に検証）
 4. "revaluation_scenario": 再評価シナリオ（何が起きたら株価が見直されるか）
 5. "max_risk": 最大リスク（1つに絞る）
 
@@ -314,7 +315,7 @@ JSON形式例:
 {
   "business_summary": "...",
   "undervalued_reason": "...",
-  "contrarian_appeal": "...",
+  "dividend_sustainability": "...",
   "revaluation_scenario": "...",
   "max_risk": "..."
 }`;
@@ -344,7 +345,15 @@ JSON形式例:
       const text = response.text?.trim() || '';
       if (text) {
         try {
-          const parsed = JSON.parse(text);
+          let parsed: any;
+          try {
+            parsed = JSON.parse(text);
+          } catch {
+            const match = text.match(/\{[\s\S]*\}/);
+            if (match) {
+              parsed = JSON.parse(match[0]);
+            }
+          }
           if (parsed && (parsed.business_summary || parsed.undervalued_reason || parsed.valuation_appeal)) {
             diagnosisMap[s.code] = {
               code: s.code,
@@ -353,11 +362,11 @@ JSON形式例:
               diagnosis: {
                 business_summary: parsed.business_summary || '',
                 undervalued_reason: parsed.undervalued_reason || parsed.valuation_appeal || '',
-                contrarian_appeal: parsed.contrarian_appeal || parsed.dividend_sustainability || '',
+                dividend_sustainability: parsed.dividend_sustainability || parsed.contrarian_appeal || '',
+                contrarian_appeal: parsed.dividend_sustainability || parsed.contrarian_appeal || '',
                 revaluation_scenario: parsed.revaluation_scenario || parsed.catalyst || '',
                 max_risk: parsed.max_risk || parsed.risks || '',
                 valuation_appeal: parsed.undervalued_reason || parsed.valuation_appeal || '',
-                dividend_sustainability: parsed.contrarian_appeal || parsed.dividend_sustainability || '',
                 catalyst: parsed.revaluation_scenario || parsed.catalyst || '',
                 risks: parsed.max_risk || parsed.risks || '',
               },
