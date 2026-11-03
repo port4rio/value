@@ -396,7 +396,8 @@ app.post('/api/ai/diagnosis', async (req, res) => {
       roe,
       equityRatio,
       ebitdaGrowth,
-      deRatio,
+      totalRevenueGrowth,
+      netIncomeGrowth,
       currentRatio,
       forceRefresh,
     } = req.body;
@@ -442,9 +443,10 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 ・PBR: ${pbr != null ? `${pbr}倍` : '不明'}
 ・配当性向: ${payoutRatio != null ? `${payoutRatio}%` : '不明'}
 ・ROE: ${roe != null ? `${roe}%` : '不明'}
+・EBITDA成長率(直近12か月): ${ebitdaGrowth != null ? `${ebitdaGrowth}%` : '不明'}
+・売上高成長率(直近四半期): ${totalRevenueGrowth != null ? `${totalRevenueGrowth}%` : '不明'}
+・純利益成長率(直近四半期): ${netIncomeGrowth != null ? `${netIncomeGrowth}%` : '不明'}
 ・自己資本比率: ${equityRatio != null ? `${equityRatio}%` : '不明'}
-・EBITDA成長率: ${ebitdaGrowth != null ? `${ebitdaGrowth}%` : '不明'}
-・D/Eレシオ: ${deRatio != null ? `${deRatio}倍` : '不明'}
 ・流動比率: ${currentRatio != null ? `${currentRatio}%` : '不明'}
 
 【出力要件】

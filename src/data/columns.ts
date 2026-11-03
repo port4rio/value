@@ -120,14 +120,42 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
     key: 'ebitda_growth',
     label: 'EBITDA成長率',
     unit: '%',
-    tooltip: '通期EBITDAの前年比成長率 (10%以上は優良)',
+    tooltip: 'EBITDA成長率（直近12か月 前年同期比）',
     align: 'right',
-    minWidth: 'min-w-[105px]',
+    minWidth: 'min-w-[95px]',
     priority: 'medium',
     format: (v) => {
       if (v == null) return '-';
       const num = Number(v);
-      return `${num > 0 ? '+' : ''}${num.toFixed(2)}%`;
+      return `${num > 0 ? '+' : ''}${num.toFixed(1)}%`;
+    },
+  },
+  {
+    key: 'total_revenue_yoy_growth_fq',
+    label: '売上高成長率',
+    unit: '%',
+    tooltip: '売上高成長率（直近四半期 前年同期比）',
+    align: 'right',
+    minWidth: 'min-w-[95px]',
+    priority: 'medium',
+    format: (v) => {
+      if (v == null) return '-';
+      const num = Number(v);
+      return `${num > 0 ? '+' : ''}${num.toFixed(1)}%`;
+    },
+  },
+  {
+    key: 'net_income_yoy_growth_fq',
+    label: '純利益成長率',
+    unit: '%',
+    tooltip: '純利益成長率（直近四半期 前年同期比）',
+    align: 'right',
+    minWidth: 'min-w-[95px]',
+    priority: 'medium',
+    format: (v) => {
+      if (v == null) return '-';
+      const num = Number(v);
+      return `${num > 0 ? '+' : ''}${num.toFixed(1)}%`;
     },
   },
   {
@@ -139,16 +167,6 @@ export const STOCK_COLUMNS: ColumnDefinition[] = [
     minWidth: 'min-w-[90px]',
     priority: 'high',
     format: (v) => (v != null ? `${Number(v).toFixed(2)}%` : '-'),
-  },
-  {
-    key: 'de_ratio',
-    label: 'D/Eレシオ',
-    unit: '倍',
-    tooltip: '負債資本倍率（有利子負債 / 株主資本） (1倍以下は健全、0.5倍以下は優良)',
-    align: 'right',
-    minWidth: 'min-w-[80px]',
-    priority: 'low',
-    format: (v) => (v != null ? `${Number(v).toFixed(2)}倍` : '-'),
   },
   {
     key: 'current_ratio',

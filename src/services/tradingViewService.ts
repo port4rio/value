@@ -130,26 +130,27 @@ export async function fetchScreeningStocks(
         { left: 'subtype', operation: 'in_range', right: ['common'] },
         { left: 'price_book_fq', operation: 'less', right: 1.3 },
         { left: 'return_on_equity_fq', operation: 'egreater', right: 7.4 },
-        { left: 'ebitda_yoy_growth_fy', operation: 'egreater', right: -10 },
+        { left: 'ebitda_yoy_growth_ttm', operation: 'egreater', right: -10 },
       ],
       options: { lang: 'ja' },
       symbols: { query: { types: [] } },
       columns: [
-        'name',                     // 0: 銘柄コード
-        'description',              // 1: 銘柄名
-        'close',                    // 2: 現在値
-        'change',                   // 3: 前日比率(%)
-        'market_cap_basic',         // 4: 時価総額
-        'price_earnings_ttm',       // 5: PER
-        'price_book_fq',            // 6: PBR
-        'return_on_equity_fq',       // 7: ROE (%)
-        'dividends_yield_current',  // 8: 配当利回り (%)
-        'dividend_payout_ratio_fy', // 9: 配当性向 (FY)
-        'ebitda_yoy_growth_fy',     // 10: EBITDA成長率通期 (%)
-        'current_ratio_fq',         // 11: 流動比率 (%)
-        'debt_to_equity_fq',        // 12: D/Eレシオ (%)
-        'total_assets_fq',          // 13: 総資産 (自己資本比率計算用)
-        'total_liabilities_fq',     // 14: 総負債 (自己資本比率計算用)
+        'name',                        // 0: 銘柄コード
+        'description',                 // 1: 銘柄名
+        'close',                       // 2: 現在値
+        'change',                      // 3: 前日比率(%)
+        'market_cap_basic',            // 4: 時価総額
+        'price_earnings_ttm',          // 5: PER
+        'price_book_fq',               // 6: PBR
+        'return_on_equity_fq',          // 7: ROE (%)
+        'dividends_yield_current',     // 8: 配当利回り (%)
+        'dividend_payout_ratio_fy',    // 9: 配当性向 (FY)
+        'ebitda_yoy_growth_ttm',       // 10: EBITDA成長率直近12か月 (%)
+        'total_revenue_yoy_growth_fq', // 11: 売上高成長率(直近四半期) (%)
+        'net_income_yoy_growth_fq',    // 12: 純利益成長率(直近四半期) (%)
+        'current_ratio_fq',            // 13: 流動比率 (%)
+        'total_assets_fq',             // 14: 総資産 (自己資本比率計算用)
+        'total_liabilities_fq',        // 15: 総負債 (自己資本比率計算用)
       ],
       sort: { sortBy: 'market_cap_basic', sortOrder: 'desc' },
       range: [0, 4000],
@@ -192,8 +193,8 @@ export async function fetchScreeningStocks(
               if (seen.has(code)) return null;
               seen.add(code);
 
-              const totalAssets = d[13];
-              const totalLiabilities = d[14];
+              const totalAssets = d[14];
+              const totalLiabilities = d[15];
               const equityRatio =
                 totalAssets && totalAssets > 0
                   ? ((totalAssets - (totalLiabilities || 0)) / totalAssets) * 100
@@ -223,8 +224,9 @@ export async function fetchScreeningStocks(
                 dividend_yield: dy,
                 payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
                 ebitda_growth: d[10] != null ? Number(Number(d[10]).toFixed(2)) : null,
-                current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
-                de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
+                total_revenue_yoy_growth_fq: d[11] != null ? Number(Number(d[11]).toFixed(2)) : null,
+                net_income_yoy_growth_fq: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
+                current_ratio: d[13] != null ? Number((Number(d[13]) * 100).toFixed(2)) : null,
                 equity_ratio: equityRatio != null ? Number(equityRatio.toFixed(2)) : null,
                 category,
                 stayDays,

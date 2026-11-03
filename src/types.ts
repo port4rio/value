@@ -11,9 +11,11 @@ export interface StockItem {
   per: number | null; // 倍
   pbr: number | null; // 倍
   roe: number | null; // %
-  ebitda_growth: number | null; // %
+  ebitda_growth: number | null; // % (直近12か月 ttm)
+  total_revenue_yoy_growth_fq?: number | null; // % 売上高成長率(直近四半期)
+  net_income_yoy_growth_fq?: number | null; // % 純利益成長率(直近四半期)
   equity_ratio: number | null; // %
-  de_ratio: number | null; // 倍
+  de_ratio?: number | null; // 倍
   current_ratio: number | null; // %
   sector?: string;
   updatedAt?: string;

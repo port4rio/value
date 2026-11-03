@@ -82,7 +82,6 @@ export default function App() {
           'name',
           'stayDays',
           'payout_ratio',
-          'de_ratio',
         ];
         return {
           key: field,

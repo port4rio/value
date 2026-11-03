@@ -3,9 +3,7 @@ import {
   ArrowUpDown,
   ArrowUp,
   ArrowDown,
-  ExternalLink,
   Info,
-  Sparkles,
 } from 'lucide-react';
 import { StockItem, SortConfig, SortField } from '../types';
 import { STOCK_COLUMNS } from '../data/columns';
@@ -113,13 +111,6 @@ export const StockTable: React.FC<StockTableProps> = ({
                   </th>
                 );
               })}
-              {/* Extra column for AI diagnosis card modal */}
-              <th
-                scope="col"
-                className="px-2 py-2.5 w-[44px] min-w-[44px] text-center whitespace-nowrap bg-[#182720] text-[#86efac] text-[11px] font-bold"
-              >
-                AI
-              </th>
             </tr>
           </thead>
 
@@ -128,7 +119,7 @@ export const StockTable: React.FC<StockTableProps> = ({
             {stocks.length === 0 ? (
               <tr>
                 <td
-                  colSpan={STOCK_COLUMNS.length + 1}
+                  colSpan={STOCK_COLUMNS.length}
                   className="py-20 text-center text-[#7d9b8a] bg-[#141e18]"
                 >
                   <div className="max-w-md mx-auto flex flex-col items-center">
@@ -168,8 +159,9 @@ export const StockTable: React.FC<StockTableProps> = ({
                 const pbrStyle = getHeatmapStyle(metricRanks.pbr?.get(stock.code), 12);
                 const roeStyle = getHeatmapStyle(metricRanks.roe?.get(stock.code), 12);
                 const ebitdaStyle = getHeatmapStyle(metricRanks.ebitda_growth?.get(stock.code), 12);
+                const revGrowthStyle = getHeatmapStyle(metricRanks.total_revenue_yoy_growth_fq?.get(stock.code), 12);
+                const netIncGrowthStyle = getHeatmapStyle(metricRanks.net_income_yoy_growth_fq?.get(stock.code), 12);
                 const eqStyle = getHeatmapStyle(metricRanks.equity_ratio?.get(stock.code), 12);
-                const deStyle = getHeatmapStyle(metricRanks.de_ratio?.get(stock.code), 12);
                 const crStyle = getHeatmapStyle(metricRanks.current_ratio?.get(stock.code), 12);
 
                 // ソート選択列の統一背景クラス（全列で一貫）
@@ -378,11 +370,35 @@ export const StockTable: React.FC<StockTableProps> = ({
                       style={{ color: ebitdaStyle.color, fontWeight: ebitdaStyle.fontWeight }}
                     >
                       {stock.ebitda_growth != null
-                        ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(2)}%`
+                        ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(1)}%`
                         : '-'}
                     </td>
 
-                    {/* Column 13: 自己資本比率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
+                    {/* Column 13: 売上高成長率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
+                    <td
+                      className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
+                        'total_revenue_yoy_growth_fq'
+                      )}`}
+                      style={{ color: revGrowthStyle.color, fontWeight: revGrowthStyle.fontWeight }}
+                    >
+                      {stock.total_revenue_yoy_growth_fq != null
+                        ? `${stock.total_revenue_yoy_growth_fq > 0 ? '+' : ''}${stock.total_revenue_yoy_growth_fq.toFixed(1)}%`
+                        : '-'}
+                    </td>
+
+                    {/* Column 14: 純利益成長率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
+                    <td
+                      className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
+                        'net_income_yoy_growth_fq'
+                      )}`}
+                      style={{ color: netIncGrowthStyle.color, fontWeight: netIncGrowthStyle.fontWeight }}
+                    >
+                      {stock.net_income_yoy_growth_fq != null
+                        ? `${stock.net_income_yoy_growth_fq > 0 ? '+' : ''}${stock.net_income_yoy_growth_fq.toFixed(1)}%`
+                        : '-'}
+                    </td>
+
+                    {/* Column 15: 自己資本比率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2.5 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'equity_ratio'
@@ -394,17 +410,7 @@ export const StockTable: React.FC<StockTableProps> = ({
                         : '-'}
                     </td>
 
-                    {/* Column 14: D/Eレシオ (低い方が良い、1位〜12位ヒートマップグラデーション) */}
-                    <td
-                      className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg(
-                        'de_ratio'
-                      )}`}
-                      style={{ color: deStyle.color, fontWeight: deStyle.fontWeight }}
-                    >
-                      {stock.de_ratio != null ? `${stock.de_ratio.toFixed(2)}倍` : '-'}
-                    </td>
-
-                    {/* Column 15: 流動比率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
+                    {/* Column 16: 流動比率 (高い方が良い、1位〜12位ヒートマップグラデーション) */}
                     <td
                       className={`px-2 py-2 text-right whitespace-nowrap ${sortedColBg(
                         'current_ratio'
@@ -412,30 +418,6 @@ export const StockTable: React.FC<StockTableProps> = ({
                       style={{ color: crStyle.color, fontWeight: crStyle.fontWeight }}
                     >
                       {stock.current_ratio != null ? `${stock.current_ratio.toFixed(1)}%` : '-'}
-                    </td>
-
-                    {/* Column 16: AI Diagnosis Button (Opens compact card modal) */}
-                    <td
-                      className="px-1.5 py-2 text-center whitespace-nowrap"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onSelectStock(stock);
-                      }}
-                    >
-                      <div className="flex items-center justify-center">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onSelectStock(stock);
-                          }}
-                          title="AI診断・チャート詳細を表示"
-                          className="px-2 py-0.5 rounded text-[11px] font-bold font-mono bg-[#162a1f] hover:bg-[#203a2c] text-[#86efac] border border-[#2b4c39] hover:border-[#4ade80] transition-colors flex items-center gap-1 shadow-xs group"
-                        >
-                          <Sparkles className="w-2.5 h-2.5 text-[#34d399] group-hover:scale-110 transition-transform" />
-                          <span>AI</span>
-                        </button>
-                      </div>
                     </td>
                   </tr>
                 );

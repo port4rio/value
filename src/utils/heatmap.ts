@@ -8,6 +8,8 @@ export type MetricKey =
   | 'pbr'
   | 'roe'
   | 'ebitda_growth'
+  | 'total_revenue_yoy_growth_fq'
+  | 'net_income_yoy_growth_fq'
   | 'equity_ratio'
   | 'de_ratio'
   | 'current_ratio';
@@ -22,6 +24,8 @@ const METRIC_DIRECTION: Record<MetricKey, 'higher' | 'lower'> = {
   pbr: 'higher',
   roe: 'higher',
   ebitda_growth: 'higher',
+  total_revenue_yoy_growth_fq: 'higher',
+  net_income_yoy_growth_fq: 'higher',
   equity_ratio: 'higher',
   de_ratio: 'lower',
   current_ratio: 'higher',
@@ -41,6 +45,8 @@ export function calculateMetricRanks(stocks: StockItem[]): Record<MetricKey, Map
     'pbr',
     'roe',
     'ebitda_growth',
+    'total_revenue_yoy_growth_fq',
+    'net_income_yoy_growth_fq',
     'equity_ratio',
     'de_ratio',
     'current_ratio',
@@ -150,6 +156,10 @@ export function getMetricAbsoluteRatio(key: MetricKey, val: number | null | unde
       return Math.min(Math.max((80.0 - val) / (80.0 - 48.0), 0), 1);
     case 'ebitda_growth': // 15%以上が最良(0), 0%以下がパッとしない(1)
       return Math.min(Math.max((15.0 - val) / (15.0 - 0.0), 0), 1);
+    case 'total_revenue_yoy_growth_fq': // 15%以上が最良(0), 0%以下がパッとしない(1)
+      return Math.min(Math.max((15.0 - val) / (15.0 - 0.0), 0), 1);
+    case 'net_income_yoy_growth_fq': // 20%以上が最良(0), 0%以下がパッとしない(1)
+      return Math.min(Math.max((20.0 - val) / (20.0 - 0.0), 0), 1);
     case 'de_ratio': // 0.1倍以下が最良(0), 1.0倍以上がパッとしない(1)
       return Math.min(Math.max((val - 0.1) / (1.0 - 0.1), 0), 1);
     case 'current_ratio': // 250%以上が最良(0), 120%以下がパッとしない(1)

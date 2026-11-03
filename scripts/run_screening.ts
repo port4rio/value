@@ -28,21 +28,22 @@ async function fetchTradingViewAllStocks(): Promise<StockItem[]> {
     options: { lang: 'ja' },
     symbols: { query: { types: [] }, tickers: [] },
     columns: [
-      'name',                     // 0: 銘柄コード
-      'description',              // 1: 銘柄名
-      'close',                    // 2: 現在値
-      'change',                   // 3: 前日比率(%)
-      'market_cap_basic',         // 4: 時価総額
-      'price_earnings_ttm',       // 5: PER
-      'price_book_fq',            // 6: PBR
-      'return_on_equity_fq',       // 7: ROE (%)
-      'dividends_yield_current',  // 8: 配当利回り (%)
-      'dividend_payout_ratio_fy', // 9: 配当性向 (FY)
-      'ebitda_yoy_growth_fy',     // 10: EBITDA成長率通期 (%)
-      'current_ratio_fq',         // 11: 流動比率 (%)
-      'debt_to_equity_fq',        // 12: D/Eレシオ (%)
-      'total_assets_fq',          // 13: 総資産 (自己資本比率計算用)
-      'total_liabilities_fq',     // 14: 総負債 (自己資本比率計算用)
+      'name',                        // 0: 銘柄コード
+      'description',                 // 1: 銘柄名
+      'close',                       // 2: 現在値
+      'change',                      // 3: 前日比率(%)
+      'market_cap_basic',            // 4: 時価総額
+      'price_earnings_ttm',          // 5: PER
+      'price_book_fq',               // 6: PBR
+      'return_on_equity_fq',          // 7: ROE (%)
+      'dividends_yield_current',     // 8: 配当利回り (%)
+      'dividend_payout_ratio_fy',    // 9: 配当性向 (FY)
+      'ebitda_yoy_growth_ttm',       // 10: EBITDA成長率直近12か月 (%)
+      'total_revenue_yoy_growth_fq', // 11: 売上高成長率(直近四半期) (%)
+      'net_income_yoy_growth_fq',    // 12: 純利益成長率(直近四半期) (%)
+      'current_ratio_fq',            // 13: 流動比率 (%)
+      'total_assets_fq',             // 14: 総資産 (自己資本比率計算用)
+      'total_liabilities_fq',        // 15: 総負債 (自己資本比率計算用)
     ],
     sort: { sortBy: 'market_cap_basic', sortOrder: 'desc' },
     range: [0, 4000],
@@ -88,8 +89,8 @@ async function fetchTradingViewAllStocks(): Promise<StockItem[]> {
       const dyCurrent = d[8] != null ? Number(Number(d[8]).toFixed(2)) : null;
 
       // 自己資本比率の計算: ((total_assets_fq - total_liabilities_fq) / total_assets_fq) * 100
-      const totalAssets = d[13] != null ? Number(d[13]) : null;
-      const totalLiabilities = d[14] != null ? Number(d[14]) : 0;
+      const totalAssets = d[14] != null ? Number(d[14]) : null;
+      const totalLiabilities = d[15] != null ? Number(d[15]) : 0;
       let equityRatio: number | null = null;
       if (totalAssets && totalAssets > 0) {
         equityRatio = Number((((totalAssets - totalLiabilities) / totalAssets) * 100).toFixed(2));
@@ -119,8 +120,9 @@ async function fetchTradingViewAllStocks(): Promise<StockItem[]> {
         dividend_yield: dyCurrent,
         payout_ratio: d[9] != null ? Number(Number(d[9]).toFixed(2)) : null,
         ebitda_growth: ebitdaGrowth,
-        current_ratio: d[11] != null ? Number((Number(d[11]) * 100).toFixed(2)) : null,
-        de_ratio: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
+        total_revenue_yoy_growth_fq: d[11] != null ? Number(Number(d[11]).toFixed(2)) : null,
+        net_income_yoy_growth_fq: d[12] != null ? Number(Number(d[12]).toFixed(2)) : null,
+        current_ratio: d[13] != null ? Number((Number(d[13]) * 100).toFixed(2)) : null,
         equity_ratio: equityRatio,
         category,
         stayDays: 1,
@@ -289,14 +291,15 @@ async function generateAiDiagnosis(
 【対象銘柄】
 ・銘柄コード: ${s.code}
 ・企業名: ${s.name}
+・予想配当利回り: ${s.dividend_yield != null ? `${s.dividend_yield}%` : '不明'}
 ・実績PER: ${s.per != null ? `${s.per}倍` : '不明'}
 ・実績PBR: ${s.pbr != null ? `${s.pbr}倍` : '不明'}
-・予想配当利回り: ${s.dividend_yield != null ? `${s.dividend_yield}%` : '不明'}
 ・配当性向: ${s.payout_ratio != null ? `${s.payout_ratio}%` : '不明'}
 ・ROE: ${s.roe != null ? `${s.roe}%` : '不明'}
+・EBITDA成長率(直近12か月): ${s.ebitda_growth != null ? `${s.ebitda_growth}%` : '不明'}
+・売上高成長率(直近四半期): ${s.total_revenue_yoy_growth_fq != null ? `${s.total_revenue_yoy_growth_fq}%` : '不明'}
+・純利益成長率(直近四半期): ${s.net_income_yoy_growth_fq != null ? `${s.net_income_yoy_growth_fq}%` : '不明'}
 ・自己資本比率: ${s.equity_ratio != null ? `${s.equity_ratio}%` : '不明'}
-・EBITDA成長率: ${s.ebitda_growth != null ? `${s.ebitda_growth}%` : '不明'}
-・D/Eレシオ: ${s.de_ratio != null ? `${s.de_ratio}倍` : '不明'}
 ・流動比率: ${s.current_ratio != null ? `${s.current_ratio}%` : '不明'}
 
 【出力要件】

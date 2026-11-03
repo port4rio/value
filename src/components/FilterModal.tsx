@@ -272,7 +272,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           {/* 5. EBITDA成長率 */}
           <div className="bg-[#121c16] p-3 rounded-xl border border-[#25392d]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-xs font-bold text-[#f0f5f2]">EBITDA成長率通期（下限）</label>
+              <label className="text-xs font-bold text-[#f0f5f2]">EBITDA成長率（直近12か月・下限）</label>
               <span className="text-sm font-bold text-[#86efac] font-mono">
                 {draft.minEbitdaGrowth <= -20
                   ? '制限なし（全対象）'

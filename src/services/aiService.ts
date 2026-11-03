@@ -285,7 +285,8 @@ export async function fetchAiDiagnosis(
         roe: stock.roe,
         equityRatio: stock.equity_ratio,
         ebitdaGrowth: stock.ebitda_growth,
-        deRatio: stock.de_ratio,
+        totalRevenueGrowth: stock.total_revenue_yoy_growth_fq,
+        netIncomeGrowth: stock.net_income_yoy_growth_fq,
         currentRatio: stock.current_ratio,
         forceRefresh,
       }),
@@ -319,14 +320,15 @@ export function createChatGptConsultUrl(stock: StockItem): string {
 【対象銘柄】
 ・銘柄コード: ${stock.code}
 ・企業名: ${stock.name}
+・予想配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
 ・実績PER: ${stock.per != null ? `${stock.per}倍` : '不明'}
 ・実績PBR: ${stock.pbr != null ? `${stock.pbr}倍` : '不明'}
-・予想配当利回り: ${stock.dividend_yield != null ? `${stock.dividend_yield}%` : '不明'}
 ・配当性向: ${stock.payout_ratio != null ? `${stock.payout_ratio}%` : '不明'}
 ・ROE: ${stock.roe != null ? `${stock.roe}%` : '不明'}
+・EBITDA成長率(直近12か月): ${stock.ebitda_growth != null ? `${stock.ebitda_growth}%` : '不明'}
+・売上高成長率(直近四半期): ${stock.total_revenue_yoy_growth_fq != null ? `${stock.total_revenue_yoy_growth_fq}%` : '不明'}
+・純利益成長率(直近四半期): ${stock.net_income_yoy_growth_fq != null ? `${stock.net_income_yoy_growth_fq}%` : '不明'}
 ・自己資本比率: ${stock.equity_ratio != null ? `${stock.equity_ratio}%` : '不明'}
-・EBITDA成長率: ${stock.ebitda_growth != null ? `${stock.ebitda_growth}%` : '不明'}
-・D/Eレシオ: ${stock.de_ratio != null ? `${stock.de_ratio}倍` : '不明'}
 ・流動比率: ${stock.current_ratio != null ? `${stock.current_ratio}%` : '不明'}
 
 【出力要件】

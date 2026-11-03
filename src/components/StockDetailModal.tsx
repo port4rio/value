@@ -216,7 +216,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
             </div>
           </div>
 
-          {/* 5指標を1行配置（配当・PBR・PER・ROE・資本）良い値からパッとしない値への文字色グラデーション適用 */}
+          {/* 主要指標を2行配置（良い値からパッとしない値への文字色グラデーション適用） */}
           {(() => {
             const dyStyle = getStockMetricStyle('dividend_yield', stock, metricRanks);
             const pbrStyle = getStockMetricStyle('pbr', stock, metricRanks);
@@ -224,52 +224,86 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
             const roeStyle = getStockMetricStyle('roe', stock, metricRanks);
             const eqStyle = getStockMetricStyle('equity_ratio', stock, metricRanks);
 
+            const marketCapStyle = getStockMetricStyle('market_cap', stock, metricRanks);
+            const payoutStyle = getStockMetricStyle('payout_ratio', stock, metricRanks);
+            const ebitdaStyle = getStockMetricStyle('ebitda_growth', stock, metricRanks);
+            const revGrowthStyle = getStockMetricStyle('total_revenue_yoy_growth_fq', stock, metricRanks);
+            const netIncGrowthStyle = getStockMetricStyle('net_income_yoy_growth_fq', stock, metricRanks);
+
             return (
-              <div className="grid grid-cols-5 gap-0.5 sm:gap-1 text-center bg-[#101813] rounded-lg p-1.5 mt-2 border border-[#223329] font-mono text-xs whitespace-nowrap">
-                <div>
-                  <span className="text-[10px] text-[#8ea899] font-sans block">配当</span>
-                  <span
-                    style={dyStyle}
-                    className="text-[11px] sm:text-xs"
-                  >
-                    {stock.dividend_yield != null ? `${stock.dividend_yield.toFixed(1)}%` : '-'}
-                  </span>
+              <div className="space-y-1 mt-2">
+                {/* 1行目: 配当, PBR, PER, ROE, 資本 */}
+                <div className="grid grid-cols-5 gap-0.5 sm:gap-1 text-center bg-[#101813] rounded-lg p-1.5 border border-[#223329] font-mono text-xs whitespace-nowrap">
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">配当</span>
+                    <span style={dyStyle} className="text-[11px] sm:text-xs">
+                      {stock.dividend_yield != null ? `${stock.dividend_yield.toFixed(1)}%` : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">PBR</span>
+                    <span style={pbrStyle} className="text-[11px] sm:text-xs">
+                      {stock.pbr != null ? `${stock.pbr.toFixed(2)}倍` : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">PER</span>
+                    <span style={perStyle} className="text-[11px] sm:text-xs">
+                      {stock.per != null ? `${stock.per.toFixed(1)}倍` : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">ROE</span>
+                    <span style={roeStyle} className="text-[11px] sm:text-xs">
+                      {stock.roe != null ? `${stock.roe.toFixed(1)}%` : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">資本</span>
+                    <span style={eqStyle} className="text-[11px] sm:text-xs">
+                      {stock.equity_ratio != null ? `${stock.equity_ratio.toFixed(0)}%` : '-'}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] text-[#8ea899] font-sans block">PBR</span>
-                  <span
-                    style={pbrStyle}
-                    className="text-[11px] sm:text-xs"
-                  >
-                    {stock.pbr != null ? `${stock.pbr.toFixed(2)}倍` : '-'}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-[10px] text-[#8ea899] font-sans block">PER</span>
-                  <span
-                    style={perStyle}
-                    className="text-[11px] sm:text-xs"
-                  >
-                    {stock.per != null ? `${stock.per.toFixed(1)}倍` : '-'}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-[10px] text-[#8ea899] font-sans block">ROE</span>
-                  <span
-                    style={roeStyle}
-                    className="text-[11px] sm:text-xs"
-                  >
-                    {stock.roe != null ? `${stock.roe.toFixed(1)}%` : '-'}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-[10px] text-[#8ea899] font-sans block">資本</span>
-                  <span
-                    style={eqStyle}
-                    className="text-[11px] sm:text-xs"
-                  >
-                    {stock.equity_ratio != null ? `${stock.equity_ratio.toFixed(0)}%` : '-'}
-                  </span>
+
+                {/* 2行目: 時価総額, 配当性向, EBITDA成長, 売上高成長, 純利益成長 */}
+                <div className="grid grid-cols-5 gap-0.5 sm:gap-1 text-center bg-[#101813] rounded-lg p-1.5 border border-[#223329] font-mono text-xs whitespace-nowrap">
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">時価総額</span>
+                    <span style={marketCapStyle} className="text-[11px] sm:text-xs">
+                      {stock.market_cap != null ? `${stock.market_cap.toLocaleString()}億` : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">配当性向</span>
+                    <span style={payoutStyle} className="text-[11px] sm:text-xs">
+                      {stock.payout_ratio != null ? `${stock.payout_ratio.toFixed(1)}%` : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">EBITDA成長</span>
+                    <span style={ebitdaStyle} className="text-[11px] sm:text-xs">
+                      {stock.ebitda_growth != null
+                        ? `${stock.ebitda_growth > 0 ? '+' : ''}${stock.ebitda_growth.toFixed(1)}%`
+                        : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">売上高成長</span>
+                    <span style={revGrowthStyle} className="text-[11px] sm:text-xs">
+                      {stock.total_revenue_yoy_growth_fq != null
+                        ? `${stock.total_revenue_yoy_growth_fq > 0 ? '+' : ''}${stock.total_revenue_yoy_growth_fq.toFixed(1)}%`
+                        : '-'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#8ea899] font-sans block">純利益成長</span>
+                    <span style={netIncGrowthStyle} className="text-[11px] sm:text-xs">
+                      {stock.net_income_yoy_growth_fq != null
+                        ? `${stock.net_income_yoy_growth_fq > 0 ? '+' : ''}${stock.net_income_yoy_growth_fq.toFixed(1)}%`
+                        : '-'}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
