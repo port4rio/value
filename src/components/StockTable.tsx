@@ -83,11 +83,6 @@ export const StockTable: React.FC<StockTableProps> = ({
                       <span className="tracking-tight text-[11px] sm:text-xs">
                         {col.label}
                       </span>
-                      {col.unit && (
-                        <span className="text-[10px] text-[#789686] font-normal">
-                          ({col.unit})
-                        </span>
-                      )}
 
                       {/* Sort Direction Indicator (現在選択されている列のみアクティブ表示) */}
                       <span

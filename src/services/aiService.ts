@@ -212,8 +212,10 @@ async function loadStaticDiagnosis(code: string, bustCache = false): Promise<Sto
               rawDiag.business_summary || rawDiag.businessSummary || '事業特色分析中',
             undervalued_reason:
               rawDiag.undervalued_reason || rawDiag.valuation_appeal || rawDiag.investmentAttractiveness || '放置要因分析中',
+            dividend_sustainability:
+              rawDiag.dividend_sustainability || rawDiag.dividendSustainability || rawDiag.contrarian_appeal || '配当・利益の継続性チェック中',
             contrarian_appeal:
-              rawDiag.contrarian_appeal || rawDiag.dividend_sustainability || rawDiag.dividendSustainability || '逆張り魅力分析中',
+              rawDiag.dividend_sustainability || rawDiag.dividendSustainability || rawDiag.contrarian_appeal || '配当・利益の継続性チェック中',
             revaluation_scenario:
               rawDiag.revaluation_scenario || rawDiag.catalyst || '再評価シナリオ分析中',
             max_risk:
@@ -221,8 +223,6 @@ async function loadStaticDiagnosis(code: string, bustCache = false): Promise<Sto
             // 従来キー互換保持
             valuation_appeal:
               rawDiag.undervalued_reason || rawDiag.valuation_appeal || '',
-            dividend_sustainability:
-              rawDiag.contrarian_appeal || rawDiag.dividend_sustainability || '',
             catalyst:
               rawDiag.revaluation_scenario || rawDiag.catalyst || '',
             risks:
@@ -334,7 +334,7 @@ export function createChatGptConsultUrl(stock: StockItem): string {
 【出力要件】
 1. 事業特色（事業紹介や特色、何で稼いでいる会社かを端的な一行で）
 2. なぜ今安く放置されているのか（市場の懸念、PBRが低い理由）
-3. それでも魅力的な理由（逆張りポイント）
+3. 配当・利益の継続性チェック（一過性の利益や特別配当の有無、増配姿勢）
 4. 再評価シナリオ（何が起きたら株価が見直されるか）
 5. 最大リスク（1つに絞る）`;
 

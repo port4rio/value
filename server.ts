@@ -453,7 +453,7 @@ app.post('/api/ai/diagnosis', async (req, res) => {
 以下の5つの項目について、定性的な洞察を具体的かつ辛口で鋭く解説し、必ず指定のキー名を持つJSONオブジェクトとして出力してください。
 1. "business_summary": 事業紹介や特色を端的な一行で（何で稼いでいる会社か）
 2. "undervalued_reason": なぜ今安く放置されているのか（市場の懸念、PBRが低い理由。数値を単純に説明しないこと）
-3. "contrarian_appeal": それでも魅力的な理由（逆張りポイント）
+3. "dividend_sustainability": 配当・利益の継続性チェック（一過性の利益や特別配当の有無、増配姿勢や利益の継続性を具体的に検証）
 4. "revaluation_scenario": 再評価シナリオ（何が起きたら株価が見直されるか）
 5. "max_risk": 最大リスク（1つに絞る）
 
@@ -461,7 +461,7 @@ JSON形式例:
 {
   "business_summary": "...",
   "undervalued_reason": "...",
-  "contrarian_appeal": "...",
+  "dividend_sustainability": "...",
   "revaluation_scenario": "...",
   "max_risk": "..."
 }
@@ -547,7 +547,8 @@ JSON形式例:
       parsedDiagnosis = {
         business_summary: `${name || '対象銘柄'}（コード: ${cleanCode}）。堅実な事業基盤を有する企業。`,
         undervalued_reason: `市場の成長期待の低さや成熟業界特有のディスカウント、資本効率への疑念から低PBRで放置されている。`,
-        contrarian_appeal: `強固な財務基盤と安定した営業キャッシュフローによる高い下値抵抗力と、潜在的な株主還元余力。`,
+        dividend_sustainability: `本業のキャッシュ創出力と配当原資を確認。一過性の特殊要因による利益・特別配当ではなく安定配当基盤を有しており、増配姿勢への移行が期待される。`,
+        contrarian_appeal: `本業のキャッシュ創出力と配当原資を確認。一過性の特殊要因による利益・特別配当ではなく安定配当基盤を有しており、増配姿勢への移行が期待される。`,
         revaluation_scenario: `東証要請に伴う資本効率改革、DOE導入や積極的な自己株取得、政策保有株の縮減によるROE向上。`,
         max_risk: `本業の需要成熟やコスト高騰により、万年割安株として市場から継続放置される流動性リスク。`,
       };
@@ -559,12 +560,12 @@ JSON形式例:
       diagnosis: {
         business_summary: parsedDiagnosis.business_summary || '情報取得中',
         undervalued_reason: parsedDiagnosis.undervalued_reason || parsedDiagnosis.valuation_appeal || '情報取得中',
-        contrarian_appeal: parsedDiagnosis.contrarian_appeal || parsedDiagnosis.dividend_sustainability || '情報取得中',
+        dividend_sustainability: parsedDiagnosis.dividend_sustainability || parsedDiagnosis.contrarian_appeal || '情報取得中',
+        contrarian_appeal: parsedDiagnosis.dividend_sustainability || parsedDiagnosis.contrarian_appeal || '情報取得中',
         revaluation_scenario: parsedDiagnosis.revaluation_scenario || parsedDiagnosis.catalyst || '情報取得中',
         max_risk: parsedDiagnosis.max_risk || parsedDiagnosis.risks || '情報取得中',
         // 従来キー互換
         valuation_appeal: parsedDiagnosis.undervalued_reason || parsedDiagnosis.valuation_appeal || '',
-        dividend_sustainability: parsedDiagnosis.contrarian_appeal || parsedDiagnosis.dividend_sustainability || '',
         catalyst: parsedDiagnosis.revaluation_scenario || parsedDiagnosis.catalyst || '',
         risks: parsedDiagnosis.max_risk || parsedDiagnosis.risks || '',
       },

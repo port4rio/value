@@ -472,14 +472,14 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                   </p>
                 </div>
 
-                {/* それでも魅力的な理由 */}
+                {/* 配当・利益の継続性チェック */}
                 <div className="p-2.5 sm:p-3 rounded-lg bg-[#18261e] border border-[#273d30]">
                   <div className="text-xs font-bold text-[#67e8f9] flex items-center gap-1.5 mb-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#22d3ee] shrink-0" />
-                    <span>それでも魅力的な理由</span>
+                    <span>配当・利益の継続性チェック</span>
                   </div>
                   <p className="text-[#e2eee7] text-[13px] sm:text-sm leading-relaxed">
-                    {aiData.diagnosis.contrarian_appeal || aiData.diagnosis.dividend_sustainability}
+                    {aiData.diagnosis.dividend_sustainability || aiData.diagnosis.contrarian_appeal}
                   </p>
                 </div>
 
