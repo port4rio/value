@@ -18,12 +18,13 @@ import { StockItem, ScreeningCriteria, StockChartData, StockAiDiagnosisResponse 
 import { fetchStockChart, fetchAiDiagnosis, createChatGptConsultUrl } from '../services/aiService';
 import { StockMiniChart } from './StockMiniChart';
 import { ErrorBoundary } from './ErrorBoundary';
-import { calculateMetricRanks, getStockMetricStyle } from '../utils/heatmap';
+import { calculateMetricRanks, getStockMetricStyle, MetricKey } from '../utils/heatmap';
 
 interface StockDetailModalProps {
   stock: StockItem | null;
   criteria: ScreeningCriteria;
   stocks?: StockItem[];
+  metricRanks?: Record<MetricKey, Map<string, number>>;
   onClose: () => void;
 }
 
@@ -31,6 +32,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
   stock,
   criteria,
   stocks,
+  metricRanks: propMetricRanks,
   onClose,
 }) => {
   const [chartData, setChartData] = useState<StockChartData | null>(null);
@@ -42,11 +44,14 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
 
   // 全銘柄に対する順位マップを計算（テーブル・カードと同一のヒートマップ評価）
   const metricRanks = useMemo(() => {
+    if (propMetricRanks) {
+      return propMetricRanks;
+    }
     if (stocks && stocks.length > 0) {
       return calculateMetricRanks(stocks);
     }
     return undefined;
-  }, [stocks]);
+  }, [propMetricRanks, stocks]);
 
   // チャート取得
   const loadChart = useCallback(async (code: string) => {
@@ -237,7 +242,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                   <div>
                     <span className="text-[10px] text-[#8ea899] font-sans block">配当</span>
                     <span style={dyStyle} className="text-[11px] sm:text-xs">
-                      {stock.dividend_yield != null ? `${stock.dividend_yield.toFixed(1)}%` : '-'}
+                      {stock.dividend_yield != null ? `${stock.dividend_yield.toFixed(2)}%` : '-'}
                     </span>
                   </div>
                   <div>
@@ -249,13 +254,13 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
                   <div>
                     <span className="text-[10px] text-[#8ea899] font-sans block">PER</span>
                     <span style={perStyle} className="text-[11px] sm:text-xs">
-                      {stock.per != null ? `${stock.per.toFixed(1)}倍` : '-'}
+                      {stock.per != null ? `${stock.per.toFixed(2)}倍` : '-'}
                     </span>
                   </div>
                   <div>
                     <span className="text-[10px] text-[#8ea899] font-sans block">ROE</span>
                     <span style={roeStyle} className="text-[11px] sm:text-xs">
-                      {stock.roe != null ? `${stock.roe.toFixed(1)}%` : '-'}
+                      {stock.roe != null ? `${stock.roe.toFixed(2)}%` : '-'}
                     </span>
                   </div>
                   <div>
@@ -528,33 +533,35 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({
               <ExternalLink className="w-3 h-3 text-white/80 ml-auto" />
             </a>
 
-            {/* 1行アクションボタン（Y!finance 株探 閉じる） */}
+            {/* 1行アクションボタン（Y!finance / ×閉じる / みんかぶ） */}
             <div className="grid grid-cols-3 gap-2">
               <a
                 href={`https://finance.yahoo.co.jp/quote/${stock.code}.T`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] hover:border-[#3d5948] text-[#9fc7b0] hover:text-[#f0f5f2] text-xs font-medium flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
+                className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] hover:border-[#3d5948] hover:bg-[#203328] text-[#9fc7b0] hover:text-[#f0f5f2] text-xs font-medium flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
               >
                 <span>Y!finance</span>
-                <ExternalLink className="w-3 h-3 shrink-0" />
-              </a>
-              <a
-                href={`https://minkabu.jp/stock/${stock.code}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] hover:border-[#3d5948] text-[#9fc7b0] hover:text-[#f0f5f2] text-xs font-medium flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
-              >
-                <span>みんかぶ</span>
                 <ExternalLink className="w-3 h-3 shrink-0" />
               </a>
               <button
                 type="button"
                 onClick={onClose}
-                className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] text-[#7d998b] hover:text-[#f0f5f2] text-xs font-medium hover:bg-[#203328] transition-colors whitespace-nowrap text-center"
+                className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] hover:border-[#3d5948] hover:bg-[#203328] text-[#9fc7b0] hover:text-[#f0f5f2] text-xs font-medium flex items-center justify-center transition-colors whitespace-nowrap"
+                aria-label="閉じる"
+                title="閉じる"
               >
-                閉じる
+                <X className="w-4 h-4" />
               </button>
+              <a
+                href={`https://minkabu.jp/stock/${stock.code}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2 px-2 rounded-lg bg-[#18261e] border border-[#273d30] hover:border-[#3d5948] hover:bg-[#203328] text-[#9fc7b0] hover:text-[#f0f5f2] text-xs font-medium flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
+              >
+                <span>みんかぶ</span>
+                <ExternalLink className="w-3 h-3 shrink-0" />
+              </a>
             </div>
           </div>
         </div>

@@ -1,17 +1,19 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { StockItem, SortConfig, StockChartData } from '../types';
-import { calculateMetricRanks, getStockMetricStyle } from '../utils/heatmap';
+import { calculateMetricRanks, getStockMetricStyle, MetricKey } from '../utils/heatmap';
 import { fetchAllCharts } from '../services/aiService';
 import { StockCardSparkline } from './StockCardSparkline';
 
 interface StockCardListProps {
   stocks: StockItem[];
+  metricRanks?: Record<MetricKey, Map<string, number>>;
   sortConfig: SortConfig;
   onSelectStock: (stock: StockItem) => void;
 }
 
 export const StockCardList: React.FC<StockCardListProps> = ({
   stocks,
+  metricRanks: propMetricRanks,
   sortConfig,
   onSelectStock,
 }) => {
@@ -32,10 +34,10 @@ export const StockCardList: React.FC<StockCardListProps> = ({
     };
   }, []);
 
-  // 表示中銘柄における各指標のランクを計算（テーブルと同一のヒートマップ評価）
+  // 表示中銘柄における各指標のランクを計算（propsで渡されていればそれを優先利用）
   const metricRanks = useMemo(() => {
-    return calculateMetricRanks(stocks);
-  }, [stocks]);
+    return propMetricRanks || calculateMetricRanks(stocks);
+  }, [propMetricRanks, stocks]);
 
   if (stocks.length === 0) {
     return (

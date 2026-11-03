@@ -7,10 +7,11 @@ import {
 } from 'lucide-react';
 import { StockItem, SortConfig, SortField } from '../types';
 import { STOCK_COLUMNS } from '../data/columns';
-import { calculateMetricRanks, getHeatmapStyle } from '../utils/heatmap';
+import { calculateMetricRanks, getHeatmapStyle, MetricKey } from '../utils/heatmap';
 
 interface StockTableProps {
   stocks: StockItem[];
+  metricRanks?: Record<MetricKey, Map<string, number>>;
   sortConfig: SortConfig;
   onSort: (field: SortField) => void;
   onSelectStock: (stock: StockItem) => void;
@@ -18,16 +19,17 @@ interface StockTableProps {
 
 export const StockTable: React.FC<StockTableProps> = ({
   stocks,
+  metricRanks: propMetricRanks,
   sortConfig,
   onSort,
   onSelectStock,
 }) => {
   const [hoveredCode, setHoveredCode] = useState<string | null>(null);
 
-  // 表示中銘柄における各指標の上位1位〜12位ランクを計算
+  // 表示中銘柄における各指標の上位1位〜12位ランクを計算（propsで渡されていればそれを優先利用）
   const metricRanks = useMemo(() => {
-    return calculateMetricRanks(stocks);
-  }, [stocks]);
+    return propMetricRanks || calculateMetricRanks(stocks);
+  }, [propMetricRanks, stocks]);
 
   return (
     <div className="flex flex-col bg-[#141e18] w-full border border-[#273a2f] rounded-lg shadow-xl overflow-hidden">

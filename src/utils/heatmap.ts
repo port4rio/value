@@ -170,17 +170,18 @@ export function getMetricAbsoluteRatio(key: MetricKey, val: number | null | unde
 }
 
 /**
- * 銘柄の特定指標に対するスタイルを取得（ランク順位優先、なければ絶対値から算出）
+ * 銘柄の特定指標に対するスタイルを取得（ランク順位マップがあればテーブルと完全に同一評価、なければ絶対値から算出）
  */
 export function getStockMetricStyle(
   key: MetricKey,
   stock: StockItem,
   metricRanks?: Record<MetricKey, Map<string, number>>
 ): { color: string; fontWeight: number } {
-  const rank = metricRanks?.[key]?.get(stock.code);
-  if (rank != null && rank > 0) {
+  if (metricRanks) {
+    const rank = metricRanks[key]?.get(stock.code);
     return getHeatmapStyle(rank, 12);
   }
   const ratio = getMetricAbsoluteRatio(key, Number(stock[key]));
   return ratioToStyle(ratio);
 }
+

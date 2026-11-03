@@ -8,6 +8,7 @@ import { StockCardList } from './components/StockCardList';
 import { FilterModal } from './components/FilterModal';
 import { StockDetailModal } from './components/StockDetailModal';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { calculateMetricRanks } from './utils/heatmap';
 
 export default function App() {
   // 1. Core State: 全母集団候補 (allCandidates) と現在のスクリーニング条件
@@ -160,6 +161,11 @@ export default function App() {
     return list;
   }, [screenedStocks, activeCategory, sortConfig]);
 
+  // 表示中銘柄群（現在のアクティブカテゴリー）に対する指標ランクマップ（テーブル・カード・詳細モーダルで完全一致させる）
+  const metricRanks = useMemo(() => {
+    return calculateMetricRanks(processedStocks);
+  }, [processedStocks]);
+
   return (
     <div className="min-h-screen bg-[#121a15] flex flex-col font-sans text-[#e3ece6]">
       {/* 1. Header with Category Badges [割安組][昇格組][卒業生][脱落者] */}
@@ -186,6 +192,7 @@ export default function App() {
         {viewMode === 'table' ? (
           <StockTable
             stocks={processedStocks}
+            metricRanks={metricRanks}
             sortConfig={sortConfig}
             onSort={handleSort}
             onSelectStock={(stock) => setSelectedStock(stock)}
@@ -193,6 +200,7 @@ export default function App() {
         ) : (
           <StockCardList
             stocks={processedStocks}
+            metricRanks={metricRanks}
             sortConfig={sortConfig}
             onSelectStock={(stock) => setSelectedStock(stock)}
           />
@@ -228,7 +236,8 @@ export default function App() {
         <StockDetailModal
           stock={selectedStock}
           criteria={criteria}
-          stocks={screenedStocks}
+          stocks={processedStocks}
+          metricRanks={metricRanks}
           onClose={() => setSelectedStock(null)}
         />
       </ErrorBoundary>
