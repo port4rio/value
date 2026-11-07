@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026/11/06 18:13",
-  "lastIncrementDate": "2026-11-06",
+  "updatedAt": "2026/11/07 10:51",
+  "lastIncrementDate": "2026-11-07",
   "count": 157,
   "stocks": [
     {
@@ -20,10 +20,10 @@
       "current_ratio": 225.29,
       "equity_ratio": 61.4,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8572",
@@ -42,10 +42,10 @@
       "current_ratio": 383.65,
       "equity_ratio": 48.57,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5110",
@@ -64,10 +64,10 @@
       "current_ratio": 177.39,
       "equity_ratio": 51.23,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "641A",
@@ -86,10 +86,10 @@
       "current_ratio": 218.62,
       "equity_ratio": 70.49,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9364",
@@ -108,10 +108,10 @@
       "current_ratio": 240.45,
       "equity_ratio": 75.59,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4205",
@@ -130,10 +130,10 @@
       "current_ratio": 159.57,
       "equity_ratio": 67.14,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4540",
@@ -152,10 +152,10 @@
       "current_ratio": 354.83,
       "equity_ratio": 62.92,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7994",
@@ -174,10 +174,10 @@
       "current_ratio": 291.28,
       "equity_ratio": 69.97,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4041",
@@ -196,10 +196,10 @@
       "current_ratio": 233.6,
       "equity_ratio": 66.38,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7296",
@@ -218,10 +218,10 @@
       "current_ratio": 341.9,
       "equity_ratio": 78.09,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1946",
@@ -240,10 +240,10 @@
       "current_ratio": 191.73,
       "equity_ratio": 55,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6651",
@@ -262,10 +262,10 @@
       "current_ratio": 278.03,
       "equity_ratio": 66.64,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9882",
@@ -284,10 +284,10 @@
       "current_ratio": 159.31,
       "equity_ratio": 60.02,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8097",
@@ -306,10 +306,10 @@
       "current_ratio": 146.33,
       "equity_ratio": 61.21,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9715",
@@ -328,10 +328,10 @@
       "current_ratio": 215.15,
       "equity_ratio": 63.95,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1762",
@@ -350,10 +350,10 @@
       "current_ratio": 176.58,
       "equity_ratio": 50.02,
       "category": "wariyasu",
-      "stayDays": 7,
+      "stayDays": 8,
       "entryDate": "2026-10-30",
       "groupEntryDate": "2026-10-30",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5930",
@@ -372,10 +372,10 @@
       "current_ratio": 233.71,
       "equity_ratio": 58.54,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4633",
@@ -394,10 +394,10 @@
       "current_ratio": 187.7,
       "equity_ratio": 55.3,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6737",
@@ -416,10 +416,10 @@
       "current_ratio": 416.87,
       "equity_ratio": 75.57,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5192",
@@ -438,10 +438,10 @@
       "current_ratio": 375.11,
       "equity_ratio": 77.38,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6804",
@@ -460,10 +460,10 @@
       "current_ratio": 323.29,
       "equity_ratio": 66.55,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4044",
@@ -482,10 +482,10 @@
       "current_ratio": 253.96,
       "equity_ratio": 65.67,
       "category": "wariyasu",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8059",
@@ -504,10 +504,10 @@
       "current_ratio": 182.28,
       "equity_ratio": 50.18,
       "category": "shokaku",
-      "stayDays": 7,
+      "stayDays": 8,
       "entryDate": "2026-10-30",
       "groupEntryDate": "2026-10-30",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7483",
@@ -526,10 +526,10 @@
       "current_ratio": 718.05,
       "equity_ratio": 87.85,
       "category": "shokaku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8016",
@@ -548,10 +548,10 @@
       "current_ratio": 136.42,
       "equity_ratio": 52.53,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8014",
@@ -570,10 +570,10 @@
       "current_ratio": 276.78,
       "equity_ratio": 67.5,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5195",
@@ -592,10 +592,10 @@
       "current_ratio": 200,
       "equity_ratio": 70.15,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4028",
@@ -614,10 +614,10 @@
       "current_ratio": 303.31,
       "equity_ratio": 53.9,
       "category": "wariyasu",
-      "stayDays": 36,
+      "stayDays": 37,
       "entryDate": "2026-09-24",
       "groupEntryDate": "2026-09-24",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6209",
@@ -636,10 +636,10 @@
       "current_ratio": 253.37,
       "equity_ratio": 71.14,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6652",
@@ -658,10 +658,10 @@
       "current_ratio": 193.46,
       "equity_ratio": 63.36,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1870",
@@ -680,10 +680,10 @@
       "current_ratio": 244.89,
       "equity_ratio": 60.22,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4008",
@@ -702,10 +702,10 @@
       "current_ratio": 232.43,
       "equity_ratio": 65.78,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5351",
@@ -724,10 +724,10 @@
       "current_ratio": 191.58,
       "equity_ratio": 50.88,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2117",
@@ -746,10 +746,10 @@
       "current_ratio": 165.18,
       "equity_ratio": 71.75,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7246",
@@ -768,10 +768,10 @@
       "current_ratio": 157.72,
       "equity_ratio": 64.7,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6458",
@@ -790,10 +790,10 @@
       "current_ratio": 385.27,
       "equity_ratio": 72.59,
       "category": "shokaku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6345",
@@ -812,10 +812,10 @@
       "current_ratio": 553.94,
       "equity_ratio": 87.45,
       "category": "shokaku",
-      "stayDays": 8,
+      "stayDays": 9,
       "entryDate": "2026-10-29",
       "groupEntryDate": "2026-10-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7226",
@@ -834,10 +834,10 @@
       "current_ratio": 224.36,
       "equity_ratio": 59.08,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7239",
@@ -856,10 +856,10 @@
       "current_ratio": 214.88,
       "equity_ratio": 61.84,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6517",
@@ -878,10 +878,10 @@
       "current_ratio": 489.05,
       "equity_ratio": 81.72,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4246",
@@ -900,10 +900,10 @@
       "current_ratio": 183.52,
       "equity_ratio": 57.08,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7931",
@@ -922,10 +922,10 @@
       "current_ratio": 420.8,
       "equity_ratio": 81.18,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-10-31",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8935",
@@ -944,10 +944,10 @@
       "current_ratio": 616.33,
       "equity_ratio": 72.3,
       "category": "wariyasu",
-      "stayDays": 36,
+      "stayDays": 37,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1938",
@@ -966,10 +966,10 @@
       "current_ratio": 277.89,
       "equity_ratio": 73.21,
       "category": "wariyasu",
-      "stayDays": 30,
+      "stayDays": 31,
       "entryDate": "2026-10-03",
       "groupEntryDate": "2026-10-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9991",
@@ -988,10 +988,10 @@
       "current_ratio": 203.79,
       "equity_ratio": 62.23,
       "category": "wariyasu",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5184",
@@ -1010,10 +1010,10 @@
       "current_ratio": 395.51,
       "equity_ratio": 77.6,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4619",
@@ -1032,10 +1032,10 @@
       "current_ratio": 251.93,
       "equity_ratio": 77.24,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6809",
@@ -1054,10 +1054,10 @@
       "current_ratio": 622.75,
       "equity_ratio": 80.57,
       "category": "wariyasu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-11-05",
       "groupEntryDate": "2026-11-05",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4362",
@@ -1076,10 +1076,10 @@
       "current_ratio": 404.82,
       "equity_ratio": 83.43,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-10-31",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5288",
@@ -1098,10 +1098,10 @@
       "current_ratio": 163.04,
       "equity_ratio": 55.78,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9639",
@@ -1120,10 +1120,10 @@
       "current_ratio": 138.04,
       "equity_ratio": 76.4,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2288",
@@ -1142,10 +1142,10 @@
       "current_ratio": 151.29,
       "equity_ratio": 58.85,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1898",
@@ -1164,10 +1164,10 @@
       "current_ratio": 175.86,
       "equity_ratio": 55.01,
       "category": "shokaku",
-      "stayDays": 3,
+      "stayDays": 4,
       "entryDate": "2026-11-04",
       "groupEntryDate": "2026-11-04",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9028",
@@ -1186,10 +1186,10 @@
       "current_ratio": 170.68,
       "equity_ratio": 62.74,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8706",
@@ -1208,10 +1208,10 @@
       "current_ratio": 179.92,
       "equity_ratio": 60.26,
       "category": "wariyasu",
-      "stayDays": 7,
+      "stayDays": 8,
       "entryDate": "2026-10-30",
       "groupEntryDate": "2026-10-30",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1847",
@@ -1230,10 +1230,10 @@
       "current_ratio": 249.97,
       "equity_ratio": 56.15,
       "category": "shokaku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7949",
@@ -1252,10 +1252,10 @@
       "current_ratio": 381.27,
       "equity_ratio": 82.71,
       "category": "shokaku",
-      "stayDays": 9,
+      "stayDays": 10,
       "entryDate": "2026-10-28",
       "groupEntryDate": "2026-10-28",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8622",
@@ -1274,10 +1274,10 @@
       "current_ratio": 165.85,
       "equity_ratio": 48.52,
       "category": "shokaku",
-      "stayDays": 7,
+      "stayDays": 8,
       "entryDate": "2026-10-30",
       "groupEntryDate": "2026-10-30",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6357",
@@ -1296,10 +1296,10 @@
       "current_ratio": 192.58,
       "equity_ratio": 52.74,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9368",
@@ -1318,10 +1318,10 @@
       "current_ratio": 208.07,
       "equity_ratio": 67.19,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4719",
@@ -1340,10 +1340,10 @@
       "current_ratio": 498.5,
       "equity_ratio": 87.36,
       "category": "wariyasu",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1810",
@@ -1362,10 +1362,10 @@
       "current_ratio": 188.09,
       "equity_ratio": 64,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1813",
@@ -1384,10 +1384,10 @@
       "current_ratio": 193.65,
       "equity_ratio": 60.3,
       "category": "shokaku",
-      "stayDays": 32,
+      "stayDays": 33,
       "entryDate": "2026-10-01",
       "groupEntryDate": "2026-10-01",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5013",
@@ -1406,10 +1406,10 @@
       "current_ratio": 227.11,
       "equity_ratio": 72.74,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7971",
@@ -1428,10 +1428,10 @@
       "current_ratio": 165.77,
       "equity_ratio": 54.56,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8150",
@@ -1450,10 +1450,10 @@
       "current_ratio": 202.18,
       "equity_ratio": 55.06,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6272",
@@ -1472,10 +1472,10 @@
       "current_ratio": 251.03,
       "equity_ratio": 79.25,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5541",
@@ -1494,10 +1494,10 @@
       "current_ratio": 2268.47,
       "equity_ratio": 93.32,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6223",
@@ -1516,10 +1516,10 @@
       "current_ratio": 211.48,
       "equity_ratio": 65.53,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9856",
@@ -1538,10 +1538,10 @@
       "current_ratio": 282.13,
       "equity_ratio": 74.17,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9441",
@@ -1560,10 +1560,10 @@
       "current_ratio": 274.32,
       "equity_ratio": 68.98,
       "category": "shokaku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6306",
@@ -1582,10 +1582,10 @@
       "current_ratio": 176.94,
       "equity_ratio": 56.41,
       "category": "wariyasu",
-      "stayDays": 10,
+      "stayDays": 11,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-27",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9845",
@@ -1604,10 +1604,10 @@
       "current_ratio": 303.48,
       "equity_ratio": 71.74,
       "category": "wariyasu",
-      "stayDays": 31,
+      "stayDays": 32,
       "entryDate": "2026-10-02",
       "groupEntryDate": "2026-10-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9622",
@@ -1626,10 +1626,10 @@
       "current_ratio": 382.98,
       "equity_ratio": 80.6,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9906",
@@ -1648,10 +1648,10 @@
       "current_ratio": 284.72,
       "equity_ratio": 69.21,
       "category": "wariyasu",
-      "stayDays": 31,
+      "stayDays": 32,
       "entryDate": "2026-10-02",
       "groupEntryDate": "2026-10-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6932",
@@ -1670,10 +1670,10 @@
       "current_ratio": 391.09,
       "equity_ratio": 68.27,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3355",
@@ -1692,10 +1692,10 @@
       "current_ratio": 255.52,
       "equity_ratio": 56.96,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2153",
@@ -1714,10 +1714,10 @@
       "current_ratio": 454.75,
       "equity_ratio": 73,
       "category": "wariyasu",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7482",
@@ -1736,10 +1736,10 @@
       "current_ratio": 357.98,
       "equity_ratio": 82.41,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6648",
@@ -1758,10 +1758,10 @@
       "current_ratio": 335.61,
       "equity_ratio": 74.42,
       "category": "shokaku",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6915",
@@ -1780,10 +1780,10 @@
       "current_ratio": 424.49,
       "equity_ratio": 79.72,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1964",
@@ -1802,10 +1802,10 @@
       "current_ratio": 267.91,
       "equity_ratio": 63.33,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7525",
@@ -1824,10 +1824,10 @@
       "current_ratio": 223,
       "equity_ratio": 63.98,
       "category": "wariyasu",
-      "stayDays": 32,
+      "stayDays": 33,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-01",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4635",
@@ -1846,10 +1846,10 @@
       "current_ratio": 188.55,
       "equity_ratio": 58.44,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4671",
@@ -1868,10 +1868,10 @@
       "current_ratio": 220,
       "equity_ratio": 68.38,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7463",
@@ -1890,10 +1890,10 @@
       "current_ratio": 336.35,
       "equity_ratio": 70.93,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1960",
@@ -1912,10 +1912,10 @@
       "current_ratio": 163.06,
       "equity_ratio": 57.75,
       "category": "wariyasu",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1828",
@@ -1934,10 +1934,10 @@
       "current_ratio": 203.46,
       "equity_ratio": 59.87,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5357",
@@ -1956,10 +1956,10 @@
       "current_ratio": 506.45,
       "equity_ratio": 79.56,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1972",
@@ -1978,10 +1978,10 @@
       "current_ratio": 381.21,
       "equity_ratio": 71.46,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3611",
@@ -2000,10 +2000,10 @@
       "current_ratio": 228.7,
       "equity_ratio": 55.83,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7417",
@@ -2022,10 +2022,10 @@
       "current_ratio": 193.94,
       "equity_ratio": 66.46,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6365",
@@ -2044,10 +2044,10 @@
       "current_ratio": 480.2,
       "equity_ratio": 80.79,
       "category": "wariyasu",
-      "stayDays": 11,
+      "stayDays": 12,
       "entryDate": "2026-10-26",
       "groupEntryDate": "2026-10-26",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3023",
@@ -2066,10 +2066,10 @@
       "current_ratio": 324.93,
       "equity_ratio": 74.25,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9332",
@@ -2088,10 +2088,10 @@
       "current_ratio": 149.03,
       "equity_ratio": 52.5,
       "category": "shokaku",
-      "stayDays": 9,
+      "stayDays": 10,
       "entryDate": "2026-10-28",
       "groupEntryDate": "2026-10-28",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9233",
@@ -2110,10 +2110,10 @@
       "current_ratio": 272.29,
       "equity_ratio": 64.43,
       "category": "wariyasu",
-      "stayDays": 33,
+      "stayDays": 34,
       "entryDate": "2026-09-30",
       "groupEntryDate": "2026-09-30",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5698",
@@ -2132,10 +2132,10 @@
       "current_ratio": 175.53,
       "equity_ratio": 53.37,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6989",
@@ -2154,10 +2154,10 @@
       "current_ratio": 248.21,
       "equity_ratio": 54.93,
       "category": "wariyasu",
-      "stayDays": 36,
+      "stayDays": 37,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6678",
@@ -2176,10 +2176,10 @@
       "current_ratio": 622.89,
       "equity_ratio": 84.42,
       "category": "shokaku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1867",
@@ -2198,10 +2198,10 @@
       "current_ratio": 198.11,
       "equity_ratio": 60.47,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1384",
@@ -2220,10 +2220,10 @@
       "current_ratio": 208.45,
       "equity_ratio": 77.3,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1770",
@@ -2242,10 +2242,10 @@
       "current_ratio": 245.1,
       "equity_ratio": 68.24,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6927",
@@ -2264,10 +2264,10 @@
       "current_ratio": 505.97,
       "equity_ratio": 72.51,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5941",
@@ -2286,10 +2286,10 @@
       "current_ratio": 200.41,
       "equity_ratio": 70.25,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6616",
@@ -2308,10 +2308,10 @@
       "current_ratio": 276.01,
       "equity_ratio": 54.42,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9857",
@@ -2330,10 +2330,10 @@
       "current_ratio": 240.04,
       "equity_ratio": 64.27,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8908",
@@ -2352,10 +2352,10 @@
       "current_ratio": 369.77,
       "equity_ratio": 51.3,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7927",
@@ -2374,10 +2374,10 @@
       "current_ratio": 259.6,
       "equity_ratio": 66.91,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3834",
@@ -2396,10 +2396,10 @@
       "current_ratio": 352.69,
       "equity_ratio": 86.97,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7095",
@@ -2418,10 +2418,10 @@
       "current_ratio": 196.2,
       "equity_ratio": 52.42,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9248",
@@ -2440,10 +2440,10 @@
       "current_ratio": 251.38,
       "equity_ratio": 51.51,
       "category": "wariyasu",
-      "stayDays": 30,
+      "stayDays": 31,
       "entryDate": "2026-10-03",
       "groupEntryDate": "2026-10-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7235",
@@ -2462,10 +2462,10 @@
       "current_ratio": 363.31,
       "equity_ratio": 79.31,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5284",
@@ -2484,10 +2484,10 @@
       "current_ratio": 206.29,
       "equity_ratio": 64.9,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-24",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7670",
@@ -2506,10 +2506,10 @@
       "current_ratio": 158.29,
       "equity_ratio": 54.71,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3447",
@@ -2528,10 +2528,10 @@
       "current_ratio": 118.07,
       "equity_ratio": 52.91,
       "category": "wariyasu",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5356",
@@ -2550,10 +2550,10 @@
       "current_ratio": 294.83,
       "equity_ratio": 71.99,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3640",
@@ -2572,10 +2572,10 @@
       "current_ratio": 317.49,
       "equity_ratio": 76.13,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2112",
@@ -2594,10 +2594,10 @@
       "current_ratio": 121.71,
       "equity_ratio": 65.52,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7050",
@@ -2616,10 +2616,10 @@
       "current_ratio": 254.39,
       "equity_ratio": 63.51,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4299",
@@ -2638,10 +2638,10 @@
       "current_ratio": 444.44,
       "equity_ratio": 79.8,
       "category": "shokaku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5282",
@@ -2660,10 +2660,10 @@
       "current_ratio": 255.38,
       "equity_ratio": 71.26,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4838",
@@ -2682,10 +2682,10 @@
       "current_ratio": 134.89,
       "equity_ratio": 51.89,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3918",
@@ -2704,10 +2704,10 @@
       "current_ratio": 247.95,
       "equity_ratio": 64.21,
       "category": "shokaku",
-      "stayDays": 9,
+      "stayDays": 10,
       "entryDate": "2026-10-28",
       "groupEntryDate": "2026-10-28",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7722",
@@ -2726,10 +2726,10 @@
       "current_ratio": 264.11,
       "equity_ratio": 63.44,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4644",
@@ -2748,10 +2748,10 @@
       "current_ratio": 1187.28,
       "equity_ratio": 92.2,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9698",
@@ -2770,10 +2770,10 @@
       "current_ratio": 340.31,
       "equity_ratio": 73.04,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7673",
@@ -2792,10 +2792,10 @@
       "current_ratio": 179.88,
       "equity_ratio": 53.63,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-24",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7175",
@@ -2814,10 +2814,10 @@
       "current_ratio": 172.99,
       "equity_ratio": 52.61,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6402",
@@ -2836,10 +2836,10 @@
       "current_ratio": 202.92,
       "equity_ratio": 62.8,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5368",
@@ -2858,10 +2858,10 @@
       "current_ratio": 476.17,
       "equity_ratio": 80.41,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4430",
@@ -2880,10 +2880,10 @@
       "current_ratio": 210.98,
       "equity_ratio": 66.21,
       "category": "shokaku",
-      "stayDays": 11,
+      "stayDays": 12,
       "entryDate": "2026-10-26",
       "groupEntryDate": "2026-10-26",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9193",
@@ -2902,10 +2902,10 @@
       "current_ratio": 307.68,
       "equity_ratio": 81.92,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1997",
@@ -2924,10 +2924,10 @@
       "current_ratio": 257.89,
       "equity_ratio": 69.12,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "8700",
@@ -2946,10 +2946,10 @@
       "current_ratio": 162.87,
       "equity_ratio": 52.31,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1768",
@@ -2968,10 +2968,10 @@
       "current_ratio": 306.19,
       "equity_ratio": 72.43,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2961",
@@ -2990,10 +2990,10 @@
       "current_ratio": 279.54,
       "equity_ratio": 64.31,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5576",
@@ -3012,10 +3012,10 @@
       "current_ratio": 305.1,
       "equity_ratio": 75.8,
       "category": "shokaku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4752",
@@ -3034,10 +3034,10 @@
       "current_ratio": 682.09,
       "equity_ratio": 66.6,
       "category": "shokaku",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7833",
@@ -3056,10 +3056,10 @@
       "current_ratio": 646.83,
       "equity_ratio": 83.58,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5189",
@@ -3078,10 +3078,10 @@
       "current_ratio": 252.08,
       "equity_ratio": 54.59,
       "category": "wariyasu",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-21",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7812",
@@ -3100,10 +3100,10 @@
       "current_ratio": 204.91,
       "equity_ratio": 54.2,
       "category": "wariyasu",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "339A",
@@ -3122,10 +3122,10 @@
       "current_ratio": 213.98,
       "equity_ratio": 54.66,
       "category": "wariyasu",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-10-31",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2408",
@@ -3144,10 +3144,10 @@
       "current_ratio": 824.12,
       "equity_ratio": 86.41,
       "category": "wariyasu",
-      "stayDays": 22,
+      "stayDays": 23,
       "entryDate": "2026-09-28",
       "groupEntryDate": "2026-10-13",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9625",
@@ -3166,10 +3166,10 @@
       "current_ratio": 377.39,
       "equity_ratio": 80.57,
       "category": "wariyasu",
-      "stayDays": 36,
+      "stayDays": 37,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9127",
@@ -3188,10 +3188,10 @@
       "current_ratio": 306.45,
       "equity_ratio": 66.79,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "4172",
@@ -3210,10 +3210,10 @@
       "current_ratio": 421.06,
       "equity_ratio": 86.2,
       "category": "shokaku",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7847",
@@ -3232,10 +3232,10 @@
       "current_ratio": 583.09,
       "equity_ratio": 73.37,
       "category": "wariyasu",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-03",
       "groupEntryDate": "2026-11-03",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "9259",
@@ -3254,10 +3254,10 @@
       "current_ratio": 130.94,
       "equity_ratio": 53.18,
       "category": "shokaku",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3352",
@@ -3276,10 +3276,10 @@
       "current_ratio": 362.68,
       "equity_ratio": 68.42,
       "category": "wariyasu",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-02",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "7919",
@@ -3298,10 +3298,10 @@
       "current_ratio": 108.42,
       "equity_ratio": 48.95,
       "category": "wariyasu",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-11-06",
       "groupEntryDate": "2026-11-06",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3953",
@@ -3320,10 +3320,10 @@
       "current_ratio": 348.7,
       "equity_ratio": 76.58,
       "category": "wariyasu",
-      "stayDays": 26,
+      "stayDays": 27,
       "entryDate": "2026-10-08",
       "groupEntryDate": "2026-10-08",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3375",
@@ -3342,10 +3342,10 @@
       "current_ratio": 256.78,
       "equity_ratio": 63.8,
       "category": "wariyasu",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-23",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "6623",
@@ -3364,10 +3364,10 @@
       "current_ratio": 198.09,
       "equity_ratio": 58.74,
       "category": "wariyasu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-11-05",
       "groupEntryDate": "2026-11-05",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "2902",
@@ -3386,10 +3386,10 @@
       "current_ratio": 373.68,
       "equity_ratio": 82.08,
       "category": "wariyasu",
-      "stayDays": 2,
+      "stayDays": 3,
       "entryDate": "2026-11-05",
       "groupEntryDate": "2026-11-05",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "5579",
@@ -3408,10 +3408,10 @@
       "current_ratio": 228.46,
       "equity_ratio": 66.03,
       "category": "shokaku",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "3670",
@@ -3430,10 +3430,10 @@
       "current_ratio": 322.21,
       "equity_ratio": 68.02,
       "category": "wariyasu",
-      "stayDays": 34,
+      "stayDays": 35,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-09-29",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "242A",
@@ -3452,10 +3452,10 @@
       "current_ratio": 454.6,
       "equity_ratio": 76.32,
       "category": "wariyasu",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-20",
-      "lastIncrementDate": "2026-11-06"
+      "lastIncrementDate": "2026-11-07"
     },
     {
       "code": "1826",
@@ -3474,7 +3474,7 @@
       "current_ratio": 174.48,
       "equity_ratio": 48.87,
       "category": "sotsugyo",
-      "stayDays": 1,
+      "stayDays": 2,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-06",
       "graduationDate": "2026-11-06",
@@ -3499,7 +3499,7 @@
       "current_ratio": 555.5,
       "equity_ratio": 85.37,
       "category": "sotsugyo",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-10-30",
       "groupEntryDate": "2026-11-02",
       "graduationDate": "2026-11-02",
@@ -3524,7 +3524,7 @@
       "current_ratio": 176.35,
       "equity_ratio": 79.93,
       "category": "sotsugyo",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "graduationDate": "2026-10-21",
@@ -3549,7 +3549,7 @@
       "current_ratio": 314.91,
       "equity_ratio": 74.96,
       "category": "sotsugyo",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "graduationDate": "2026-10-21",
@@ -3574,7 +3574,7 @@
       "current_ratio": 330.54,
       "equity_ratio": 76.06,
       "category": "sotsugyo",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "graduationDate": "2026-10-21",
@@ -3599,7 +3599,7 @@
       "current_ratio": 558.68,
       "equity_ratio": 85.35,
       "category": "sotsugyo",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-20",
       "groupEntryDate": "2026-10-21",
       "graduationDate": "2026-10-21",
@@ -3624,7 +3624,7 @@
       "current_ratio": 200.09,
       "equity_ratio": 81.77,
       "category": "sotsugyo",
-      "stayDays": 22,
+      "stayDays": 23,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-13",
       "graduationDate": "2026-10-13",
@@ -3649,7 +3649,7 @@
       "current_ratio": 204.58,
       "equity_ratio": 59.78,
       "category": "sotsugyo",
-      "stayDays": 21,
+      "stayDays": 22,
       "entryDate": "2026-10-07",
       "groupEntryDate": "2026-10-14",
       "graduationDate": "2026-10-14",
@@ -3674,7 +3674,7 @@
       "current_ratio": 232.11,
       "equity_ratio": 63.5,
       "category": "sotsugyo",
-      "stayDays": 29,
+      "stayDays": 30,
       "entryDate": "2026-10-02",
       "groupEntryDate": "2026-10-05",
       "graduationDate": "2026-10-05",
@@ -3699,7 +3699,7 @@
       "current_ratio": 205.62,
       "equity_ratio": 62.03,
       "category": "sotsugyo",
-      "stayDays": 135,
+      "stayDays": 136,
       "entryDate": "2026-03-30",
       "groupEntryDate": "2026-03-31",
       "graduationDate": "2026-03-31",
@@ -3724,7 +3724,7 @@
       "current_ratio": 403.06,
       "equity_ratio": 67.81,
       "category": "sotsugyo",
-      "stayDays": 135,
+      "stayDays": 136,
       "entryDate": "2026-03-30",
       "groupEntryDate": "2026-03-31",
       "graduationDate": "2026-03-31",
@@ -3749,7 +3749,7 @@
       "current_ratio": 192.52,
       "equity_ratio": 51.09,
       "category": "sotsugyo",
-      "stayDays": 135,
+      "stayDays": 136,
       "entryDate": "2026-03-30",
       "groupEntryDate": "2026-03-31",
       "graduationDate": "2026-03-31",
@@ -3774,7 +3774,7 @@
       "current_ratio": 151.8,
       "equity_ratio": 36.4,
       "category": "sotsugyo",
-      "stayDays": 135,
+      "stayDays": 136,
       "entryDate": "2026-03-30",
       "groupEntryDate": "2026-03-31",
       "graduationDate": "2026-03-31",
@@ -3799,7 +3799,7 @@
       "current_ratio": 172.67,
       "equity_ratio": 54.05,
       "category": "sotsugyo",
-      "stayDays": 135,
+      "stayDays": 136,
       "entryDate": "2026-03-30",
       "groupEntryDate": "2026-03-31",
       "graduationDate": "2026-03-31",
@@ -3824,7 +3824,7 @@
       "current_ratio": 202.49,
       "equity_ratio": 47.7,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-10-02",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3849,7 +3849,7 @@
       "current_ratio": 604.08,
       "equity_ratio": 83.6,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3874,7 +3874,7 @@
       "current_ratio": 456.69,
       "equity_ratio": 80.48,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3899,7 +3899,7 @@
       "current_ratio": 189.18,
       "equity_ratio": 48.94,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-10-29",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3924,7 +3924,7 @@
       "current_ratio": 179.65,
       "equity_ratio": 55.97,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3949,7 +3949,7 @@
       "current_ratio": 159.07,
       "equity_ratio": 48.22,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3974,7 +3974,7 @@
       "current_ratio": 348.54,
       "equity_ratio": 79.51,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -3999,7 +3999,7 @@
       "current_ratio": 357.84,
       "equity_ratio": 82.67,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4024,7 +4024,7 @@
       "current_ratio": 189.74,
       "equity_ratio": 63.52,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4049,7 +4049,7 @@
       "current_ratio": 1909.45,
       "equity_ratio": 81.05,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-10-15",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4074,7 +4074,7 @@
       "current_ratio": 886.9,
       "equity_ratio": 90.92,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-11-02",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4099,7 +4099,7 @@
       "current_ratio": 268.72,
       "equity_ratio": 65.43,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4124,7 +4124,7 @@
       "current_ratio": 269.07,
       "equity_ratio": 64.83,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4149,7 +4149,7 @@
       "current_ratio": 241.96,
       "equity_ratio": 72.82,
       "category": "datsuraku",
-      "stayDays": 4,
+      "stayDays": 5,
       "entryDate": "2026-10-23",
       "groupEntryDate": "2026-11-03",
       "dropoutDate": "2026-11-03",
@@ -4174,7 +4174,7 @@
       "current_ratio": 229.51,
       "equity_ratio": 52.93,
       "category": "datsuraku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-11-02",
       "dropoutDate": "2026-11-02",
@@ -4199,7 +4199,7 @@
       "current_ratio": 227.59,
       "equity_ratio": 68.06,
       "category": "datsuraku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-10-31",
       "groupEntryDate": "2026-11-02",
       "dropoutDate": "2026-11-02",
@@ -4224,7 +4224,7 @@
       "current_ratio": 238.2,
       "equity_ratio": 61.14,
       "category": "datsuraku",
-      "stayDays": 5,
+      "stayDays": 6,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-11-02",
       "dropoutDate": "2026-11-02",
@@ -4249,7 +4249,7 @@
       "current_ratio": 191.74,
       "equity_ratio": 53.91,
       "category": "datsuraku",
-      "stayDays": 6,
+      "stayDays": 7,
       "entryDate": "2026-10-30",
       "groupEntryDate": "2026-10-31",
       "dropoutDate": "2026-10-31",
@@ -4274,7 +4274,7 @@
       "current_ratio": 321.43,
       "equity_ratio": 60.63,
       "category": "datsuraku",
-      "stayDays": 7,
+      "stayDays": 8,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-30",
       "dropoutDate": "2026-10-30",
@@ -4299,7 +4299,7 @@
       "current_ratio": 222.42,
       "equity_ratio": 72.36,
       "category": "datsuraku",
-      "stayDays": 7,
+      "stayDays": 8,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-30",
       "dropoutDate": "2026-10-30",
@@ -4324,7 +4324,7 @@
       "current_ratio": 229.7,
       "equity_ratio": 67.84,
       "category": "datsuraku",
-      "stayDays": 8,
+      "stayDays": 9,
       "entryDate": "2026-09-30",
       "groupEntryDate": "2026-10-29",
       "dropoutDate": "2026-10-29",
@@ -4349,7 +4349,7 @@
       "current_ratio": 173.85,
       "equity_ratio": 56.27,
       "category": "datsuraku",
-      "stayDays": 10,
+      "stayDays": 11,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-10-27",
       "dropoutDate": "2026-10-27",
@@ -4374,7 +4374,7 @@
       "current_ratio": 174.28,
       "equity_ratio": 63.88,
       "category": "datsuraku",
-      "stayDays": 13,
+      "stayDays": 14,
       "entryDate": "2026-10-21",
       "groupEntryDate": "2026-10-23",
       "dropoutDate": "2026-10-23",
@@ -4399,7 +4399,7 @@
       "current_ratio": 154.97,
       "equity_ratio": 55.59,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-07",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4424,7 +4424,7 @@
       "current_ratio": 200.86,
       "equity_ratio": 57.9,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4449,7 +4449,7 @@
       "current_ratio": 390.68,
       "equity_ratio": 71.8,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4474,7 +4474,7 @@
       "current_ratio": 345.43,
       "equity_ratio": 76.07,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4499,7 +4499,7 @@
       "current_ratio": 187.45,
       "equity_ratio": 57.89,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4524,7 +4524,7 @@
       "current_ratio": 461.69,
       "equity_ratio": 80.06,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4549,7 +4549,7 @@
       "current_ratio": 190.67,
       "equity_ratio": 59.39,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-02",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4574,7 +4574,7 @@
       "current_ratio": 272.31,
       "equity_ratio": 58.68,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4599,7 +4599,7 @@
       "current_ratio": 126.05,
       "equity_ratio": 59.12,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4624,7 +4624,7 @@
       "current_ratio": 170.41,
       "equity_ratio": 53.78,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4649,7 +4649,7 @@
       "current_ratio": 177.19,
       "equity_ratio": 60.92,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4674,7 +4674,7 @@
       "current_ratio": 441.25,
       "equity_ratio": 79.63,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4699,7 +4699,7 @@
       "current_ratio": 229.01,
       "equity_ratio": 69.73,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-10-16",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4724,7 +4724,7 @@
       "current_ratio": 280.9,
       "equity_ratio": 69.29,
       "category": "datsuraku",
-      "stayDays": 15,
+      "stayDays": 16,
       "entryDate": "2026-09-29",
       "groupEntryDate": "2026-10-21",
       "dropoutDate": "2026-10-21",
@@ -4749,7 +4749,7 @@
       "current_ratio": 286.85,
       "equity_ratio": 68.11,
       "category": "datsuraku",
-      "stayDays": 16,
+      "stayDays": 17,
       "entryDate": "2026-10-17",
       "groupEntryDate": "2026-10-20",
       "dropoutDate": "2026-10-20",
@@ -4774,7 +4774,7 @@
       "current_ratio": 212.13,
       "equity_ratio": 63.34,
       "category": "datsuraku",
-      "stayDays": 21,
+      "stayDays": 22,
       "entryDate": "2026-10-09",
       "groupEntryDate": "2026-10-14",
       "dropoutDate": "2026-10-14",
@@ -4799,7 +4799,7 @@
       "current_ratio": 114.75,
       "equity_ratio": 63.39,
       "category": "datsuraku",
-      "stayDays": 27,
+      "stayDays": 28,
       "entryDate": "2026-10-03",
       "groupEntryDate": "2026-10-07",
       "dropoutDate": "2026-10-07",
@@ -4824,7 +4824,7 @@
       "current_ratio": 241.71,
       "equity_ratio": 66.27,
       "category": "datsuraku",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4849,7 +4849,7 @@
       "current_ratio": 273.85,
       "equity_ratio": 65.1,
       "category": "datsuraku",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4874,7 +4874,7 @@
       "current_ratio": 270.53,
       "equity_ratio": 67.69,
       "category": "datsuraku",
-      "stayDays": 35,
+      "stayDays": 36,
       "entryDate": "2026-09-25",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4899,7 +4899,7 @@
       "current_ratio": 333.02,
       "equity_ratio": 76.46,
       "category": "datsuraku",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4924,7 +4924,7 @@
       "current_ratio": 140.42,
       "equity_ratio": 54.76,
       "category": "datsuraku",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4949,7 +4949,7 @@
       "current_ratio": 481.07,
       "equity_ratio": 79.33,
       "category": "datsuraku",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4974,7 +4974,7 @@
       "current_ratio": 280.49,
       "equity_ratio": 66.66,
       "category": "datsuraku",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -4999,7 +4999,7 @@
       "current_ratio": 567.94,
       "equity_ratio": 86.49,
       "category": "datsuraku",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-23",
       "groupEntryDate": "2026-09-25",
       "dropoutDate": "2026-09-25",
@@ -5024,7 +5024,7 @@
       "current_ratio": 335.59,
       "equity_ratio": 68.52,
       "category": "datsuraku",
-      "stayDays": 37,
+      "stayDays": 38,
       "entryDate": "2026-09-24",
       "groupEntryDate": "2026-09-24",
       "dropoutDate": "2026-09-24",
